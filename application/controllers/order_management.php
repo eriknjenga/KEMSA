@@ -44,5 +44,22 @@ class Order_Management extends MY_Controller {
 		$data['link'] = "order_management"; 
 		$this -> load -> view("template", $data);
 	}
-
+	public function drug_issue(){
+		$data['title'] = "New Drug Issue";
+		$data['content_view'] = "new_issue_v";
+		$data['banner_text'] = "New Drug Issue";
+		$data['link'] = "order_management";
+		$data['drug_categories'] = Drug_Category::getAll();
+		$data['quick_link'] = "drug_issue";
+		$this -> load -> view("template", $data);
+	}
+	public function stock_level(){
+		$data['title'] = "Stock";
+		$data['content_view'] = "stock_level_v";
+		$data['banner_text'] = "Stock Level";
+		$data['link'] = "order_management";
+		$data['drug_categories'] = Drug_Category::getAll();
+		$data['quick_link'] = "stock_level";
+		$this -> load -> view("template", $data);
+	}
 }
