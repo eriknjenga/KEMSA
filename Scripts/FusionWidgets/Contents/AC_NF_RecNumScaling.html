@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td width="100%"><h2 class="pageHeader">Number Formatting &gt; Recursive Number Scaling </h2></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Recursive number scaling comes into the picture when you have number scales defined for your chart. Let's jump to an example straightaway to understand this better. </p>
+      <p>Suppose we have a linear gauge which plots the time taken by a machine to do various tasks. Since the task can take any amount of time ranging from a few seconds to a few days, it is very tricky to select a unit in which to show the data. Hence, we will define a number scale for the chart which would take seconds as the basic unit and convert it into minutes, hours, weeks etc depending on the value. The number scale for the chart would be:</p>
+      <p>60 seconds = 1 minute<br />
+60 minute = 1 hr<br />
+24 hrs = 1 day<br />
+7 days = 1   week</p>
+      <p>We can define the same in our chart using:</p>
+      <p><span class="codeInline">&lt;chart defaultNumberScale='s' numberScaleValue='60,60,24,7'   numberScaleUnit='min,hr,day,wk' formatNumberScale='1' ... &gt;</span>  </p>
+      <p>Please see the Number Scaling section for more details on how to build a number scale. Now let's consider the XML below: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart lowerLimit='0' upperLimit='100000' defaultNumberScale='s' numberScaleValue='60,60,24,7' numberScaleUnit='mins,hrs,days,wks' formatNumberScale='1' majorTMNumber='3' chartLeftMargin='75' chartRightMargin='75'&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='100000' code='F6BD0F'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;</p>
+      <p>&nbsp;&nbsp;&nbsp;&lt;value&gt;94000&lt;/value&gt;<br />
+    &nbsp;&nbsp;&nbsp;&lt;value&gt;7400&lt;/value&gt;<br />
+    &lt;/chart&gt; </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The above XML when used for a horizontal linear gauge would give us this: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/AC_RecNum1.jpg" width="450" height="100" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">You can see above how owing to the number scale we defined, the values in seconds are getting converted into hours, mins etc according to the magnitude of the value entered. Neat work, but wouldn't you rather prefer this? </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/AC_RecNum2.jpg" width="450" height="100" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Notice how 2.06 hours is converted to 2 hrs, 3 mins and 20 s; 1.09 days to 1 day, 2 hrs, 6 mins and 40 s. This chart makes use of recursive number scaling and after converting the time in seconds to say hours, whatever is left over is not converted into decimals and shown. It is rather converted into smaller units of time and broken down as far as possible - so the remaining seconds are first converted to minutes and then when the seconds are too few to be converted into minutes, then they are displayed in seconds itself. This gives us a much a much fairer idea of how much time was used for each task. </p>
+    <p>To use recursive number scaling, all you have to do is set <span class="codeInline">&lt;chart ... scaleRecursively='1' .. &gt;. </span><span class="text">You can also define the separator you want to use to separate the various units making up time for a task using </span><span class="codeInline">scaleSeparator</span><span class="text">. In the above example, we have used commas to separate the hours from minutes and minutes from seconds. So we had to set</span><span class="codeInline"> scaleSeparator=', '</span><span class="text">.</span> You can set the same to any character you want. </p>
+    <p>The entire XML for the chart above is: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart lowerLimit='0' upperLimit='100000' defaultNumberScale='s' numberScaleValue='60,60,24,7' numberScaleUnit='mins,hrs,days,wks' formatNumberScale='1' majorTMNumber='3' chartLeftMargin='75' chartRightMargin='75' <strong>scaleRecursively='1' scaleSeparator=', '</strong>&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='100000' code='F6BD0F'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;</p>
+      <p>&nbsp;&nbsp;&nbsp;&lt;value&gt;94000&lt;/value&gt;<br />
+    &nbsp;&nbsp;&nbsp;&lt;value&gt;7400&lt;/value&gt;<br />
+    &lt;/chart&gt; </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Controlling the levels of recursion </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Suppose in the above chart, instead of  1 day, 2 hrs, 6 mins and 40 s, you are pretty happy with showing 1 day, 2 hrs itself either for space constraints or some other reason. You can control the levels of recursion all the numbers on your chart are showing using <span class="codeInline">maxScaleRecursion</span>. Suppose you want only 2 levels of recursion, then set <span class="codeInline">&lt;chart ... maxScaleRecursion='2'&gt;</span>. This would convert the above chart to: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/AC_RecNum3.jpg" width="450" height="100" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Notice how all the numbers on the chart are using a maximum of 2 time units - the rest have been truncated. When you want all the units of a number to be shown on the chart, you can either omit the <span class="codeInline">maxScaleRecursion</span> attribute or set it to -1. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

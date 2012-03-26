@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Real-time capabilities &gt; Adding data stamp </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Consider a scenario where we're plotting a live CPU monitor using FusionWidgets real-time line chart. In this system, we asume that the CPU Usage change is recorded every 10 seconds. But, to efficiently consume bandwidth, we stream this data to the chart every 90 seconds.  </p>
+      <p>To set the refresh interval, we've set the initial XML as under: </p>
+      <p class="codeInline"> &lt;chart dataStreamURL='Path/DataProviderPage.aspx' refreshInterval='60' ...&gt; ... data ... &lt;/chart&gt; </p>
+      <p>Now, <span class="codeInline">DataProviderPage.aspx</span> page is responsible for providing the CPU usage statistics. Each time it is invoked, it needs to provide 9 historical values (as the chart calls this page every 90 seconds, but data is updated every 10 seconds in the system). </p>
+      <p>In traditional systems, <span class="codeInline">DataProviderPage.aspx</span> would have to keep a track of &quot;What data was last sent to chart?&quot; using either Session variables or by storing the same in database. This can be a bit cumbersome in a stateless environment - as in server farms, Sessions won't scale well, and utilizing database for this purpose entails a lot of additional code, as you'll have to store the details for each connected user.</p>
+      <p>FusionWidgets introduces a smart feature that helps you easily overcome this - Data stamp. Data stamp is basically a token of information that is passed with each update to the chart and back to the server, which helps in easily identifying &quot;What data was last sent to chart?&quot;. </p>
+      <p>Let's see in in action. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Motives</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In our case, we would ideally like to do the following:</p>
+      <ol>
+        <li>When the chart is first rendered, we would like to provide the initial date/time as data stamp in XML, so that the chart can pass this to data stream URL page (<span class="codeInline">DataProviderPage.aspx</span>) as querystring. </li>
+        <li>The data stream URL page (<span class="codeInline">DataProviderPage.aspx</span>) will now request this stamp (date/time in this case) from querystring and provide any CPU data recorded after that time as output data. After building the data string, it will also append the updated data stamp, which is the date/time of the last data provided. </li>
+        <li>The entire data and stamp is now being sent to chart as real-time update. </li>
+        <li>The chart will now read this data, update the view and then update its own data stamp. </li>
+        <li>Again when the chart polls for real-time data, it will now append the updated data stamp to <span class="codeInline">dataStreamURL</span> and request data. Steps 2,3 and 4 will now recursively occur. </li>
+      </ol>      
+    <p>&nbsp;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Setting it up </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To set the initial data stamp, you'll need to set the following in XML:</p>
+      <p class="codeInline">&lt;chart ... dataStreamURL='DataProviderPage.aspx' refreshInterval='90' dataStamp='13:43:45' ...&gt;</p>
+      <p>As you can see above, we've added the data stamp as time, which is <span class="codeInline">13:43:45</span> in this example. Every 90 seconds, the chart will now call the following URL:</p>
+      <p class="codeInline">DataProviderPage.aspx?FCTimeIndex=35454&amp;dataStamp=13:43:45</p>
+      <p>Here, you can see that <span class="codeInline">dataStamp</span> has been added to the URL. <span class="codeInline">FCTimeIndex</span> is just a parameter added by chart to avoid caching issue. </p>
+      <p>Your code in <span class="codeInline">DataProviderPage.aspx </span>can now request this data stamp and then provide the values occurring after this time. Additionally, after providing the 9 values (for last 90 seconds) your <span class="codeInline">DataProviderPage.aspx</span> will need to update the data stamp by providing the time of the last CPU reading. So, the data output by <span class="codeInline">DataProviderPage.aspx</span> would read something as:</p>
+      <p class="codeInline">&amp;label=13:43:55,13:44:05,13:44:15,13:44:25,13:44:35,13:44:45,13:44:55,13:45:05,13:45:15|<br />
+        value=34,23,65,34,23,65,34,45,34<strong>&amp;dataStamp=13:45:15</strong></p>
+      <p>In the above output, we're providing:</p>
+      <ul>
+        <li>Label for the 9 values</li>
+        <li>Value for the same</li>
+        <li>Updated data stamp, which is date/time of the last value provided in this update </li>
+      </ul>
+      <p>Once this update reaches the chart, it will update itself to plot the 9 new values and would also update its data stamp. Next time when the chart invokes <span class="codeInline">DataProviderPage.aspx</span>, it will invoke the following URL:</p>
+      <p class="codeInline">DataProviderPage.aspx?FCTimeIndex=37564<strong>&amp;dataStamp=13:45:15 </strong></p>
+    <p>Note how <span class="codeInline">datastamp</span> has been updated to the one specifed by real-time update. This helps constantly update the data stamp and thereby, keep a track of the last data sent to chart. </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Annotation &gt; Text </h2></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Let us take a look at the Text Annotation here. The Text annotation looks like just any other text on the chart - just that you can place any number of text annotations anywhere on the chart. A text annotation would look as under: </p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>&nbsp;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Text1.gif" width="31" height="16" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML to create the above is: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+      &nbsp;&nbsp;&nbsp;...<br />
+      &nbsp;&nbsp;&nbsp;&lt;annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' &gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='text' x='200' y='200' label='Text' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;...<br />
+    &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">As is very clear from the code above, we need to set the annotation type to <span class="codeInline">text</span>, specify the  x and y co-ordinates where we want the text to be placed and finally, the label of the text annotation - what we want to be displayed in the text annotation. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Customizing font face, size &amp; color </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The font face, size &amp; color can be customized using the <span class="codeInline">font</span>, <span class="codeInline">fontSize</span> and <span class="codeInline">fontColor</span> attributes. <span class="codeInline">font='Arial', fontSize='15'</span>, <span class="codeInline">fontColor='639ACE'</span> would give us: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Text2.gif" width="36" height="22" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Formatting the text </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Various kinds of formatting can be applied to the text - bold, italics, underline. The text can be made bold, italicized and underlined by using the <span class="codeInline">bold, italic</span> and <span class="codeInline">underline</span> attributes and setting the required ones to 1. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="0" cellspacing="0" cellpadding="1">
+      <tr>
+        <td width="33%"><img src="Images/Ann_Text3.gif" width="37" height="20" /></td>
+        <td width="33%"><img src="Images/Ann_Text4.gif" width="38" height="23" /></td>
+        <td width="33%"><img src="Images/Ann_Text5.gif" width="34" height="21" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Multi-line text </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Text can be made multi-line by separating the lines by &lt;BR&gt; which has to be represented as &lt;BR&gt;. For example, <span class="codeInline">label='Line 1 text&lt;BR&gt;Line 2'</span> would yield: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Text6.gif" width="79" height="41" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Wrapping text </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Text can be wrapped by setting <span class="codeInline">wrap='1'</span> and then defining either a wrap width or height or both, exceeding which the text would be wrapped. Suppose we have a text label '<span class="codeInline">Text Annotation Label</span>'. We set <span class="codeInline">wrap='1'</span> and set a wrap width of 40 for it by setting <span class="codeInline">wrapWidth='40'</span>. So the width of the textbox in which this text is placed would be 40 and the remaining text would be wrapped to the next line. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Text7.gif" width="43" height="71" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Adding a background fill and border</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">A background fill can be added to the text using the <span class="codeInline">bgColor</span> attribute. A border can be added using the <span class="codeInline">borderColor</span> attribute. As an example, we would set <span class="codeInline">bgColor='E1F5FF' </span>and<span class="codeInline"> borderColor='639ACE'.</span></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Text8.gif" width="44" height="26" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Aligning text </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The text can be horizontally aligned (left, center or right) using the <span class="codeInline">align</span> attribute and vertically aligned (top, middle or bottom) using the <span class="codeInline">vAlign</span> attribute. It is especially useful for text spanning multiple lines. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="0" cellspacing="0" cellpadding="1">
+      <tr>
+        <td width="33%"><img src="Images/Ann_Text9.gif" width="56" height="74" /></td>
+        <td width="33%"><img src="Images/Ann_Text10.gif" width="57" height="74" /></td>
+        <td width="33%"><img src="Images/Ann_Text11.gif" width="52" height="72" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The various attributes using which the text annotation can be customized are: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+
+      <tr>
+        <td valign="top" class="codeInline">type</td>
+        <td valign="top" class="text">Rectangle, Circle, Polygon, Line, Arc, Text, Image</td>
+        <td valign="top" class="text">Needs to be set to <span class="codeInline">Text</span> to create a rectangle annotation type. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">x</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The starting x co-ordinate for the annotation. This x co-ordinate is relative to the x co-ordinate of the annotation group in which the annotation is placed. For example, if you have set the x co-ordinate of the annotation group as 50 and the x co-ordinate of the annotation is 100, then th effective x co-ordinate of the annotation would be 150 w.r.t to the starting position of the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">y</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The starting y co-ordinate for the annotation. This again is relative to the starting y co-ordinate of the annotation group in which the annotation is placed. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Hex Color (without the '#')</td>
+        <td valign="top" class="text">A generic color for the annotation from which fill color and border color (whichever applies) will be derived automatically. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">label</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Herein, you specify the text that you want to displayed using the text annotation.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">align</td>
+        <td valign="top" class="text">left/center/right</td>
+        <td valign="top" class="text">This attribute sets the horizontal alignment of the text.<br />
+          Default   value: center.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vAlign</td>
+        <td valign="top" class="text">top/middle/bottom</td>
+        <td valign="top" class="text">This attribute sets the vertical alignment of the text.<br />
+          Default value: middle.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">font</td>
+        <td valign="top" class="text">Font Face </td>
+        <td valign="top" class="text">This attribute sets the font name in which you want the text label to be   displayed in. <br />
+          Default Value: Verdana</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontSize</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">This attribute sets the font size of the text label. <br />
+          Default value: 10</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontColor</td>
+        <td valign="top" class="text">Hex code (without the '#') </td>
+        <td valign="top" class="text">This attribute sets the font color of the text label. By default, the value is the same as defined by the generic <span class="codeInline">color</span> attribute. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bold</td>
+        <td valign="top" class="text">Boolean (0 or 1) </td>
+        <td valign="top" class="text">Whether the text would be bold or not. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">italic</td>
+        <td valign="top" class="text">Boolean (0 or 1) </td>
+        <td valign="top" class="text">Whether the text would be italicized or not. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">underline</td>
+        <td valign="top" class="text">Boolean (0 or 1) </td>
+        <td valign="top" class="text">Whether the text would be underlined or not. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">letterSpacing</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The letter spacing for the text.<br />
+          Default value: 0. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">leftMargin</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The margin to the left of the text. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgColor</td>
+        <td valign="top" class="text">Hex code (without the '#')</td>
+        <td valign="top" class="text">The background color of the box in which the text is placed. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">borderColor</td>
+        <td valign="top" class="text">Hex code (without the '#')</td>
+        <td valign="top" class="text">The border color of the text box. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">wrap</td>
+        <td valign="top" class="text">Boolean (0 or 1) </td>
+        <td valign="top" class="text">This attribute lets you define whether you want the text to be wrapped or not to the next line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">wrapWidth</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The maximum width after occupying which, the remaining text(if any) would be wrapped to the next line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">wrapHeight</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The maximum possible height you would need for the texbox if you have set wrapping on. </td>
+      </tr>
+      
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Application</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Appl1.jpg" width="300" height="170" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML for the above is: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart ... &gt;<br />
+      &nbsp;&nbsp; ...<br />
+      &nbsp;&nbsp; &lt;annotations&gt;<br />
+      &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotationGroup&gt;<br />
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='rectangle' xPos='120' yPos='60' toXPos='280' toYPos='120' radius='0' fillcolor='333333' fillAlpha='5'/&gt;<br />
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='line' xPos='120' yPos='60' toYPos='120' color='333333' thickness='2'/&gt;<br />
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='line' xPos='280' yPos='60' toYPos='120' color='333333'  thickness='2'/&gt;<br />
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='line' xPos='120' yPos='60' toXPos='125' color='333333'  thickness='2'/&gt;<br />
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='line' xPos='120' yPos='120' toXPos='125' color='333333'  thickness='2'/&gt;<br />
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='line' xPos='275' yPos='60' toXPos='280' color='333333'  thickness='2'/&gt;<br />
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='line' xPos='275' yPos='120' toXPos='280' color='333333'  thickness='2'/&gt;<br />
+<strong>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='text' label='Fuel left in tanker' font='Verdana' xPos='145' yPos='65' align='left' vAlign='left' fontcolor='333333' fontSize='10' isBold='1'/&gt; <br />
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='text' label='(expressed in ltrs)' font='Verdana' xPos='144' yPos='80' align='left' vAlign='left' fontcolor='333333' fontSize='10'/&gt; <br />
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='text' label='3650' font='Verdana' xPos='145' yPos='95' align='left' vAlign='left' fontcolor='333333' fontSize='10' isbold='1'/&gt; <br />
+          </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;/annotationGroup&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+      &lt;/chart&gt;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

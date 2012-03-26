@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Annotation &gt; Polygon </h2></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here we will discuss the polygon annotation and its properties. Here is how a polygon with 4 sides looks: </p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>&nbsp;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Polygon1.gif" width="107" height="107" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML to create the above polygon is: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+      &nbsp;&nbsp;&nbsp;...<br />
+      &nbsp;&nbsp;&nbsp;&lt;annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' &gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='polygon' sides='4' color='639ACE' x='200' y='200' radius='50'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;...<br />
+    &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">As is evident from the code above, we need to set <span class="codeInline">type</span> as <span class="codeInline">polygon</span>, define the number of sides, color and the starting x and y co-ordinates in the <span class="codeInline">&lt;annotation&gt;</span> element to build our polygon. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Setting the number of sides  </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">We can have polygons with any number of sides. A polygon with 6 sides would look as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Polygon2.gif" width="104" height="90" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Creating a gradient background </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Now lets create a gradient background for the polygon. For that all we need to do is add more colors to the <span class="codeInline">color</span> attribute. Here we will set <span class="codeInline">color='639ACE,FFFFFF'</span> to get the following effect. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Polygon3.jpg" width="106" height="91" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">We can add as many colors as we want to the gradient. With <span class="codeInline">color='639ACE,FFFFFF,FF5904'</span>, the polygon would look like: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Polygon6.jpg" width="109" height="92" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Now lets change the gradient angle. The same can be done using <span class="codeInline">fillAngle</span> attribute. <span class="codeInline">fillAngle='90'</span> gives: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Polygon7.jpg" width="105" height="92" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">We can also set the ratio in which the constituent colors of the gradient would be divided using <span class="codeInline">fillRatio</span> attribute. Since we have 3 colors in the gradient here, we would need 3 values in <span class="codeInline">fillRatio</span>, which should sum upto 100. If you like orange, then <span class="codeInline">fillRatio='20,10,70'</span> would look good to you: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Polygon8.jpg" width="109" height="93" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">If you need to set the alpha (transparency) of the constituent colors of the gradient, then you have to use the <span class="codeInline">fillAlpha</span> attribute. Again this attribute should have as many values as there are colors in the gradient. For this gradient having 3 colors, one of the various combinations could be <span class="codeInline">fillAlpha='50, 100, 50'</span>:</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Polygon9.jpg" width="109" height="93" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Setting the start angle </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>When using polygons, many number of times we would need to define the starting angle of the polygon. The same can be done using the <span class="codeInline">startAngle</span> attribute. Here we set <span class="codeInline">startAngle='90'</span> to get the following: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Polygon4.jpg" width="94" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Customizing polygon border </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">We can also add a border to the polygon by setting <span class="codeInline">showBorder='1'</span>. The polygon would dress up to be: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Polygon5.jpg" width="94" height="106" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The border color and thickness can be customized using the <span class="codeInline">borderColor</span> and <span class="codeInline">borderThickness</span> attributes. Setting <span class="codeInline">borderColor='333333'</span> and <span class="codeInline">borderThickness='4'</span> would give: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Polygon10.jpg" width="96" height="108" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">So the final XML for the above polygon would look as under: </td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+      &nbsp;&nbsp;&nbsp;...<br />
+      &nbsp;&nbsp;&nbsp;&lt;annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' &gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='polygon' <strong>sides='6' color='639ACE,FFFFFF'</strong> x='200' y='200' radius='50' startAngle='90' showBorder='1' borderColor='333333' borderThickness='4'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;...<br />
+      &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The various attributes for the polygon annotation using which it can be customized are: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+
+      <tr>
+        <td valign="top" class="codeInline">type</td>
+        <td valign="top" class="text">Rectangle, Circle, Polygon, Line, Arc, Text, Image</td>
+        <td valign="top" class="text">Needs to be set to <span class="codeInline">Polygon</span> to create a polygon annotation type. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">x</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The starting x co-ordinate for the annotation. This x co-ordinate is relative to the x co-ordinate of the annotation group in which the annotation is placed. For example, if you have set the x co-ordinate of the annotation group as 50 and the x co-ordinate of the annotation is 100, then th effective x co-ordinate of the annotation would be 150 w.r.t to the starting position of the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">y</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The starting y co-ordinate for the annotation. This again is relative to the starting y co-ordinate of the annotation group in which the annotation is placed. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">sides</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">This attribute sets the number of sides that the required polygon would have.   For example, to draw a triangle we need to set it to 3. Similarly, to draw a   pentagon, you can set it as 5. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">radius</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The radius of the polygon. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">yRadius</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The y-radius  of the polygon. Allows you to stretch or compress the annotation vertically. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Hex Color (without the '#')</td>
+        <td valign="top" class="text">A generic color for the annotation from which fill color and border color (whichever applies) will be derived automatically. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">alpha</td>
+        <td width="20%" valign="top" class="text">Number(1-100)</td>
+        <td valign="top" class="text">The alpha(transparency) of the annotation. By default, it would be set to 100. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">startAngle</td>
+        <td valign="top" class="text">Number (0-360) </td>
+        <td valign="top" class="text">This attribute is used to set the starting angle for a circle, arc or polygon. For example, if   you need to draw a semi-circle or a semi-circular arc, then set <span class="codeInline">startAngle=&quot;0&quot;</span> and <span class="codeInline">endAngle=&quot;180&quot;</span> for the respective annotation. Similarly for a polygon, if you need to draw a diamond shape, then set <span class="codeInline">sides=&quot;4&quot;</span> and the <span class="codeInline">startAngle=&quot;90&quot;</span>. </td>
+      </tr>
+
+      <tr>
+        <td colspan="3" valign="top" class="codeInline">&nbsp;</td>
+      </tr>
+
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Fill and Border  properties </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">fillColor</td>
+        <td width="20%" valign="top" class="text">Hex code (separated by commas if there are multiple codes for a gradient) </td>
+        <td valign="top" class="text">This attribute sets the background fill color for the annotation. You can   set any hex color code as the value of this attribute. To specify a gradient as   background color, separate the hex color codes of each color in the gradient   using comma. <br />
+          Example: <span class="codeInline">FF5904,FFFFFF</span>. Remember to remove # and any spaces in   between. See the gradient specification page for more details. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">fillAlpha</td>
+        <td width="20%" valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Sets the alpha (transparency) for the background fill. If you've   opted for gradient background, you need to set a list of alpha(s) separated by   comma. If the number of alpha values you have specified is lesser than the number of colors in the gradient, then the remaining colors would by default have an alpha of 100. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">fillRatio</td>
+        <td width="20%" valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">If you've opted for a gradient background fill, this attribute lets   you set the ratio of each color constituent. Tha ratio for the colors should be separated by commas and the same must sum upto 100. For example, if you have 2 colors in your gradient, then <span class="codeInline">fillRatio</span> could be <span class="codeInline">80,20</span>. There should be no spaces in between the values. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fillAngle</td>
+        <td valign="top" class="text">Number (0-360) </td>
+        <td valign="top" class="text">Angle of the background fill color, in case of a gradient. Evey color in the gradient can have a fill angle (which have to be separated by commas without any spaces in between). If the number of angle values is less than the number of colors in the gradient, then a default value of 0 is taken for the remaining colors. For example, <span class="codeInline">fillAngle='90, 270'</span> for a gradient having 2 colors. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">fillPattern</td>
+        <td width="20%" valign="top" class="text">Radial/Linear</td>
+        <td valign="top" class="text">The pattern of the gradient. It takes a default value of <span class="codeInline">radial</span> for circle. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">showBorder</td>
+        <td width="20%" valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show a border for the annotation. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">borderColor</td>
+        <td width="20%" valign="top" class="text">Hex code (without the '#') </td>
+        <td valign="top" class="text">The border color of the annotation if <span class="codeInline">showBorder='1'</span>. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">borderThickness</td>
+        <td width="20%" valign="top" class="text">Hex code (without the '#') </td>
+        <td valign="top" class="text">The border thickness of the annotation if <span class="codeInline">showBorder='1'</span>. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">borderAlpha</td>
+        <td width="20%" valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">The border alpha(transparency) of the annotation if <span class="codeInline">showBorder='1'</span>. </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

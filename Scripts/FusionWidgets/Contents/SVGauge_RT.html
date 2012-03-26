@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader"> Gauges &gt; Real-time support </h2></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The gauges in FusionWidgets suite are real time gauges that can continuously request new   data from the server and display the same, without involving any page refreshes.   You can specify the URL of the data provider and the time interval (in seconds),   after which the gauge will look for new data. </p>
+        <p>The data provider page needs to be a page at your server side, which when   invoked by linear gauge, would output the new data   in the format explained below. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="lightYellowTr">
+    <td valign="top" class="header">Real-time data format </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The real-time data format for  gauges depends on:</p>
+        <ul>
+          <li>Value to be passed </li>
+          <li>Whether you're using Message Logger for the chart?</li>
+          <li>Commands for the chart - like stop update etc. </li>
+        </ul>
+      <p>Let's quickly see examples of each one of them.</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Data value update </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the simplest form, if you're looking to update the value of a gauge, you need to output the data in following   format:</p>
+        <p class="codeInline">&amp;value=34</p>
+      <p>Here, we're just outputting the value 34. So, when FusionWidgets would read this value, it would update the chart by setting its value to 34 (if the data is within range). </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Stopping real-time updates from server </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you wish to stop the chart from polling the server for any more real-time updates, you can send the following command from server to do so:</p>
+        <p class="codeInline">&amp;stopUpdate=1</p>
+      <p class="text">After stopping the update, it can be restarted either using user interaction (right click context menu) or using client side JavaScript. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Sending messages pertinent to Message logger </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The gauge can show message logger like data streaming charts. There are various parameters which you can specify for message logger. All of them have been explained in the section &quot;Message Logger&quot;. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="lightYellowTr">
+    <td valign="top" class="header">Creating the real-time gauge </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To create any real-time gauge, you'll need to assimilate the following   things:</p>
+        <ol>
+          <li>Chart SWF file and FusionCharts JavaScript class </li>
+          <li>XML file that initializes the chart and tells it where to pull the real time   data from </li>
+          <li>Real time data provider page that provides updated data to chart in   real-time data format. </li>
+        </ol>
+      <p>We're already familiar with XML for the chart. The new attributes that need to be added for real-time update are: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+        <tr>
+          <td width="25%" class="header">Attribute Name </td>
+          <td width="20%" class="header">Type / Range </td>
+          <td class="header">Description</td>
+        </tr>
+        <tr>
+          <td valign="top" class="codeInline">dataStreamURL</td>
+          <td valign="top" class="text">URL</td>
+          <td valign="top" class="text">This parameter sets the path of the page which is supposed to relay real-time   data to the chart. If you've special characters as a part of your data stream   URL, like ? or &amp;, you'll need to URL Encode the entire <span class="codeInline">dataStreamURL</span><br />
+              <br />
+            This page needs to be on the same   sub-domain on which the chart is hosted and invoked from. Otherwise, the Flash   sandbox security would restrict it from accessing the data and hence the   real-time feature won't work.<br />
+            Example: <span class="codeInline">dataStreamURL='liveQuote.aspx?name=xyz' </span></td>
+        </tr>
+        <tr>
+          <td valign="top" class="codeInline">refreshInterval</td>
+          <td valign="top" class="text">Number</td>
+          <td valign="top" class="text">For this parameter, you can specify the number of seconds after which the chart   will look for new data. This process will happen continuously - i.e., if you   specify 5 seconds here, the chart will look for new data every 5 seconds. </td>
+        </tr>
+        <tr>
+          <td valign="top" class="codeInline">dataStamp</td>
+          <td valign="top" class="text">String</td>
+          <td valign="top" class="text">Constantly changing data stamp that can be added to real time data URL, so as to maintain a state. Please see the section &quot;Real time capabilities &gt; Adding data-stamp&quot; </td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Shown below is an example chart XML:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart lowerLimit='0' upperLimit='100' lowerLimitDisplay='Bad' upperLimitDisplay='Good' palette='1' numberSuffix='%' chartRightMargin='20' decimals='0' dataStreamURL='RealTimeData.asp' refreshInterval='3'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='75' code='FF654F' label='Bad'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='90' code='F6BD0F' label='Moderate'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='100' code='8BBA00' label='Good'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;value&gt;43&lt;/value&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='myValueFont' bgColor='F1f1f1' borderColor='999999' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Value' styles='myValueFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+&lt;/chart&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've set <span class="codeInline">dataStreamURL='RealTimeData.asp' refreshInterval='3'</span>, which tells the chart to poll new data from <span class="codeInline">RealTimeData.asp</span> every 3 seconds. </p>
+        <p>For the sake of demo, <span class="codeInline">RealTimeData.asp</span> returns  random value within 100% in the format:</p>
+      <p class="codeInline">&amp;value=84</p>
+      <p>When this value is read by the gauge, it will update its display to reflect the updated value. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Troubleshooting</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table cellspacing="0" cellpadding="0">
+        <tr>
+          <td valign="top" class="text">If the chart renders initially, but doesn't update   in real time, check the following: </td>
+        </tr>
+        <tr>
+          <td valign="top" class="text"><ul>
+              <li><strong>Switch on the debug mode of chart. It will provide you with a lot of   valuable information when debugging.</strong> </li>
+            <li>Check if path of <span class="codeInline">dataStreamURL</span> provided in XML is   correct. </li>
+            <li>Check if you've specified a valid value for <span class="codeInline">refreshInterval</span> in your XML document. </li>
+            <li>Check if <span class="codeInline">dataStreamURL</span> is returning proper   data. To test this, just open your browser and run this page. It should return   the data in text format. </li>
+            <li>Make sure the output data doesn't contain any carriage returns or HTML   elements. In many scripting languages, these are automatically added. You'll   need to remove them. </li>
+            <li>You also need to make sure that the page which provides the incremental   update data to FusionCharts must be hosted on the same sub-domain in which the   chart .swf is hosted - otherwise, FusionWidgets, owing to Flash Sandbox security   model, won't be able to receive updated data. Due to Flash sandbox security   restrictions, you are allowed to retrieve data only from the same sub-domain in   which the flash movie is residing. Data can only be loaded from a domain that is   an exact match to the location of the SWF, including subdomains. For this reason   a SWF residing at <span class="codeInline">server1.mydomain.com</span> will not be able to access data from a   SWF at <span class="codeInline">mydomain.com</span>.
+              <p>If you wish to load data from a different domain, you can set up a proxy page   at the same sub domain which would actually request data from the distant domain   and then relay it to FusionWidgets. You must be able to upload and run a   server-side script on a server in the same domain as the Flash movie. In this   method, the Flash movie accesses the script, which loads the information,   retrieves it, and returns the information back to the Flash movie. This method   is best if the server hosting the data is not under your control (for example, a   public source or a web service).</p>
+            </li>
+          </ul></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>&nbsp;</p>    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Bulb Gauge &gt; Configuration </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we'll see how to configure the various aspects of bulb gauge chart. We'll see how to:</p>
+      <ul>
+        <li><a href="#bulb">Configuring bulb cosmetics </a></li>
+        <li><a href="#value">Configuring value</a></li>
+      </ul>      
+      <p>Let's see them one by one. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="bulb" id="bulb"></a>Configuring bulb cosmetics </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can customize various aspects of the bulb. To configure its border, you can set:</p>
+    <p class="codeInline">&lt;chart ... showGaugeBorder='1' gaugeBorderColor='666666' gaugeBorderThickness='2' gaugeBorderAlpha='100' ..&gt;</p>
+    <p>This results in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bulb_Gauge1.jpg" width="84" height="106" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Or, you can also ask the chart to color gauge border in a   derivative of its fill color using:</p>
+      <p class="codeInline">&lt;chart ... gaugeBorderColor='{dark-30}' ...&gt; </p>
+      <p>Here, we've used one token of the gradient fill mix to color bulb border using 30% darker color than its fill color. It will result in: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bulb_Gauge2.jpg" width="84" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can customize bulb's origin and radius using:</p>
+    <p class="codeInline">&lt;chart ... gaugeOriginX='40' gaugeOriginY='40' gaugeRadius='20' ...&gt;</p>
+    <p>This results in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bulb_Gauge3.jpg" width="83" height="102" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to render the bulb with a 2D fill using:</p>
+    <p class="codeInline">&lt;chart ... is3D='0' ...&gt;</p>
+    <p>This results in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bulb_Gauge4.jpg" width="85" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="value" id="value"></a>Configuring gauge value </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to show the gauge value inside the gauge using: </p>
+    <p class="codeInline">&lt;chart .. placeValuesInside='1' ..&gt;</p>
+    <p>This results in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bulb_Value1.jpg" width="83" height="104" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also opt to show the color range label of the value, instead of the numerical value using:</p>
+    <p class="codeInline">&lt;chart .. useColorNameAsValue='1' ..&gt;</p>
+    <p>This results in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bulb_Value2.jpg" width="84" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Since our value was in the color range with label as &quot;Low&quot;, the label is being displayed here. Similarly, had it been a higher value, it would show as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bulb_Value3.jpg" width="84" height="104" /></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<chart lowerLimit="1" upperLimit="8" numberSuffix="Wks" showBorder="0" bgColor="FFFFFF" ticksBelowGauge="1" valuePadding="0" gaugeFillMix="" showGaugeBorder="0" pointerOnTop="0" pointerRadius="5" pointerBorderColor="000000" pointerBgColor="000000" annRenderDelay="0" showShadow="0" minorTMNumber="0" baseFontColor="000000" animation="0">
+	<value>3.5</value>
+	<colorRange>
+		<color minValue="1" maxValue="8" alpha="0"/>
+	</colorRange>
+	<annotations>
+		<!--
+		The circle which makes for the arc shape above the gauge
+		-->
+		<annotationGroup id="Grp1" showBelow="0" x="210" y="-160" xScale="200">
+			<annotation type="circle" radius="200" color="FFFFFF"/>
+		</annotationGroup>
+		<!-- The gradient rectangle which is usd as the gauge -->
+		<annotationGroup id="Grp2" showBelow="1">
+			<annotation type="rectangle" x="15" y="10" toX="406" toY="59" color="678000,FCEF27,E00000"/>
+		</annotationGroup>
+		<!-- The labels Good and Bad -->
+		<annotationGroup id="Grp3" showBelow="0">
+			<annotation type="text" x="40" y="40" size="10" color="FFFFFF" bold="1" label="Good"/>
+			<annotation type="text" x="385" y="40" size="10" color="FFFFFF" bold="1" label="Bad"/>
+		</annotationGroup>
+	</annotations>
+	<styles>
+		<definition>
+			<style name="LabelShadow" type="shadow" distance="1" strength="3" color="333333"/>
+		</definition>
+		<application>
+			<apply toObject="Grp3" styles="LabelShadow"/>
+		</application>
+	</styles>
+</chart>

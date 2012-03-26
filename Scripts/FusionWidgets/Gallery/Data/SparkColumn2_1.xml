@@ -1,0 +1,35 @@
+<!--300*35-->
+<chart caption='Min Temp' subcaption='°C' bgColor='FFFFFF' plotFillColor='003162' canvasLeftMargin='100' showCanvasBorder='0' highColor='008301' lowColor='850001' >
+	<dataset>
+		<set value='13' />
+		<set value='12' />
+		<set value='17' />
+		<set value='20' />
+		<set value='14' />
+		<set value='9' />
+		<set value='15' />
+		<set value='16' />
+		<set value='11' />
+		<set value='19' />
+		<set value='14' />
+		<set value='12' />
+		<set value='14' />
+		<set value='13' />
+		<set value='16' />
+		<set value='11' />
+		<set value='15' />
+		<set value='12' />
+		<set value='15' />
+		<set value='16' />
+		<set value='17' />
+		<set value='11' />
+		<set value='14' />
+		<set value='15' />
+		<set value='11' />
+		<set value='16' />
+		<set value='11' />
+		<set value='10' />
+		<set value='13' />
+		<set value='10' />
+	</dataset>
+</chart>

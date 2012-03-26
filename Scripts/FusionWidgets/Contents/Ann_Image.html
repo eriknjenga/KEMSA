@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Annotations &gt; Image </h2></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Let us take a look at the Image Annotation here. The Image Annotation allows you to display an image on the chart. </p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>&nbsp;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Image1.gif" width="185" height="76" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML to create the above is: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+      &nbsp;&nbsp;&nbsp;...<br />
+      &nbsp;&nbsp;&nbsp;&lt;annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' &gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='image' x='200' y='200' URL='logo.gif' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;...<br />
+    &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">As is very clear from the code above, we need to set the annotation type to <span class="codeInline">image</span>, specify the  x and y co-ordinates where we want the image to be placed and finally provide the URL where the image is located. This URL has to lie in the same domain as the Flash movie. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Scaling Images </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">You can x-scale and y-scale images using the <span class="codeInline">xScale</span> and <span class="codeInline">yScale</span> attributes. Setting <span class="codeInline">xScale='50' yScale='200'</span> would reduce the image to half horizontally and double it vertically. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Image2.gif" width="105" height="135" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The various attributes using which the image annotation can be customized are: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+
+      <tr>
+        <td valign="top" class="codeInline">type</td>
+        <td valign="top" class="text">Rectangle, Circle, Polygon, Line, Arc, Text, Image</td>
+        <td valign="top" class="text">Needs to be set to <span class="codeInline">Rectangle</span> to create a rectangle annotation type. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">x</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The starting x co-ordinate for the annotation. This x co-ordinate is relative to the x co-ordinate of the annotation group in which the annotation is placed. For example, if you have set the x co-ordinate of the annotation group as 50 and the x co-ordinate of the annotation is 100, then th effective x co-ordinate of the annotation would be 150 w.r.t to the starting position of the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">y</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The starting y co-ordinate for the annotation. This again is relative to the starting y co-ordinate of the annotation group in which the annotation is placed. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">url</td>
+        <td valign="top" class="text">URL to image (.gif, ,jpeg, .swf, .png) </td>
+        <td valign="top" class="text">The URL of the image to be used as annotation. It should be in the same domain as the   chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">xScale</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">This attribute is used to scale the width of the image in percentage. For example, if we set this attribute as 50 then the image width   will be halved whereas 200 will make its width to double the actual   width. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">yScale</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Similar to the <span class="codeInline">xScale</span> attribute, it is used to scale   the height of the image in percentage. </td>
+      </tr>
+      
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Application</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_AS2.jpg" width="400" height="200" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML for the above is: </td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="codeBlock"><p>&lt;chart ...&gt;<br />
+&nbsp;&nbsp;&nbsp;...<br />
+&nbsp;&nbsp;&nbsp;&lt;annotations origW='400' origH='200'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' showBelow='1' <strong>autoScale='1'</strong>&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='rectangle' x='0' y='0' toX='400' toY='200' radius='10' fillColor='333333, 453269' fillAngle='180' /&gt; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='rectangle' x='5' y='5' toX='395' toY='195' radius='10' color='000000' fillAlpha='0' showBorder='1' borderColor='FFFFFF' borderThickness='3'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp2' showBelow='0' <strong>autoScale='0'</strong>&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&lt;annotation type='image' x='110' y='7' URL='logo.gif' /&gt;</strong><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+&nbsp;&nbsp; &lt;/annotations&gt;<br />
+&lt;/chart&gt;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

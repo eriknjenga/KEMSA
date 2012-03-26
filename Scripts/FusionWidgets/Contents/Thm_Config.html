@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Thermometer Gauge &gt; Configuration </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The thermometer gauge chart from FusionWidgets suite offers you a lot of configuration options. Here, we'll see how to:</p>
+      <ul>
+        <li><a href="#palette">Using palettes        </a></li>
+        <li><a href="#gauge"> Customizing gauge properties </a></li>
+        <li><a href="#manual"> Manually setting thermometer radius &amp; height </a></li>
+        <li><a href="#value"> Hiding chart value </a></li>
+        <li><a href="#tick"> Configuring tick marks &amp; values </a></li>
+      </ul>
+      <p>Let's see each of them one by one. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="palette" id="palette"></a>Using palettes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The thermometer gauge offer 5 pre-defined color palettes for you to choose from. Each   of these palettes are accessible by the number 1-5. To choose a palette, all you   need to do is set: </p>
+      <p class="codeInline">&lt;chart palette='2' or '3' or ..&gt;</p>
+    <p>Shown below are a few examples of palettes applied on our previous chart:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="0" cellspacing="0" cellpadding="2">
+      <tr>
+        <td width="30%"><div align="center"><img src="Images/Thm_Palette2.jpg" width="103" height="305" /></div></td>
+        <td width="30%"><div align="center"><img src="Images/Thm_Palette3.jpg" width="103" height="305" /></div></td>
+        <td><div align="center"><img src="Images/Thm_Palette4.jpg" width="104" height="305" /></div></td>
+      </tr>
+      <tr>
+        <td width="30%" valign="top" class="text"><div align="center">Palette 2 </div></td>
+        <td width="30%" valign="top" class="text"><div align="center">Palette 3 </div></td>
+        <td valign="top" class="text"><div align="center">Custom palette color using 
+          <p class="codeInline">&lt;chart paletteThemeColor='669933' ..&gt;</p>
+        </div></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"> <a name="gauge" id="gauge"></a>Customizing gauge properties </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can set the thermometer fill color using:</p>
+    <p class="codeInline">&lt;chart ... gaugeFillColor='FF5904' gaugeFillAlpha='100' ...  &gt; </p>
+    <p>This results in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Thm_Gauge1.jpg" width="103" height="305" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also change the border color using:</p>
+    <p class="codeInline">&lt;chart ... showGaugeBorder='1' gaugeBorderColor='FF5904' gaugeBorderThickness='2' gaugeFillColor='FF5904' gaugeBorderAlpha='80' gaugeFillAlpha='40' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Thm_Gauge2.jpg" width="105" height="303" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="manual" id="manual"></a>Manually setting thermometer radius &amp; height</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>By default, FusionWidgets automatically calculates the best thermometer radius and height. However, if you need to set it manually, you can use:</p>
+      <p>&lt;chart ... thmBulbRadius='25' thmHeight='220' ..&gt;</p>
+    <p>This will result in:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Thm_Manual1.jpg" width="105" height="305" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">This is useful when you're using annotations to create background elements for your thermometer. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"> <a name="value" id="value"></a>Hiding chart value </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can hide the value for the chart using:</p>
+    <p class="codeInline">&lt;chart ... showValue='0' ..&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Thm_Value.jpg" width="105" height="305" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="tick" id="tick"></a>Configuring tick marks &amp; values </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to hide all tick marks &amp; values using:</p>
+      <p class="codeInline">&lt;chart ... showTickMarks='0' showTickValues='0'   ...&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Thm_Tick1.jpg" width="104" height="305" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can place the ticks to the left or right of thermometer using:</p>
+      <p class="codeInline">&lt;chart ... ticksOnRight='0' ...&gt; </p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Thm_Tick2.jpg" width="104" height="305" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure the number of tick marks as under: </p>
+      <p class="codeInline">&lt;chart ... majorTMNumber='8' minorTMNumber='3'   ...&gt;</p>
+    <p>It will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Thm_Tick3.jpg" width="104" height="303" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The chart can automatically adjusted the number of major ticks to a best   feasible value. However, if you do not want the chart to do the same, you can   add:</p>
+      <p class="codeInline">&lt;chart ... adjustTM='0' majorTMNumber='8'   minorTMNumber='3' ...&gt;</p>
+      <p>You can opt to show every nth tick value by setting:</p>
+      <p class="codeInline">&lt;chart ... tickValueStep='2' ...&gt;</p>
+    <p>This will result in every 2nd major tick mark's value being shown, as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Thm_Tick4.jpg" width="105" height="305" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure tick mark cosmetics using: </p>
+      <p class="codeInline">&lt;chart ... majorTMColor='333333' majorTMAlpha='100'   majorTMHeight='10' majorTMThickness='2' minorTMColor='666666' minorTMAlpha='100'   minorTMHeight='7' minorTMThickness='1' tickMarkDistance='2'...&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Thm_Tick5.jpg" width="104" height="304" /></td>
+  </tr>
+</table>
+</body>
+</html>

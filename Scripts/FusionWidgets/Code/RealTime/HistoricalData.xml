@@ -1,0 +1,35 @@
+<chart caption='Stock Price Monitor' subCaption='Google vs Dell' dataStreamURL='StockPriceGoogDell.asp' refreshInterval='2' numberPrefix='$' setAdaptiveYMin='1' xAxisName='Time' showRealTimeValue='1' labelDisplay='Rotate' slantLabels='1' numDisplaySets='20'>
+	<categories>
+		<category label='6 mins ago' />
+		<category label='5 mins ago' />
+		<category label='4 mins ago' />
+		<category label='3 mins ago' />
+		<category label='2 mins ago' />
+		<category label='1 mins ago' />
+	</categories>
+	<dataset seriesName='Google' showValues='0'>
+		<set value='32.34' />
+		<set value='34.35' />
+		<set value='31.25' />
+		<set value='33.23' />
+		<set value='31.34' />
+		<set value='33.76' />
+	</dataset>
+	<dataset seriesName='Dell' showValues='0'>
+		<set value='22.34' />
+		<set value='22.34' />
+		<set value='24.75' />
+		<set value='23.34' />
+		<set value='21.23' />
+		<set value='23.65' />
+	</dataset>
+	<styles>
+		<definition>
+			<style type='font' name='captionFont' size='14' />
+		</definition>
+		<application>
+			<apply toObject='Caption' styles='captionFont' />
+			<apply toObject='Realtimevalue' styles='captionFont' />
+		</application>
+	</styles>
+</chart>

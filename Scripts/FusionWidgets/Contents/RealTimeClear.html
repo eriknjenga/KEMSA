@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Data-streaming Charts &gt; Clearing Chart View </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The data-streaming charts in FusionWidgets v3 allow you to clear the data currently being shown on the chart using 3 different ways:</p>
+      <ol>
+        <li>Sending a <span class="codeInline">&amp;clear=1</span> command from server.</li>
+        <li>Setting <span class="codeInline">clearChartInterval</span> so that the chart clears itself every n seconds    specified</li>
+        <li>Using JavaScript API</li>
+      </ol>
+      <p>Let's see each one of them in detail.</p>
+      <p class="highlightBlock">Chart clearing can also be used to reduce CPU usage by data-streaming charts, when they've been running live for days/months. Clearing the chart re-instantiates many objects in the chart, thereby clearing a lot of memory. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Clearing the chart from server </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Let's consider a scenario where you plotting the real-time values of a certain counter 24/7. At the start of next day, you wish to clear the existing data being shown on the chart. This can be easily done by sending the following command as part of your real-time data update: </p>
+    <p class="codeInline">&amp;clear=1 </p>
+    <p>The above command, when sent  to the chart, clears all the data that's currently being shown on the chart. The chart now bears an empty canvas - ready to accept new incremental values from the real-time data provider page. </p>
+    <p class="highlightBlock">When sending this command from real-time data provider to the chart, you need to make sure, that it's not sent in each incremental data. Else, you wouldn't see anything plotted on the chart, as the chart will clear itself with each update. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Setting clearInterval </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The data-streaming charts also allow you to set a pre-defined interval in the XML, at which the chart will automatically clear itself. Shown below is an example:</p>
+    <p class="codeInline">&lt;chart .... clearChartInterval='21600' ...&gt;</p>
+    <p><span class="codeInline">clearChartInterval</span> needs to be specified in seconds. Here, we've set it as 21600 (or 6 hours). Therefore, every 6 hours, the chart will clear itself and start drawing with a fresh canvas.</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Clearing chart using JavaScript API </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The data-streaming charts also expose a JavaScript API to help you clear charts at client side. To do so, you need to take the following steps:</p>
+    <p>Enable the <span class="codeInline">registerWithJS</span> flag as under (last parameter): </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">var chart1 = new FusionCharts(&quot;../Charts/RealTimeLine.swf&quot;, &quot;ChId1&quot;, &quot;500&quot;, &quot;350&quot;, &quot;0&quot;, &quot;1&quot;);</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">At the event when you want to clear the chart (say a button click, or any other event), get a reference to the chart object and call <span class="codeInline">clearChart() </span>method as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><span class="codeComment">//Get reference to the chart using its ID</span><br />
+var chartToClear = getChartFromId(&quot;ChId1&quot;);<br />
+<span class="codeComment">//Invoke clearChart() command</span><br />
+chartToClear.clearChart();</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">When the above command is invoked, the chart will clear its existing view state and start afresh. </td>
+  </tr>
+</table>
+</body>
+</html>

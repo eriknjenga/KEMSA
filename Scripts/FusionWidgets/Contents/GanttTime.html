@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Gantt Chart &gt; Time based tasks </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Till now, we've only seen date based charts in all our examples. However, FusionWidgets Gantt chart also supports the following chart:</p>
+      <ul>
+        <li>Time based charts - For plotting tasks based on time - all occurring in a single day.</li>
+        <li>Date + time based charts - To plot time based tasks spanning across multiple days</li>
+      </ul>
+      <p>Here, we'll see examples of both. But first, we'll see the XML  format required for time based charts. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Time format required by FusionWidgets </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets needs you to specify the time necessarily in 24 hour format (<span class="codeInline">hh:mn:ss</span>) in your XML data document. </p>
+    <p>The 24-hour clock is a convention of time-keeping in which the day runs from midnight to midnight and is divided into 24 hours, numbered from 0 to 23. A time of day is written in the 24-hour notation in the form hh:mm (for example 01:23) or hh:mm:ss (for example, 01:23:45), where hh (00 to 23) is the decimal number of full hours that have passed since midnight, mm (00 to 59) is the number of full minutes that have passed since the last full hour, and ss (00 to 59) is the number of seconds since the last full minute. In the 24-hour time notation, the day begins at midnight, 00:00, and the last minute of the day is that beginning at 23:59.</p>
+    <p>So, to specify a time in FusionCharts XML, you'll have to use something as under:</p>
+    <p><span class="codeInline">&lt;category start='00:00:00' end='23:59:59' label='Day' /&gt;</span><br />
+      or <br />
+          <span class="codeInline">&lt;task processId='EMP121' start='08:00:00' end='12:30:00' label='Morning Shift'/&gt;</span></p>
+    <p>In the above example, we've specified only the time. You can, however, specify both date and time, as we'll see later in this page.</p>
+    <p>Let's now quickly see an example of how to plot time based gantt Charts.  <br />
+      <br />
+    </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Time based Gantt chart example: Employee Shifts </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we'll be plotting a time based Gantt chart to represent the time shifts for each employee. This chart's time span is 1 day only. Within that day, we'll distribute the chart into time blocks and show each employee's work time.</p>
+    <p>The final chart would look as under:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Time1.gif" width="583" height="378" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, each employee's work time is now represented by a bar spanning across different times. We've also defined our own time base category (visual timeline) here.</p>
+    <p>The XML for this chart looks as under:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p class="codeBlock">&lt;chart dateFormat='dd/mm/yyyy' outputDateFormat='hh12:mn ampm' caption='Time Shifts' &gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;categories&gt;&nbsp;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='00:00:00' end='23:59:59' label='Time' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;categories align='left'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='00:00:00' end='02:59:59' label='Midnight' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='03:00:00' end='05:59:59' label='3 am' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='06:00:00' end='08:59:59' label='6 am' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='09:00:00' end='11:59:59' label='9 am' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='12:00:00' end='14:59:59' label='12 noon' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='15:00:00' end='17:59:59' label='3 pm' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='18:00:00' end='20:59:59' label='6 pm' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='21:00:00' end='23:59:59' label='9 pm' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;processes fontSize='12' isBold='1' align='left' headerText='Who?' headerFontSize='18' headerVAlign='bottom' headerAlign='left'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='John.S' id='EMP121'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='David.G' id='EMP122'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Mary.P' id='EMP123'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Andrew.H' id='EMP124'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Neil.M' id='EMP125'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/processes&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;tasks showLabels='1'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP121' start='08:00:00' end='12:30:00' label='Morning Shift'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP121' start='15:00:00' end='19:30:00' label='Evening Shift'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP122' start='10:00:00' end='16:30:00' label='Half Day'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP123' start='08:00:00' end='12:00:00' label='Morning Shift'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP123' start='15:00:00' end='21:30:00' label='Evening Shift'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP124' start='08:00:00' end='20:30:00' label='Full time support'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP125' start='10:00:00' end='14:30:00' label='Half Day'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/tasks&gt;<br />
+  &lt;/chart&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've:</p>
+      <ul>
+        <li>First and very importantly defined  the <span class="codeInline">outputDateFormat</span> attribute as <span class="codeInline">hh12:mn ampm</span>. This is necessary as we're using only time here. If you not define this, the tool tip (or task date labels) wouldn't show time. </li>
+        <li>Defined 2 categories - first to represent the entire day (spanning from 00:00:00 to 23:59:59) and second to represent time blocks in multiples of 3 hours each. We've defined our own custom labels for each one of them. Also, we've set the alignment position of labels to left for better visual clarity. </li>
+        <li>Defined each employee as a process with its own ID.</li>
+        <li>Created the task bars for each employee spanning the required time. Do remember to specify all time in 24 hour format - else you'll see the task bars placed at weird  positions in the chart. </li>
+      </ul>
+      <p class="highlightBlock">If you're using only time based charts, FusionWidgets allows you to specify 23:59:59 as 24:00:00 for ease of usage.</p>
+    <p class="text">Let's now quickly modify this example to enable scrolling in Gantt pane. We'll set the scroll in such a way that the Gantt pane shows only 6 hours in a single view. To do so, we use:</p>
+    <p class="codeInline">&lt;chart ... ganttPaneDuration='6' ganttPaneDurationUnit='h'&gt;</p>
+    <p class="text">This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Time2.gif" width="577" height="352" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Creating date+time based charts </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In this example, we'll plot time based Gantt charts that span more than a single day. We'll plot the work schedule of employees for the next 2 days.</p>
+    <p>The final chart would look as under after completion:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Time3.gif" width="575" height="334" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, here we're spanning the task bars across 2 dates and different times in each date. To do so, we've to provide both the date and time to the chart in the following format:</p>
+    <p>&lt;category start='7/15/2007 00:00:00' end='7/15/2007 23:59:59' label='Today' /&gt;      <br />
+      or<br />
+      &lt;task processId='EMP121' start='7/15/2007 08:00:00' end='7/15/2007 12:30:00' label='Logo A'/&gt;</p>
+    <p>The format is <span class="codeInline">dd/mm/yyyy hh:mn:ss</span>. You can customize <span class="codeInline">dd/mm/yyyy</span> to <span class="codeInline">mm/dd/yyyy</span> or<span class="codeInline"> yyyy/mm/dd</span> using <span class="codeInline">dateFormat</span> attribute of <span class="codeInline">&lt;chart&gt;</span> element. But, the time always needs to be in <span class="codeInline">hh:mn:ss</span> format in 24 hour format. </p>
+    <p>The entire XML for above chart can be listed as under: <br />
+      <br />
+    </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p class="codeBlock">&lt;chart dateFormat='mm/dd/yyyy' outputDateFormat='hh:mn' caption='Work Schedule' subCaption='For next 2 days'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='7/15/2007 00:00:00' end='7/15/2007 23:59:59' label='Today' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='7/16/2007 00:00:00' end='7/16/2007 23:59:59' label='Tomorrow' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;categories align='right'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='7/15/2007 00:00:00' end='7/15/2007 05:59:59' label='6 am' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='7/15/2007 06:00:00' end='7/15/2007 11:59:59' label='12 pm' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='7/15/2007 12:00:00' end='7/15/2007 17:59:59' label='6 pm' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='7/15/2007 18:00:00' end='7/15/2007 23:59:59' label='Midnight' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='7/16/2007 00:00:00' end='7/16/2007 05:59:59' label='6 am' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='7/16/2007 06:00:00' end='7/16/2007 11:59:59' label='12 pm' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='7/16/2007 12:00:00' end='7/16/2007 17:59:59' label='6 pm' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='7/16/2007 18:00:00' end='7/16/2007 23:59:59' label='Midnight' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;processes fontSize='12' isBold='1' align='left' headerText='Who?' headerFontSize='18' headerVAlign='bottom' headerAlign='left'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='John.S' id='EMP121'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='David.G' id='EMP122'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Mary.P' id='EMP123'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Andrew.H' id='EMP124'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Neil.M' id='EMP125'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/processes&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;tasks showLabels='1' showStartDate='1'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP121' start='7/15/2007 08:00:00' end='7/15/2007 12:30:00' label='Logo A'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP121' start='7/15/2007 17:00:00' end='7/15/2007 19:30:00' label='Logo B'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP121' start='7/16/2007 09:00:00' end='7/16/2007 19:30:00' label='Website template'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP122' start='7/15/2007 10:00:00' end='7/15/2007 20:30:00' label='PHP Blueprint'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP122' start='7/16/2007 10:00:00' end='7/16/2007 20:30:00' label='PHP Blueprint'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP123' start='7/15/2007 08:00:00' end='7/15/2007 12:00:00' label='Support'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP123' start='7/16/2007 15:00:00' end='7/16/2007 21:30:00' label='Support'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP124' start='7/15/2007 08:00:00' end='7/15/2007 20:30:00' label='Level 2 support'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP124' start='7/16/2007 08:00:00' end='7/16/2007 20:30:00' label='Level 2 support'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP125' start='7/15/2007 10:00:00' end='7/15/2007 14:30:00' label='Network Maintenance'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP125' start='7/16/2007 12:00:00' end='7/16/2007 14:30:00' label='System OS Updates'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/tasks&gt;<br />
+    &lt;/chart&gt;</p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've:</p>
+      <ul>
+        <li>First and very importantly defined  the <span class="codeInline">outputDateFormat</span> attribute as <span class="codeInline">hh:mn</span> so that we see only time on the chart and no dates. </li>
+        <li>Defined 2 categories - first to represent the two days day (each spanning from 00:00:00 to 23:59:59) and second to represent time blocks in multiples of 6 hours each. We've defined our own custom labels for each one of them. Also, we've set the alignment position of right to left for better visual clarity. </li>
+        <li>Defined each employee as a process with its own ID.</li>
+        <li>Created the task bars for each employee spanning the required date &amp; time. Do remember to specify all time in 24 hour format - else you'll see the task bars placed at weird  positions in the chart. </li>
+    </ul></td>
+  </tr>
+</table>
+</body>
+</html>

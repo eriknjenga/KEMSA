@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Message Logger &gt; Handling messages in JavaScript </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>In our previous examples, we saw how to log the messages streamed from server in the in-built visual logger of the chart. However, FusionWidgets also provides you an option to pass the entire (or partial) message envelope to your custom JavaScript functions present in the page (that contains chart). Here, we'll see examples of the same. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Using JavaScript alert() to show streamed messages </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To start with, we'll simply use the JavaScript's native <span class="codeInline">alert</span> function to show messages streamed from server to the client. To do that, we need to tell the chart to stream messages to <span class="codeInline">alert</span> function. We do so by setting:</p>
+    <p class="codeInline">&lt;chart useMessageLog='1' messageGoesToJS='1' messageJSHandler='alert'..&gt;</p>
+    <p>When you now run the chart, you'll see the following message being logged in the visual logger, as well as being passed to the <span class="codeInline">alert</span> function.</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/MsgL_JSAlert.gif" width="550" height="324" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>&nbsp;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Using custom function handler and passing all parameters in message envelope</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the previous example, we've used the in-built <span class="codeInline">alert</span> function of JavaScript. However, you can use any of your custom functions and then define the same as <span class="codeInline">messageJSHandler</span> attribute. </p>
+      <p>Also, in this example only the message text was passed to JavaScript. However, you can pass all parameters from the message envelope to your function by setting:</p>
+    <p><span class="codeInline">&lt;chart useMessageLog='1' messageGoesToJS='1' messageJSHandler='myFunction' <strong>messagePassAllToJS</strong>='1'..&gt;</span> </p>
+    <p>Here, we've defined the function handler as <span class="codeInline">myFunction</span> (which is our own custom function) and asked the chart to pass all parameters received (as part of message) to this JavaScript function.</p>
+    <p>A simple implementation of <span class="codeInline">myFunction</span> can look as under (here, we're simply showing the different parameters to the user, concatenated as a string  - you can instead use it for your own loggers).</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">function myFunction(strMsgId, strMsgTitle, strMsgText, strMsgType){<br />
+&nbsp;&nbsp;<span class="codeComment">&nbsp;//This method is invoked when the chart streams real-time message to JS. <br />
+&nbsp;&nbsp;&nbsp;//Order of parameters - strMsgId, strMsgTitle, strMsgText, strMsgType<br />
+&nbsp;&nbsp;&nbsp;//- strMsgId - The ID allotted to each message by your server side code.<br />
+&nbsp;&nbsp;&nbsp;//- strMsgTitle - Title given to each message by your server side code.<br />
+&nbsp;&nbsp;&nbsp;//- strMsgText - Text of each message.<br />
+&nbsp;&nbsp;&nbsp;//- strMsgType - Type of each message - INFO, ERROR, LITERAL or LINK</span><br />
+&nbsp;&nbsp;&nbsp;alert(&quot;A message was streamed from server. \nMessage Id: &quot; + strMsgId + &quot;\nMessage Title: &quot; + strMsgTitle + &quot;\nMessage Text: &quot; + strMsgText + &quot;\nMessage Type: &quot; + strMsgType);<br />
+}</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>With the server streaming the following data, you'll get an output as shown below: </p>
+    <p class="codeInline">&amp;label=12%3A48%3A43+PM&amp;value=23|54&amp;msgId=OSUPD_34534&amp;msgTitle=OS   update at 12:28&amp;msgText=Operating system update downloaded automatically.   Installation in-process. Reboot due in 8 minutes.</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/MsgL_JSCustomF.gif" width="550" height="301" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Angular Gauge &gt; Auto-scaling </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>FusionWidgets v3 angular gauge  allows you to auto-scale various objects in the gauge, when scaling a gauge up/down. </p>
+      <p>For example, consider a chart whose width and height is 260x200 pixels and it uses the following data: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart lowerLimit='0' upperLimit='100' lowerLimitDisplay='Bad' upperLimitDisplay='Good' gaugeStartAngle='135' gaugeEndAngle='45' gaugeOriginX='130' gaugeOriginY='180' gaugeOuterRadius='140' palette='1' numberSuffix='%' tickValueDistance='20' showValue='1' majorTMHeight='10' minorTMHeight='5'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='75' code='FF654F'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='90' code='F6BD0F'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='100' code='8BBA00'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;dials&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dial value='92' rearExtension='10' valueX='130' valueY='100'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/dials&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='myValueFont' bgColor='F1f1f1' borderColor='999999' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Value' styles='myValueFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The above XML renders the following gauge: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Scale1.jpg" width="263" height="206" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, in this XML, we've manually specified the following:</p>
+      <ul>
+        <li>Gauge Origin X and Origin Y</li>
+        <li>Gauge Outer Radius   </li>
+        <li>Value textbox X and Y position </li>
+        <li>Major and minor tick mark height </li>
+      </ul>
+    <p>Let's say, now we want to increase the gauge size by 2, so that width becomes 520 and height 400. If you just increase the width and height of gauge in HTML to 520x400, it will show something as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Scale2.jpg" width="524" height="406" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, the gauge has not scaled itself to occupy the full chart dimensions. This is because our XML still contains co-ordinates/radius for a smaller chart dimension. </p>
+    <p>However, there's a way to instruct the gauge to automatically scale everything that was manually specified. To do so, you would need to set:</p>
+    <p class="codeInline">&lt;chart ... autoScale='1' origW='260' origH='200' ...&gt; </p>
+    <p>Here, we're first asking the chart to auto scale itself. Thereafter, we've specified the original width and height of chart, based on which we had defined the various co-ordinates/radius in XML. When the chart is now rendered with 520x400 dimensions, it now checks the current dimension against the original width and height specified (in XML), and then scales everything (that was manually specified in the XML) accordingly.</p>
+    <p>The result would  now look as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Scale3.jpg" width="527" height="407" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, the chart has scaled:</p>
+      <ul>
+        <li>Gauge Outer radius (keeping the inner radius percentage  same)</li>
+        <li>Tick mark height </li>
+        <li>Gauge Origin  X and Origin Y</li>
+        <li>Value textbox position</li>
+        <li>Tick value distance</li>
+      </ul>
+    <p>Additionally,  had you specified manual values for any of the gauge elements listed below, they would have been auto-scaled:</p>
+    <ul>
+      <li>Gauge outer &amp; inner radius</li>
+      <li>Gauge origin X &amp; origin Y</li>
+      <li>Pivot Radius</li>
+      <li>Individual Dial Radius    </li>
+      <li>Dial base width </li>
+      <li>Dial rear extension</li>
+      <li>Dial value x &amp; y position</li>
+      <li>Trend-point radius &amp; inner radius</li>
+      <li>Trend-marker radius</li>
+      <li>Major &amp; Minor Tick mark height</li>
+      <li>Tick value distance</li>
+      </ul>
+    <p>As such, you can always be sure that when you're resizing your gauge in <strong>constrained proportion</strong>, with manually specified values for any of the above elements, FusionWidgets angular gauge can easily scale things for you. </p>
+    <p class="highlightBlock">Please note that this auto scaling works perfectly only for constrained resizing i.e., both width and height being multipled by the same factor. If the chart is not scaled in proportions, the gauge will scale in the least possible proportion and then leave empty space at right/bottom.</p>
+    <p><strong>In a similar way, the annotations present in the gauge can also be scaled. Please see the section Annotations &gt; Auto-scaling to see how to auto-scale annotations. </strong></p></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="../Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Drill-Down Charts &gt; Simple Example </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>FusionWidgets can be easily and extensively 
+        used to create drill-down charts. All the charts in FusionWidgets v3 suite 
+        support drill down for data elements i.e., in each chart type, the data 
+        plot of that chart (columns in Column Charts, dials in angular chart, funnel slices in funnel charts 
+        etc.) can act as hotspots for the chart. Using the drill down functionality 
+        provided by FusionWidgets, you can easily produce charts that enact &quot;drill 
+        down&quot; or &quot;zoom in (data)&quot; capabilities. </p>
+      <p>In FusionWidgets v3, you can define the following types of link for the 
+        data plot:</p>
+      <ul>
+        <li>Simple links that open in the same page</li>
+        <li>Simple links that open in a new page</li>
+        <li>Links that open in a specified frame</li>
+        <li>Links that open in a new pop-up window</li>
+        <li>Existing JavaScript functions (on the same page) to be invoked as 
+          links</li>
+      </ul>
+      <p class="highlightBlock">All the examples discussed here in this section is present in Download Package &gt; Code &gt; DrillDown folder. The examples use Column 2D chart from FusionCharts v3 suite to generalize and simplify all examples, as it uses a common and simple XML structure. </p>
+      <p>&nbsp; </p></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="header">Defining links for a Chart</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"> <p>To define a simple link for any data plot, 
+        just define the <span class="codeInline">link</span> attribute for the respective element (like 
+        <span class="codeInline">&lt;set&gt;</span> element in data-streaming charts or <span class="codeInline">&lt;dial&gt;</span> element in angular chart):</p>
+      <p>        <span class="codeInline">&lt;set ... value='2235' ... <strong>link='ShowDetails.asp%3FMonth%3DJan'</strong> 
+        ...&gt; </span></p>
+      <p>With the above XML, the data plot (column in data-streaming charts), 
+        when clicked, will take to the page <span class="codeInline">ShowDetails.asp?Month=Jan</span>, 
+        which might contain another chart to show detailed results for the month 
+        of January.</p>
+      <p>As you will note, the above link has been URL Encoded. FusionWidgets expects 
+        all the links in URL Encoded format, if you have  special characters 
+        (like ?,&amp;, etc.) in your link. When the user clicks on the link, FusionWidgets 
+        decodes it and invokes <span class="codeInline">ShowDetails.asp?Month=Jan</span>.      </p>
+      <p class="highlightBlock">All the server side scripting languages provide 
+        a generic function to URL Encode any string - like in ASP and ASP.NET, 
+        we've Server.URLEncode(strURL) and so on.</p>
+      <p></p></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="header">Opening links in new window</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text">Quite often, you might want to open the drill-down 
+      link in a new window instead of the same window. To have a link open in 
+      a new window, all you need to do is, add <span class="codeInline">n-</span> 
+      before any link. E.g., 
+      <p><span class="codeInline">&lt;set ... value='2235' ... <strong>link='n-ShowDetails.asp%3FMonth%3DJan'</strong> 
+        ...&gt; </span></p>
+      <p>The above link, when clicked, would open in a new window.</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

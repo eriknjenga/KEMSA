@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Creating your First Chart  &gt; Creating your First Chart</h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we'll guide you through the process 
+        of creating your first chart. For a head start, we'll create a simple 
+        angular gauge (speedometer chart) to visually depict &quot;Customer Satisfaction %&quot; for a fictional company. </p>
+      <p>Like FusionCharts, to create any chart using FusionWidgets, you need to assemble four things:</p>
+      <ol>
+        <li><strong>SWF File</strong> for the chart that you want to create. We 
+          want to create an angular gauge whose SWF file is named 
+          as <span class="codeInline">AngularGauge.swf</span>. All the chart SWF files 
+          are present in <span class="codeInline">Download Package</span> &gt; 
+          <span class="codeInline">Charts</span> folder. </li>
+        <li><strong>XML Data File</strong>. FusionWidgets accepts data only in 
+          a pre-defined XML format. So, you'll need to convert your data to XML 
+          format - either using a server side scripting language or manually.</li>
+        <li><strong>HTML Wrapper File</strong>. This HTML file would contain the 
+          code to embed the chart.</li>
+        <li><strong>FusionCharts JavaScript class</strong> - This JavaScript class is used to embed the charts inside HTML page. It serves two purpose: 
+          <ul>
+            <li>Allows easy embedding and handling of charts in HTML pages </li>
+            <li>Avoids the &quot;Click to activate...&quot; issue in Internet Explorer </li>
+          </ul>
+        </li>
+      </ol>
+      <p>Before we get on to assemble the above items, let's create a new folder 
+        that will serve as our playground for  trials and researches. Create 
+        a new folder named as <span class="codeInline">c:\FusionWidgets </span>on 
+        your computer. We'll keep all our examples within this folder. </p>
+      <p>For our first chart example, we'll create another folder within the above 
+        folder. Name the new folder as <span class="codeInline">MyFirstChart</span> 
+        so that the structure now looks like <span class="codeInline">c:\FusionWidgets\MyFirstChart</span>.</p></td>
+  </tr>
+  <tr> 
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="highlightBlock">All examples discussed in the documentation 
+      are present in Download Package under <span class="codeInline">Code</span> 
+      folder.</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="header">Setting the Chart SWF &amp; JavaScript class </td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Now, to build the chart, we need to copy 
+        chart SWF files within this folder. Before that, create another folder 
+        <span class="codeInline">Charts</span> under <span class="codeInline">c:\FusionWidgets</span>, 
+        so that the new folder looks like <span class="codeInline">c:\FusionWidgets\Charts</span>. 
+        This folder would be our container for all the chart SWF files. </p>
+      <p>Copy all the chart SWF files (from Download Package &gt; <span class="codeInline">Charts</span> 
+        folder) into this newly created folder (<span class="codeInline">c:\FusionWidgets\Charts</span>\).</p>
+      <p>Also copy <span class="codeInline">FusionCharts.js</span> file (from <span class="codeInline">Download Package &gt; JSClass</span>) into this folder. This JavaScript file contains the class to help us easily embed the charts in our HTML page. </p>
+      <p>This folder serves as the central location for charts. All our examples 
+        would use the charts contained in this single folder.</p></td>
+  </tr>
+  <tr> 
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="highlightBlock">Even when you're using FusionWidgets 
+      on your website, it's a good idea to keep all the chart SWF files and FusionCharts JavaScript class file in a root 
+      level folder named as <span class="codeInline">FusionCharts</span> or <span class="codeInline">Charts</span>. This 
+      makes sure that you do not have multiple copies of the same chart SWF. So, 
+      updates of charts become easier, as you just have to copy-paste the new 
+      charts at one location.</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>&nbsp;</p>
+      <p>Now that the SWF files are set up, we move on to see how to create the 
+        XML data for our chart.</p></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="header">Creating the XML data document</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Before we build the chart, we first need 
+        to have the data that we'll present on the chart. Since we're plotting 
+        customer satisfaction index for a fictional company, let us first define the scales for measuring this index. The scales would look as under in a tabular form: </p></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"> <table width="466" border="1" cellspacing="0" cellpadding="1">
+        <tr class="textBold"> 
+          <td width="61">Range</td>
+          <td width="199"> <div align="left">What it means? </div></td>
+          <td width="192">Color to be represented in </td>
+        </tr>
+        <tr class="text"> 
+          <td>0-75%</td>
+          <td> <div align="left">Bad customer satisfaction </div></td>
+          <td>Red</td>
+        </tr>
+        <tr class="text"> 
+          <td>75-90%</td>
+          <td> <div align="left">Moderate customer satisfaction </div></td>
+          <td>Yellow</td>
+        </tr>
+        <tr class="text"> 
+          <td>90-100%</td>
+          <td> <div align="left">Good customer satisfaction </div></td>
+          <td>Green</td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Let us assume that, as a result of a survey, the company found that 92% of its customers are satisfied with it. So, we need to depict the above scales and this value in our angular gauge. </p>
+      <p>Now, as  mentioned earlier, FusionWidgets necessarily 
+        needs its data in pre-defined XML format. It <strong>cannot</strong> read 
+        any other format (including Excel, CSV or text data) apart from XML. So, 
+        we need to convert this data into XML. </p>
+      <p>The converted XML data would look 
+      as under: </p></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="codeBlock">&lt;chart lowerLimit='0' upperLimit='100' lowerLimitDisplay='Bad' upperLimitDisplay='Good' gaugeStartAngle='180' gaugeEndAngle='0' palette='1' numberSuffix='%' tickValueDistance='20' showValue='1'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='75' code='FF654F'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='90' code='F6BD0F'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='100' code='8BBA00'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;dials&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dial value='92' rearExtension='10'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/dials&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Punch the above code in a text editor (e.g., 
+        Notepad) and save it as <span class="codeInline">Data.xml</span> under 
+        <span class="codeInline">c:\FusionWidgets\MyFirstChart</span> folder.</p>
+      <p>And yeah - don't worry about whatever spaghetti stuff you have just written 
+        - we'll soon cover them. Basically, what we've done above can be listed 
+        in the following points:</p>
+      <ul>
+        <li>We've created the root <span class="codeInline">&lt;chart&gt;</span> element,   with a few attributes to define the lower and upper limit, number suffix, chart color palette, gauge angles etc.</li>
+        <li>For each color range (index scale), we've created a <span class="codeInline">&lt;color&gt;</span> element under the <span class="codeInline">&lt;colorRange&gt;</span> element. We've specified its start   value, end value and color. </li>
+        <li>And we've finally created a dial to represent the value of 92%. This is   attained using the<span class="codeInline"> &lt;dial&gt;</span> element under the   <span class="codeInline">&lt;dials&gt;</span> element. You can point to as many   different values as you want using appropriate number of dials. </li>
+        <li>We've stripped off the % sign from our figures, as FusionWidgets needs pure   numbers without % or $ or commas. The <span class="codeInline">numberSuffix</span>   attribute would take care of putting them back again on the chart. </li>
+      </ul>
+      <p>Just as a measure to check if the XML document is structurally valid, 
+        open the file in your browser. You should be able to see the XML data 
+        document in a formatted way, without any errors.</p>
+      <p>And now, if you're running out of your patience to see this data in chart 
+        format, let's quickly build the HTML container for this chart.<br />
+      </p></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="header">Creating the HTML container for chart</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text">Each chart needs to be embedded in an HTML file 
+      before it can be viewed. So, to view our chart, we'll have to create an 
+      HTML wrapper for this one too. Pull up your text editor again and throw 
+      in the following code:</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="codeBlock"><p>&lt;html&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;head&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My first chart using FusionWidgets&lt;/title&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script language=&quot;JavaScript&quot; src=&quot;Charts/FusionCharts.js&quot;&gt;&lt;/script&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/head&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;body bgcolor=&quot;#ffffff&quot;&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&lt;div id=&quot;chartdiv&quot; align=&quot;center&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The chart will appear within this DIV. This text will be replaced by the chart.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type=&quot;text/javascript&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var myChart = new FusionCharts(&quot;Charts/AngularGauge.swf&quot;, &quot;myChartId&quot;, &quot;400&quot;, &quot;200&quot;, &quot;0&quot;, &quot;0&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myChart.setDataURL(&quot;Data.xml&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myChart.render(&quot;chartdiv&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;</strong><br />
+  &nbsp;&nbsp;&nbsp;&lt;/body&gt;<br />
+        &lt;/html&gt;<br />
+    </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Save this file as <span class="codeInline">MyFirstChart.html</span> under <span class="codeInline">MyFirstChart</span> folder.
+      <p>The code in <strong>bold</strong> above is the actual code that you need to place 
+        in your page to embed a FusionCharts chart. </p>
+    <p>Here, we first include the FusionCharts   JavaScript class file using: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;script language=&quot;JavaScript&quot;   src=&quot;Charts/FusionCharts.js&quot;&gt;&lt;/script&gt; </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Create a DIV in the page body with a unique id (<span class="codeInline">chartdiv</span> in example above). </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;div id=&quot;chartdiv&quot; align=&quot;center&quot;&gt;...&lt;/div&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Instantiate a chart using the following code with width as 400 and height as 200. Also, we've specified the chart's ID as <span class="codeInline">myChartId</span>. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">var myChart = new FusionCharts(&quot;Charts/AngularGauge.swf&quot;, &quot;myChartId&quot;, &quot;400&quot;, &quot;200&quot;, &quot;0&quot;, &quot;0&quot;);</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, <span class="codeInline">myChart</span> is the name of the JavaScript   object that contains reference to our chart.</p>
+    <p>As parameters, we pass:</p>
+    <ol>
+      <li>URL of SWF file of the chart type that we intend to use </li>
+      <li>Id for the chart - You can give any id for the chart. Just make sure that if   you're using multiple charts in the same HTML page, each chart should have a   unique Id. </li>
+      <li>Required width and height of the chart. </li>
+      <li>The last two parameters are <span class="codeInline">debugMode</span> and   <span class="codeInline">registerWithJS</span> and are normally set to 0. We'll   explain those parameters later</li>
+    </ol></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Convey the XML data path to the chart using:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">myChart.setDataURL(&quot;Data.xml&quot;); </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Finally, render the chart by calling <span class="codeInline">render()</span>   method of the class and specifying the Id of the   DIV which we want the chart to occupy.</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">myChart.render(&quot;chartdiv&quot;); </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text">And, it's now time to fructify the efforts that 
+      you have put into creating your first chart. Open <span class="codeInline">MyFirstChart.html</span> 
+      in your preferred browser. You should now see a chart like this:</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><img src="Images/FirstChart1.jpg" width="414" height="209" /></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text">And we just proved how easy it is to create 
+      a chart using FusionWidgets. </td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="header">Troubleshooting</td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>If for some reasons, you do not see a chart 
+        similar to one shown above, run through the following checks:</p>
+      <p>If you see an endless loading progress bar in your browser, or if the 
+        right click menu (right click at the place where the chart is supposed 
+        to be) shows &quot;<span class="codeInline">Movie not loaded</span>&quot;, 
+        check the following:</p>
+      <ul>
+        <li>Have you pasted the chart SWF files in <span class="codeInline">Charts</span> 
+          folder?</li>
+        <li>Have you provided the SWF path properly in your <span class="codeInline">MyFirstChart.html</span> 
+          page?</li>
+        <li>Do you have Adobe Flash Player 8 (or above) installed for this 
+          browser?</li>
+        <li>Have you enabled your browser to show ActiveX controls? 
+          Normally, all browsers are Flash-enabled. </li>
+      </ul>
+      <p>If you get a screen showing &quot;The chart will appear within this DIV. This text will be replaced by the chart.&quot;, make sure that:</p>
+      <ul>
+        <li>You've copied <span class="codeInline">FusionCharts.js</span> in <span class="codeInline">Charts</span> folder.  </li>
+        <li>You've included the proper path to this JS file in your HTML code. </li>
+      </ul>
+      <p>If you get an &quot;Error in Loading Data&quot; message, check the following:</p>
+      <ul>
+        <li>Whether <span class="codeInline">Data.xml</span> is in the same folder 
+          as the <span class="codeInline">Chart.html</span> HTML file?</li>
+        <li>Whether <span class="codeInline">Data.xml</span> is named as <span class="codeInline">Data.xml</span> 
+          and not <span class="codeInline">Data.xml.txt</span>, as many basic 
+          text editors append .txt after the file name?</li>
+        <li>If you're using an operating system that uses case sensitive naming for file system, check for the names of your XML and SWF file. </li>
+      </ul>
+      <p>If you get an &quot;Invalid XML Data&quot; message, it means that the 
+        XML data document is malformed. Check it again for common errors like:</p>
+      <ul>
+        <li>Difference in case of tags. <span class="codeInline">&lt;chart&gt;</span> 
+          should end with <span class="codeInline">&lt;/chart&gt;</span> and <strong>not</strong> 
+          <span class="codeInline">&lt;/Chart&gt;</span> or<span class="codeInline"> 
+          &lt;/CHART&gt;</span></li>
+        <li>Missing opening/closing quotation marks for any attributes. e.g., 
+          <span class="codeInline">&lt;chart numberSuffix=%' </span>should 
+          be <span class="codeInline">&lt;chart numberSuffix='%'</span></li>
+        <li>Missing closing tag for any element.</li>
+      </ul>
+      <p>To check whether your final XML is ok, open it in your browser and you'll 
+        see the error.</p></td>
+  </tr>
+</table>
+</body>
+</html>

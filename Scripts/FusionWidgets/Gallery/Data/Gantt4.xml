@@ -1,0 +1,78 @@
+<chart canvasBgColor='F1F1FF, FFFFFF'  canvasBgAngle='90' dateFormat='dd/mm/yyyy' ganttLineColor='0372AB' ganttLineAlpha='8' gridBorderColor='0372AB' canvasBorderColor='0372AB' showShadow='0'>
+<categories bgColor='0372AB'>
+		<category start='1/1/2005' end='4/2/2005' name='Machine Operation Sheet' fontColor='FFFFFF' />
+</categories>
+<categories bgAlpha='0'>
+		<category start='1/1/2005' end='7/1/2005' name='Week1' />
+		<category start='8/1/2005' end='14/1/2005' name='Week2' />
+		<category start='15/1/2005' end='21/1/2005' name='Week3' />
+		<category start='22/1/2005' end='28/1/2005' name='Week4'/>
+		<category start='29/1/2005' end='4/2/2005' name='Week5'/>
+</categories>
+<processes isBold='1' headerbgColor='0372AB' fontColor='0372AB' bgColor='FFFFFF' > 
+		<process Name='Machine A' id='A'  />
+		<process Name='Machine B' id='B' />
+		<process Name='Machine C' id='C' />
+		<process Name='Machine D' id='D' />
+		<process Name='Machine E' id='E' />
+		<process Name='Machine F' id='F' />
+		<process Name='Machine G' id='G' />
+		<process Name='Machine H' id='H' />
+</processes>
+<tasks >
+		<task name='In Use' processId='A' start='1/1/2005' end='13/1/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+		<task name='Idle' processId='A' start='13/1/2005' end='18/1/2005' taskId='B' borderColor='8BBA00' color='8BBA00' />
+		<task name='In Use' processId='A' start='18/1/2005' end='27/1/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+		<task name='Repair' processId='A' start='27/1/2005' end='29/1/2005' taskId='B' borderColor='F6BD0F' color='F6BD0F' />
+		<task name='In Use' processId='A' start='29/1/2005' end='4/2/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+
+		<task name='Idle' processId='B' start='1/1/2005' end='7/1/2005' taskId='B' borderColor='8BBA00' color='8BBA00' />		
+		<task name='In Use' processId='B' start='7/1/2005' end='18/1/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+		<task name='Repair' processId='B' start='18/1/2005' end='24/1/2005' taskId='B' borderColor='F6BD0F' color='F6BD0F' />
+		<task name='In Use' processId='B' start='24/1/2005' end='4/2/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+
+		<task name='Idle' processId='C' start='1/1/2005' end='14/1/2005' taskId='B' borderColor='8BBA00' color='8BBA00' />
+		<task name='In Use' processId='C' start='14/1/2005' end='3/2/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+		<task name='Idle' processId='C' start='3/2/2005' end='4/2/2005' taskId='B' borderColor='8BBA00' color='8BBA00' />
+
+		<task name='Repair' processId='D' start='1/1/2005' end='7/1/2005' taskId='B' borderColor='F6BD0F' color='F6BD0F' />
+		<task name='Idle' processId='D' start='7/1/2005' end='11/1/2005' taskId='B' borderColor='8BBA00' color='8BBA00' />
+		<task name='In Use' processId='D' start='11/1/2005' end='27/1/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+		<task name='Repair' processId='D' start='27/1/2005' end='4/2/2005' taskId='B' borderColor='F6BD0F' color='F6BD0F' />
+
+		<task name='Idle' processId='E' start='1/1/2005' end='18/1/2005' taskId='B' borderColor='8BBA00' color='8BBA00' />
+		<task name='In Use' processId='E' start='18/1/2005' end='3/2/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+		<task name='Idle' processId='E' start='3/2/2005' end='4/2/2005' taskId='B' borderColor='8BBA00' color='8BBA00' />
+
+		<task name='In Use' processId='F' start='1/1/2005' end='8/1/2005' taskId='B' borderColor='FF654F' color='FF654F'  />
+		<task name='Repair' processId='F' start='8/1/2005' end='11/1/2005' taskId='B' borderColor='F6BD0F' color='F6BD0F' />
+		<task name='In Use' processId='F' start='11/1/2005' end='18/1/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+		<task name='Repair' processId='F' start='18/1/2005' end='21/1/2005' taskId='B' borderColor='F6BD0F' color='F6BD0F' />
+		<task name='Idle' processId='F' start='21/1/2005' end='4/2/2005' taskId='B' borderColor='8BBA00' color='8BBA00' />
+
+
+		<task name='In Use' processId='G' start='1/1/2005' end='13/1/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+		<task name='Idle' processId='G' start='13/1/2005' end='20/1/2005' taskId='B' borderColor='8BBA00' color='8BBA00' />
+		<task name='In Use' processId='G' start='20/1/2005' end='27/1/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+		<task name='Repair' processId='G' start='27/1/2005' end='4/2/2005' taskId='B' borderColor='F6BD0F' color='F6BD0F' />
+
+
+		<task name='In Use' processId='H' start='1/1/2005' end='8/1/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+		<task name='Idle' processId='H' start='8/1/2005' end='18/1/2005' taskId='B' borderColor='8BBA00' color='8BBA00' />
+		<task name='In Use' processId='H' start='18/1/2005' end='27/1/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+		<task name='Repair' processId='H' start='27/1/2005' end='29/1/2005' taskId='B' borderColor='F6BD0F' color='F6BD0F' />
+		<task name='In Use' processId='H' start='29/1/2005' end='4/2/2005' taskId='B' borderColor='FF654F' color='FF654F' />
+
+
+</tasks>
+<connectors>
+		<connector fromTaskId='2' toTaskId='1'  color='' alpha='' thickness='' isDotted='' />
+</connectors>
+
+<legend>
+	<item label='In use' color='FF654F' />
+	<item label='Repair' color='F6BD0F' />
+	<item label='Idle' color='8BBA00' />
+</legend>
+
+</chart>

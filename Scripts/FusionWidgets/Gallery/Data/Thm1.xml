@@ -1,0 +1,10 @@
+<chart palette='3' bgColor='FFFFFF' bgAlpha='0' showBorder='0' lowerLimit='0' upperLimit='100' lowerLimitDisplay='Low' upperLimitDisplay='High' numberSuffix='%25' majorTMHeight='4' minorTMNumber='5' useSameFillColor='0' showTickValues='1' decimalPrecision='0' chartTopMargin='25' chartLeftMargin='20'>
+	<value>78.9</value>
+	<annotations>
+		<annotationGroup id='Grp1' showBelow='1'>
+			<annotation type='rectangle' x='0' y='0' toX='100' toY='450' radius='10' fillColor='AEC0CA, 333333, AEC0CA' fillAngle='90' />
+			<annotation type='rectangle' x='5' y='5' toX='95' toY='445' radius='10' fillColor='333333, C3D0D8, 333333' fillAngle='90' />
+			<annotation type='rectangle' x='10' y='10' toX='90' toY='440' radius='10' fillColor='C4D5DC, A3A5A4' fillAngle='180' />
+		</annotationGroup>
+	</annotations>
+</chart>

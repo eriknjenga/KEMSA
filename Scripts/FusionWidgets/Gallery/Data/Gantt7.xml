@@ -1,0 +1,54 @@
+<chart dateFormat='mm/dd/yyyy' caption='Project Gantt' subCaption='From 1st Feb 2007 - 31st Aug 2007' ganttPaneDuration='3' ganttPaneDurationUnit='m' palette='4'>
+   <categories>
+      <category start='02/01/2007' end='04/01/2007' label='Q1' />
+      <category start='04/01/2007' end='07/01/2007' label='Q2' />
+      <category start='07/01/2007' end='09/01/2007' label='Q3' />
+   </categories>
+   <categories>
+      <category start='02/01/2007' end='03/01/2007' label='Feb' />
+      <category start='03/01/2007' end='04/01/2007' label='Mar' />
+      <category start='04/01/2007' end='05/01/2007' label='Apr' />
+      <category start='05/01/2007' end='06/01/2007' label='May' />
+      <category start='06/01/2007' end='07/01/2007' label='Jun' />
+      <category start='07/01/2007' end='08/01/2007' label='Jul' />
+      <category start='08/01/2007' end='09/01/2007' label='Aug' />
+   </categories>
+    <processes fontSize='12' isBold='1' align='left' headerText='Who?' headerFontSize='18' headerVAlign='bottom' headerAlign='left'>
+      <process label='Identify Customers' />
+      <process label='Survey 50 Customers' />
+      <process label='Interpret Requirements' />
+      <process label='Study Competition' />
+      <process label='Documentation of features' />
+      <process label='Brainstorm concepts' />
+      <process label='Design &amp; Code' />
+      <process label='Testing / QA' />
+      <process label='Documentation of product' />
+      <process label='Global Release' />
+   </processes>
+ <datatable headerVAlign='bottom'>
+      <datacolumn headerText='Who does?' headerFontSize='18' headerVAlign='bottom' headerAlign='right' align='left' fontSize='12' >
+         <text label='John' />
+         <text label='David' />
+         <text label='Mary' />
+         <text label='Andrew' />
+         <text label='Tiger' />
+         <text label='Sharon' />
+         <text label='Neil' />
+         <text label='Harry' />
+         <text label='Chris' />
+         <text label='Richard' />
+      </datacolumn>
+   </datatable>
+   <tasks>
+      <task start='02/04/2007' end='02/10/2007' />
+      <task start='02/08/2007' end='02/19/2007' />
+      <task start='02/19/2007' end='03/02/2007' />
+      <task start='02/24/2007' end='03/02/2007' />
+      <task start='03/02/2007' end='03/21/2007' />
+      <task start='03/21/2007' end='04/06/2007' />
+      <task start='04/06/2007' end='07/21/2007' />
+      <task start='07/21/2007' end='08/19/2007' />
+      <task start='07/28/2007' end='08/24/2007' />
+      <task start='08/24/2007' end='08/27/2007' /> 
+   </tasks>
+</chart>

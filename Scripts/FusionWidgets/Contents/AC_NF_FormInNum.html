@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td width="100%"><h2 class="pageHeader">Number Formatting &gt; Using formatted input numbers </h2></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In some countries, commas are used as decimal separators and dots as thousand   separators. But, if you directly specify such numbers in FusionWidgets XML, it   will give an error while converting to number. FusionWidgets v3 introduces a   smart way to let you specify numbers in your own format in XML. </p>      
+      <p>Consider the XML below (for a pyramid chart): </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart caption='Sales distribution by Employee' subCaption='Jan 07 - Jul 07' numberPrefix='$' isSliced='1' <strong>inThousandSeparator='.' inDecimalSeparator=','</strong>&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label='Buchanan' value='20.231,54' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label='Callahan' value='49.457,78' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label='Davolio' value='63.190,51' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label='Dodsworth' value='41.286,51' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label='Fuller' value='74.779,52' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label='King' value='49.890,21' /&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In this XML, we're providing the numbers in the non-standard convention -   i.e., we've used dot as the thousand separator and comma as the decimal   separator (as followed in some European countries). Now, to make sure that   FusionWidgets reads these numbers in the right way, we convey our input decimal   and thousand separator characters as under:</p>
+      <p class="codeInline">&lt;chart ... inThousandSeparator='.' inDecimalSeparator=','   ..&gt; </p>
+      <p>This tells FusionWidgets that it should treat dot in the input numbers as   thousands (instead of normal decimals) and comma as decimals. </p>
+      <p>When you now view this chart, you'll get the following output: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/AC_InNumFormat1.jpg" width="500" height="350" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">You can see that FusionWidgets has interpreted the numbers properly and   automatically converted the numbers into the standard format. If you want to   output the number again in the non-conventional format, you can use the   following XML: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart caption='Sales distribution by Employee' subCaption='Jan 07 - Jul 07' numberPrefix='$' isSliced='1' inThousandSeparator='.' inDecimalSeparator=',' <strong>thousandSeparator='.' decimalSeparator=','</strong>formatNumberScale='0'&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;set label='Buchanan' value='20.231,54' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;set label='Callahan' value='49.457,78' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;set label='Davolio' value='63.190,51' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;set label='Dodsworth' value='41.286,51' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;set label='Fuller' value='74.779,52' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;set label='King' value='49.890,21' /&gt;<br />
+    &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">You will get the following chart: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/AC_InNumFormat2.jpg" width="500" height="350" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Notice how . is used for thousand separator and , for decimal separator. </td>
+  </tr>
+</table>
+</body>
+</html>

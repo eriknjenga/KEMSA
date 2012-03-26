@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Annotations &gt; Introduction </h2></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Annotations let you create your own custom objects (shapes, images, text etc.) in the charts. You can create various shapes like polygons, rectangles, circles, arcs etc, render annotation text at required positions and load external GIF/JPEG/PNG images or other Flash movies in the chart itself. </p>
+      <p>The main features of annotations are:</p>
+      <ul>
+        <li>Rendering of lines, rectangle, circle,  arc or any polygon at any   position of the chart </li>
+        <li>Gradient fill support</li>
+        <li>Support for loading of external .gif, .jpeg, .swf and .png files and   dynamically scaling them after loading </li>
+        <li>Rendering of text, with customizable properties, at any position of the   chart </li>
+        <li>Ability to manipulate the layer depth of various objects, and to control   whether the individual objects would be shown above the chart or below it </li>
+        <li>Option to add tool text for each annotation group</li>
+        <li>Ability to link each annotation group to an external URL  </li>
+        <li>Can be linked with STYLEs to apply effects and animation </li>
+        <li>Applicable for all the charts </li>
+      </ul>      
+      <p>Shown below are a few samples where we've applied annotation over charts: </p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="0" cellspacing="0" cellpadding="1">
+      <tr>
+        <td width="50%"><div align="center"><img src="Images/Ann_Appl2.jpg" width="270" height="270" /></div></td>
+        <td width="50%"><div align="center"><img src="Images/Ann_Appl1.jpg" width="300" height="170" /></div></td>
+      </tr>
+      <tr>
+        <td class="text"><div align="center">The circles below the gauge have been created using annotations. </div></td>
+        <td class="text"><div align="center">The content box and the text in it have been created using annotations. </div></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">There are a lot of cosmetic and functional properties that you can define for each annotation and customize it entirely the way you want. Let us now take a look at the general XML structure required to create an annotation. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart bgColor='333333' bgAlpha='100' gaugeStartAngle='90' gaugeEndAngle='-270' lowerLimit='0' upperLimit='12' lowerLimitDisplay=' ' upperLimitDisplay='12' majorTMNumber='12' majorTMThickness='3' majorTMColor='FFFFFF' majorTMHeight='7' minorTMNumber='4' minorTMColor='FFFFFF' minorTMHeight='4' placeValuesInside='1' tickValueStep='3' tickValueDistance='20' gaugeOuterRadius='95' gaugeInnerRadius='95' showShadow='0' pivotRadius='6' pivotFillColor='FFFFFF' annRenderDelay='0'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;dials&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dial value='5' color='FFFFFF' baseWidth='3' topWidth='1' radius='70' rearExtension='12'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/dials&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;annotations&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;&lt;!--circles behind the gauge--&gt;</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' showBelow='1'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='circle' x='135' y='135' color='EBF0F4,85898C,484C4F,C5C6C8' fillRatio='30,30,30,10' fillAngle='270' radius='120' fillPattern='linear' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='circle' x='135' y='135' color='8E8E8E,83878A,E7E7E7' fillAngle='270' radius='105' fillPattern='linear' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='circle' x='135' y='135' color='07476D,19669E,186AA6,D2EAF6' fillRatio='5,45,40,10' fillAngle='270' radius='103' fillPattern='linear' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='circle' x='135' y='135' color='07476D,19669E,07476D' fillRatio='5,90,5' fillAngle='270' radius='100' fillPattern='linear' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;</p>
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;&lt;!--Circle behind the pivot--&gt;</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp2' showBelow='1'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='circle' x='135' y='135' radius='12' color='012A46' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style name='TTipFont' type='font' color='FFFFFF' bgColor='706C11' borderColor='706C11' font='Verdana' size='10' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style name='ValueFont' font='Times New Roman' italic='1' type='font' size='18' color='FFFFFF' bold='1' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;</p>
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='TOOLTIP' styles='TTipFont' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='TICKVALUES' styles='ValueFont' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='LIMITVALUES' styles='ValueFont' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+  &lt;/chart&gt;<br />
+      </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The <span class="codeInline">&lt;annotations&gt;</span> element signifies the start of annotations in the XML data.   All the code to generate the annotations is enclosed within <span class="codeInline">&lt;annotations&gt;</span> and <span class="codeInline">&lt;/annotations&gt;</span>. </p>
+    <p>Each annotation has to be placed within one annotation group or the other. An annotation group is created using the <span class="codeInline">&lt;annotationGroup&gt;</span> element. Each annotation group necessarily has to have an ID, and that too a unique one. This ID comes into use when you are using STYLEs, Alert manager or JavaScript API. </p>
+    <p>Individual annotation objects can be placed within the annotation group using the <span class="codeInline">&lt;annotation&gt;</span> element. The <span class="codeInline">&lt;annotation&gt;</span> element has some essential properties like type, x, y etc. and lots of other cosmetic and functional properties.</p>
+    <p> Let us take a look at each of these elements in greater detail now. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">&lt;annotationGroup&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p><span class="codeInline">&lt;annotationGroup&gt;</span> elements are used to consolidate a number of annotations under one group. For example, say that you've created your company logo using custom objects, and you want the logo to be present on all the charts (on the top left corner). Now, your company logo consists of two polygons, one rectangle, three lines and two textboxes. So, you can group all of these individual annotations under an <span class="codeInline">&lt;annotationGroup&gt;</span>, so that whenever you need to re-position the logo on the chart or scale it, you can directly assign the new position to the annotation group itself, instead of applying the same to all the annotations within. </p>
+      <p>Also, if you need to show an annotation below the chart, you can set the layering depth of the same using annotation group only. For example, you've created a textured background using annotations and now you want all your charts to have that textured background. However, by default if you just place it within an annotation group, the background will appear over the chart. With the <span class="codeInline">showBelow</span> property of the <span class="codeInline">annotationGroup</span> element, you can configure to show the entire annotation group below the chart. </p>
+      <p>In an annotation group, the annotation which has been defined first will appear at the bottom-most within that respective group and the one which has been defined last will appear at the top-most. If the chart contains more than one annotation group, then the stacking order of various annotation groups is also determined similarly. </p>
+      <p>Let's study the attributes supported by <span class="codeInline">&lt;annotationGroup&gt;</span> element in detail:</p>
+      <ul>
+        <li><span class="codeInline">x</span>='Numerical Value' - The  x co-ordinate of the annotation group. All the annotations in this group would start drawing from this x co-ordinate + the x co-ordinate of the annotation itself (if defined). Thus, when you have to re-position a group of annotations, lets say the company logo we talked about earlier, then instead of re-positioning each and every annotation in the company logo, we can re-position the entire annotation group itself using this attribute. <br />
+          <br />
+        Whenever, you have to use x-scaling or y-scaling for annotations, then what you should do is place the annotation at (0,0) within that annotation group, then x-scale the annotation as per requirement and then position the annotation group to where the annotation was supposed to be. This is required because if we had instead placed the annotation at the required position and then x-scaled it, then the distance from the starting position of the annotation group to the starting position of the annotation will also be x-scaled and hence the annotation won't end up at the required x position. <br />
+          <br />
+        </li>
+        <li>        <span class="codeInline">y</span>='Numerical Value'- Just like x sets the x position of the object group, this attribute sets the y position of the object group.<br />
+          <br />
+        </li>
+        <li>        <span class="codeInline">alpha</span>='Numerical Value' - This attribute helps you set the alpha of all the objects in an object group by specifying at just one place - the object group. <br />
+            <br />
+        </li>
+        <li><span class="codeInline">origW</span>='Number' - This attribute helps you define the original width of the chart - the width of the chart when you had first created the annotation group. So when you change the chart size later and want the annotations in the annotation group to be scaled accordingly, you can use the auto-scale feature which in turn uses the <span class="codeInline">origW</span> attribute. <br />
+            <br />
+        </li>
+        <li><span class="codeInline">origH</span>='Number' - Similar to <span class="codeInline">origW</span> attribute, it helps you specify the original height of the chart. <br />
+            <br />
+        </li>
+        <li><span class="codeInline">autoScale</span>='0/1' - Allows you to auto-scale the annotation group taking into account the change in width and height of the chart. 
+          The scaling is constrained by default. <br />
+          <br />
+        </li>
+        <li><span class="codeInline">constrainedScale</span>='0/1' - Whether to use constrained scaling or not. If the width and height of the chart have changed by different values and you use the auto-scale feature, then the annotation would have constrained scaling by default, i.e. the dimensions of the annotation would change such that the shape of the annotation doesn't become distorted. But if you wish to have unconstrained scaling which might result in the annotation becoming distorted in shape, then you can set this attribute to 0. <br />
+          <br />
+        </li>
+        <li><span class="codeInline">scaleImages</span>='0/1' - If <span class="codeInline">autoScale='1'</span>, then this attribute allows you to define whether the images in the annotation group (if any) also have to be auto-scaled. <br />
+          <br />
+        </li>
+        <li>        <span class="codeInline">scaleText</span>='0/1' - If <span class="codeInline">autoScale='1'</span>, then this attribute allows you to define whether the text in the annotation group (if any) also have to be auto-scaled. <br />
+          <br />
+        </li>
+        <li>        <span class="codeInline">grpXShift</span>='Number (both positive and negative)' - Even after using the auto-scale feature, if you need to shift the annotation group to the left or right, you can do the same using this attribute. <br />
+          <br />
+        </li>
+        <li>        <span class="codeInline">grpYShift</span>='Number (both positive and negative)' - Even after using the auto-scale feature, if you need to shift the annotation group above or below, you can do the same using this attribute. <br />
+          <br />
+        </li>
+        <li>        <span class="codeInline">showBelow</span>='0/1' - Whether the annotation group would be shown above the chart or below it? <br />
+          <br />
+        </li>
+        <li><span class="codeInline"> visible</span>='0/1' - Whether the annotation group would be visible on the chart or not? <br />
+          <br />
+        </li>
+        <li><span class="codeInline"> toolText</span>='String' - This attribute allows you to define the tool-text for all the annotations in the annotation group. <br />
+          <br />
+        </li>
+        <li>        <span class="codeInline">link</span>='Link in FusionCharts format' - This attribute sets up a link to the given URL for all the annotations in the annotation group. For more on varius types of links supported, see the Drill Down Charts section. <br />
+          <br />
+        </li>
+        <li>        <span class="codeInline">xScale</span>='Numerical Value'- This attribute helps you increase the width % of the custom object group. Say, you had your logo drawn using custom objects and now you want to double its size. Doubling means increasing the width and height of the object group to 200%. So, this attribute helps you increase the width - you can set it as 200 to double the width of the logo. <br />
+          <br />
+        </li>
+        <li>        <span class="codeInline">yScale</span>='Numerical Value'- Just like xScale helps you set the width %, this attribute helps you set the height %. 
+        <br />
+        </li>
+      </ul>
+      <p>You can have as many number of annotation groups as you want - however, it is wise to group related annotations under one group, rather than creating groups at random.</p>
+      <p>Now that you're clear with annotation groups, let's have a look at the main element of annotations - the <span class="codeInline">&lt;annotation&gt;</span> element. <br />
+          <br />
+    </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">&lt;annotation&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Each &lt;annotation&gt; element helps you specify an annotation for the chart. And for each annotation, there are a lot of   properties which you can define using the attributes of this element. The most   important attribute of this element is <span class="codeInline">type</span>, which   helps you define what kind of annotation needs to be drawn. Example:<br />
+          <br />
+          <span class="codeInline">&lt;annotation type='line' .... /&gt;</span></p>
+      <p>The type attribute of <span class="codeInline">&lt;annotation&gt;</span> element can   take the following values:</p>
+      <ul>
+        <li>line </li>
+        <li>rectangle </li>
+        <li>circle </li>
+        <li>polygon </li>
+        <li>rectangle </li>
+        <li>arc </li>
+        <li>text </li>
+        <li>image </li>
+      </ul>
+      <p>Pretty self explanatory - each of these type helps you create that shape on   the chart.</p>
+      <p>Every annotation needs a few other parameters to function properly. Like   the rectangle needs to know where to start from and where to end. Also, it needs   the cosmetic properties like border color, fill color etc. It's not necessary to   define all the properties, as FusionWidgets will take the default value for all   those attributes whose value you've not specified. </p>
+    <p>Let's now delve into the attributes for each annotation type that can help you   control the annotation better. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

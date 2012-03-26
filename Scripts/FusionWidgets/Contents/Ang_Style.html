@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" /></head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Angular Gauge &gt; Using STYLEs </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The angular gauge can effectively use STYLEs feature to apply animation, effects and font styling to each and every object on the chart. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">An example </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Shown below is a simple example where we've applied font style to limit and value texboxes and shadow style to tick values: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart lowerLimit='0' upperLimit='100' lowerLimitDisplay='Bad' upperLimitDisplay='Good' gaugeStartAngle='180' gaugeEndAngle='0' palette='1' numberSuffix='%' tickValueDistance='20' showValue='1'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='75' code='FF654F'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='90' code='F6BD0F'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='100' code='8BBA00'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;dials&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dial value='92' rearExtension='10'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/dials&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='myValueFont' bgColor='F1f1f1' borderColor='999999' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='limitsFont' bold='1' bgColor='F1f1f1' borderColor='999999' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='shadow' name='myShadow' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Value' styles='myValueFont' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Limitvalues' styles='limitsFont' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='tickvalues' styles='myShadow' /&gt;<br />
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+        &nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+    &lt;/chart&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">This results in: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Styles.jpg" width="355" height="195" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">This was just a basic example. You can create complex animation patterns or apply effects to all chart objects as per your wish. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Chart Objects </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">You can apply effects, font styles and animation to the following objects in angular gauge: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="15%" valign="top" class="header">Object Name </td>
+        <td width="50%" valign="top" class="header">Description</td>
+        <td width="20%" valign="top" class="header">STYLES supported </td>
+        <td width="15%" valign="top" class="header">Animation Parameters </td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">BACKGROUND</td>
+        <td width="50%" valign="top" class="text">Background refers to the background for entire chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td width="15%" valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+          <li>_x<br />
+            </li>
+          <li>_y<br />
+            </li>
+          <li>_xScale<br />
+            </li>
+          <li>_yScale</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">DIAL</td>
+        <td valign="top" class="text">All the dials on the gauge. </td>
+        <td valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+          <li>_x<br />
+            </li>
+          <li>_y<br />
+            </li>
+          <li>_xScale<br />
+            </li>
+          <li>_yScale</li>
+          <li>_rotation</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">GAUGE</td>
+        <td valign="top" class="text">The color range (qualitative range) for the chart. </td>
+        <td valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+          <li>_x<br />
+            </li>
+          <li>_y<br />
+            </li>
+          <li>_xScale<br />
+            </li>
+          <li>_yScale</li>
+          <li>_rotation</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">PIVOT</td>
+        <td valign="top" class="text">The base circle from which dial emanates. </td>
+        <td valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+          <li>_x<br />
+            </li>
+          <li>_y<br />
+            </li>
+          <li>_xScale<br />
+            </li>
+          <li>_yScale</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">VALUE</td>
+        <td valign="top" class="text">Value textfield for the dial (if visible). </td>
+        <td valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Font</li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+          <li>_x<br />
+            </li>
+          <li>_y</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">TICKMARKS</td>
+        <td valign="top" class="text">Tick marks on the gauge scale. </td>
+        <td valign="top" class="text"><ul>
+            <li>Animation</li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+          <li>_x<br />
+            </li>
+          <li>_y</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">TICKVALUES</td>
+        <td valign="top" class="text">Value for tick marks. </td>
+        <td valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Font</li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+          <li>_x<br />
+            </li>
+          <li>_y</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">LIMITVALUES</td>
+        <td valign="top" class="text">Textfield representing chart lower and upper limit. </td>
+        <td valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Font</li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+          <li>_x<br />
+            </li>
+          <li>_y</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">TRENDPOINTS</td>
+        <td valign="top" class="text">All defined trend points for the chart. </td>
+        <td valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td valign="top" class="text"><ul>
+            <li>_alpha</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">TRENDVALUES</td>
+        <td valign="top" class="text">Value of defined trend lines. </td>
+        <td valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Font</li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+          <li>_x<br />
+            </li>
+          <li>_y</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">TRENDMARKERS</td>
+        <td valign="top" class="text">Trend-markers, if any. </td>
+        <td valign="top" class="text"><ul>
+            <li>Animation</li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+          <li>_x<br />
+            </li>
+          <li>_y<br />
+            </li>
+          <li>_xScale<br />
+            </li>
+          <li>_yScale</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">TOOLTIP</td>
+        <td valign="top" class="text">Tool tip for the chart.</td>
+        <td valign="top" class="text"><ul>
+            <li>Font</li>
+        </ul></td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

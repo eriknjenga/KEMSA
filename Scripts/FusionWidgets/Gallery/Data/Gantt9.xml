@@ -1,0 +1,40 @@
+<chart scrollColor='99CCCC' scrollPadding='3' scrollHeight='20' scrollBtnWidth='28' scrollBtnPadding='3' dateFormat='dd/mm/yyyy' caption='Employee Schedule' subCaption='From 15th June 2007 - 21st June 2007' ganttPaneDuration='57' ganttPaneDurationUnit='d' palette='2'>
+   <categories>
+      <category start='15/07/2007' end='22/07/2007' label='Week 3' />
+   </categories>
+   <categories>
+      <category start='15/07/2007' end='16/07/2007' label='Sun' />
+      <category start='16/07/2007' end='17/07/2007' label='Mon' />
+      <category start='17/07/2007' end='18/07/2007' label='Tue' />
+      <category start='18/07/2007' end='19/07/2007' label='Wed' />
+      <category start='19/07/2007' end='20/07/2007' label='Thu' />
+      <category start='20/07/2007' end='21/07/2007' label='Fri' />
+      <category start='21/07/2007' end='22/07/2007' label='Sat' />
+   </categories>
+   <processes fontSize='12' isBold='1' align='left' headerText='Who?' headerFontSize='18' headerVAlign='bottom' headerAlign='left'>
+      <process label='John.S' id='EMP121'/>
+      <process label='David.G' id='EMP122'/>
+      <process label='Mary.P' id='EMP123'/>
+      <process label='Andrew.H' id='EMP124'/>
+      <process label='Neil.M' id='EMP125'/>
+   </processes>
+   <datatable headerVAlign='bottom'>
+      <datacolumn headerText='Team?' headerFontSize='18' headerVAlign='bottom' headerAlign='left' align='left' fontSize='12' >
+         <text label='Graphics' />
+         <text label='ASP.NET' />
+         <text label='PHP' />
+         <text label='Flash' />
+         <text label='Documentation' />
+      </datacolumn>
+   </datatable>
+   <tasks showLabels='1'>
+      <task processId='EMP121' id='TSK1311' start='16/07/2007' end='17/07/2007' label='Product A Logo'/>
+      <task processId='EMP121' id='TSK1325' start='18/07/2007' end='19/07/2007' label='Website design'/>
+      <task processId='EMP121' id='TSK1329' start='20/07/2007' end='21/07/2007' label='Brochure design'/>
+      <task processId='EMP122' id='TSK1393' start='16/07/2007' end='22/07/2007' label='C# Wrapper development'/>
+      <task processId='EMP123' id='TSK1398' start='18/07/2007' end='21/07/2007' label='PHP Blueprint application'/>
+      <task processId='EMP124' id='TSK1498' start='16/07/2007' end='17/07/2007' label='Pie Chart Bug Fix'/>
+      <task processId='EMP124' id='TSK1499' start='18/07/2007' end='22/07/2007' label='Flex Research'/>
+      <task processId='EMP125' id='TSK1512' start='16/07/2007' end='22/07/2007' label='FusionGadgets Documentation'/>
+   </tasks>
+</chart>

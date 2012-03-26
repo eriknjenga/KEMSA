@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Spark Charts &gt; Spark Win-Loss Chart &gt; Configurations </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we'll see how to configure the various facets of the chart. We'll see   how to:</p>
+      <ul>
+        <li><a href="#period">Specify period blocks for the chart </a></li>
+        <li><a href="#colors"> Configure win, loss &amp; draw colors</a></li>
+        <li><a href="#scoreless">Configure color to show matches with no scores by a side. </a></li>
+        <li><a href="#value">Hiding chart value</a> </li>
+      </ul>
+      <p>Let's see each one of them in detail. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="period" id="period"></a>Specify period blocks for the chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets spark win/loss chart allows you to show period blocks on the chart   using colored bands. This helps you easily interpret periods on the chart. Assuming each game occurred once a week, if we want to show 3 weeks period block on the chart, we can set:</p>
+    <p class="codeInline">&lt;chart ... periodLength='3' periodColor='CCCCCC'   periodAlpha='50'&gt;</p>
+    <p>Here, we've set <span class="codeInline">periodLength='3'</span> as we've specified weekly data - so, 3 data   points make 3 weeks. This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkWL_Period.jpg" width="202" height="41" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">When specifying periods, you just need to make sure that your period length is   always less than the number of data points that you've specified, as period   length is directly numbered on data points. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"> <a name="colors" id="colors"></a>Configure win, loss &amp; draw colors</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure the color for bars indicating win, loss &amp; draw using:</p>
+    <p class="codeInline">&lt;chart ... winColor='00CC33' lossColor='FF0000' drawColor='000000' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkWL_Colors.jpg" width="200" height="43" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="scoreless" id="scoreless"></a>Configuring bar color for scoreless matches </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets spark win/loss chart allows you to highlight matches that a team won/lost but one side didn't score at all. This can be done using: </p>
+    <p class="codeInline">&lt;chart .... scoreLessColor='FF0000' ..&gt;<br />
+      ...<br />
+&lt;set value='W' scoreless='1'/&gt;
+<br />
+...<br />
+&lt;/chart&gt;</p>
+    <p>Here, we've added <span class="codeInline">scoreless='1' </span>attribute to <span class="codeInline">&lt;set&gt;</span> element and specified red color as the fill color for all matches with no scores. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkWL_Colors2.jpg" width="199" height="38" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">As you can see above, there's one bar (winning bar) colored in red indicating that the other side couldn't score in that match. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="value" id="value"></a>Hiding chart value</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to hide the chart value by setting:</p>
+    <p class="codeInline">&lt;chart ... showValue='0' ...&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkWL_Value.jpg" width="201" height="46" class="imageBorder" /></td>
+  </tr>
+</table>
+</body>
+</html>

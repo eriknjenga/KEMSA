@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Funnel Chart &gt; Creating a simple chart </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Since funnel charts are mostly used to show streamlined data, here, we'll create a simple funnel chart to show the &quot;Sales Conversion Ratio&quot; of a product website for a particular month. The chart will display the various processes involved in sales and how many targeted customers were filtered out in each process. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Data to show </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">We'll be showing the following data on the chart: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="50%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="49%" class="header">Process</td>
+        <td width="51%" class="header"><div align="right">Number of People </div></td>
+      </tr>
+      <tr>
+        <td class="text">Website Visits</td>
+        <td class="text"><div align="right">3,85,634</div></td>
+      </tr>
+      <tr>
+        <td class="text">Downloads</td>
+        <td class="text"><div align="right">1,75,631</div></td>
+      </tr>
+      <tr>
+        <td class="text">Interested to buy</td>
+        <td class="text"><div align="right">84,564</div></td>
+      </tr>
+      <tr>
+        <td class="text">Contract finalized</td>
+        <td class="text"><div align="right">35,654</div></td>
+      </tr>
+      <tr>
+        <td class="text">Purchased</td>
+        <td class="text"><div align="right">12,342</div></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Here, we've divided the entire sales process in five simple steps (though you can have any number of steps in your process). The process starts when a unique visitor visits the website and ends when he purchases the intended product. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Converting into XML </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The above data needs to be converted into XML, for use by funnel chart. The converted XML would look as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart caption='Conversion Ratio' subcaption='May 2007' showPercentValues='1' decimals='1' baseFontSize='11' &gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label=&quot;Website Visits&quot; value=&quot;385634&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label=&quot;Downloads&quot; value=&quot;175631&quot;  /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label=&quot;Interested to buy&quot; value=&quot;84564&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label=&quot;Contract finalized&quot; value=&quot;35654&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label=&quot;Purchased&quot; value=&quot;12342&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='captionFont' size='15' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='CAPTION' styles='captionFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've:</p>
+      <ul>
+        <li>Defined the <span class="codeInline">&lt;chart&gt;</span> element and a few of its properties like caption, sub-caption, percent  values set to on, decimals set to 1 and base font size.</li>
+        <li>Added a <span class="codeInline">&lt;set&gt; </span>element for each data row that we had in the table.</li>
+        <li>Created STYLE to increase caption font size. </li>
+      </ul>
+    <p>When you now view the chart (after embedding it in HTML code) with above XML, you'll see it as under (we've clicked on a slice here to show the slicing effect): </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Funnel_1.jpg" width="454" height="456" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets has created the funnel segments based on your data provided. Also, it has converted the numbers into percentage, since we had set <span class="codeInline">&lt;chart showPercentValues='1' ..&gt;</span>. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Same slant angle for each funnel </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the above example, each funnel slice has its width according to its data (top and bottom openings proportional to data in and out respectively, to get a visual cue of the  funneling rate as compared to other funnels depicting funneling/screening rate  of allied processes). However, if you do not want the width of each funnel to depend on its data, you can set:</p>
+      <p class="codeInline">&lt;chart useSameSlantAngle='1' ...&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Funnel_SlantAngle.jpg" width="455" height="456" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">As you can see, each funnel now has the same slant angle. The variation in data can be visualized only from each funnel's height. </td>
+  </tr>
+</table>
+</body>
+</html>

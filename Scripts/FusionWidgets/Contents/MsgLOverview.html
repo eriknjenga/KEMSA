@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Message Logger &gt; Introduction </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>FusionWidgets v3 introduces a new concept of streaming and showing real-time messages in the chart using <em>Message Logger</em>. The Message logger can be effectively used to show necessary real-time information or live error logs. </p>
+      <p>Essentially, the message logger is a text based scrollable window that can listen to messages streamed from server and then do one of the following:</p>
+      <ul>
+        <li>Display the message in the message logger window</li>
+        <li>Pass it to custom JavaScript functions (defined by you) for further actions</li>
+      </ul>
+      <p>A simple message logger  in a chart looks something as under: </p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/MsgL_Intro.gif" width="504" height="352" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the above screenshot, we've a real time line chart that is monitoring CPU usage of multiple CPUs on the same chart. Also, on the top of the chart, we've used the message logger. As you can see above, the message logger contains multiple messages that were streamed to it by the server. </p>
+      <p>The message logger in FusionWidgets v3 has the following features:</p>
+    <ul>
+      <li>Message logger is supported in all the real-time charts &amp; gauges. The non real-time charts do not support message logger.</li>
+      <li>Each real time update of the chart can contain 1 message to be added to the logger. </li>
+      <li>The message logger can contain any number of messages. It's a scrollable logger.</li>
+      <li>The cosmetics of this message logger is fully customizable. </li>
+      <li>Messages streamed to this message logger can either be displayed in the in-built logger or passed to any JavaScript function present in the same page. This helps you build your custom client side loggers, without having to worry about retrieving real time data from server, as that's handled by FusionWidgets. </li>
+      <li>Can be switched on or off by setting <span class="codeInline">&lt;chart useMessageLog='0' or '1'&gt;</span> in the XML for the chart. </li>
+      <li>Additionally, your end users can also show/hide it at client  side using Shift+M key combination</li>
+      <li>You can also use client side JavaScript to show/hide message logger for a chart.</li>
+      <li>Messages streamed to the logger can be of 4 types - INFO, ERROR, LITERAL or LINK. You can decide the type for each message that you send to logger. Based on their type, they are displayed with different formatting in the Message Logger.</li>
+      <li>The logger can be dynamically cleared at run-time (to get rid of existing messages) either by sending a <span class="codeInline">&amp;clearLog=1</span> flag in the real-time data stream, or using client side JavaScript. </li>
+    </ul>
+    <p>Let's next see how to setup the message logger for your chart. </p></td>
+  </tr>
+</table>
+</body>
+</html>

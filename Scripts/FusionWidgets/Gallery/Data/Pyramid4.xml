@@ -1,0 +1,46 @@
+<chart bgColor='FFFFFF' showBorder='0' showValues='0' showNames='0' decimalPrecision='1'  numberPrefix='$' animation='0' isSliced='1' chartLeftMargin='0' chartRightMargin='150' showToolTip='0'>
+   <set value='10' name=' Item A' color='AFD8F8' />
+   <set value='11' name=' Item C' color='8BBA00' />
+   <set value='21' name=' Item D' color='A66EDD' />
+   <set value='22' name=' Item E' color='F984A1' /> 
+<customObjects>
+<objectGroup showBelow='0'>
+	<object type='rectangle' xPos='2' yPos='2' toXPos='498' toYPos='348' fillAlpha='0' radius='15' showBorder='1' borderThickness='2' color='333333' />
+	<object type='circle' xPos='175' yPos='50' radius='5' borderThickness='1' color='333333'/>
+
+	<object type='line' xPos='175' yPos='50' toXPos='230' borderThickness='1' color='333333'/>
+	<object type='line' xPos='230' yPos='25' toXPos='230' toYPos='75' color='333333' borderThickness='1'/>
+	<object type='circle' xPos='175' yPos='100' radius='5' color='333333' borderThickness='1'/>
+
+
+	<object type='line' xPos='175' yPos='100' toXPos='260' color='333333' borderThickness='1'/>
+	<object type='line' xPos='260' yPos='75' toXPos='260' toYPos='125' color='333333' borderThickness='1'/>
+
+	<object type='circle' xPos='175' yPos='180' radius='5' color='333333' borderThickness='1'/>
+
+	<object type='line' xPos='175' yPos='180' toXPos='280' color='333333' borderThickness='1'/>
+	<object type='line' xPos='280' yPos='155' toYPos='205' color='333333' borderThickness='1'/>
+
+	<object type='circle' xPos='175' yPos='280' radius='5' color='333333' borderThickness='1'/>
+
+	<object type='line' xPos='175' yPos='280' toXPos='310' color='333333'  borderThickness='1'/>
+	<object type='line' xPos='310' yPos='255' toXPos='310' toYPos='305' color='333333' borderThickness='1'/>
+
+	<object type='text' xPos='235' yPos='50' isBold='1' isHTML='1' label='Stocks(speculative)&lt;BR&gt;Options(uncovered)&lt;BR&gt;Margin Accounts&lt;BR&gt;Limited Partnerships' align='left' color='333333' />
+	<object type='text' xPos='265' yPos='100' isBold='1' label='Corporate Bond Mutual Fund&lt;BR&gt;Stock Market Funds&lt;BR&gt;Blue Cip Stocks&lt;BR&gt;Investment Grade Bonds' align='left' color='333333' />
+	<object type='text' xPos='285' yPos='180' isBold='1' label='Money Market, Government and&lt;BR&gt;Municipal Bond Mutual Funds&lt;BR&gt;Government Securities&lt;BR&gt;Unit Investment Trusts' align='left' color='333333' />
+	<object type='text' xPos='315' yPos='280' isBold='1' label='Certificates of deposits&lt;BR&gt;(CDs) (FDIC insured)&lt;BR&gt;Bank Money Market&lt;BR&gt;Money Market Mutual Funds' align='left' color='333333' />
+
+</objectGroup>
+</customObjects>
+<styles>
+<definition>
+<style name='TTipFont' type='font' isHTML='1' />
+</definition>
+<application>
+<apply toObject='TOOLTIP' styles='TTipFont' />
+</application>
+</styles>
+</chart>
+
+

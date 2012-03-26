@@ -1,0 +1,36 @@
+<chart caption="Stock Movement for Acyclovir Tablets 400mg" subcaption="(from April 2011 to March 2012)" lineThickness="1" showValues="0" formatNumberScale="0" anchorRadius="2" divLineAlpha="20" divLineColor="CC3300" divLineIsDashed="1" showAlternateHGridColor="1" alternateHGridAlpha="5" alternateHGridColor="CC3300" shadowAlpha="40" labelStep="2" numvdivlines="5" chartRightMargin="35" bgColor="FFFFFF,CC3300" bgAngle="270" bgAlpha="10,10">
+<categories>
+<category label="May"/>
+<category label="July"/>
+<category label="September"/>
+<category label="November"/>
+<category label="January"/>
+<category label="March"/> 
+</categories>
+ 
+<dataset seriesName="Total Stock Ordered" color="2AD62A" anchorBorderColor="2AD62A" anchorBgColor="2AD62A">
+<set value="850"/>
+<set value="1010"/>
+<set value="1116"/>
+<set value="1234"/>
+<set value="1210"/>
+<set value="1054"/> 
+</dataset>
+<dataset seriesName="Total Stock Issued" color="DBDC25" anchorBorderColor="DBDC25" anchorBgColor="DBDC25">
+<set value="541"/>
+<set value="781"/>
+<set value="920"/>
+<set value="754"/>
+<set value="840"/>
+<set value="893"/> 
+</dataset>
+<styles>
+<definition>
+<style name="CaptionFont" type="font" size="12"/>
+</definition>
+<application>
+<apply toObject="CAPTION" styles="CaptionFont"/>
+<apply toObject="SUBCAPTION" styles="CaptionFont"/>
+</application>
+</styles>
+</chart>

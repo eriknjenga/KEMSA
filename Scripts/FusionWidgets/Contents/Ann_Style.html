@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Annotations &gt; Using Styles </h2></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In this section, we will have a look at how to apply Styles to annotations. </p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>&nbsp;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Applying effects</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Let's say we have a rectangle like this: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Rect1.gif" width="100" height="100" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">To apply effects to this rectangle, we will have to use Styles. Using Styles, we can apply Shadow, Glow, Bevel and Blur effects to the rectangle. Here we will see how to apply a shadow effect. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+      ...<br />
+&nbsp;&nbsp;      &lt;annotations&gt;<br />
+      &nbsp;&nbsp;      &nbsp;&nbsp;      &lt;annotationGroup id='Grp1' &gt;<br />
+      &nbsp;&nbsp;      &nbsp;&nbsp;      &nbsp;&nbsp;      &lt;annotation type='rectangle' color='639ACE' x='100' y='100' toX='200' toY='200'/&gt;<br />
+      &nbsp;&nbsp;      &nbsp;&nbsp;      &lt;/annotationGroup&gt;<br />
+      &nbsp;&nbsp;      &lt;/annotations&gt;<br />
+      &nbsp;&nbsp;      &lt;styles&gt;<br />
+      &nbsp;&nbsp;      &nbsp;&nbsp;      &lt;definition&gt;<br />
+      &nbsp;&nbsp;      &nbsp;&nbsp;      &nbsp;&nbsp;      &lt;style name='myShadow' type='shadow' distance='10' /&gt;<br />
+      &nbsp;&nbsp;      &nbsp;&nbsp;      &lt;/definition&gt;<br />
+      &nbsp;&nbsp;      &nbsp;&nbsp;      &lt;application&gt;<br />
+      &nbsp;&nbsp;      &nbsp;&nbsp;      &nbsp;&nbsp;      &lt;apply toObject='Grp1' styles='myShadow'/&gt;<br />
+      &nbsp;&nbsp;      &nbsp;&nbsp;      &lt;/application&gt;<br />
+      &nbsp;&nbsp;      &lt;/styles&gt;<br />
+      ...<br />
+    &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we have made a style called <span class="codeInline">myShadow</span> the usual way and then applied it to the annotatation group which is referred to using its ID <span class="codeInline">Grp1</span>. So whenever you have to apply Styles to annotations, you have to make an annotation group, put the annotation in the annotation group and then just name the ID in the <span class="codeInline">toOject</span> attribute of the <span class="codeInline">&lt;apply&gt;</span> element. In case you are not familiar with Styles, then please have a look at the Styles section. </p>
+    <p>The rectangle will now look like this: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Styles1.gif" width="116" height="114" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Similarly you can apply Glow, Bevel and Blur effects as well to the annotations. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Animating annotations  </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Animating annotations is very similar to applying effects to annotations. Just that here we will use the <em>Animation</em> style intead of the other styles we used to apply effects. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+      ...<br />
+       &nbsp;&nbsp;&nbsp;&lt;annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' &gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='rectangle' color='639ACE' x='50' y='50' toX='150' toY='150'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style name='myAnim' type='animation' param='_x' start='-50' easing='Bounce' duration='0.5'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Grp1' styles='myAnim'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+      ...<br />
+    &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">We create an animation style called <span class="codeInline">myAnim</span> which animates the x-position of the object we apply to. Here, we apply it to the annotation group <span class="codeInline">Grp1</span> which contains the rectangle. You can place any number of annotations in <span class="codeInline">Grp1</span> and also create any number of annotation groups and then apply <span class="codeInline">myAnim</span> (or any other animation style) to each of them separately. </td>
+  </tr>
+</table>
+</body>
+</html>

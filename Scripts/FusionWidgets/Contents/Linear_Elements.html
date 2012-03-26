@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Linear Gauge &gt; Elements of the gauge </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>A linear gauge chart can consist of the following elements: </p>
+      <ul>
+        <li>Horizontal scale (Color Range) </li>
+        <li>Pointers (Data Value Indicator) </li>
+        <li>Tick Marks &amp; Values</li>
+        <li>Trend points &amp; Trend zones  </li>
+        <li>Annotations</li>
+      </ul>
+      <p>Here we&rsquo;ll see each of them in detail. Let&rsquo;s first have a look at a standard   linear gauge chart enlisting the various basic components:<br />
+      </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LinearAnatomy.jpg" width="500" height="150" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><U>Horizontal Scale</U><br />
+      The linear gauge chart is defined by minimum and   maximum values. Within that scale you can create various ranges to classify your   data. There can be any number of ranges as you wish to. For each range, you&rsquo;ll   have to specify the minimum and maximum limits, a name for the range and the hex   color for the range. Like in the above chart, we have the chart with upper limit   as 9 and lower limit as 0. And the color ranges are 0-2, 2-6 and 6-9 and the   range names are Micro, Moderate and Strong respectively.
+      <p><em>Note: Each color range should have its own unique range value. That is   say, if a range is defined as 0-2, the next range should have the minimum value   as 2 necessarily. It cannot have anything other than this. Similarly, if the   upper limit of the chart is 9, the last range should have max value as   9.</em></p>
+      <p><U>Data Pointer</U><br />
+        Data pointer is the data indicator on the chart on the   linear gauge charts. You can define the number of sides (polygonal shape) of the   pointer, it&rsquo;s border and background color and it&rsquo;s radius. You can also define multiple pointers with different values and cosmetics for each one of them. </p>
+      <p><U>Tick Marks</U><br />
+        Tick marks are the calibration marks on the horizontal   scale to help interpret the reading. There are two types of tick marks which can   be drawn on the chart:</p>
+      <ul>
+        <li>Major Tick Marks &ndash; These are the bigger lines below the scale. </li>
+        <li>Minor Tick Marks &ndash; These are the smaller lines enclosed within the bigger   lines. </li>
+      </ul>
+      <p>For all the tick marks, you can specify the color and the height. You can   also opt to show/hide the tick mark values.</p>
+      <p><U>Trend Points / Trend zones </U><br />
+      The linear gauge chart   allows you to define trend points on the chart. For example, if you wish to   highlight a certain value (say like last year&rsquo;s average), you could use the   trend point feature to do so. </p>
+      <p><U>Annotations</U><br />
+      Annotations allow you to draw your own custom   shapes, text, or load images on the chart.</p>
+      <p>Now that we are aware of the basic components that make up a linear gauge,   lets go ahead to build a sample linear gauge.<br />
+    </p></td>
+  </tr>
+</table>
+</body>
+</html>

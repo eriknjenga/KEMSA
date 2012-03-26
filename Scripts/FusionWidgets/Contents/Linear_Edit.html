@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Linear Gauge &gt; Edit Mode </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The linear gauge in FusionWidgets v3 suite can also act as an input control,   allowing users to visually drag &amp; change the value of pointer. Once the value   is updated, it can be retrieved from the chart using client side JavaScript. </p>
+      <p>Here, we'll see how to do the same. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Setting the chart to register with JavaScript </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>First, we need to register the chart with JavaScript by setting <span class="codeInline">registerWithJS</span> flag to 1, as under. This is required   because we'll need to retrieve the chart's update value using JavaScript. </p>
+    <p>(Note the last parameter set as 1) </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">var chart1 = new FusionCharts(&quot;HLinearGauge.swf&quot;, &quot;ChId1&quot;, &quot;450&quot;, &quot;150&quot;, &quot;0&quot;,   &quot;1&quot;);</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Setting editMode to 1 </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Next, we need to tell the chart to switch the edit mode on. This can be done   either at the global level using:</p>
+      <p class="codeInline">&lt;chart ... editMode='1' ..&gt;</p>
+      <p>This makes all the pointers present on the chart editable. </p>
+      <p>Or, you can make individual pointer editable using:</p>
+      <p class="codeInline">&lt;pointer ... editMode='1' ..&gt;</p>
+    <p>This enables the particular pointer to be editable. The user can now   drag that pointer to change its value. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">JavaScript Event &amp; Retrieving value </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Once the user has changed the value of the gauge, the chart automatically   calls <span class="codeInline">FC_ChartUpdated(DOMId)</span> JavaScript function. </p>
+    <p>You'll have to define this method in your HTML page and then write JavaScript   code to retrieve the data using <span class="codeInline">getData(index)</span> or   <span class="codeInline">getDataForId(id)</span> method. Let's quickly see an   example. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">An Example </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>We'll build a simple example to let the user choose his satisfaction % using   a linear gauge chart. Once he has selected the value, we'll simply display it   within the HTML page. </p>
+    <p class="highlightBlock">In your real-life application, you could use the return   value to assign to a hidden form field and then submit the form to server side   scripts for processing. </p>
+    <p>The chart will use the following XML: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart lowerLimit='0' upperLimit='100' lowerLimitDisplay='Bad' upperLimitDisplay='Good' palette='1' numberSuffix='%' chartRightMargin='20' editMode='1' decimals='0'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='75' code='FF654F' label='Bad'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='90' code='F6BD0F' label='Moderate'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='100' code='8BBA00' label='Good'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;pointers&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;pointer value='92' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/pointers&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='myValueFont' bgColor='F1f1f1' borderColor='999999' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Value' styles='myValueFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Here, we've defined 1 editable pointer (with ID as CS). When you run this chart, it   will look as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Edit1.jpg" width="454" height="104" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Let's now look at the HTML + JavaScript code required to retrieve data from   this pointer when user changes the value. We create an HTML page with the following   code.</p>
+    <p class="highlightBlock">This page is present in Download Package &gt; Code &gt;   LinearGauge &gt; EditMode.html</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;HTML&gt;<br />
+      &lt;HEAD&gt;<br />
+      &lt;TITLE&gt;FusionWidgets v3 - Edit Mode&lt;/TITLE&gt;<br />
+      &lt;script type=&quot;text/javascript&quot; src=&quot;../Charts/FusionCharts.js&quot;&gt;&lt;/script&gt;<br />
+      &lt;script language=&quot;javascript&quot;&gt;<br />
+&nbsp;&nbsp;<span class="codeComment">&nbsp;//FC_ChartUpdated method is called when user has changed pointer value.</span><br />
+&nbsp;&nbsp;&nbsp;function FC_ChartUpdated(DOMId){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Check if DOMId is that of the chart we want</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (DOMId==&quot;ChId1&quot;){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Get reference to the chart</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var chartRef = getChartFromId(DOMId);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Get the current value</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var pointerValue = chartRef.getData(1); <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//You can also use getDataForId method as commented below, to get the pointer value.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//var pointerValue = chartRef.getDataForId(&quot;CS&quot;); <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Update display</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var divToUpdate = document.getElementById(&quot;contentDiv&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;divToUpdate.innerHTML = &quot;&lt;span class='text'&gt;Your satisfaction index: &lt;B&gt;&quot; + Math.round(pointerValue) + &quot;%&lt;/B&gt;&lt;/span&gt;&quot;;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;} <br />
+&lt;/script&gt;<br />
+&lt;style type=&quot;text/css&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;.text{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family:Arial, Helvetica, sans-serif;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size:10pt;<br />
+&nbsp;&nbsp;&nbsp;}<br />
+&lt;/style&gt;<br />
+&lt;/HEAD&gt;<br />
+&lt;BODY&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;CENTER&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;chart1div&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This text is replaced by the Flash movie.<br />
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;script type=&quot;text/javascript&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var chart1 = new FusionCharts(&quot;../Charts/HLinearGauge.swf&quot;, &quot;ChId1&quot;, &quot;450&quot;, &quot;100&quot;, &quot;0&quot;, &quot;1&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chart1.setDataURL(&quot;EditMode.xml&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chart1.render(&quot;chart1div&quot;);<br />
+&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;BR&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;DIV id=&quot;contentDiv&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='text'&gt;Please drag the pointer above to indicate your satisfaction index.<br />
+&nbsp;&nbsp;&nbsp;&lt;/DIV&gt;<br />
+&lt;/BR&gt;<br />
+&lt;/BODY&gt;<br />
+&lt;/HTML&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we're:</p>
+      <ol>
+        <li>Creating a linear gauge with registerWithJS   flag set as 1. This enables the chart to communicate with JavaScript. </li>
+        <li>We initialize the chart with data provided by <span class="codeInline">EditMode.xml</span> (containing the data listed above). </li>
+        <li>The chart now renders in edit mode and the pointer can be dragged to any value. </li>
+        <li>Whenever the pointer value is now changed, the chart calls <span class="codeInline">FC_ChartUpdated(DOMId)</span> JavaScript function. </li>
+        <li>In this function, we first check if the event was raised by our chart. We do   so by matching the DOM Id of the chart. </li>
+        <li>If the DOM Id matches, we retrieve the new data of chart using <span class="codeInline">getData(pointerIndex)</span> method. This method returns the   numeric value of a particular pointer based on its pointer index. The first pointer on   the chart bears an index of 1, second 2 and so on. </li>
+        <li>We finally change the content of the <span class="codeInline">contentDiv</span> to show this value (for demo purpose). </li>
+      </ol>
+    <p>When you run this example, you'll get the following result (after changing   pointer value): </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Edit2.jpg" width="456" height="143" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Instead of <span class="codeInline">getData(index)</span> method, you can also   use <span class="codeInline">getDataForId(pointerId)</span> method to retrieve pointer's   value as under:</p>
+      <p class="codeInline">var pointerValue = chartRef.getDataForId(&quot;CS&quot;);</p>
+      <p>Here, CS was the pointer ID we had specified in   XML. </p>
+      <p>So, you just saw how easy it is to create editable linear gauges using   FusionWidgets. </p></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Gantt Chart &gt; Multi-tasked processes </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>In all our previous examples, we've seen how to allot one task for each process. However, in real life scenarios, you can have multiple tasks allotted for each process. For example, consider a Gantt chart showing &quot;Employee Schedule&quot; with each employee as a process. There, you might have to need to create multiple tasks for each employee. FusionWidgets Gantt chart allows you to do so by mapping tasks and processes using IDs. Here, we'll see an example of that. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Example Data to plot: Employee Schedule </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">For this example, we'll be plotting a Gantt chart showing the scheduled work list for each employee during a particular week. The data can be visualized as under in a data table (all dates are in dd/mm/yyyy format) </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="90%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="22%" class="header">Employee Name </td>
+        <td width="18%" class="header">Employee ID </td>
+        <td width="16%" class="header">Which team? </td>
+        <td width="44%" class="header">Alloted tasks for this week </td>
+      </tr>
+      <tr>
+        <td width="22%" valign="top" class="text">John.S</td>
+        <td width="18%" valign="top" class="text">EMP121</td>
+        <td width="16%" valign="top" class="text">Graphics</td>
+        <td valign="top" class="text"><table width="95%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#f1f1f1">
+          <tr>
+            <td width="38%" class="textBold">Date</td>
+            <td width="62%" class="textBold">Task</td>
+          </tr>
+          <tr>
+            <td valign="top" class="text">16/07/2007 </td>
+            <td valign="top" class="text">Product A Logo</td>
+          </tr>
+          <tr>
+            <td valign="top" class="text">18/07/2007 </td>
+            <td valign="top" class="text">Website design</td>
+          </tr>
+          <tr>
+            <td valign="top" class="text">20/07/2007</td>
+            <td valign="top" class="text">Brochure design</td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td width="22%" valign="top" class="text">David.G</td>
+        <td width="18%" valign="top" class="text">EMP122</td>
+        <td width="16%" valign="top" class="text">ASP.NET</td>
+        <td valign="top" class="text"><table width="95%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#f1f1f1">
+          <tr>
+            <td width="38%" class="textBold">Date</td>
+            <td width="62%" class="textBold">Task</td>
+          </tr>
+          <tr>
+            <td valign="top" class="text">16/07/2007 to 21/07/2007</td>
+            <td valign="top" class="text">C# Wrapper development</td>
+          </tr>
+
+        </table></td>
+      </tr>
+      <tr>
+        <td width="22%" valign="top" class="text">Mary.P</td>
+        <td width="18%" valign="top" class="text">EMP123</td>
+        <td width="16%" valign="top" class="text">PHP</td>
+        <td valign="top" class="text"><table width="95%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#f1f1f1">
+          <tr>
+            <td width="38%" class="textBold">Date</td>
+            <td width="62%" class="textBold">Task</td>
+          </tr>
+          <tr>
+            <td valign="top" class="text">18/07/2007 to 20/07/2007 </td>
+            <td valign="top" class="text">PHP Blueprint application</td>
+          </tr>
+
+        </table></td>
+      </tr>
+      <tr>
+        <td width="22%" valign="top" class="text">Andrew.H</td>
+        <td valign="top" class="text">EMP124</td>
+        <td width="16%" valign="top" class="text">Flash</td>
+        <td valign="top" class="text"><table width="95%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#f1f1f1">
+          <tr>
+            <td width="38%" class="textBold">Date</td>
+            <td width="62%" class="textBold">Task</td>
+          </tr>
+          <tr>
+            <td valign="top" class="text">16/07/2007 </td>
+            <td valign="top" class="text">Pie Chart Bug Fix</td>
+          </tr>
+          <tr>
+            <td valign="top" class="text">18/07/2007 to 21/07/2007 </td>
+            <td valign="top" class="text">Flex Research</td>
+          </tr>
+
+        </table></td>
+      </tr>
+      <tr>
+        <td width="22%" valign="top" class="text">Neil.M</td>
+        <td valign="top" class="text">EMP125</td>
+        <td width="16%" valign="top" class="text">Documentation</td>
+        <td valign="top" class="text"><table width="95%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#f1f1f1">
+          <tr>
+            <td width="38%" class="textBold">Date</td>
+            <td width="62%" class="textBold">Task</td>
+          </tr>
+          <tr>
+            <td valign="top" class="text">16/07/2007 to 21/07/2007</td>
+            <td valign="top" class="text">FusionWidgets Documentation</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, we're:</p>
+      <ul>
+        <li>Going to use employee as a process for the Gantt chart.</li>
+        <li>We've assigned an employee Id to each employee. We'll be using this in our XML. It is this ID which will be used to map the tasks with employees.</li>
+        <li>Defined multiple tasks for employees.</li>
+        <li>Additionally, we've given a task ID to each task (not shown in the table above).</li>
+      </ul>
+    <p>When you dynamically generate the Gantt chart's XML data from your database, in all probability you'll have internal IDs defined for each task and each process. You can use that IDs as the process ID and task ID. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Converting to XML </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The above table when converted to XML looks as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart scrollColor='99CCCC' scrollPadding='3' scrollHeight='20' scrollBtnWidth='28' scrollBtnPadding='3' dateFormat='dd/mm/yyyy' caption='Employee Schedule' subCaption='From 15th June 2007 - 21st June 2007' ganttPaneDuration='57' ganttPaneDurationUnit='d'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='15/07/2007' end='22/07/2007' label='Week 3' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='15/07/2007' end='16/07/2007' label='Sun' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='16/07/2007' end='17/07/2007' label='Mon' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='17/07/2007' end='18/07/2007' label='Tue' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='18/07/2007' end='19/07/2007' label='Wed' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='19/07/2007' end='20/07/2007' label='Thu' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='20/07/2007' end='21/07/2007' label='Fri' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='21/07/2007' end='22/07/2007' label='Sat' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;processes fontSize='12' isBold='1' align='left' headerText='Who?' headerFontSize='18' headerVAlign='bottom' headerAlign='left'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='John.S' id='EMP121'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='David.G' id='EMP122'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Mary.P' id='EMP123'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Andrew.H' id='EMP124'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Neil.M' id='EMP125'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/processes&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;datatable headerVAlign='bottom'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;datacolumn headerText='Team?' headerFontSize='18' headerVAlign='bottom' headerAlign='left' align='left' fontSize='12' &gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Graphics' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='ASP.NET' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='PHP' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Flash' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Documentation' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/datacolumn&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/datatable&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;tasks showLabels='1'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP121' id='TSK1311' start='16/07/2007' end='17/07/2007' label='Product A Logo'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP121' id='TSK1325' start='18/07/2007' end='19/07/2007' label='Website design'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP121' id='TSK1329' start='20/07/2007' end='21/07/2007' label='Brochure design'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP122' id='TSK1393' start='16/07/2007' end='22/07/2007' label='C# Wrapper development'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP123' id='TSK1398' start='18/07/2007' end='21/07/2007' label='PHP Blueprint application'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP124' id='TSK1498' start='16/07/2007' end='17/07/2007' label='Pie Chart Bug Fix'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP124' id='TSK1499' start='18/07/2007' end='22/07/2007' label='Flex Research'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='EMP125' id='TSK1512' start='16/07/2007' end='22/07/2007' label='FusionWidgets Documentation'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/tasks&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the above XML, we've:</p>
+      <ul>
+        <li>Defined the visual timeline (categories) to show days in 3rd week of July 2007. </li>
+        <li>Defined each employee as a process and assigned the employee ID as process ID</li>
+        <li>Added each employee's team name as additional data column</li>
+        <li>Defined each task with it's own ID. Each task is linked to its employee using the process ID. </li>
+      </ul>
+    <p>When you now view this chart, you'll get something as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_MultiTask.gif" width="580" height="374" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Showing projected vs actual dates  </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The technique of allotting multiple tasks can be used effectively to show projected vs actual duration for different tasks. Consider the chart below: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_MultiTask2.gif" width="592" height="378" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the above chart, we're showing the time required by various tasks in a construction process. We've shown the projected time required in blue and actual time required in a shade of grey.</p>
+    <p>This was done using the following XML:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart palette='2' caption='Construction Timeline' dateFormat='dd/mm/yyyy' outputDateFormat='ddds mns' &gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='1/5/2008' end='31/8/2008' label='Months' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='1/5/2008' end='31/5/2008' label='May' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='1/6/2008' end='30/6/2008' label='June' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='1/7/2008' end='31/7/2008' label='July' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='1/8/2008' end='31/8/2008' label='August' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;processes headerText='Task' headerFontSize='16' fontSize='12'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Terrace' id='TRC' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Inspection' id='INS' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Wood Work' id='WDW' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Interiors' id='INT' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/processes&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;tasks showLabels='1' showEndDate='1'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task label='Planned' processId='TRC' start='5/5/2008' end='2/6/2008' id='5-1' color='4567aa' height='25%' topPadding='22%' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task label='Actual' processId='TRC' start='10/5/2008' end='2/6/2008' id='5' color='EEEEEE' height='25%' topPadding='70%'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task label='Planned' processId='INS' start='11/5/2008' end='12/6/2008' id='6-1' color='4567aa' height='25%' topPadding='22%' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task label='Actual' processId='INS' start='13/5/2008' end='19/6/2008' id='6' color='EEEEEE'  height='25%' topPadding='70%'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task label='Planned' processId='WDW' start='1/6/2008' end='12/7/2008' id='7-1' color='4567aa' height='25%' topPadding='22%' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task label='Actual' processId='WDW' start='2/6/2008' end='19/7/2008' id='7' color='EEEEEE'  height='25%' topPadding='70%'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task label='Planned' processId='INT' start='1/6/2008' end='12/8/2008' id='8-1' color='4567aa' height='25%' topPadding='22%' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task label='Actual' processId='INT' start='1/6/2008' end='19/8/2008' Id='8' color='EEEEEE' height='25%' topPadding='70%' /&gt; <br />
+&nbsp;&nbsp;&nbsp;&lt;/tasks&gt;<br />
+&lt;/chart&gt;<br /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To achieve this, we've done the following:</p>
+      <ul>
+        <li>Defined each construction task as a process with its unique ID</li>
+        <li>Defined the estimated time required for each task with its own ID and the mapped process ID. Also, we've set the <span class="codeInline">topPadding</span> of this task bar to 22% and <span class="codeInline">height</span> as 25%</li>
+        <li>Defined the actual time required for each task with its own ID and the mapped process ID. For this task, we've set <span class="codeInline">topPadding</span> as 70% (to show below the estimated time bar) and <span class="codeInline">height</span> as 25%  </li>
+    </ul></td>
+  </tr>
+</table>
+</body>
+</html>

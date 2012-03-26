@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Bullet Graph &gt; Various configurations </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>FusionWidgets bullet graphs allow you to configure a lot of its functional and cosmetic properties. Here, we'll see how to:</p>
+      <ul>
+        <li><a href="#palette">Use pre-defined &amp; custom palettes </a></li>
+        <li><a href="#plot">Customize plot &amp; target properties</a></li>
+        <li><a href="#colorrange">Customize color range properties</a></li>
+        <li><a href="#tick">Customize tick marks</a></li>
+        <li><a href="#point">Plotting as point instead of filled bar    </a></li>
+        <li><a href="#value">Showing/hiding chart value </a></li>
+      </ul>
+      <p>Let's see each of them one by one. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="palette" id="palette"></a>Using palettes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The bullet graphs offer 5 pre-defined color palettes for you to   choose from. Each of these palettes are accessible by the number 1-5. To choose   a palette, all you need to do is set: </p>
+      <p class="codeInline">&lt;chart palette='2' or '3' or ..&gt;</p>
+    <p>Shown below are a few examples of palettes applied on our previous graph: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/BulletGraph_Palette2.jpg" width="455" height="74" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Palette 2 applied </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/BulletGraph_Palette3.jpg" width="454" height="74" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Palette 3 applied </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/BulletGraph_Palette4.jpg" width="454" height="74" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Palette 4 applied </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Additionally,  you can also define an entire new palette by setting a   single theme color using:</p>
+      <p class="codeInline">&lt;chart paletteThemeColor='669933' palette='2'..&gt;</p>
+      <p>This will create a new palette derived from this color and then color the   chart as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/BulletGraph_Palette5.jpg" width="454" height="75" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="plot" id="plot"></a>Customizing plot &amp; target properties </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can customize the plot &amp; target color properties using:</p>
+    <p class="codeInline">&lt;chart ... plotFillColor='CC0000' plotFillAlpha='90' targetColor='CC0000' targetThickness='4' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bullet_Plot1.jpg" width="456" height="76" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also add a border to the plot bar using:</p>
+    <p class="codeInline">&lt;chart ... plotFillColor='CCCCCC' showPlotBorder='1' plotBorderColor='333333' plotBorderThickness='1' plotBorderAlpha='100' ..&gt;</p>
+    <p>This will result in:</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bullet_Plot2.jpg" width="453" height="74" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure the thickness (height in horizontal bullet graph; width in vertical bullet graph) of the value bar and target line using:</p>
+    <p class="codeInline">&lt;chart ... plotFillPercent='20' targetFillPercent='25' ...&gt;</p>
+    <p>Here, we've made both the plot bar and target line thinner, as shown below:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bullet_Plot3.jpg" width="454" height="74" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="colorrange" id="colorrange"></a>Customizing color range properties </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can specify the color range's gradient mix and ratio in FusionWidgets gradient formula as under:</p>
+      <p class="codeInline">&lt;chart ... colorRangeFillMix='{light-30},{dark-10},{color}' colorRangeFillRatio='5,10,85' ..&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bullet_CR1.jpg" width="454" height="75" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To get a 2D look (without any gradient), you can set:</p>
+    <p class="codeInline">&lt;chart ... colorRangeFillMix='' ...&gt; </p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bullet_CR2.jpg" width="453" height="74" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can remove the chart's shadow using:</p>
+    <p class="codeInline">&lt;chart ... showShadow='0' ...&gt;  </p>
+    <p class="text">This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bullet_CR3.jpg" width="454" height="74" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also opt to show color range border using: </p>
+    <p class="codeInline">&lt;chart ... showColorRangeBorder='1' colorRangeBorderColor='666666' colorRangeBorderThickness='1' colorRangeBorderAlpha='100' colorRangeFillMix='' showShadow='0' ..&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bullet_CR4.jpg" width="454" height="73" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="tick" id="tick"></a>Tick mark customizations </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In a horizontal bullet graph, you can opt to show tick marks below the graph or above the graph. In a vertical, you can choose whether to show it at left or right. In horizontal, to move the tick marks up, you'll need to set:</p>
+    <p class="codeInline">&lt;chart ... ticksBelowGraph='0' ..&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bullet_Ticks1.jpg" width="454" height="74" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can hide tick marks and values using:</p>
+    <p class="codeInline">&lt;chart ... showTickMarks='0' showTickValues='0' ...&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bullet_Ticks2.jpg" width="453" height="74" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can control the number of tick marks using:</p>
+    <p class="codeInline">&lt;chart ... majorTMNumber='6' minorTMNumber='3' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bullet_Ticks3.jpg" width="455" height="75" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can customize tick mark properties using:</p>
+    <p class="codeInline">&lt;chart ... majorTMColor='AAAAAA' majorTMAlpha='100' majorTMHeight='10' majorTMThickness='1' minorTMColor='BBBBBB' minorTMAlpha='100' minorTMHeight='6' minorTMThickness='1' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bullet_Ticks4.jpg" width="454" height="74" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="point" id="point"></a>Plotting as point instead of bar </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to show the plot as point, instead of bar, using:</p>
+    <p class="codeInline">&lt;chart ... plotAsDot='1' ...&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bullet_Dot.jpg" width="454" height="75" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="value" id="value"></a>Hiding chart value </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can hide chart value by setting:</p>
+    <p class="codeInline">&lt;chart ... showValue='0' chartRightMargin='30' ...&gt;</p>
+    <p>Here, we've also increased the chart's right margin, so that the axis values do not go out of chart. You'll get a chart as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bullet_Value.jpg" width="454" height="75" /></td>
+  </tr>
+</table>
+</body>
+</html>

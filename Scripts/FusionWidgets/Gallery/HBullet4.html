@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>FusionGadgets Chart Gallery - Bullet Graph</title>
+	<script language="JavaScript" src="../JSClass/FusionCharts.js"></script>
+    <style type="text/css">
+<!--
+.style2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+-->
+    </style>
+</head>
+<body bgcolor="#ffffff">
+<table width='370' align='center' cellpadding='2' cellspacing='0' style='border:1px #cccccc solid;'>
+  <tr >
+  <td  align="center">
+   <div id="chart1div" align="center">FusionGadgets</div>
+   <script type="text/javascript">
+	var myChart1 = new FusionCharts("../Charts/HBullet.swf", "myChart1Id", "350", "60", "0", "0");
+	myChart1.setDataURL("Data/HBullet4_1.xml");
+	myChart1.render("chart1div");
+   </script>   </td>
+   </tr>
+   <tr>
+     <td align="center">
+	 <div id="chart2div" align="center">FusionGadgets</div>
+   <script type="text/javascript">
+	var myChart2 = new FusionCharts("../Charts/HBullet.swf", "myChart2Id", "350", "60", "0", "0");
+	myChart2.setDataURL("Data/HBullet4_2.xml");
+	myChart2.render("chart2div");
+   </script>	 </td>
+   </tr>
+   <tr>
+     <td align="center">
+	 <div id="chart3div" align="center">FusionGadgets</div>
+   <script type="text/javascript">
+	var myChart3 = new FusionCharts("../Charts/HBullet.swf", "myChart3Id", "350", "60", "0", "0");
+	myChart3.setDataURL("Data/HBullet4_3.xml");
+	myChart3.render("chart3div");
+   </script>	 </td>
+   </tr>
+   <tr>
+     <td align="center">
+	 <div id="chart4div" align="center">FusionGadgets</div>
+   <script type="text/javascript">
+	var myChart4 = new FusionCharts("../Charts/HBullet.swf", "myChart4Id", "350", "60", "0", "0");
+	myChart4.setDataURL("Data/HBullet4_4.xml");
+	myChart4.render("chart4div");
+   </script>	 </td>
+   </tr>
+   <tr>
+     <td align="center">
+	 <div id="chart5div" align="center">FusionGadgets</div>
+   <script type="text/javascript">
+	var myChart5 = new FusionCharts("../Charts/HBullet.swf", "myChart5Id", "350", "60", "0", "0");
+	myChart5.setDataURL("Data/HBullet4_5.xml");
+	myChart5.render("chart5div");
+   </script>	 </td>
+   </tr>
+   </table>
+<BR>
+     <div align="center"><span class="style2">Multiple graphs placed vertically next to each other. To maintain the same canvas start position, it has been manually set in the XML.</span> </div>
+
+   
+
+</body>
+</html>

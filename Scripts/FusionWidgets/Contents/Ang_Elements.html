@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Angular Gauge &gt; Elements of the gauge </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>An angular gauge chart consists of the following elements:</p>
+      <ul>
+        <li>Color Range (Radial scale) </li>
+        <li>Dials (Data Value Indicators) </li>
+        <li>Tick Marks &amp; Values </li>
+        <li>Tool Tip</li>
+        <li>Trend points, trend arcs &amp; trend markers </li>
+        <li>Annotations</li>
+      </ul>
+      <p>Here we&rsquo;ll see each of them in detail. Let&rsquo;s first have a look at a standard   angular gauge chart enlisting the various basic components:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/AngularAnatomy.jpg" width="549" height="325" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><U>Color Range</U><br />
+      The angular chart displays the data values on a radial   scale. The radial scale is marked by a lower limit and an upper limit, i.e. the   minimum and maximum values that can be plotted on the chart. Within that scale,   you can create various sections to classify your data - each section can have a   different background color, border color etc. to differentiate them from one   another. These sections are called color ranges. In the above chart, we have 3   color ranges marked as green, yellow and red. There can be any number of color   ranges. For each color range, you&rsquo;ll have to specify the minimum and maximum   values, and the hex color code for the range.
+      <p><em>Note: Each color range should have its own unique range value. That is   say, if a range is defined as 0-50, the next range should have the minimum value   as 50 necessarily. It cannot have anything other than this. Similarly, if the   upper limit of the chart is 100, the last range should have max value as   100.</em></p>
+      <p><U>Dials (Data Indicators)</U><br />
+        In an angular gauge, dials are used to   point to the desired value. You can point to more than one value using multiple   dials. Each dial can have its individual properties like color (border and   background), width (both base and top), radius and value of the dial.</p>
+      <p><U>Tick Marks</U><br />
+        Tick marks are the calibration marks on the radial scale   to help interpret the reading. There are two types of tick marks which can be   drawn on the chart:</p>
+      <ul>
+        <li>Major Tick Marks &ndash; These are the bigger lines around the radial scale. </li>
+        <li>Minor Tick Marks &ndash; These are the smaller lines enclosed within the bigger   lines. </li>
+      </ul>
+      <p>For all the tick marks, you can specify the color, height and thickness. You   can also specify the number of tick makrs that you want to have on the chart.   You have the option to show/hide the tick mark values as well.</p>
+      <p><U>Tool Tip</U><br />
+      For each dial on the chart, FusionWidgets   allows you to set a tool tip to display the value indicated by that particular   dial. You can customize the tool tip background color and border color. You can   also opt to show/hide it.</p>
+      <p><U>Trend Points / Trend arcs / Trend markers </U><br />
+      The angular gauge chart allows you to define trend   points on the chart. For example, if you wish to highlight a certain value (say   like last year&rsquo;s average), you could use the trend point feature to do so. </p>
+      <p><U>Annotations</U><br />
+      Annotations allow you to draw your own custom   shapes, text, or load images on the chart. </p>
+      <p>Now that you know the potential of the angular chart, let's go ahead and   build a sample angular gauge.<br />
+    </p></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" /></head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Creating your First Chart &gt; Multiple Charts in a single page </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Using FusionWidgets, you can embed any number of charts in the same HTML page. The process of embedding multiple charts is similar to that of embedding a single chart. You just need to take care of the following:</p>
+      <ul>
+        <li>Each chart on the page should reference a different DIV to render.</li>
+        <li>Each chart on the page should have a different ID (specified in the JavaScript container)</li>
+        <li>Each chart has it's own JavaScript variable name (e.g.,<span class="codeInline"> var chart1 = new FusionCharts(...); var chart2 = new FusionCharts(...); </span>) </li>
+      </ul>      
+    <p>Shown below is an example page containing multiple charts. The page is named as <span class="codeInline">MultiChart.html</span> and is stored in <span class="codeInline">MyFirstChart</span> folder itself. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;html&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;head&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script language=&quot;JavaScript&quot; src=&quot;../Charts/FusionCharts.js&quot;&gt;&lt;/script&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/head&gt;</p>
+      <p>&nbsp;&nbsp;&nbsp;&lt;body bgcolor=&quot;#ffffff&quot;&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id=&quot;chart1div&quot; align=&quot;center&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        The chart will appear within this DIV. This text will be replaced by the chart.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type=&quot;text/javascript&quot;&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var myChart1 = new FusionCharts(&quot;../Charts/AngularGauge.swf&quot;, &quot;myChart1Id&quot;, &quot;400&quot;, &quot;200&quot;, &quot;0&quot;, &quot;0&quot;);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myChart1.setDataURL(&quot;Data.xml&quot;);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myChart1.render(&quot;chart1div&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;</p>
+      <p>
+        <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id=&quot;chart2div&quot; align=&quot;center&quot;&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The chart will appear within this DIV. This text will be replaced by the chart.<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type=&quot;text/javascript&quot;&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var myChart2 = new FusionCharts(&quot;../Charts/HLinearGauge.swf&quot;, &quot;myChart2Id&quot;, &quot;400&quot;, &quot;100&quot;, &quot;0&quot;, &quot;0&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myChart2.setDataURL(&quot;CostPerDownload.xml&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myChart2.render(&quot;chart2div&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;</p>
+      <p>
+        <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id=&quot;chart3div&quot; align=&quot;center&quot;&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The chart will appear within this DIV. This text will be replaced by the chart.<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type=&quot;text/javascript&quot;&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var myChart3 = new FusionCharts(&quot;../Charts/HBullet.swf&quot;, &quot;myChart3Id&quot;, &quot;400&quot;, &quot;60&quot;, &quot;0&quot;, &quot;0&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myChart3.setDataURL(&quot;ProfitPerSale.xml&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myChart3.render(&quot;chart3div&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;</p>
+      <p>&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br />
+        &lt;/html&gt;<br />
+    </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see here, we've embedded three charts in the page:</p>
+      <ol>
+        <li><span class="codeInline">AngularGauge.swf</span> with chart ID as <span class="codeInline">myChart1Id</span>, div ID as <span class="codeInline">chart1div</span> and chart variable as <span class="codeInline">myChart1</span></li>
+        <li><span class="codeInline">HLinearGauge.swf</span> with chart ID as <span class="codeInline">myChart2Id</span>, div ID as <span class="codeInline">chart2div</span> and chart variable as <span class="codeInline">myChart2</span></li>
+        <li><span class="codeInline">HBullet.swf</span> with chart ID as <span class="codeInline">myChart3Id</span>, div ID as <span class="codeInline">chart3div</span> and chart variable as <span class="codeInline">myChart3</span> </li>
+      </ol>
+    <p>We've also built 2 new XMLs for the linear gauge and bullet graph. We've not shown them here, as we'll covering them in the XML structure of the respective charts. </p>
+    <p>When you finally view the HTML page (with some formatting applied to above code), you'll get a result as shown under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/MultiChart.jpg" width="410" height="444" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Using the above way, you can embed any number of charts in your HTML page. You can even mix charts and maps from different products in FusionCharts suite (FusionCharts v3, FusionMaps v3, PowerCharts v3 &amp; FusionWidgets v3) and use them on the same page. </td>
+  </tr>
+</table>
+</body>
+</html>

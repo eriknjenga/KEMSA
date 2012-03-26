@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Data-streaming charts &gt; JavaScript API </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we'll see all the APIs exposed by data-streaming charts - the one which we've discussed previously and the ones which we've not.  </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="98%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="20%" class="header">Function Name </td>
+        <td width="20%" class="header">Parameter</td>
+        <td width="60%" class="header">Description</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="textBold">FusionWidgets general JavaScript API </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">setDataURL(strURL)</td>
+        <td valign="top" class="codeInline">strURL</td>
+        <td valign="top" class="text">Sets the chart to update its data from the specified URL </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">setDataXML(strXML)</td>
+        <td valign="top" class="codeInline">strXML</td>
+        <td valign="top" class="text">Sets the chart to update its data from the given string containing XML data </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      
+      <tr class="greyTr">
+        <td colspan="3" class="textBold">Data-streaming chart related APIs </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">feedData(strData)</td>
+        <td valign="top" class="codeInline">strData</td>
+        <td valign="top" class="text">This method feeds incremental data-stream to chart using JavaScript. The data stream has to be in the same format as provided by real-time data provider page. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">getData()</td>
+        <td valign="top" class="codeInline">None</td>
+        <td valign="top" class="text">This method returns the current data being shown on the chart as a JavaScript array. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">stopUpdate()</td>
+        <td valign="top" class="codeInline">None</td>
+        <td valign="top" class="text">This method stops the chart from self-updating itself. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">restartUpdate()</td>
+        <td valign="top" class="codeInline">None</td>
+        <td valign="top" class="text">If you've stopped the update of the chart, you can resume the update using this method. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">clearChart()</td>
+        <td valign="top" class="codeInline">None</td>
+        <td valign="top" class="text">This method clears the data currently being shown on the chart and sets the chart canvas afresh. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="textBold">Message logger related APIs</td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">showLog()</td>
+        <td valign="top" class="codeInline">None</td>
+        <td valign="top" class="text">This method shows the message logger, if it was previously hidden. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">hideLog()</td>
+        <td valign="top" class="codeInline">None</td>
+        <td valign="top" class="text">This method hides the message logger, if it's visible. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">clearLog()</td>
+        <td valign="top" class="codeInline">None</td>
+        <td valign="top" class="text">This method clears the message log contents. </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Additionally, you can control the annotations using JavaScript API, which has been discussed in the annotations sections.</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Troubleshooting</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>While accessing any of the JavaScripts methods listed above, if you get an error like<span class="codeInline"> &quot;... is not a function of ...&quot;</span>, make sure of the following points:</p>
+        <ul>
+          <li>You've set <span class="codeInline">registerWithJS</span> flag as 1 in the chart's constructor method.</li>
+          <li>You've not placed the chart inside a <span class="codeInline">FORM</span> element. When the chart is inside a <span class="codeInline">FORM</span> element, the browser cannot access the chart using DOM.</li>
+          <li>Make sure that you're not calling the JavaScript method before the chart has loaded and rendered. You need to use <span class="codeInline">FC_Rendered</span> function of chart to track the loading of chart as explained in the section &quot;FusionWidgets and JavaScript&quot;</li>
+          <li> Make sure that you're NOT running the chart from local file system (C:\ , D:\). Instead, run the chart from behind a server (localhost - IIS, Apache etc.). This is because the Flash Player security settings do not allow chart to JavaScript interaction on local file system by default, unless otherwise specifically set.<br />
+          </li>
+        </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

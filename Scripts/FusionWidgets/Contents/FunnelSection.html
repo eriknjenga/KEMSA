@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Funnel Chart &gt; Section Funnel Chart</h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>In the previous example we had shown how to create a streamlined funnel chart, i.e., chart whose data equals 100% when totalled. However, FusionWidgets also allows you to create non-streamlined charts, where  height of each funnel segment depicts its value with respect to the entire funnel height. There is no filtering of data involved in this case. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">An example </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">For a simple section funnel chart example, we'll plot the sales figures achieved by employees of a fictional company during the first 7 months of this year. The data can be rendered as under in tabular form: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="60%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="65%" class="header">Employee Name </td>
+        <td width="35%" class="header"><div align="right">Sales ($) </div></td>
+      </tr>
+      <tr>
+        <td class="text">Buchanan</td>
+        <td class="text"><div align="right">20,000</div></td>
+      </tr>
+      <tr>
+        <td class="text">Callahan</td>
+        <td class="text"><div align="right">49,000</div></td>
+      </tr>
+      <tr>
+        <td class="text">Davolio</td>
+        <td class="text"><div align="right">63,000</div></td>
+      </tr>
+      <tr>
+        <td class="text">Dodsworth</td>
+        <td class="text"><div align="right">41,000</div></td>
+      </tr>
+      <tr>
+        <td class="text">Fuller</td>
+        <td class="text"><div align="right">74,000</div></td>
+      </tr>
+      <tr>
+        <td class="text">King</td>
+        <td class="text"><div align="right">49,000</div></td>
+      </tr>
+      <tr>
+        <td class="text">Leverling</td>
+        <td class="text"><div align="right">77,000</div></td>
+      </tr>
+      <tr>
+        <td class="text">Peacock</td>
+        <td class="text"><div align="right">54,000</div></td>
+      </tr>
+      <tr>
+        <td class="text">Suyama</td>
+        <td class="text"><div align="right">14,000</div></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Converting to XML </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The above data when converted to XML would look as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart caption='Sales distribution by Employee' subCaption='Jan 07 - Jul 07' numberPrefix='$' isSliced='1' streamlinedData='0' isHollow='0'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Buchanan' value='20000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Callahan' value='49000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Davolio' value='63000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Dodsworth' value='41000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Fuller' value='74000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='King' value='49000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Leverling' value='77000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Peacock' value='54000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Suyama' value='14000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='captionFont' size='15' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='CAPTION' styles='captionFont' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+  &lt;/chart&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've:</p>
+      <ul>
+        <li>Defined the <span class="codeInline">&lt;chart&gt;</span> element with caption, sub-caption, number prefix. </li>
+        <li>To convey the chart that we're not plotting streamlined data, we also add <span class="codeInline">streamlinedData='0'</span> atttribute to <span class="codeInline">&lt;chart&gt;</span> element.</li>
+        <li>We also configure the funnel slices to show up as filled by setting<span class="codeInline"> isHollow='0'</span> and also set each slice to show separated from each other by setting <span class="codeInline">isSliced='1'</span> </li>
+        <li>Thereafter, we provide data for each employee.</li>
+        <li>Finally, we apply style to increase caption font size.  </li>
+      </ul>
+    <p>When you see this chart, you'll get a result as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Funnel_2.jpg" width="456" height="456" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, the chart has now rendered each funnel slice with a common slant angle. The height of each funnel represents its value.</p>
+    <p>Also, in this chart, since we've set <span class="codeInline">isSliced='1'</span> at chart level,  the slicing interaction won't work. </p></td>
+  </tr>
+</table>
+</body>
+</html>

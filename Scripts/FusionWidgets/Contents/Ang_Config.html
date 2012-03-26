@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Angular Gauge &gt; Configuration </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The angular gauge chart from FusionWidgets suite offers you a lot of configuration options. Here, we'll see how to:</p>
+      <ul>
+        <li><a href="#palette">Using palettes </a></li>
+        <li><a href="#gaugeFill">Configuring gauge gradient fill</a></li>
+        <li><a href="#gaugeBorder">Configuring gauge borders</a></li>
+        <li><a href="#gaugeRadius">Configuring gauge radius &amp; inner radius</a></li>
+        <li><a href="#pivot">Configuring pivot properties  </a></li>
+        <li><a href="#value">Showing dial values and placing them </a></li>
+      </ul>
+      <p>Let's see how to do each one of them. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="palette" id="palette"></a>Using palettes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The angular gauge offer 5 pre-defined color palettes for you to choose from.   Each of these palettes are accessible by the number 1-5. To choose a palette,   all you need to do is set: </p>
+      <p class="codeInline">&lt;chart palette='2' or '3' or ..&gt;</p>
+    <p>Shown below are a few examples of palettes applied on our previous chart: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Palette2.jpg" width="355" height="195" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Palette 2 applied </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Palette3.jpg" width="354" height="196" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Palette 3 applied </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Additionally,  you can also define an entire new palette by setting a   single theme color using:</p>
+      <p class="codeInline">&lt;chart paletteThemeColor='669933' ..&gt;</p>
+    <p>This will create a new palette derived from this color and then color the   chart as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_PaletteC.jpg" width="355" height="195" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="gaugeFill" id="gaugeFill"></a>Configuring gauge gradient fill </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets angular gauge allows you to configure the gradient fill mix of the gauge by specifying gradient fill formula as under:</p>
+    <p class="codeInline">&lt;chart ... gaugeFillMix='{light-10},{light-20},{light-60},{dark-30},{dark-40}, {dark-40}' gaugeFillRatio='' ..&gt;</p>
+    <p>Here, we've specified the fill mix as gradient formula (explained in section Advanced charting) and set   <span class="codeInline">gaugeFillRatio</span> as empty (so as to instruct chart to automatically distribute the gradient color constituents). The color sequence starts applying from the inner side to outer side of the gauge i.e., first color specified would apply to the inner radius side and then move out towards outer radius. </p>
+    <p>The gauge will look as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Mix1.jpg" width="356" height="197" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Another example:</p>
+    <p class="codeInline">&lt;chart ... gaugeFillMix='{dark-10},FFFFFF,{dark-10}' gaugeFillRatio='3' ..&gt;</p>
+    <p>It results in:      </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Mix2.jpg" width="355" height="196" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>More example:</p>
+    <p class="codeInline">&lt;chart ... gaugeFillMix='{light-10},{light-30},{light-20},{dark-5},{color},{light-30},{light-20},{dark-10}' gaugeFillRatio='' ..&gt;</p>
+    <p>Resulting in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Mix3.jpg" width="356" height="194" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="gaugeBorder" id="gaugeBorder"></a>Configuring gauge borders </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure to show/hide the gauge border. Additionally, you can configure to show the entire border in single color or a color derived from the color range fill color. </p>
+    <p>To hide the gauge border,  you can set: </p>
+    <p class="codeInline">&lt;chart ... showGaugeBorder='0' ...&gt; </p>
+    <p>This will result in (we've removed the shadow from this gauge to make the hidden border's effect more pronounced): </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Border1.jpg" width="355" height="196" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To set a single color as the border for entire gauge, you can set:</p>
+    <p class="codeInline">&lt;chart ... showGaugeBorder='1' gaugeBorderColor='666666' gaugeBorderThickness='1' gaugeBorderAlpha='100' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Border2.jpg" width="355" height="195" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Or, you can also ask the chart to color each color scale's border in a derivative of its fill color using:</p>
+    <p><span class="codeInline">&lt;chart ... gaugeBorderColor='{dark-30}'  ...&gt;</span> </p>
+    <p>Here, we've used one token of the gradient fill mix to color each color range using 30% darker color than its fill color. It will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Border3.jpg" width="354" height="194" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, each color range now bears a border color, which is 30% darker than its fill color.</p>
+    <p>Or, if you want a 60% lighter fill shade, you could set:  </p>
+    <p><span class="codeInline">&lt;chart ... gaugeBorderColor='{light-60}'  ...&gt;</span></p>
+    <p>You can also set the border property for each color range invidually by setting:</p>
+    <p class="codeInline">&lt;color minValue='0' maxValue='75' code='FF654F' <strong>borderColor='FF0000' borderAlpha='100'</strong>/&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Border4.jpg" width="355" height="195" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="gaugeRadius" id="gaugeRadius"></a>Configuring gauge radius and inner radius </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can set the gauge outer and inner radius explicitly as under: </p>
+    <p class="codeInline">&lt;chart ... gaugeOuterRadius='130' gaugeInnerRadius='60' ...&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gauge_Radius1.jpg" width="354" height="194" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also set inner radius as percentage of outer radius as under:</p>
+    <p class="codeInline">&lt;chart ... gaugeOuterRadius='130' gaugeInnerRadius='80%' ..&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gauge_Radius2.jpg" width="354" height="196" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="pivot" id="pivot"></a>Configuring pivot properties </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets angular gauge chart allows you to configure all aspects of the pivot including fill color, type, gradient, radius etc.</p>
+    <p>To set the radius of pivot (in pixels), you can use:</p>
+    <p class="codeInline">&lt;chart ...  pivotRadius='10' ..&gt;  </p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Pivot1.jpg" width="354" height="194" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can set a solid fill for the pivot, you can use:</p>
+    <p class="codeInline">&lt;chart ... pivotFillColor='333333' pivotFillAlpha='100' pivotFillMix='' ...&gt;</p>
+    <p>Here, we've asked the chart to not use any fill mix for pivot (by specifying <span class="codeInline">pivotFillMix=''</span>) and then we've specified the color for the pivot. This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Pivot2.jpg" width="354" height="195" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can add a border as under:</p>
+    <p class="codeInline">&lt;chart showPivotBorder='1' pivotBorderThickness='2' pivotBorderColor='333333' pivotBorderAlpha='100' pivotFillColor='CCCCCC' pivotFillAlpha='100' pivotFillMix='' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Pivot3.jpg" width="352" height="195" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also specify a gradient fill mix for the pivot using:</p>
+    <p class="codeInline">&lt;chart ... pivotFillColor='CCCCCC'  pivotFillMix='{light-10},{light-30},{dark-20}' pivotFillRatio='' pivotRadius='7' ..&gt;</p>
+    <p>Here, we've specified a single color for pivot and then applied the gradient fill mix. We've set ratio empty, so that chart will auto-distribute the colors. It will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Pivot4.jpg" width="356" height="197" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also specify linear (instead of radial) gradient fill type for pivot as under:</p>
+    <p class="codeInline">&lt;chart ... pivotFillColor='CCCCCC'  pivotFillType='linear' pivotFillAngle='0' pivotFillMix='{light-40},{dark-60}' pivotFillRatio='' pivotRadius='7' showPivotBorder='1' pivotBorderColor='999999' ..&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Pivot5.jpg" width="355" height="194" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="value" id="value"></a>Customizing dial values </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets allows you to show/hide dial values and configure its placement too. To hide all dial values, you can set:</p>
+    <p class="codeInline">&lt;chart ... showValue='0' ...&gt;</p>
+    <p>This will hide value text boxes  for all the dials. </p>
+    <p>Or, if you want to show the dial value below the pivot, you can set:</p>
+    <p class="codeInline">&lt;chart ... valueBelowPivot='1' ...&gt;</p>
+    <p>Using STYLEs, you can also add border and background to your value textfield as under:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;styles&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='myValueFont' bgColor='F1f1f1' borderColor='999999' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Value' styles='myValueFont' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+    &lt;/styles&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">This will result in: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Value1.jpg" width="355" height="193" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Additionally, for each dial on the chart, you can configure whether to show value or hide value for the same. Also, you can configure the x and y position as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;dials&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;dial value='92'... showValue='1' valueX='150' valueY='120' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;dial value='79' ... showValue='1' valueX='210' valueY='120'/&gt;<br />
+&lt;/dials&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Here, we've added 2 dials to chart and configured their value textfield positions individually. This will result in: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Value2.jpg" width="353" height="196" /></td>
+  </tr>
+</table>
+</body>
+</html>

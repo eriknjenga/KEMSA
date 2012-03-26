@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Data-streaming charts &gt; Feeding data using JavaScript </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The data-streaming charts allow you to feed data to the chart using JavaScript too, instead of real-time data provider page. The format of data feed, however, should be the same as that outputted by real-time data provider page. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">How to feed data using JavaScript? </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">To feed data using JavaScript, you'll first need to enable the <span class="codeInline">registerWithJS</span> flag as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">var chart1 = new FusionCharts(&quot;../Charts/RealTimeLine.swf&quot;, &quot;ChId1&quot;, &quot;500&quot;, &quot;350&quot;, &quot;0&quot;, &quot;1&quot;);</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Now, you can use the <span class="codeInline">feedData(strData)</span> method to feed data to the chart. Here, <span class="codeInline">strData</span> is a string value which should contain the data in exactly the same format as that provided by real-time data provider page. </p>
+    <p>Shown below is an example: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;HTML&gt;<br />
+      &lt;HEAD&gt;<br />
+      &lt;script type=&quot;text/javascript&quot; src=&quot;../Charts/FusionCharts.js&quot;&gt;&lt;/script&gt;<br />
+      &lt;script language=&quot;javascript&quot;&gt;<br />
+      &nbsp;&nbsp;&nbsp;<span class="codeComment">//This method is called when user clicks on the feed data button</span><br />
+      &nbsp;&nbsp;&nbsp;function feedDataToChart(){<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Get reference to the chart using its ID</span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var chartRef = getChartFromId(&quot;ChId1&quot;);</p>
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;//We need to create a querstring format incremental update, containing <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//label in hh:mm:ss format<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//and a value (random).</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var currDate = new Date();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var label= currDate.getHours() + &quot;:&quot; + currDate.getMinutes() + &quot;:&quot; + currDate.getSeconds();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Get random number between 30 &amp; 35 - rounded to 2 decimal places</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var randomValue = Math.floor(Math.random()*500)/100 + 30;<br />
+  &nbsp;&nbsp;&nbsp;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Build data string in format &amp;label=...&amp;value=...</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var strData = &quot;&amp;label=&quot; + label + &quot;&amp;value=&quot; + randomValue;</p>
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Feed it to chart.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chartRef.feedData(strData);<br />
+  <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return; <br />
+        &nbsp;&nbsp;&nbsp;}<br />
+  &lt;/script&gt;<br />
+  &lt;/HEAD&gt;<br />
+  &lt;BODY&gt;<br />
+  &lt;CENTER&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;div id=&quot;chart1div&quot;&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This text is replaced by the Flash movie.<br />
+  &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;script type=&quot;text/javascript&quot;&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var chart1 = new FusionCharts(&quot;../Charts/RealTimeLine.swf&quot;, &quot;ChId1&quot;, &quot;500&quot;, &quot;350&quot;, &quot;0&quot;, &quot;1&quot;);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chart1.setDataURL(&quot;Data.xml&quot;);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chart1.render(&quot;chart1div&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&lt;/script&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;input type='button' value='Feed Random Data' onClick='javascript:feedDataToChart();' &gt;<br />
+  &lt;/BODY&gt;<br />
+  &lt;/HTML&gt;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the above code, we're:</p>
+      <ol>
+        <li>First instantiating our chart without any data, and one single dataset.</li>
+        <li>Defined a custom function <span class="codeInline">feedDataToChart() </span>which gets invoked when user clicks the &quot;<span class="codeInline">Feed Random Data</span>&quot; button.</li>
+        <li>This function builds the data string (in real-time data format) to be specified to the chart. It contains random value for demo purpose.</li>
+        <li>We finally   specify the data string to chart using <span class="codeInline">feedData(strData)</span> method. </li>
+      </ol>
+    <p>When you now view this example, you'll get something as under (image taken after button was clicked a few times):</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_JS_FeedData1.jpg" width="508" height="383" class="imageBorder" /></td>
+  </tr>
+</table>
+</body>
+</html>

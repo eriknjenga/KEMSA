@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Real-time capabilities &gt; Data Format </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The real-time data is provided by the URL specified as <span class="codeInline">dataStreamURL</span> attribute in the XML data document. This data should essentially be in text format <strong>WITHOUT containing any HTML tags or carriage returns.</strong> The parameters contained in this output depends on whether you're using data streaming charts or real-time gauges.</p>
+      <p>Here, we'll see the required format for both of them.</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="lightYellowTr">
+    <td valign="top" class="header">Real-time data format for data streaming charts </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As we had previously explained, data streaming charts can update themselves in real time and show historical data for the pre-defined period, along with the latest data. Also, each data streaming chart can have multiple data-sets, each showing the state of a counter that's being monitored on the chart.</p>
+    <p>As such, the format of the real-time data for data streaming chart depends on a lot of factors like:</p>
+    <ul>
+      <li>Number of datasets you've in your chart, which you want to update </li>
+      <li>Number of incremental updates you want to pass to the chart in one attempt </li>
+      <li>Attributes which you want to provide to chart for each data - like label, color, link, tool-text etc. </li>
+      <li>Whether you're using <span class="codeInline">vLines</span> on the chart?</li>
+      <li>Whether you're using Message Logger for the chart?</li>
+      <li>Commands for the chart - like stop update or clear historical data. </li>
+    </ul>
+    <p>Let's quickly see examples of each one of them.</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Simple Example </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the simplest form, if you're looking to update say a line chart, which is   currently showing two datasets, you need to output the data in following   format:</p>
+    <p class="codeInline"> &amp;value=23|43</p>
+    <p>Here, we're outputting two values - 23 and 43 separated by a | (pipe   character). The value 23 would correspond to the first data set on the chart and   the value 43 would correspond to the second data set. So, when FusionWidgets would   read this value, it would update the first dataset by adding 23 as its last   value and 43 would be added to the second dataset. </p>
+    <p>Similarly, if you had 3 datasets on your chart, which you wanted to update   via streaming data, the incremental data would be required in the following   format:</p>
+    <p class="codeInline"> &amp;value=23|43|45</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Sending label as part of real time data </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>For each data update, you can also send the x-axis label for the data update.</p>
+    <p>Let's consider a case where we're plotting a streaming multi-series line chart   indicating the load on three servers. On the x-axis, we've the time and on the   y-axis we've the server load. So, in this case we'll need to provide the label   for each incremental data too, as the x-axis is representing the time. So, our   incremental data format would be:</p>
+    <p class="codeInline"> &amp;label=11:45&amp;value=23|43|45 </p>
+    <p>When FusionWidgets receives this data, it will shift all the existing data and   x-axis label on the chart to one position left, and then add the new label to the   x-axis and data to the three lines present on the chart.</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Setting label not to display </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Now, let's consider a situation where you do not want to show each label on the chart (to avoid cluttering). Instead, you want to show alternate   labels (e.g., time in the above chart), but show the data update every minute. So, in this   case, what you can do is configure your server's incremental data update to the   following, for the data whose name you don't want to show on the chart.</p>
+    <p class="codeInline"> &amp;label=11:45&amp;showLabel=0&amp;value=23|43|45</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Passing multiple data in each update </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets charts can accept multiple data in each update too. </p>
+      <p>Say, for an example, you're   working over HTTP and you need to make sure that you utilize the bandwidth very   efficiently. So, you cannot really set the chart to update itself every second,   as that might create a strain on your server. However, you would also not want   to skip those data which you missed by not updating every second. In such cases,   the multiple data update feature comes in handy. You can then provide the   following data update from the server:</p>
+      <p class="codeInline">&amp;label=11:45,11:46,11:47&amp;value=23,25,24|43,47,45|45,47,49 </p>
+      <p>In the above data, we're providing three updates to each of the lines present   on the chart. Also, we're providing three new labels for the x-axis. </p>
+      <p class="highlightBlock">To provide   multiple data in a single update, you need to separate the values within the data-set using   commas. Each dataset still gets separated from other data-sets using the pipe (|) character. <br />
+      </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Providing link for each incremental  data </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">FusionWidgets allows you to provide a link for each incremental update data too.   The link can be provided in the following structure:
+      <p class="codeInline">&amp;label=11:45&amp;value=23|43|45&amp;link=showdetail.asp?server=1%26time=1145|   showdetail.asp?server=2%26time=1145|showdetail.asp?server=3%26time=1145</p>
+      <p>The link can be in FusionCharts link format (for opening in new window, pop-up window, frames etc.) </p>
+      <p>As you can see above, along with the values for the chart, we're also   providing the new links for each of of those data - the link has been URL   Encoded as it contains special characters like &amp;,% etc.<br />
+      </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Providing tool text for each incremental  data</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>When you provide label for the incremental update data, you can also provide the   tool text for each data in the following format:</p>
+      <p class="codeInline"> &amp;name=11:45&amp;toolText=12/3/2007 11:45:23 AM &amp;value=23|43|45 </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Providing color for each incremental data </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also provide specific color for each data update as under. </p>
+      <p class="codeInline">&amp;label=11:45&amp;value=23|43|45&amp;color=FF0000|0372AB|FF5904</p>
+      <p class="highlightBlock">The color specified in real time update will always fill as solid color and not gradient. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Providing empty data </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If for some reason, you want to provide empty data to the chart (so that a line/column/area break shows us), you can just set:</p>
+    <p><span class="codeInline">&amp;label=11:45&amp;value=||</span> </p>
+    <p>In a line chart if you've not set chart to connect null data (using <span class="codeInline">&lt;chart connectNullData='1' ..&gt;</span>) it will result in something as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/RTDataFormat1.gif" width="339" height="244" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Note the broken lines at the right side of the chart. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Adding vLines to chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can add <span class="codeInline">vLines</span> to chart using: </p>
+      <p class="codeInline">&amp;label=11:45&amp;value=753|345&amp;vline=0&amp;vLineLabel=vLine&amp;vLineColor=666666&amp;vLineThickness=2<br />
+      &amp;vLineDashed=1 </p>
+    <p>It will result in the following output: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/RTDataFormat2.gif" width="378" height="275" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Sending clear chart command from server </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If at any point of time, you want to clear the historical data being displayed on the chart, you can send the following command from server to do so:</p>
+      <p class="codeInline">&amp;clear=1 </p>
+    <p>This will remove all the existing data on the chart and then start with the new data specified. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Stopping real-time updates from server </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you wish to stop the chart from polling the server for any more real-time updates, you can send the following command from server to do so:</p>
+    <p class="codeInline">&amp;stopUpdate=1</p>
+    <p class="text">After stopping the update, it can be restarted either using user interaction (right click context menu) or using client side JavaScript. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Sending messages pertinent to Message logger </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The data streaming charts can show message logger as shown below. There are various parameters which you can specify for message logger. All of them have been explained in the section &quot;Message Logger&quot;. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/MsgL_Intro.gif" width="504" height="352" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="lightYellowTr">
+    <td valign="top" class="header"><a name="gauge" id="gauge"></a>Real-time data format for gauges </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The real-time data format for gauges is a bit simpler than that of data-streaming charts, as here you do not have the concept of multiple data-sets. Just for angular and linear gauge you can have multiple dials/pointers.</p>
+    <p>The format of real-time data for gauges depend on:</p>
+    <ul>
+      <li>Whether you've multiple pointers on the chart (in angular/linear) or a single value (cylinder/thermometer/bulb/LEDs)?</li>
+      <li>If you've multiple pointers, whether you want to provide data by pointer numerical index or by their defined IDs? </li>
+      <li>Whether you're using Message Logger for the chart?</li>
+      <li>Commands for the chart - like stop update</li>
+      </ul>
+    <p>Let's quickly see examples of each one of them.</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Simple Example </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the simplest form, if you're looking to update the value of a gauge, you need to output the data in following   format:</p>
+    <p class="codeInline">&amp;value=34</p>
+    <p>Here, we're just outputting a single value 34. So, when FusionWidgets would read this value, it would update the chart by setting its value to 34 (if the data is within range). </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Updating multiple pointers </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you've multiple dials defined in angular gauge or multiple pointers defined in linear gauge chart, you can update them all in a single update by outputting the following from real-time data provider page:</p>
+    <p class="codeInline">&amp;value=34|25|54</p>
+    <p>Here, we're specifying three values in the real-time update. So, assuming that we've 3 dials or pointers defined in the chart, each one of them will take the sequential value and update itself. That is, the first dial would now show 34, second one would show 25 and the third one 54. The sequence of dial is determined by its order in XML data document. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Updating using named ID of the dial/pointer </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In angular gauge &amp; linear gauge, FusionWidgets allows you define the ID for each dial or pointer as under:</p>
+    <p><strong>In angular gauge:</strong><br />
+        <span class="codeInline">&lt;dial id='CPU1Temp' ..../&gt;<br />
+      &lt;dial id='CPU2Temp' ..../&gt;</span></p>
+    <p> <strong>In Linear gauge:</strong>    <br />
+      <span class="codeInline">&lt;pointer id='CPU1Temp' ...&gt;<br />
+      &lt;pointer id='CPU2Temp' ...&gt;</span></p>
+    <p>You can now update each of these named dial/pointer by outputting the following in your real-time data stream:</p>
+    <p class="codeInline">&amp;CPU1Temp=23&amp;CPU2Temp=34 </p>
+    <p>This will change the value of dial 1 (with id as CPU1Temp) to 23 and dial 2 to 34. <br />
+                </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Stopping real-time updates from server </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you wish to stop the chart from polling the server for any more real-time updates, you can send the following command from server to do so:</p>
+        <p class="codeInline">&amp;stopUpdate=1</p>
+      <p class="text">After stopping the update, it can be restarted either using user interaction (right click context menu) or using client side JavaScript. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Sending messages pertinent to Message logger </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The gauges can show message logger like data streaming charts. There are various parameters which you can specify for message logger. All of them have been explained in the section &quot;Message Logger&quot;. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

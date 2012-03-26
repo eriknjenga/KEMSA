@@ -1,0 +1,470 @@
+<html>
+
+<head>
+	<title>FusionWidgets v3 Documentation</title>
+	<link rel="StyleSheet" href="dtree.css" type="text/css" />
+	<script type="text/javascript" src="JS/dtree.js"></script>
+</head>
+
+<body leftMargin='20'>
+
+<div class="dtree">
+	<script type="text/javascript">
+		<!--
+
+		//id, pid, name, url, title, target, icon, iconOPne, open,
+
+		d = new dTree('d');
+		d.config.target="right";		
+		d.config.folderLinks = false;
+		
+// ----------------- INTRODUCTION ------------------//
+	d.add(0,-1,'<B>FusionWidgets v3</B>','','FusionWidgets v3 Documentation');
+		d.add(1,0,'Introduction','','Introduction & Installation','','','',true);
+			d.add(101,1,'Overview','Overview.html','Introduction to FusionWidgets');
+			d.add(102,1,'Quick Links','Links.html');
+			d.add(103,1,'System Requirements','SysReq.html');
+			d.add(104,1,'Installation','Installation.html');
+			d.add(105,1,'Download Contents','DownloadC.html','Folder Structure of what\'s present in your download package');
+			d.add(106,1,'What\'s new in v3?','WhatsNew.html');
+			d.add(107,1,'List of Charts','ChartList.html');
+			d.add(108,1,'Upgrading from v2','Upgrading.html','If you\'re upgrading from FusionCharts Instrumentation Suite v2 to FusionWidgets v3, this section is meant for you.');
+			d.add(109,1,'Upgrading to v3.1 from v3.0.x','Upgrading31.html','If you\'ve used FusionWidgets v3.0.7 and have now upgraded to v3.1');
+			d.add(110,1,'Upgrading from Evaluation','UpgradingEval.html','If you\'ve used FusionWidgets v3 Evaluation and have now purchased a license.');
+			
+
+
+// --------------- SAMPLE CHARTS -------------------- //
+		d.add(2,0,'Sample Charts','');
+			d.add(201,2,'Angular (Speedometer)','');
+				d.add(2010,201,'Feather Effect','../Gallery/Angular16.html');
+				d.add(2011,201,'Metal Effect','../Gallery/Angular10.html');		
+				d.add(2012,201,'Rating Meter','../Gallery/Angular9.html');		
+				d.add(2013,201,'Fuel Gauge','../Gallery/Angular13.html');				
+				d.add(2014,201,'Fuel Gauge #2','../Gallery/Angular12.html');				
+				d.add(2015,201,'RPM Chart','../Gallery/Angular14.html');
+				d.add(2016,201,'Revenue Gauge','../Gallery/Angular7.html');
+				d.add(2017,201,'KPH Meter','../Gallery/Angular6.html');
+				d.add(2018,201,'Clock','../Gallery/Angular1.html');
+				d.add(2019,201,'Editable Gauge','../Gallery/Angular4.html');
+				d.add(2020,201,'Custom gradients','../Gallery/Angular17.html');
+				d.add(2021,201,'Steel casing','../Gallery/Angular15.html');
+				d.add(2022,201,'Using external image','../Gallery/Angular2.html');
+				d.add(2023,201,'Gradient background','../Gallery/Angular5.html');
+				d.add(2024,201,'Framed gauge','../Gallery/Angular3.html');
+				d.add(2025,201,'Framed gauge #2','../Gallery/Angular8.html');				
+
+				
+				
+			
+			d.add(207,2,'Linear Gauges','');
+				d.add(2070,207,'Basic Example','../Gallery/Linear1.html');		
+				d.add(2071,207,'Trend point','../Gallery/Linear2.html');		
+				d.add(2072,207,'Editable Linear Gauge','../Gallery/Linear3.html');		
+				d.add(2073,207,'Richter Scale','../Gallery/Linear4.html');		
+				d.add(2074,207,'Using annotations','../Gallery/Linear5.html');	
+				d.add(2075,207,'Custom gradient','../Gallery/Linear6.html');	
+					
+			d.add(203,2,'Other Gauges','');								
+				d.add(2035,203,'Horizontal LED #1','../Gallery/HLED1.html');		
+				d.add(2036,203,'Horizontal LED #2','../Gallery/HLED2.html');		
+				d.add(2037,203,'Horizontal LED #3','../Gallery/HLED3.html');		
+				d.add(2038,203,'Horizontal LED #4','../Gallery/HLED4.html');		
+				d.add(2039,203,'Vertical LED #1','../Gallery/VLED1.html');		
+				d.add(2040,203,'Vertical LED #2','../Gallery/VLED2.html');		
+				d.add(2041,203,'Cylinder #1','../Gallery/Cylinder1.html');		
+				d.add(2042,203,'Cylinder #2','../Gallery/Cylinder2.html');		
+				d.add(2043,203,'Cylinder #3','../Gallery/Cylinder3.html');		
+				d.add(2044,203,'Thermometer #1','../Gallery/Thm1.html');
+				d.add(2045,203,'Thermometer #2','../Gallery/Thm2.html');
+				d.add(2046,203,'Thermometer #3','../Gallery/Thm3.html');
+				d.add(2047,203,'Bulb #1','../Gallery/Bulb1.html');		
+				d.add(2048,203,'Bulb #2','../Gallery/Bulb2.html');		
+			
+			d.add(210,2,'Gantt Chart','');
+				d.add(2101,210,'Residential Construction','../Gallery/Gantt5.html');			
+				d.add(2102,210,'Grouped tasks','../Gallery/Gantt6.html');			
+				d.add(2103,210,'Time Based #1','../Gallery/Gantt10.html');		
+				d.add(2104,210,'Time Based #2','../Gallery/Gantt11.html');		
+				d.add(2105,210,'Scrolling support','../Gallery/Gantt7.html');		
+				d.add(2106,210,'Multiple tasks per process','../Gallery/Gantt8.html');		
+				d.add(2107,210,'Employee Schedule','../Gallery/Gantt9.html');		
+				d.add(2108,210,'Gantt Project','../Gallery/Gantt1.html');		
+				d.add(2109,210,'Sales Territory','../Gallery/Gantt2.html');		
+				d.add(2110,210,'Development Life Cycle','../Gallery/Gantt3.html');			
+				d.add(2111,210,'Machine Operation Sheet','../Gallery/Gantt4.html');			
+				d.add(2112,210,'Trend lines/zones','../Gallery/Gantt12.html');			
+				
+					
+			d.add(206,2,'Funnel Chart','');
+				d.add(2060,206,'Variable width','../Gallery/Funnel1.html');		
+				d.add(2061,206,'Same slant angle','../Gallery/Funnel2.html');		
+				d.add(2062,206,'Section funnel','../Gallery/Funnel3.html');				
+				d.add(2063,206,'2D Funnel','../Gallery/Funnel4.html');				
+				
+			d.add(209,2,'Pyramid Chart','');
+				d.add(2090,209,'Pyramid #1','../Gallery/Pyramid1.html');
+				d.add(2091,209,'Pyramid #2','../Gallery/Pyramid2.html');
+				d.add(2092,209,'Pyramid #3','../Gallery/Pyramid3.html');
+				d.add(2093,209,'Pyramid #4','../Gallery/Pyramid4.html');
+				
+			d.add(208,2,'Bullet Graphs','');
+				d.add(2080,208,'Horizontal #1','../Gallery/HBullet1.html');		
+				d.add(2081,208,'Horizontal #2','../Gallery/HBullet2.html');		
+				d.add(2082,208,'Horizontal #3','../Gallery/HBullet3.html');				
+				d.add(2083,208,'Multiple graphs','../Gallery/HBullet4.html');
+				d.add(2084,208,'Vertical Bullet','../Gallery/VBullet1.html');
+			
+			d.add(211,2,'Spark Charts','');
+				d.add(2111,211,'Spark Line #1','../Gallery/SparkLine1.html');		
+				d.add(2112,211,'Spark Column #1','../Gallery/SparkColumn1.html');		
+				d.add(2113,211,'Spark Column #2','../Gallery/SparkColumn2.html');		
+				d.add(2114,211,'Spark Win Loss #1','../Gallery/SparkWinLoss1.html');		
+					
+			d.add(212,2,'Drawing Pad','');
+				d.add(2121,212,'Process Flow Diagram','../Gallery/DrawingPad1.html');		
+
+// ------- CREATING YOUR FIRST CHART -------------//
+		d.add(3,0,'Creating your First Chart');
+			d.add(301,3,'Creating your First Chart','FirstChart.html');
+			d.add(302,3,'XML Overview','XMLOverview.html', 'Overview of FusionWidgets XML');
+			d.add(303,3,'Multiple Charts in a page','MultiCharts.html', 'Using multiple charts in the same page');
+			d.add(304,3,'HTML Embedding','HTMLEmbed.html','How to use direct HTML code to embed charts?');
+			d.add(305,3,'dataXML method','DataXML.html','Creating single page charts by putting XML data inside HTML page');
+
+//----------------- How FusionWidgets Works ---------------------
+		d.add(6,0,'How FusionWidgets works?');
+			d.add(601,6,'Overview','HowFCWorks.html','Detailed explanation and communication diagrams');
+			d.add(602,6,'dataURL Method','DataURL.html','Explanation of dataURL Method');
+			d.add(603,6,'dataXML Method','DataXMLExp.html','Explanation of dataXML Method');		
+			d.add(604,6,'JavaScript + XML Method','JSDataXML.html','Explanation of JavaScript + setDataXML Method');
+			d.add(605,6,'JavaScript + URL Method','JSDataURL.html','Explanation of JavaScript + setDataURL Method');
+
+// -------------------- Real-time capabilities ------------------//
+		d.add(5,0,'Real-time capabilities','Real-time capabilities of FusionWidgets');
+			d.add(501,5,'Overview','RealTimeOverview.html','What are real-time charts and how they work?');
+			d.add(502,5,'Real-time data format','RealTimeDataFormat.html','Data format & attributes for real-time charts');
+			d.add(503,5,'Adding data-stamp','RealTimeStamp.html','Adding data stamp to your real time data.');
+
+//------------------ Data Streaming Charts ------------------------------//
+		d.add(15,0,'Data Streaming Charts','Data Streaming Charts');
+			d.add(1501,15,'Introduction','DSC_Overview.html','Introduction to Data Streaming Charts');
+			d.add(1502,15,'Real-time data format','DSC_Format.html','Setting the charts to update in real-time');			
+			d.add(1503,15,'Creating a simple example','DSC_Example.html','Creating a simple example of real-time line chart');									
+			d.add(1504,15,'Adding multiple datasets','DSC_MultipleDS.html','Setting multiple data-sets to compare');
+			d.add(1505,15,'Pushing multiple updates','DSC_MUpdates.html','Pushing multiple data in each update');
+			d.add(1506,15,'Adding historical data','DSC_Historical.html','Setting multiple data-sets to compare');
+			d.add(1508,15,'Setting different intervals','DSC_Intervals.html','Setting the charts to update in real-time');
+			d.add(1500,15,'Adding trendlines','DSC_Trend.html','Adding trend lines to the chart');
+			//In Configuring chart- long x-axis labels, setting canvas margins
+			//Setting custom ymin ymax
+			d.add(1511,15,'Chart Configurations','DSC_Config.html','Configuring color palettes, decimals, axes etc.');
+			d.add(1512,15,'Adding data stamp','RealTimeStamp.html','Adding data stamp to your real-time data');
+			//checkForAlert
+			d.add(1513,15,'Setting Alert Manager','DSC_AlertM.html','Setting Alert Manager for the chart');
+			d.add(1514,15,'Setting Message Logger','DSC_MessageLog.html','Setting Message Logger for the chart');
+			d.add(1515,15,'Clearing chart view','RealTimeClear.html','Clearing historical data from chart in real-time');
+			//Precautions to take - no carraige return, no HTML, same sub-domain
+			d.add(1516,15,'JavaScript - Feeding Data','DSC_JS_Feed.html','Feeding data from JavaScript to chart');
+			d.add(1517,15,'JavaScript - Retrieving Data','DSC_JS_Get.html','Retrieving data from chart');
+			d.add(1518,15,'JavaScript - APIs','DSC_JSAPI.html','JavaScript APIs exposed by the chart');			
+			d.add(1519,15,'Flash API','DSC_FlashAPI.html','Flash APIs exposed by the chart');			
+			d.add(1520,15,'Troubleshooting','DSC_Debug.html','Troubleshooting the data-streaming charts');			
+			d.add(1530,15,'XML Sheets','RealTimeOverview.html','XML Sheets');
+				d.add(15301,1530,'Real-time Line Chart','DSC_XML_RTLine.html','Real-time Line Chart XML Sheet');
+				d.add(15302,1530,'Real-time Column Chart','DSC_XML_RTColumn.html','Real-time Column Chart XML Sheet');
+				d.add(15303,1530,'Real-time Area Chart','DSC_XML_RTArea.html','Real-time Area Chart XML Sheet');
+				d.add(15304,1530,'Real-time Stacked Area Chart','DSC_XML_RTStArea.html','Real-time Stacked Area Chart XML Sheet');
+				d.add(15305,1530,'Real-time Stacked Column Chart','DSC_XML_RTStColumn.html','Real-time Stacked Column Chart XML Sheet');
+				d.add(15306,1530,'Real-time Dual Y Line Chart','DSC_XML_RTLineDY.html','Real-time Dual Y Line Chart XML Sheet');
+
+//------------------ Funnel Chart  ------------------------------//
+		d.add(16,0,'Funnel Chart','Funnel Chart');
+			d.add(1601,16,'Introduction','FunnelIntro.html','Introduction to Funnel Chart');
+			d.add(1602,16,'Creating a simple chart','FunnelCreate.html','Creating a simple Funnel chart');
+			d.add(1603,16,'Section funnel chart','FunnelSection.html','Creating section funnel chart instead of streamlined funnel chart');
+			d.add(1604,16,'Chart Configurations','FunnelConfig.html','Configuring various properties of the chart');			
+			d.add(1605,16,'XML Sheet','FunnelXML.html','XML Sheet for Funnel Chart');
+
+//------------------ Pyramid Chart  ------------------------------//
+		d.add(17,0,'Pyramid Chart','Pyramid Chart');
+			d.add(1701,17,'Introduction','PyramidIntro.html','Introduction to Pyramid Chart');
+			d.add(1703,17,'Creating a simple chart','PyramidCreate.html','Creating a simple Pyramid chart');
+			d.add(1703,17,'Chart Configurations','PyramidConfig.html','Configuring various properties of the chart');
+			d.add(1706,17,'XML Sheet','PyramidXML.html','XML Sheet for Pyramid Chart');
+
+//------------------ Spark Charts ------------------------------//
+		d.add(14,0,'Spark Charts','Spark Charts');
+			d.add(1401,14,'Introduction','SparkOverview.html','Introduction to Spark Charts');
+			d.add(1402,14,'Spark Line','Spark Line Chart');
+				d.add(14021,1402,'Simple Example','SparkLineCreate.html','Creating a simple Spark Line Chart');
+				d.add(14022,1402,'Configurations','SparkLineConfig.html','Spark Line Chart - Various possible configurations');
+				d.add(14023,1402,'XML Sheet','SparkLineXML.html','XML Sheet for Spark Line Chart');
+			d.add(1403,14,'Spark Column','Spark Column Chart');
+				d.add(14031,1403,'Simple Example','SparkColumnCreate.html','Creating a simple Spark Column Chart');
+				d.add(14032,1403,'Configurations','SparkColumnConfig.html','Spark Column Chart - Various possible configurations');
+				d.add(14033,1403,'XML Sheet','SparkColumnXML.html','XML Sheet for Spark Column Chart');
+			d.add(1404,14,'Spark Win/Loss','Spark Win/Loss Chart');
+				d.add(14041,1404,'Simple Example','SparkWLCreate.html','Creating a simple Spark Win/Loss Chart');
+				d.add(14042,1404,'Configurations','SparkWLConfig.html','Spark Win/Loss Chart - Various possible configurations');
+				d.add(14043,1404,'XML Sheet','SparkWLXML.html','XML Sheet for Spark Win/Loss Chart');
+
+//------------------ Bullet Graphs  ------------------------------//
+		d.add(13,0,'Bullet Graphs','Bullet Graphs');
+			d.add(1301,13,'Introduction','BulletOverview.html','Introduction to Bullet Graphs');
+			d.add(1302,13,'Creating a simple graph','BulletCreate.html','Creating a simple bullet graph');
+			d.add(1303,13,'Various Configurations','BulletConfig.html','Various configurations possible for the bullet graph');
+			d.add(1304,13,'XML Sheet - Horizontal Bullet','HBulletXML.html','XML Sheet for Horizontal Bullet Graph');
+			d.add(1305,13,'XML Sheet - Vertical Bullet','VBulletXML.html','XML Sheet for Vertical Bullet Graph');
+
+//------------------ Angular Gauge ------------------------------//
+		d.add(7,0,'Angular Gauge','Angular Gauge');
+			d.add(701,7,'Introduction','Ang_Overview.html','Introduction to Angular Gauge');
+			d.add(702,7,'Elements of the gauge','Ang_Elements.html','Elements of Angular Gauge - An Anatomy');
+			d.add(703,7,'Creating a simple gauge','Ang_Create.html','Creating a simple angular gauge');
+			d.add(704,7,'Configuring gauge','Ang_Config.html','Configuring various properties of the gauge');
+			d.add(705,7,'Configuring dials','Ang_Dials.html','Configuring the dials of the gauge');
+			d.add(706,7,'Configuring tick marks','Ang_Ticks.html','Configuring tick marks and values');	
+			d.add(707,7,'Configuring angles & origin','Ang_Angles.html','Configuring gauge angles & origin');
+			d.add(708,7,'Auto-scaling','Ang_Origins.html','Auto-scaling of gauge');
+			d.add(709,7,'Adding trendpoints','Ang_Trend.html','Adding trend points to the angular gauge');			
+			d.add(710,7,'Edit Mode','Ang_Edit.html','Using the gauge to accept values from user');
+			d.add(711,7,'Real-time support','Ang_RealTime.html','Setting the gauge to update in real-time');
+			d.add(712,7,'Alert Manager','Ang_Alert.html','Setting the gauge to update in real-time');
+			d.add(713,7,'Message Logger','Ang_MsgLgr.html','Setting the gauge to update in real-time');
+			d.add(714,7,'JavaScript API','Ang_JS.html','JavaScript API exposed by the gauge');
+			d.add(716,7,'Using STYLEs','Ang_Style.html','Setting the gauge to update in real-time');
+			d.add(717,7,'XML Sheet','Ang_XML.html','XML Sheet');
+//------------------ Linear Gauge ------------------------------//
+		d.add(8,0,'Linear Gauge','Linear Gauge');
+			d.add(801,8,'Introduction','Linear_Overview.html','Introduction to Linear Gauge');
+			d.add(802,8,'Elements of the gauge','Linear_Elements.html','Elements of Linear Gauge - An Anatomy');
+			d.add(803,8,'Creating a simple gauge','Linear_Create.html','Creating a simple linear gauge');
+			d.add(804,8,'Configuring chart','Linear_Config.html','Configuring various aspects of the gauge');
+			d.add(805,8,'Configuring ticks marks','Linear_Ticks.html','Configuring tick marks & tick values');
+			d.add(806,8,'Adding trendpoints','Linear_Trend.html','Adding trend points to the linear gauge');			
+			d.add(807,8,'Edit Mode','Linear_Edit.html','Using the gauge to accept values from user');
+			d.add(808,8,'Real-time support','Linear_RealTime.html','Setting the gauge to update in real-time');
+			d.add(809,8,'JavaScript API','Linear_JSPAPI.html','JavaScript API exposed by the gauge');
+			d.add(810,8,'XML Sheet','Linear_XML.html','XML Sheet');
+
+//------------------ LED Gauges ------------------------------//
+		d.add(9,0,'LED Gauges','LED Gauges');
+			d.add(901,9,'Introduction','LED_Overview.html','Introduction to LED Gauges');
+			d.add(902,9,'Elements of the gauge','LED_Elements.html','Elements of LED Gauges - An Anatomy');
+			d.add(903,9,'Creating a simple gauge','LED_Create.html','Creating a simple horizontal LED gauge');
+			d.add(904,9,'Gauge Configurations','LED_Config.html','Various possible configurations for the LED gauge');
+			d.add(905,9,'Real-time support','SVGauge_RT.html','Setting the gauge to update in real-time');
+			d.add(906,9,'JavaScript API','SVGauge_JS.html','JavaScript API exposed by the gauge');
+			d.add(907,9,'XML Sheet - Horizontal LED ','LEDH_XML.html','XML Sheet for Horizontal LED Gauge');
+			d.add(908,9,'XML Sheet - Vertical LED ','LEDV_XML.html','XML Sheet for Vertical LED Gauge');
+
+//------------------ Thermometer Gauge ------------------------------//
+		d.add(10,0,'Thermometer Gauge','Thermometer Gauge');
+			d.add(1001,10,'Introduction','Thm_Overview.html','Introduction to thermometer Gauge');
+			d.add(1002,10,'Elements of the gauge','Thm_Elements.html','Elements of thermometer Gauge - An Anatomy');
+			d.add(1003,10,'Creating a simple gauge','Thm_Create.html','Creating a simple thermometer gauge');
+			d.add(1003,10,'Configuration','Thm_Config.html','Various possible configurations of the thermometer gauge');
+			d.add(1004,10,'Real-time support','SVGauge_RT.html','Setting the gauge to update in real-time');
+			d.add(1005,10,'JavaScript API','SVGauge_JS.html','JavaScript API exposed by the gauge');
+			d.add(1006,10,'XML Sheet','Thm_XML.html','XML Sheet');
+
+//------------------ Cylinder Gauge ------------------------------//
+		d.add(11,0,'Cylinder Gauge','Cylinder Gauge');
+			d.add(1101,11,'Introduction','Cylinder_Overview.html','Introduction to Cylinder Gauge');
+			d.add(1102,11,'Elements of the gauge','Cylinder_Elements.html','Elements of Cylinder Gauge - An Anatomy');
+			d.add(1103,11,'Creating a simple gauge','Cylinder_Create.html','Creating a simple Cylinder gauge');
+			d.add(1104,11,'Configuration','Cylinder_Config.html','Creating a simple Cylinder gauge');
+			d.add(1105,11,'Real-time support','SVGauge_RT.html','Setting the gauge to update in real-time');
+			d.add(1106,11,'JavaScript API','SVGauge_JS.html','JavaScript API exposed by the gauge');
+			d.add(1107,11,'XML Sheet','Cylinder_XML.html','XML Sheet');
+
+//------------------ Bulb Gauge ------------------------------//
+		d.add(12,0,'Bulb Gauge','Bulb Gauge');
+			d.add(1201,12,'Introduction','Bulb_Overview.html','Introduction to Bulb Gauge');
+			d.add(1202,12,'Elements of the gauge','Bulb_Elements.html','Elements of Bulb Gauge - An Anatomy');
+			d.add(1203,12,'Creating a simple gauge','Bulb_Create.html','Creating a simple Cylinder gauge');
+			d.add(1203,12,'Configurations','Bulb_Config.html','Various configurations of the bulb gauge');
+			d.add(1204,12,'Real-time support','SVGauge_RT.html','Setting the gauge to update in real-time');
+			d.add(1205,12,'JavaScript API','SVGauge_JS.html','JavaScript API exposed by the gauge');
+			d.add(1206,12,'XML Sheet','Bulb_XML.html','XML Sheet');
+
+//----------------- Gantt Chart ---------------------
+		d.add(30,0,'Gantt Chart');
+			d.add(3001,30,'Overview','GanttOverview.html','Overview of Gantt Chart.');
+			d.add(3002,30,'Anatomy','GanttAnatomy.html','Explanation of dataURL Method');
+			d.add(3003,30,'Creating your First Chart','GanttFirst.html','Creating your first Gantt Chart');		
+			d.add(3004,30,'Basic Configurations','GanttConfig.html','Basic configuration for the Gantt chart');		
+			d.add(3005,30,'Task bar configuration','GanttTaskConfig.html','Various possible configurations for the task bars in the chart');
+			d.add(3006,30,'Configuring date formats','GanttDateFormat.html','Configuring the date format for Gantt charts');
+			d.add(3007,30,'Enabling scrolling','GanttScroll.html','How to enable scrolling panels for the Gantt chart?');
+			d.add(3008,30,'Multi-tasked Processes','GanttMultiTask.html','How to create multiple tasks for each process and link them using IDs?');
+			d.add(3009,30,'Time based charts','GanttTime.html','Plotting time based tasks on FusionWidgets Gantt chart');
+			d.add(3010,30,'Adding Milestones','GanttMilestones.html','Showing milestones on the chart');
+			d.add(3011,30,'Adding Connectors','GanttConnectors.html','How to create connectors between tasks?');
+			d.add(3012,30,'Adding Trend-lines','GanttTrend.html','Adding trend lines to your Gantt Chart');
+			d.add(3013,30,'Adding Legend','GanttLegend.html','Adding legend to Gantt Charts');
+			d.add(3014,30,'XML Sheet','GanttXML.html','XML Sheet for Gantt Chart');
+
+// -------------------- Drill Down Charts ---------------------		
+		d.add(40,0,'Drill Down Charts','Using FusionWidgets to create Drill-down charts');
+			d.add(4001,40,'Simple Example','DrillDown/Simple.html','Basic Example of Using FusionWidgets to create drill down charts');
+			d.add(4002,40,'Links in frames','DrillDown/Frames.html');
+			d.add(4003,40,'Links in pop-up windows','DrillDown/PopUps.html');
+			d.add(4004,40,'Full Chart as a hotspot','DrillDown/ClickURL.html');
+			d.add(4005,40,'JavaScript functions as links','DrillDown/JavaScript.html');
+
+// -------------------- Annotations ---------------------		
+	d.add(41,0,'Annotations');
+			d.add(4101,41,'Introduction','Ann_Introduction.html','Introduction to Annotations');
+			d.add(4102,41,'Rectangle','Ann_Rectangle.html','Rectangle annotation type');
+			d.add(4103,41,'Circle','Ann_Circle.html','Circle annotation type');
+			d.add(4104,41,'Polygon','Ann_Polygon.html','Polygon annotation type');
+			d.add(4105,41,'Line','Ann_Line.html','Line annotation type');
+			d.add(4106,41,'Arc','Ann_Arc.html','Arc annotation type');
+			d.add(4107,41,'Text','Ann_Text.html','Text annotation type');
+			d.add(4108,41,'Image','Ann_Image.html','Image annotation type');
+			d.add(4111,41,'Using IDs','Ann_ID.html','Defining IDs for each annotation group.');
+			d.add(4109,41,'Setting visibility','Ann_Visible.html','Setting visibility of annotations using XML and JavaScript');
+			d.add(4110,41,'Using STYLEs','Ann_Style.html','Applying effects & animation using STYLEs');			
+			d.add(4112,41,'JavaScript API','Ann_JS.html','Using JavaScript to control annotations');
+			d.add(4113,41,'Auto Scaling','Ann_AutoScale.html','Auto scaling annotations');
+			d.add(4114,41,'XML Sheet','AnnotationXML.html','XML Attributes for annotation');
+
+//----------------- Drawing Pad ---------------------
+		d.add(31,0,'Drawing Pad');
+			d.add(3101,31,'Overview','DP_Overview.html','Overview of Drawing Pad');
+			d.add(3102,31,'Examples','DP_Examples.html','Examples of Drawing Pad');			
+
+// -------------------- FusionWidgets and JavaScript ---------------------		
+		d.add(42,0,'FusionWidgets & JavaScript');
+			d.add(4201,42,'Overview','JS_Overview.html','Overview of using FusionWidgets with JavaScript and AJAX');
+			d.add(4202,42,'JavaScript APIs exposed','JS_API.html','List of JavaScript API exposed by each chart.');
+			d.add(4203,42,'Events raised by chart','JS_Events.html','JavaScript Events raised by the chart');
+			d.add(4204,42,'setDataXML() Method','JS_setDataXML.html','Explanation of setDataXML() JavaScript method');
+			d.add(4205,42,'setDataURL() Method','JS_setDataURL.html','Explanation of setDataURL() JavaScript method');
+			d.add(4206,42,'print() Method','JS_print.html','Invoking chart printing using JavaScript');
+			d.add(4207,42,'getXML() Method','JS_getXML.html','Getting the XML data of the chart');		
+
+
+			
+// -------------------- Exporting as Image/PDF ---------------------		
+		d.add(52,0,'Exporting as Image/PDF','Exporting charts generated by FusionWidgets as images/PDFs');
+			d.add(5201,52,'Overview','ECOverview.html','Overview of how FusionWidgets exports charts to images/PDFs');
+			d.add(5202,52,'How it works?','ECProcess.html','The processes that take place behind the scenes during export');
+			d.add(5203,52,'Terminologies','ECTerminology.html','The processes that take place behind the scenes during export');
+			d.add(5204,52,'XML Attributes','ECXML.html','XML attributes that help you configure export related parameters');
+			
+			d.add(5205,52,'Server-side exporting','Setting up server-side exporting');
+				d.add(52051,5205,'Overview','ECServerOverview.html','Overview of server-side exporting');
+				d.add(52052,5205,'Returning image as download','ECServerDownload.html','Returning the exported imaged/PDF as download to browser');
+				d.add(52053,5205,'Saving to server disk','ECServerSave.html','Saving the exported image/PDF to server disk');
+				d.add(52054,5205,'Configuring Export Formats','ECServerFormats.html','Selecting what formats to show for export?');
+				d.add(52055,5205,'Configuring Export Dialog','ECExportDialog.html','Configuring cosmetics of export dialog');
+			
+			d.add(5206,52,'Client-side exporting','Configuring FusionCharts to export as images/PDFs at client side');
+				d.add(52061,5206,'Overview','ECClientOverview.html','Overview of client-side exporting');
+				d.add(52062,5206,'Simple Example','ECClientSimple.html','Setting up a simple single chart export');
+				d.add(52063,5206,'Setting for multiple charts','ECClientMultiple.html','Exporting multiple charts on same page');
+				d.add(52064,5206,'Setting JavaScript callback','ECClientCallback.html','Setting up JavaScript callbacks to get notified when the chart has finished exporting');		
+				d.add(52065,5206,'Component UI Customization','ECComponentUI.html','Configuring export component UI');
+				d.add(52066,5206,'Configuring Export Formats','ECServerFormats.html','Selecting what formats to show for export?');
+				d.add(52067,5206,'Configuring Export Dialog','ECExportDialog.html','Configuring cosmetics of server-side export');
+			
+			d.add(5207,52,'Batch exporting charts','Exporting all charts on a page using batch export');
+				d.add(52071,5207,'Overview','ECBatchOverview.html','Overview of batch exporting');
+				d.add(52072,5207,'Setting it up','ECBatchSetup.html','Setting up batch overview');
+				d.add(52072,5207,'Setting JavaScript callback','ECBatchCallback.html','Setting up JavaScript callbacks to get notified when the batch has finished exporting');	
+				d.add(52073,5207,'Over-riding export parameters','ECBatchOverride.html','Over-riding batch export parameters from JavaScript');
+			
+			d.add(5208,52,'JavaScript Reference','JavaScript API and Reference to help you customize your exporter component');
+				d.add(52081,5208, 'JavaScript API', 'ECReferenceJS.html', 'JavaScript API of the FusionCharts export component');
+				d.add(52082,5208, 'Component Attributes', 'ECReferenceComponent.html', 'Component attributes that helps you to customize your export component');
+				d.add(52083,5208, 'Export Attributes', 'ECReferenceExport.html', 'Export attributes that allows');		
+			
+			d.add(5209,52,'Initiating from JavaScript','ECJavaScript.html','Using JavaScript to initiate chart export');		
+			d.add(5210,52,'Export Component Debug Mode','ECReferenceDebugJS.html','Debug Mode of client side Export Component');
+			d.add(5211,52,'Troubleshooting','ECTroubleshooting.html','Troubleshooting export chart related issues');
+
+// -------------------- Exporting chart data ------------------
+		d.add(53,0,'Exporting Chart Data','Exporting data of generated chart as CSV');
+			d.add(5301,53,'Using Context Menu','ExportDataSetup.html','Overview of how to allow export of data from charts');
+			d.add(5302,53,'Using JavaScript API','ExportDataJS.html','Using the new JavaScript API to export data');
+
+// -------------------- Message Logger ---------------------		
+		d.add(43,0,'Message Logger');
+			d.add(4301,43,'Overview','MsgLOverview.html','What is Message Logger?');
+			d.add(4302,43,'Setting it up','MsgLUse.html','Setting up the Message Logger for use in real-time charts');
+			d.add(4303,43,'Streaming messages','MsgLRealTime.html','Properties to stream real-time messages to Message Logger');
+			d.add(4304,43,'Handling Messages in JavaScript','MsgLHandleJS.html','How to handle messages streamed from server in local JavaScript functions?');
+			d.add(4305,43,'JavaScript API','MsgLJSAPI.html','JavaScript API to control message logger at client side.');
+// -------------------- Alert Manager ---------------------		
+		d.add(44,0,'Alert Manager');
+			d.add(4401,44,'Introduction','AM_Intro.html','Introduction to Alert Manager and what it does?');
+			d.add(4402,44,'Setting it up','AM_Setting.html','How to set it up for a real-time chart?');
+
+// -------------------- STYLES ---------------------		
+		d.add(45,0,'Using STYLES','');
+			d.add(4501,45,'Overview','Styles/Styles.html');
+			d.add(4502,45,'How to Use?','Styles/HowToUse.html');
+			d.add(4503,45,'Font Style Type','Styles/Font.html');
+			d.add(4504,45,'Animation Style Type','Styles/Animation.html');
+			d.add(4506,45,'Shadow Style Type','Styles/Shadow.html');
+			d.add(4507,45,'Glow Style Type','Styles/Glow.html');
+			d.add(4508,45,'Bevel Style Type','Styles/Bevel.html');
+			d.add(4509,45,'Blur Style Type','Styles/Blur.html');		
+
+//----------------- For Flash Developers ---------------------
+		d.add(46,0,'Guide for Flash Developers');
+			d.add(4601,46,'Overview','Flash_Overview.html','Overview of using FusionWidgets in your Flash Movies');
+			d.add(4602,46,'Loading Multiple Charts','Flash_Multiple.html','Overview of using FusionWidgets in your Flash Movies');
+			d.add(4603,46,'Loading External XML','Flash_EXML.html','Loading XML data from an external XML file.');
+			d.add(4604,46,'Using Chart API','Flash_API.html','Using the API exposed by each chart.');
+			d.add(4606,46,'Handling Click Events','Flash_Click.html','Handling click events inside your Flash movies when a data point is clicked.');			
+			d.add(4607,46,'Loading/Rendering Events','Flash_Load.html','Handling loading/rendering event of charts inside your Flash movies.');
+			d.add(4608,46,'FAQs','Flash_FAQ.html','Frequently asked Questions about using FusionWidgets in Flash');
+
+
+// -------------- Advanced Charting --------------		
+		d.add(47,0,'Advanced Charting');
+			d.add(4701,47,'Number Formatting');
+				d.add(47010,4701,'Basics','AC_NF_Basics.html','Basics of Number Formatting in FusionWidgets');
+				d.add(47011,4701,'Number Scaling','AC_NF_NumScaling.html','Number Scaling in FusionWidgets');
+				d.add(47012,4701,'Recursive Number Scaling','AC_NF_RecNumScaling.html','Number Scaling in FusionWidgets');
+				d.add(47013,4701,'Input Number Formatting','AC_NF_FormInNum.html','Using formatted input numbers.');
+		
+			d.add(4702,47,'Using Special Characters');
+				d.add(47021,4702,'Using Multi-lingual text','AC_SC_MultiLingual.html','Using multi-lingual text in FusionWidgets');
+				d.add(47022,4702,'Using Euro Sign','AC_SC_Euro.html','Using Euro sign in FusionWidgets');
+				d.add(47023,4702,'Using Pound Sign','AC_SC_Pound.html','Using Pound sign in FusionWidgets');
+				d.add(47024,4702,'Using Franc Sign','AC_SC_Franc.html','Using Franc sign in FusionWidgets');
+				d.add(47025,4702,'Using Yen Sign','AC_SC_Yen.html','Using Yen sign in FusionWidgets');		
+				d.add(47026,4702,'Using Cent Sign','AC_SC_Cent.html','Using Cent sign in FusionWidgets');
+				d.add(47027,4702,'Using Percent Sign','AC_SC_Percentage.html','Using Percentage sign in FusionWidgets');
+				d.add(47028,4702,'Using &amp; Character','AC_SC_Ampersand.html','Using Ampersand Character in FusionWidgets');
+				d.add(47029,4702,'Using &lt; or &gt; Sign','AC_SC_Inequality.html','Using < or > sign on chart');
+				d.add(47030,4702,"Using Apostrophe (')",'AC_SC_Apostrophe.html','Using Apostrophe Character in FusionWidgets');
+				
+			d.add(4703,47,'Plotting Discontinuous data','AC_SC_DiscData.html','Plotting discontinuous data with FusionWidgets');
+			d.add(4704,47,'Using Gradients','AC_UsingGradients.html','How to use gradients in FusionWidgets?');
+			d.add(4705,47,'Tool Tip in Multiple Lines','AC_MultilineTT.html','How to distribute tool tip content into multiple lines and to use HTML in the same?');
+			d.add(4706,47,'Set backgrounds for chart','AC_SC_ChartBG.html','How to set background images for chart?');
+			d.add(4707,47,'Using Chart on SSL/HTTPS','AC_HTTPS.html','Using FusionWidgets over SSL/HTTPS');
+			d.add(4708,47,'Changing chart messages','AC_ChartMessages.html','Changing various chart messages');
+// -------------------- Debugging ---------------------		
+		d.add(48,0,'Debugging your Charts','');
+			d.add(4801,48,'Basic Troubleshooting','BasicDebug.html','Troubleshooting / Problem Solving');
+			d.add(4802,48,'The new Debug Window','DebugWindow.html','Using the debug window');
+			d.add(4803,48,'Debugging real-time update','DebugRT.html','Debugging the real-time data update');
+
+		d.add(49,0,'Frequently Asked Questions','FAQ.html');
+		d.add(50,0,'Licensing Information','Licensing.html');
+		d.add(51,0,'Support Information','Support.html');
+
+		document.write(d);
+		//-->
+	</script>
+	<p><a href="javascript: d.openAll();">Expand all</a> | <a href="javascript: d.closeAll();">Collapse all</a></p>
+</div>
+</body>
+</html>

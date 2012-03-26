@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+	<TITLE>FusionWidgets & JavaScript - Basic Example</TITLE>	
+	<style type="text/css">
+	<!--
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+	}
+	-->
+	</style>
+	<SCRIPT LANGUAGE="Javascript" SRC="../Charts/FusionCharts.js"></SCRIPT>
+	<SCRIPT LANGUAGE="JavaScript">
+		//FC_Rendered method is called whenever a FusionCharts chart on the page
+		//has finished initial rendering. To this function, the chart passes its 
+		//own DOM Id.
+		function FC_Rendered(DOMId){
+			//If it's our required chart
+			if (DOMId=="chart1Id"){
+				//Simply alert				
+				window.alert("Look Ma! I am Funnel Chart and I've finished loading and rendering.");
+				return;
+			}
+		}
+	</SCRIPT>
+</HEAD>
+<BODY>
+	<CENTER>
+		<h2>FusionWidgets and JavaScript - Basic Example</h2>
+		
+		<div id="chart1div">
+			FusionWidgets
+		</div>
+		<script language="JavaScript">					
+			var chart1 = new FusionCharts("../Charts/Funnel.swf", "chart1Id", "450", "400", "0", "1");		   			
+			chart1.setDataXML("<chart caption='Conversion Ratio' subcaption='May 2007' showPercentValues='1' decimals='1' baseFontSize='11' percentOfPrevious='1' showPlotBorder='1' funnelYScale='15' labelSepChar=': '><set label='Website Visits' value='385634' /><set label='Downloads' value='175631'  /><set label='Interested to buy' value='84564' /><set label='Contract finalized' value='35654' /><set label='Purchased' value='12342' /></chart>");
+			chart1.render("chart1div");
+		</script>
+		<BR>
+		
+	</CENTER>
+</BODY>
+</HTML>

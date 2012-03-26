@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Message Logger &gt; Setting it up </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>To use message logger, you first need to make sure that you're using a real-time chart from FusionWidgets suite - i.e., charts which upate themselves in real-time. Examples are real-time line chart, column chart, angular gauge, linear gauges etc.</p>
+    <p>Thereafter, there are 2 steps involved in configuring and using the message logger:</p>
+    <ol>
+      <li>Configure your XML data document to use message logger. Also, set up the XML attributes to configure the functional and cosmetic properties of the message logger.</li>
+      <li>Configure your real-time data provider page to broadcast/stream messages to the logger. </li>
+      </ol>
+    <p>We'll discuss both of these in details here. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Setting up the message logger - XML Attributes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To use the message logger in a real time chart, you just need to set the following in your XML:</p>
+    <p class="codeInline">&lt;chart useMessageLog='1' ..&gt;</p>
+    <p>This attribute tells the chart to setup message logger and listen to messages streamed from the server. <strong>Please note that the message logger becomes visible only when it listens to the first message streamed from the server. By default, it stays in hidden mode. </strong></p>
+    <p>So, for example, when you first set the message logger on for a real-time line chart, you would get a screen as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/MsgL_Use1.gif" width="503" height="351" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">And, when the first message is streamed to the chart from server, the logger will show up as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/MsgL_Use2.gif" width="503" height="353" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Configuring the logger </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The following <span class="codeInline">&lt;chart&gt;</span> element attributes help you configure the functional and cosmetic properties of the message logger. </p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="95%" border="1" align="left" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="22%" class="text"><strong>Attribute Name </strong></td>
+        <td width="20%" class="text"><strong>Type</strong></td>
+        <td width="58%" class="text"><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messageLogWPercent</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">This attribute lets you set the width percent of the message logger window w.r.t entire chart width. So, if you set it as 80, the message logger window will take up 80% of chart width. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messageLogHPercent</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">This attribute lets you set the height percent of the message logger window w.r.t entire chart height. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messageLogShowTitle</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show the title for message logger? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messageLogTitle</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">If you've opted to show the title for message logger, you can define your custom title here. Examples are &quot;Error log&quot;, &quot;Server History&quot; etc. The title displays at the top left corner of chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messageLogColor</td>
+        <td valign="top" class="text">Color (Hex without #) </td>
+        <td valign="top" class="text">You can customize the color of the entire message log window by setting a hex value for this attribute. </td>
+      </tr>
+      <tr>
+        <td height="54" valign="top" class="codeInline">messageGoesToLog</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">The messages streamed to the chart can either be displayed in the message log window or can be passed to JavaScript (which we'll see next). This attribute lets you control whether the messages should be logged in the in-built log window. </td>
+      </tr>
+      <tr>
+        <td height="54" valign="top" class="codeInline">messageGoesToJS</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">This attribute lets you configure whether each message streamed from the server should be passed to a local JavaScript function. </td>
+      </tr>
+      <tr>
+        <td height="54" valign="top" class="codeInline">messageJSHandler</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">If you've opted to pass each message to JavaScript function, this attribute lets you define the name of the function. This helps you create your custom functions to react to messages streamed from server. </td>
+      </tr>
+      <tr>
+        <td height="54" valign="top" class="codeInline">messagePassAllToJS</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether all parameters passed as part of message envelope be passed to the custom JavaScript function. We'll see the implementation of this next. </td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>&nbsp;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Now that the message logger is set up in the chart, we'll next see how to stream messages from server to the message logger. </td>
+  </tr>
+</table>
+</body>
+</html>

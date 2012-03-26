@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Annotation &gt; Line </h2></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Let us take a look at the Line Annotation here. A line annotation looks as under: </p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>&nbsp;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Line1.gif" width="110" height="109" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML to create the above is: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+      &nbsp;&nbsp;&nbsp;...<br />
+      &nbsp;&nbsp;&nbsp;&lt;annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' &gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='line' x='200' y='200' toX='300' toY='300' color='639ACE'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;...<br />
+    &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">In the code above, we have set the annotation type to <span class="codeInline">line</span>, specified the  starting x and y co-ordinates and the ending x and y co-ordinates and also a color for the line.</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Setting the thickness of the line  </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The thickness of the line can be defined using the <span class="codeInline">thickness</span> attribute. <span class="codeInline">thickness='5'</span> would give: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Line2.gif" width="108" height="110" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Dashed line  </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The line can be made dashed by setting <span class="codeInline">dashed='1'</span>. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Line3.gif" width="110" height="110" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The dash properties - dash length &amp; gap can be customized using the dashLen and dashGap attributes. Setting <span class="codeInline">dashLen='1'</span> and <span class="codeInline">dashGap='4'</span>, we would have: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Line4.gif" width="109" height="110" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The final XML for the line (as we have above would be): </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+      &nbsp;&nbsp;&nbsp;...<br />
+      &nbsp;&nbsp;&nbsp;&lt;annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' &gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='line' x='200' y='200' toX='300' toY='300' color='639ACE' dashed='1' dashLen='1' dashGap='4'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;...<br />
+      &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The various attributes using which the line annotation can be customized are: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">type</td>
+        <td valign="top" class="text">Rectangle, Circle, Polygon, Line, Arc, Text, Image</td>
+        <td valign="top" class="text">The type of the annotation you wish to draw on the chart. Needs to be set to <span class="codeInline">Line</span> to create a Line annotation. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">x</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The starting x co-ordinate for the annotation. This x co-ordinate is relative to the x co-ordinate of the annotation group in which the annotation is placed. For example, if you have set the x co-ordinate of the annotation group as 50 and the x co-ordinate of the annotation is 100, then the effective x co-ordinate of the annotation would be 150 w.r.t to the starting position of the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">y</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The starting y co-ordinate for the annotation. This again is relative to the starting y co-ordinate of the annotation group in which the annotation is placed. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">toX</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The ending x co-ordinate for the line. This co-ordinate is relative to the starting x-position of the annotation group in which the annotation is placed. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">toY</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The ending y co-ordinate for the line. This co-ordinate is relative to the starting y-position of the annotation group in which the annotation is placed. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Hex Color (without the '#')</td>
+        <td valign="top" class="text">A generic color for the annotation from which font color, fill color and border color (whichever applies) will be derived automatically. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alpha</td>
+        <td valign="top" class="text">Number(1-100)</td>
+        <td valign="top" class="text">The alpha(transparency) of the annotation. By default, it would be set to 100.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">thickness</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The thickness of the line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Dash properties </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashed</td>
+        <td valign="top" class="text">Boolean (0 or 1) </td>
+        <td valign="top" class="text">Whether the line would be dashed or not. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashLen</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The length of the dash in the line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashGap</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The gap between 2 dashes in a line. </td>
+      </tr>
+      
+      
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Application</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Appl1.jpg" width="300" height="170" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML for the above is: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart ... &gt;<br />
+  &nbsp;&nbsp; ...<br />
+  &nbsp;&nbsp; &lt;annotations&gt;<br />
+  &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotationGroup&gt;<br />
+  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='rectangle' xPos='120' yPos='60' toXPos='280' toYPos='120' radius='0' fillcolor='333333' fillAlpha='5'/&gt;<br />
+  <strong>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='line' xPos='120' yPos='60' toYPos='120' color='333333' thickness='2'/&gt;<br />
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='line' xPos='280' yPos='60' toYPos='120' color='333333'  thickness='2'/&gt;<br />
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='line' xPos='120' yPos='60' toXPos='125' color='333333'  thickness='2'/&gt;<br />
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='line' xPos='120' yPos='120' toXPos='125' color='333333'  thickness='2'/&gt;<br />
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='line' xPos='275' yPos='60' toXPos='280' color='333333'  thickness='2'/&gt;<br />
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='line' xPos='275' yPos='120' toXPos='280' color='333333'  thickness='2'/&gt;<br />
+  </strong>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='text' label='Fuel left in tanker' font='Verdana' xPos='145' yPos='65' align='left' vAlign='left' fontcolor='333333' fontSize='10' isBold='1'/&gt; <br />
+  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='text' label='(expressed in ltrs)' font='Verdana' xPos='144' yPos='80' align='left' vAlign='left' fontcolor='333333' fontSize='10'/&gt; <br />
+  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='text' label='3650' font='Verdana' xPos='145' yPos='95' align='left' vAlign='left' fontcolor='333333' fontSize='10' isbold='1'/&gt; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;/annotationGroup&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+  &lt;/chart&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

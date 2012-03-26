@@ -1,0 +1,9 @@
+<chart palette='1' lowerLimit='0' upperLimit='600' canvasLeftMargin='120' caption='Avg Order Size' subcaption='US $' showBorder='0'>
+    <colorRange>
+        <color minValue='0' maxValue='350' />
+        <color minValue='350' maxValue='500' /> 
+        <color minValue='500' maxValue='600' /> 
+    </colorRange> 
+    <value>320</value>
+    <target>550</target>
+</chart>

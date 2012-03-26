@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Message Logger &gt; Streaming messages from server </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we'll see the data format required to stream messages from server to the client. Each real time update of the chart can contain 1 message to be added to the logger. The following attributes <strong>in the real-time data stream</strong> help you do so: </p>
+      <p class="highlightBlock">Please note that the messages to be logged should be provided in the real-time data stream and not the XML document. Real-time data stream refers to the data provided by the URL specified in <span class="codeInline">dataStreamURL</span> attribute. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="95%" border="1" align="left" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="22%" class="text"><strong>Attribute Name </strong></td>
+        <td width="20%" class="text"><strong>Type</strong></td>
+        <td width="58%" class="text"><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">msgId</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">This attribute lets you specify an ID for each message - it is useful when you're tracking messages in your custom JavaScript function and need to refer to this ID to take actions. This ID is NOT displayed in the logger window. It's just passed to the JavaScript function. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">msgTitle</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">The string title of the message that gets displayed in the message logger window, and can also be passed to JavaScript functions. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">msgText</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">The actual text of the message that gets displayed in the message logger window and can also be passed to JavaScript functions. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">msgType</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text"><p>This attribute lets you specify a type for each message streamed. Basically, each type gets rendered using a different text style in the logger for instant interpretation. </p>
+          <p>Possible values are INFO, ERROR, LITERAL or LINK. INFO is shown in normal font properties, whereas ERROR is highlighted in a shade of red. LITERALS are shown in code like blocks, whereas LINK serves as a clickable link. </p></td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">msgGoesToLog</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">For each message streamed from the server, you can control whether to log it in the visible message logger of chart. By default, this attribute takes its value from <span class="codeInline">messageGoesToLog</span> attribute defined for <span class="codeInline">&lt;chart&gt;</span> element. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">msgGoesToJS</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Additionally, for each message, you can also specify whether this message should be passed to JavaScript handler. By default, this attribute takes its value from <span class="codeInline">messageGoesToJS</span> attribute of <span class="codeInline">&lt;chart&gt;</span> element. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">clearLog</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">When you've a need to clear the message history in the currently showing chart, you can return this parameter as part of data stream with a value of 1. </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Examples of real-time update</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Shown below is an example of real-time update string passed by server to the message logger (contained in a line chart in this example):</p>
+    <p>&amp;<strong>label</strong>=10%3A44%3A15+AM&amp;<strong>value</strong>=23|54&amp;<strong>msgTitle</strong>=OS update at   12:28&amp;<strong>msgText</strong>=Operating system update downloaded automatically. Installation   in-process. Reboot due in 8 minutes. </p>
+    <p>Here, we first have the <span class="codeInline">&amp;label </span>and &amp;value parameters which are absorbed by the chart for data update. Thereafter, we've the <span class="codeInline">msgTitle</span> and <span class="codeInline">msgText</span> parameters which get absorbed by the message logger. Here, we've set a title of <span class="codeInline">&quot;OS update at   12:28&quot;</span> and text of <span class="codeInline">&quot;Operating system update downloaded automatically. Installation   in-process. Reboot due in 8 minutes. &quot; </span></p>
+    <p>When a chart (with message logger set as on) accepts this data stream, it will show the following: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/MsgL_Use2.gif" width="503" height="353" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p class="highlightBlock">Note: If you're passing any special characters as part of your message text or title (like &amp;, % etc.), you'll need to URL Encode the text/title.</p>
+    <p>&nbsp; </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Changing Message Type </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As we had earlier discussed, you can choose a message type for each message as INFO, ERROR, LITERAL or LINK. This helps your end users easily recognize the type of each message </p>
+      <p>Shown below is a simple example using message type as error:</p>
+      <p>&amp;label=10%3A48%3A28+AM&amp;value=23|54&amp;<strong>msgTitle</strong>=Alert at   12:24&amp;<strong>msgText</strong>=Server Alert Id: 33456. Temperature of zone 1 exceeded pre-set   threshold 1.<strong>&amp;msgType=ERROR</strong></p>
+    <p>When a chart reads this, it'll display the message as under:</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/MsgL_Error.gif" width="450" height="303" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">And, for a message type as <span class="codeInline">Literal</span>, it will show the message as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/MsgL_Literal.gif" width="448" height="115" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Creating messages with link </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you want to show a message as link, just set <span class="codeInline">msgText</span> of that message as the entire link (URL Encoded) and <span class="codeInline">msgType</span> to <span class="codeInline">LINK</span>. Example: </p>
+      <p>&amp;label=10%3A59%3A44+AM&amp;value=23|54&amp;<strong>msgTitle</strong>=Test   Link&amp;<strong>msgText</strong>=http%3A%2F%2Fwww%2Efusioncharts%2Ecom%3Fid%3D34&amp;<strong>msgType</strong>=LINK</p>
+      <p>In the above example, we're linking the message to <span class="codeInline">http://www.fusioncharts.com?id=34</span> - we've URL Encoded the link, as it contains special characters (? in this case). </p>
+      <p class="highlightBlock">When specifying a link message type, the link itself is shown as the message text. You cannnot change the message text. </p>
+      <p>This will yield the following output: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/MsgL_Link.gif" width="420" height="89" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Linking custom text</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you have a need to show your own text as message and then link it, there's a work-around. Set <span class="codeInline">msgType</span> to <span class="codeInline">INFO</span> and provide the entire link in HTML code as part of <span class="codeInline">msgText</span>. </p>
+      <p>To specify a link, you'll need to output the HTML code for link as <span class="codeInline">msgText</span>. Add the &lt;U&gt; tag in HTML code if you need to underline the link. Finally, URLEncode the entire <span class="codeInline">msgText</span> parameter and then stream to the chart. Example:</p>
+    <p>&amp;label=11%3A02%3A56+AM&amp;value=23|54&amp;<strong>msgTitle</strong>=Test Linked   Message&amp;<strong>msgText</strong>=%3CA+HREF%3D%27<br />
+      http%3A%2F%2Fwww%2Efusioncharts%2Ecom%3Fid%3D<br />
+    34%27%3E%3CU%3EServer+Alert+Id%3A+33456%2E+Temperature+of+zone+1+<br />
+    exceeded+pre%2Dset+threshold+1%2E%3C%2FU%3E%3C%2FA%3E&amp;<strong>msgType</strong>=INFO</p>
+    <p>In simpler form (i.e., before URL Encoding), this stream reads as under:</p>
+    <p>&amp;label=11%3A02%3A56+AM&amp;value=23|54&amp;<strong>msgTitle</strong>=Test Linked Message&amp;<strong>msgText</strong>=&lt;A HREF='http://www.fusioncharts.com?id=34'&gt;&lt;U&gt;Server Alert Id: 33456. Temperature of zone 1 exceeded pre-set threshold 1.&lt;/U&gt;&lt;/A&gt;&amp;<strong>msgType</strong>=INFO</p>
+    <p>When you see this in the chart, you'll get the following result: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/MsgL_LinkINFO.gif" width="443" height="106" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Clearing Message Logger from server </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>From the server, you can instruct the chart to clear the contents of visible message logger by sending the following command:</p>
+    <p>&amp;clearLog=1 </p>
+    <p>It can be sent as a part of message stream like </p>
+    <p>&amp;label=10%3A48%3A28+AM&amp;value=23|54&amp;msgTitle=Alert at   12:24&amp;msgText=Server Alert Id: 33456. Temperature of zone 1 exceeded pre-set   threshold 1.&amp;msgType=ERROR<strong>&amp;clearLog=1</strong></p>
+    <p>This will clear all the contents of the existing message logger and start afresh.</p>
+    <p class="highlightBlock">Note: If you send &amp;clearLog=1 with each real-time update, the chart wouldn't show any messages in the logger, as the log is being cleared with each update. As such, take caution to send this command only when log needs to be cleared. </p>
+    <p>Additionally, you can also clear the message logger using client side JavaScript API, which we'll see in next section. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Next we'll see how messages can be handled in JavaScript functions. </td>
+  </tr>
+</table>
+</body>
+</html>

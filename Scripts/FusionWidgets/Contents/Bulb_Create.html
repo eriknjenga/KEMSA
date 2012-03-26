@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Bulb Gauge &gt; Creating a simple chart </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>In our first bulb gauge, we would be plotting Attrition Rate from 0-100%. The   final outcome would be:</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Bulb_Create1.jpg" width="100" height="125" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The various tasks involved in building this chart are:</p>
+      <ul>
+        <li>Defining the minimum and maximum value which would be plotted on the gauge   scale. They are termed as the lower and upper limits of the gauge scale and in   this case setting them to 0 and 100 respectively would suit our purpose just   fine - as we're plotting the chart indicating a %, which cannot go below 0 or   beyond 100. <br />
+        </li>
+        <li>Dividing the values into pre-determined regions: <br />
+          0-15%: Low Attrition   Rate (the bulb would shown in green when the value is in this region)<br />
+          15-35%:   Medium Attrition Rate (bulb would be yellow in this region)<br />
+          35-100%: High   Attrition Rate (bulb would be red in this region)<br />
+        </li>
+        <li>Passing the data value to the chart, 12 in the above chart. Since 12 lies in   the 1st pre-determined region, i.e. of the Low Attrition rate, the entire bulb   is shown in green. </li>
+      </ul>
+    <p>With the tasks defined, now lets get to the XML side of things. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">XML for the chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart upperLimit='100' lowerLimit='0' numberSuffix='%'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='15' label='Low' code='00FF00' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='15' maxValue='35' label='Medium' code='FFFF00' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='35' maxValue='100' label='High' code='FF0000' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;value&gt;12&lt;/value&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Explanation</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>First of all comes the <span class="codeInline">&lt;chart&gt;</span> element   which is the starting element for any chart that you create using FusionWidgets.   Now we define the lower and upper limits of the gauge scale. To define the   limits, we use the <span class="codeInline">lowerLimit</span> and <span class="codeInline">upperLimit</span> attributes of the <span class="codeInline">&lt;chart&gt;</span> element. </p>
+    <p>We also set the palette number and number suffix (the character which would   show up at the end of end number). </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart upperLimit='100' lowerLimit='0' numberSuffix='%'&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>There are other attributes of the <span class="codeInline">&lt;chart&gt;</span>   element which we would not be delving into now, because of this being a really   basic chart.</p>
+    <p>Next, we need to define our color range. As we had earlier seen, this chart   has 3 color ranges. To define the color range, we use the <span class="codeInline">&lt;colorRange&gt;</span> element, which is an immediate child   of the <span class="codeInline">&lt;chart&gt;</span> element. Under each <span class="codeInline">&lt;colorRange&gt;</span> element, we place a <span class="codeInline">&lt;color&gt;</span> element specifying a single color range as   shown in the code below. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;colorRange&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='15' label='Low' code='00FF00' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;color minValue='15' maxValue='35' label='Medium' code='FFFF00' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;color minValue='35' maxValue='100' label='High' code='FF0000' /&gt;<br />
+    &lt;/colorRange&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">After that, we set the value of the chart using: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;value&gt;12&lt;/value&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">And this finishes our first bulb gauge. </td>
+  </tr>
+</table>
+</body>
+</html>

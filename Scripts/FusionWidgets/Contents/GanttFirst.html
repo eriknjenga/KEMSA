@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Gantt Chart &gt; Creating your first chart </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we're going to create a simple Gantt chart using FusionWidgets. We'll try to keep things as simple as possible in this example and keep on learning new things incrementally in the forthcoming sections. </p>
+    <p>To create a Gantt chart using FusionWidgets, you need to take the following steps:</p>
+    <ol>
+      <li>Decide on the data you want to plot.</li>
+      <li>Convert the data into XML either manually or using your scripts (and database) </li>
+      <li>Embed the Gantt chart in HTML page and pass the reference to the above created XML file</li>
+      </ol>
+    <p>Here, we'll focus on the XML structure of the Gantt, as inclusion in HTML page has already been discussed in the section &quot;Creating your first chart&quot;. So, let's first decide on the data that we'll be plotting.</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Project Schedule Data  </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As the simplest example, we'll plot the timeline of a fictitious project let's say &quot;Project Gantt&quot;. This project has multiple sub-tasks which we'll be plotting on a Gantt chart to visually illustrate the timeline.</p>
+    <p>Before delving into XML, let's see the data for the chart in tabular format. All dates are in mm/dd/yyyy format. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="80%" border="1" cellpadding="2" cellspacing="1" bordercolor="#f1f1f1">
+      <tr>
+        <td width="39%" bgcolor="#f1f1f1" class="header">Process Name </td>
+        <td width="23%" bgcolor="#f1f1f1" class="header">Start Date </td>
+        <td width="21%" bgcolor="#f1f1f1" class="header">End Date </td>
+      </tr>
+      <tr>
+        <td bgcolor="#f1f1f1" class="text"><strong>Project Gantt </strong></td>
+        <td bgcolor="#f1f1f1" class="text"><strong>02/01/2007</strong></td>
+        <td bgcolor="#f1f1f1" class="text"><strong>08/31/2007</strong></td>
+      </tr>
+      <tr>
+        <td class="text">Identify Customers </td>
+        <td class="text">02/04/2007</td>
+        <td class="text">02/10/2007</td>
+      </tr>
+      <tr>
+        <td class="text">Survey 50 Customers </td>
+        <td class="text">02/08/2007</td>
+        <td class="text">02/19/2007</td>
+      </tr>
+      <tr>
+        <td class="text">Interpret Requirements </td>
+        <td class="text">02/19/2007</td>
+        <td class="text">03/02/2007</td>
+      </tr>
+      <tr>
+        <td class="text">Study Competition </td>
+        <td class="text">02/24/2007</td>
+        <td class="text">03/02/2007</td>
+      </tr>
+      <tr>
+        <td class="text">Documentation of features  </td>
+        <td class="text">03/02/2007</td>
+        <td class="text">03/21/2007</td>
+      </tr>
+      <tr>
+        <td class="text">Brainstorm concepts </td>
+        <td class="text">03/21/2007</td>
+        <td class="text">04/06/2007</td>
+      </tr>
+      <tr>
+        <td class="text">Design &amp; Code </td>
+        <td class="text">04/06/2007</td>
+        <td class="text">07/21/2007</td>
+      </tr>
+      <tr>
+        <td class="text">Testing / QA </td>
+        <td class="text">07/21/2007</td>
+        <td class="text">08/19/2007</td>
+      </tr>
+      <tr>
+        <td class="text">Documentation of product </td>
+        <td class="text">07/28/2007</td>
+        <td class="text">08/24/2007</td>
+      </tr>
+      <tr>
+        <td class="text">Global Release </td>
+        <td class="text">08/24/2007</td>
+        <td class="text">08/27/2007</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, we've:</p>
+      <ul>
+        <li>Distributed the entire project into processes (sub-tasks)</li>
+        <li>Specified a start date and end date for each process.  </li>
+      </ul>
+    <p>Before we delve into creating the XML for above data table, let's look at how the final chart would look: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/GanttFirst_1.gif" width="589" height="387" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Now, if you're already excited, let's see how to build the XML for the Gantt chart. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Building the XML for above chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To build the XML for above chart, we need to:</p>
+      <ol>
+        <li>Specify <span class="codeInline">dateFormat</span> and attributes for the &lt;chart&gt; element</li>
+        <li>Add the &lt;categories&gt; element - each &lt;categories&gt; element represent a  visual timeline. In our chart, we've just 1 visual timeline representing each month's name, so we'll just have 1 &lt;categories&gt; element.</li>
+        <li>Add the chart processes under &lt;processes&gt;  element.</li>
+        <li>Add tasks for each process  and specify the starting and ending date for them.</li>
+        <li>Customize few cosmetics.</li>
+      </ol>
+      <p>The final XML for the chart would look as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart dateFormat='mm/dd/yyyy' caption='Project Gantt' subCaption='From 1st Feb 2007 - 31st Aug 2007'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='03/01/2007' label='Feb' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='03/01/2007' end='04/01/2007' label='Mar' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='05/01/2007' label='Apr' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='05/01/2007' end='06/01/2007' label='May' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='06/01/2007' end='07/01/2007' label='Jun' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='08/01/2007' label='Jul' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='08/01/2007' end='09/01/2007' label='Aug' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;processes fontSize='12' isBold='1' align='right'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Identify Customers'  /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Survey 50 Customers' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Interpret Requirements' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Study Competition' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of features' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Brainstorm concepts' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Design &amp; Code' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Testing / QA' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of product' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Global Release' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/processes&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;tasks&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/04/2007' end='02/10/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/08/2007' end='02/19/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/19/2007' end='03/02/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/24/2007' end='03/02/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='03/02/2007' end='03/21/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='03/21/2007' end='04/06/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='04/06/2007' end='07/21/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='07/21/2007' end='08/19/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='07/28/2007' end='08/24/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='08/24/2007' end='08/27/2007' /&gt; <br />
+&nbsp;&nbsp;&nbsp;&lt;/tasks&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">&lt;chart&gt; element and its attributes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Like all other charts in FusionCharts and FusionWidgets suite, the root element of the Gantt chart is <span class="codeInline">&lt;chart&gt;</span>. This element can accept a lot of attributes, which decide the functional and cosmetic properties of the chart. The entire list of properties is discussed in the section &quot;XML Sheet&quot;. Here, we'll discuss only the properties relevant to this chart.</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><strong>Specifying input date format for the chart </strong></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The most important (and mandatory) attribute for <span class="codeInline">&lt;chart&gt;</span> element is <span class="codeInline">dateFormat</span>. This attribute lets you specify the format of your dates in XML. For example, in our case, we've specified the dates in <span class="codeInline">mm/dd/yyyy</span> format. As such, we need to tell the Gantt chart that we're specify the date in <span class="codeInline">mm/dd/yyyy</span> format. Otherwise, the chart would not be able to interpret dates and would not render properly.</p>
+      <p>FusionWidgets allows you to specify the date in any one of the following   formats. As such, the <span class="codeInline">dateFormat</span> attribute can take any one of these values, and all your dates specified in the XML should conform to that format. </p>
+      <ul>
+        <li>mm/dd/yyyy </li>
+        <li>dd/mm/yyyy </li>
+        <li>yyyy/mm/dd </li>
+      </ul>
+      <p class="highlightBlock">To keep things simple here, we're not discussing time as part of date. We've covered that in the section &quot;Time based charts&quot;</p>
+    <p></p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><strong>Specifying caption and sub-caption for the chart </strong></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>We specify the caption and sub-caption for the chart using the following attributes of <span class="codeInline">&lt;chart&gt;</span> element:</p>
+      <ul>
+        <li class="codeInline">caption='Project Gantt' </li>
+        <li class="codeInline">subCaption='From 1st Feb 2007 - 31st Aug 2007'</li>
+      </ul>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Defining the visual timeline for the chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Next, we define the visual timeline for the chart. FusionWidgets Gantt chart allows you to define any number of date categories on the chart, and even irregular ones too. In our chart, since we're just showing the months (as shown below), we've defined only 1 <span class="codeInline">&lt;categories&gt;</span> element.</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/GanttFirst_Cat_1.gif" width="404" height="34" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Within the <span class="codeInline">&lt;categories&gt;</span> element, you can define the sub-categories, which are actually the divisions that you want for the category. We've divided our main category into months, and as such each category represents 1 month. For each category, you can define your custom label and more cosmetics (discussed in XML sheet). </p>
+    <p>Our XML for visual date scale looks as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='03/01/2007' label='Feb' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;category start='03/01/2007' end='04/01/2007' label='Mar' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='05/01/2007' label='Apr' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;category start='05/01/2007' end='06/01/2007' label='May' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;category start='06/01/2007' end='07/01/2007' label='Jun' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='08/01/2007' label='Jul' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;category start='08/01/2007' end='09/01/2007' label='Aug' /&gt;<br />
+&lt;/categories&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><strong>Adding more categories </strong></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">If you want to add another category on the date scale, say a scale showing quarters, you would need to add another <span class="codeInline">&lt;categories&gt; </span>element as shown below: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart ... &gt;<br />
+      ...<br />
+&nbsp;&nbsp;<strong>&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='04/01/2007' label='Q1' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='07/01/2007' label='Q2' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='09/01/2007' label='Q3' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;</strong><br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='03/01/2007' label='Feb' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='03/01/2007' end='04/01/2007' label='Mar' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='05/01/2007' label='Apr' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='05/01/2007' end='06/01/2007' label='May' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='06/01/2007' end='07/01/2007' label='Jun' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='08/01/2007' label='Jul' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='08/01/2007' end='09/01/2007' label='Aug' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+...<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">This will give the following result: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/GanttFirst_Cat_2.gif" width="394" height="51" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Similarly, you can add weeks, days, hours, minutes etc. as sub-categories too. The idea is to add as many categories as you need with each sub-category within containing the start and end date. You'll just need to keep the following considerations in mind:</p>
+      <ul>
+        <li>The start and end of each &lt;category&gt; should be same - as all the categories represent the same duration, just using different units.</li>
+        <li>The sub-category of each category should be so defined that they cover the entire duration and the dates of two sub-category never overlap.  </li>
+        <li>The dates of sub-category represent a date within the date frame of the chart. For example, in our Quarter division, we've set the dates for Q1 as 02/01/2007-04/01/2007, as the date frame of chart is 02/01/2007-08/31/2007. If we set Q1 as 01/01/2007-04/01/2007, the chart will change the date frame to 01/01/2007-08/31/2007. </li>
+      </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Defining processes for the chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Next, we define the list of processes for the chart using the <span class="codeInline">&lt;processes&gt;</span> element. This element can assume a lot of visual and functional attributes, which have been discussed in XML sheet. Here, we just specify a few attributes to change the cosmetics.</p>
+    <p>Each <span class="codeInline">&lt;process&gt;</span> element within the <span class="codeInline">&lt;processes&gt;</span> element represent a single process on the chart. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;processes fontSize='12' isBold='1' align='right'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;process label='Identify Customers' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;process label='Survey 50 Customers' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;process label='Interpret Requirements' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;process label='Study Competition' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of features' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;process label='Brainstorm concepts'  /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;process label='Design &amp; Code'  /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;process label='Testing / QA' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of product' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;process label='Global Release' /&gt;<br />
+&lt;/processes&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Defining the tasks </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Finally, we define the tasks for the chart using <span class="codeInline">&lt;tasks&gt;</span> and <span class="codeInline">&lt;task&gt;</span> element. Each task represents a horizontal bar on the chart, spanning from the specified start date to end date. Both these elements can have a number of additional cosmetic and functional properties which have been defined in XML Sheet. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;tasks&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;task start='02/04/2007' end='02/10/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;task start='02/08/2007' end='02/19/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;task start='02/19/2007' end='03/02/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;task start='02/24/2007' end='03/02/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;task start='03/02/2007' end='03/21/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;task start='03/21/2007' end='04/06/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;task start='04/06/2007' end='07/21/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;task start='07/21/2007' end='08/19/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;task start='07/28/2007' end='08/24/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;task start='08/24/2007' end='08/27/2007' /&gt; <br />
+&lt;/tasks&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>When specifying the dates for tasks, you need to make sure that:</p>
+      <ul>
+        <li>The date defined for each task should conform to the <span class="codeInline">dateFormat</span> specified earlier. </li>
+        <li>The end date for a task should always be more than the start date.</li>
+        <li>The date for any task should be within the date frame of the chart  (i.e., the date frame defined by chart categories). </li>
+      </ul>      
+    <p>Now that our first chart is done, we'll look into a few of the basic chart configuration properties in the next section. </p></td>
+  </tr>
+</table>
+</body>
+</html>

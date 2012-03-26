@@ -1,0 +1,34 @@
+<chart caption='Microsoft' palette='1' canvasLeftMargin='110'>
+	<dataset>
+		<set value='34.45' />
+		<set value='44.76' />
+		<set value='34.78' />
+		<set value='56.67' />
+		<set value='44.12' />
+		<set value='98.45' />
+		<set value='23.71'/>
+		<set value='46.90' />
+		<set value='65.12' />
+		<set value='64.91' />
+		<set value='34.02' />
+		<set value='31.21' />
+		<set value='34.31' />
+		<set value='44.21' />
+		<set value='34.54' />
+		<set value='76.90' />
+		<set value='44.21' />
+		<set value='91.90' />
+		<set value='23.43'/>
+		<set value='46.73' />
+		<set value='65.42' />
+		<set value='64.74' />
+		<set value='34.31' />
+		<set value='34.39' />
+		<set value='34.10' />
+		<set value='44.84' />
+		<set value='34.64' />
+		<set value='76.62' />
+		<set value='44.61' />
+		<set value='96.71' />
+	</dataset>
+</chart>

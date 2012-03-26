@@ -1,0 +1,35 @@
+<!--300*25-->
+<chart caption='Oracle' palette='1' canvasLeftMargin='110'>
+	<dataset>
+		<set value='33.52' />
+		<set value='51.43' />
+		<set value='44.78' />
+		<set value='46.67' />
+		<set value='54.12' />
+		<set value='38.45' />
+		<set value='50.71' />
+		<set value='46.90' />
+		<set value='45.12' />
+		<set value='34.91' />
+		<set value='39.02' />
+		<set value='41.21' />
+		<set value='38.31' />
+		<set value='42.21' />
+		<set value='30.54' />
+		<set value='46.90' />
+		<set value='64.21' />
+		<set value='51.90' />
+		<set value='53.43' />
+		<set value='66.73' />
+		<set value='55.42' />
+		<set value='49.74' />
+		<set value='42.31' />
+		<set value='40.39' />
+		<set value='50.10' />
+		<set value='44.84' />
+		<set value='55.64' />
+		<set value='40.62' />
+		<set value='50.61' />
+		<set value='40.68' />
+	</dataset>
+</chart>

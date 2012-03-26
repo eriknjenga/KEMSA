@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Bullet Graphs &gt; An Example </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we'll create a simple bullet graph to show the process involved in the same. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Steps</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To create a bullet graph, you need to decide:</p>
+      <ol>
+        <li>Chart lower and upper limit.</li>
+        <li>Divided the specified limits into qualitative ranges of performance, such as poor, satisfactory, and good.  </li>
+        <li>Decide the value to represent.</li>
+        <li>Decide the target figure to represent</li>
+        <li>Choose chart cosmetics.</li>
+      </ol>
+      <p>Let's see how to do each of these. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Revenue example </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>We'll plot a simple horizontal bullet graph to show the revenue figures for a fictional company. To do so, we first decide the qualitative ranges of revenue performance for that company. Let's assume it to something as under: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="60%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="39%" class="header">Range</td>
+        <td width="36%" class="header">What it means? </td>
+        <td width="25%" class="header">Color</td>
+      </tr>
+      <tr>
+        <td class="text">$0-$50,000</td>
+        <td class="text">Poor</td>
+        <td class="text">Dark grey </td>
+      </tr>
+      <tr>
+        <td class="text">$50,000-$75,000</td>
+        <td class="text">Moderate</td>
+        <td class="text">Normal grey </td>
+      </tr>
+      <tr>
+        <td class="text">$75,000-$100,000</td>
+        <td class="text">Good</td>
+        <td class="text">Light grey </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Also, we intend to plot the following values:</p>
+    <p><strong>Intended revenue</strong>: $80,000<br />
+      <strong>Revenue achieved</strong>: $78,900</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Converting to XML </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML for the above data would look as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart lowerLimit='0' upperLimit='100' caption='Revenue' subcaption='US $ (1,000s)' numberPrefix='$' numberSuffix='K' showValue='1' &gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='50' color='A6A6A6'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='50' maxValue='75' color='CCCCCC'/&gt; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='100' color='E1E1E1'/&gt; <br />
+&nbsp;&nbsp;&nbsp;&lt;/colorRange&gt; <br />
+&nbsp;&nbsp;&nbsp;&lt;value&gt;78.9&lt;/value&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;target&gt;80&lt;/target&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've:</p>
+      <ul>
+        <li>Created the <span class="codeInline">&lt;chart&gt;</span> element, which is   the root element of each chart. </li>
+        <li>Specified chart limits, caption, sub-caption, number prefix &amp; number suffix. You can specify a lot more properties for the <span class="codeInline">&lt;chart&gt;</span> element, which have been discussed in next   sections. </li>
+        <li>Defined the color range (numerical value for qualitative ranges) for the chart under <span class="codeInline">&lt;colorRange&gt;</span> element. Each range value has its own exclusive <span class="codeInline">minValue</span> and <span class="codeInline">maxValue</span> and also a color <span class="codeInline">code</span>. </li>
+        <li>Defined the value for chart inside <span class="codeInline">&lt;value&gt;</span> element. </li>
+        <li>Defined the intended target for chart inside <span class="codeInline">&lt;target&gt;</span> element. </li>
+      </ul>
+    <p>When you now run this XML against the horizontal bullet graph, you'll get something as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/HBullet1.jpg" width="454" height="75" /></td>
+  </tr>
+</table>
+</body>
+</html>

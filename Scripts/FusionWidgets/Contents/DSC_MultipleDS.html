@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Data-streaming charts &gt; Adding multiple datasets</h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>All the data-streaming charts can have any number of data-sets in them. For example, in our previous example, we're monitoring the stock price of just Google. However, we can add any number of stocks to monitor. </p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Monitoring multiple stocks </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In this example, we'll modify that example to compare 2 stocks - Google and Dell. For the sake of demo, we'll assume that the intraday price of Google stock fluctuates between $30 and $35 and that of Dell between $22 and $26.</p>
+    <p>The first step in this process would be to modify our XML  to add another data-set to represent Dell. This will be done as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart caption='Stock Price Monitor' subCaption='Google' dataStreamURL='StockPriceGoogDell.asp' refreshInterval='60' numberPrefix='$' setAdaptiveYMin='1' xAxisName='Time' showRealTimeValue='1' realTimeValuePadding='50' labelDisplay='Rotate' slantLabels='1'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;dataset seriesName='Google' showValues='0'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/dataset&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;dataset seriesName='Dell' showValues='0'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/dataset&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='captionFont' size='14' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Caption' styles='captionFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Realtimevalue' styles='captionFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've made the following changes:</p>
+      <ul>
+        <li>Changed data provider page to <span class="codeInline">StockPriceGoogDell.asp</span>, as now we need to monitor two stocks and so the data output has to be in a different  format.</li>
+        <li>Added another dataset representing Dell. </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Data provider page </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><span class="codeInline">StockPriceGoogDell.asp</span> now contains the following code: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;%@ Language=VBScript %&gt;<br />
+      &lt;%<br />
+      <span class="codeComment">'This page is meant to output the Stock Price of Google in real-time data format. <br />
+      'The data will be picked by FusionWidgets real-time line chart and plotted on chart.<br />
+      'You need to make sure that the output data doesn't contain any HTML tags or carriage returns.</span></p>
+      <p class="codeComment">'For the sake of demo, we'll just be generating random values and returning them<br />
+        'In real life applications, you can get the data from web-service or your own data systems, convert it into real-time data format and then return to the chart.</p>
+      <p><span class="codeComment">'Set randomize timers on</span><br />
+        Randomize()<br />
+        Randomize Timer</p>
+      <p>Dim lowerLimitGoog, upperLimitGoog<br />
+        Dim lowerLimitDell, upperLimitDell<br />
+        Dim googlePrice, dellPrice<br />
+        Dim dateTimeLabel</p>
+      <p>lowerLimitGoog = 30<br />
+        upperLimitGoog = 35<br />
+        lowerLimitDell = 22<br />
+        upperLimitDell = 26<br />
+      </p>
+      <p><span class="codeComment">'Generate random values - and round them to 2 decimal places</span><br />
+        googlePrice = Int(Rnd()*100*(upperLimitGoog-lowerLimitGoog))/100+lowerLimitGoog <br />
+        dellPrice = Int(Rnd()*100*(upperLimitDell-lowerLimitDell))/100+lowerLimitDell</p>
+      <p><span class="codeComment">'Get label for the data - time in format hh:mn:ss</span><br />
+        dateTimeLabel = Datepart(&quot;h&quot;,Now()) &amp; &quot;:&quot; &amp; Datepart(&quot;n&quot;,Now()) &amp; &quot;:&quot; &amp; Datepart(&quot;s&quot;,Now())</p>
+      <p><span class="codeComment">'Now write it to output stream</span><br />
+        Response.Write(&quot;&amp;label=&quot;&amp; dateTimeLabel &amp; &quot;&amp;value=&quot; &amp; googlePrice &amp; &quot;|&quot; &amp; dellPrice)<br />
+    %&gt;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see, we've modified the code to output data for both Google and Dell in a format as under:</p>
+    <p class="codeInline">&amp;label=19:26:56&amp;value=30.63|22.19</p>
+    <p>Here, we've a common label, but two values separated by | (pipe character). The value 30.63 belongs to Google (as Google is the first <span class="codeInline">dataset</span> defined in XML document) and 22.19 belongs to Dell (as it's the second <span class="codeInline">dataset</span> defined in XML). The order of values here should correspond with order of <span class="codeInline">&lt;dataset&gt;</span> element in XML. </p>
+    <p>When you now view the chart, you'll get a blank canvas as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_MDS1.jpg" width="507" height="355" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">After some time, when data is populated, it will look as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_MDS2.jpg" width="510" height="359" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Interactive legend </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets data-streaming charts offer interactive legend - that allows you to show hide any dataset on the chart. That is, if you've multiple data-sets on the chart, but want to focus on just one, you can click on the data-set's series name in legend and it will hide on the chart. When clicked again, it will be visible. </p>
+    <p>Shown below  is a screenshot where we've hidden the dataset indicating Dell's price by clicking on the legend item. Also note that after clicking, the legend key of Dell becomes hollow: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_MDS3.jpg" width="506" height="354" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Even when a dataset is not visible, it will continue updating itself in the background from the real-time data. Also, all alert managers associated with the dataset will continue to work. </p>
+    <p>If you do not need interactive legend, you can set it off using:</p>
+    <p class="codeInline">&lt;chart interactiveLegend='0' ..&gt;  </p></td>
+  </tr>
+</table>
+</body>
+</html>

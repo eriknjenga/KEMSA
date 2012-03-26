@@ -1,0 +1,39 @@
+<chart dateFormat='dd/mm/yyyy' ganttLineColor='CCCCCC' ganttLineAlpha='20' gridBorderAlpha='20' showTaskNames='1' hoverCapBgColor='F1F1F1' hoverCapBorderColor='333333' paletteThemeColor='333333'>
+<categories bgColor='333333' baseFont='Arial' baseFontCOlor='FFFFFF' baseFontSize='12' >
+	<category start='1/1/2005' end='31/5/2005' align='center' name='Sales Territory Assignment' fontColor='ffffff' isBold='1' fontSize='16' />
+</categories>
+<categories font='Arial' fontColor='ffffff' isBold='1' fontSize='12' bgColor='333333'>
+	<category start='1/1/2005' end='31/1/2005' name='January'  />
+	<category start='1/2/2005' end='28/2/2005' name='February'  />
+	<category start='1/3/2005' end='31/3/2005' name='March' />
+	<category start='1/4/2005' end='30/4/2005' name='April'/>
+	<category start='1/5/2005' end='31/5/2005' name='May' />
+</categories>
+<processes headerbgColor='333333' fontColor='ffffff' fontSize='12' bgColor='333333' align='right' >
+	<process Name='Tom' id='1'  />
+	<process Name='Harry' id='2' />
+	<process Name='Mary' id='4' />
+	<process Name='Mike' id='3' />
+</processes>
+
+<tasks  color='' alpha='' font='' fontColor='' fontSize='' isAnimated='1'>
+	<task name='North' processId='1' start='3/1/2005' end='4/2/2005' Id='1_1' color='e1f5ff' borderColor='AFD8F8'/>
+	<task name='East' processId='1' start='6/2/2005' end='24/3/2005' Id='1_2' color='e1f5ff' borderColor='AFD8F8'/>
+	<task name='Vacation' processId='1' start='25/3/2005' end='18/4/2005' Id='1_3' color='e1f5ff' borderColor='AFD8F8' height='2' showBorder='1'/>
+	<task name='South' processId='1' start='18/4/2005' end='24/5/2005' Id='1_4' color='e1f5ff' borderColor='AFD8F8'/>
+
+	<task name='South' processId='2' start='15/1/2005' end='5/3/2005' Id='2_1' color='F6BD0F' borderColor='F6BD0F'/>
+	<task name='West' processId='2' start='21/3/2005' end='10/5/2005' Id='2_2' color='F6BD0F' borderColor='F6BD0F'/>
+
+	<task name='Global' processId='3' start='7/1/2005' end='26/5/2005' Id='3_1' width='12' color='8BBA00' borderColor='8BBA00'/>
+
+  	<task name='South' processId='4' start='13/2/2005' end='19/4/2005' Id='4_1' width='12' color='FF654F' borderColor='FF654F' />
+
+</tasks>
+<connectors>
+	<connector fromTaskId='1_2' toTaskId='2_2' color='AFD8F8' thickness='2'/>
+	<connector fromTaskId='2_1' toTaskId='4_1' color='F7CB41' thickness='2'/>
+</connectors>
+
+</chart>
+

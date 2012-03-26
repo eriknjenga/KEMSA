@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">FusionWidgets and Flash &gt; Handling Click Events </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>You can easily handle the click events for data points on the chart in  your Flash movies. That is, whenever a user clicks on a data point e.g., dial, pointer etc., you can be notified of the same in your Flash movie.  Here we'll see how to do this.</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Adding link to XML</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To enable your parent movie to track links in FusionWidgets,  you need to add S- before every link specified in the XML data  document. This instructs the chart to convey the link to its parent SWF  movie. An example is given below: </p>
+      <p><span class="codeInline">&lt;dial id='CPU1' value='49' link='S-parameter'/&gt;</span></p>
+      <p>Here, <span class="codeInline">S-</span> is the prefix to indicate that this link should be bubbled up to parent SWF. When this link is bubbled up, the specified parameter is passed to the event handler. </p>
+      <p class="highlightBlock">If you need to pass multiple parameters, one way would be to use a comma to separate each new value. Then String.split the parameter into individual values in the called function. This is a simple method that would only work with string values.</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Listening to events </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To listen to events dispatched by chart, you'll need to construct event listener objects in your code as under: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><span class="codeComment">// ---------------- Event handlers ---------------------//</span><br />
+      var objL:Object = new Object();<br />
+objL.linkClicked = function(targetObj:Object){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;trace(&quot;Data belonging to &quot; + targetObj.link + &quot; was clicked&quot;);<br />
+}</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, <span class="codeInline">targetObj.link</span> would contain the link that was specified in the link attribute of the object (after truncating S-). </p>
+    <p>And, you'll also need to register your chart objects with this listener as under: </p></td>
+  </tr>
+  
+  <tr>
+    <td valign="top" class="codeBlock"><span class="codeComment">//Register the event listeners for charts</span><br />
+  chartObj.addEventListener(&quot;linkClicked&quot;, objL);</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

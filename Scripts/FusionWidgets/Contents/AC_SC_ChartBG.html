@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td width="100%"><h2 class="pageHeader">Setting backgrounds for charts</h2></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets allows you to easily set a background image/movie for your   chart. You can use this option to embed background images (GIF, JPEG or PNG),   other SWF Files, or data tables (in image format) as your chart background. </p>      
+      <p>To embed an image, all you need to do is set <span class="codeInline">bgSWF</span> property of <span class="codeInline">&lt;chart&gt;</span> element as shown below. You can also   dynamically change the transparency of the loaded image using <span class="codeInline">bgSWFAlpha</span> property, which accepts a value between 0 and   100. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart <strong>bgSWF='ChartBG.jpg'</strong> caption='Sales distribution by Employee' subCaption='Jan 07 &amp; Feb 07' baseFontC0lor='FFFFFF'&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;set label='Buchanan' value='20000' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;set label='Callahan' value='49000' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;set label='Davolio' value='63000' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;set label='Dodsworth' value='41000' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;set label='Fuller' value='74000' /&gt;<br />
+    &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the above XML, we're loading a background image <span class="codeInline">ChartBG.jpg</span> by   setting it as bgSWF attribute. If your image file   is in a different location, you'll need to specify the full path. Also, due to   security restrictions, your image file has to reside on the same sub-domain as   chart SWF File. </p>
+    <p>This is how the chart will look with the background image. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/AC_ChartBG.jpg" width="600" height="400" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Simple and effective - isn't it? </p>
+    <p>For best results, you need to make sure that the background image and your   chart have the same dimensions (width and height). Else, the loaded image would   align at top left of the chart. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

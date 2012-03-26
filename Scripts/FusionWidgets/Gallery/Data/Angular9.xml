@@ -1,0 +1,26 @@
+<chart bgColor='000000' bgAlpha='100' gaugestartAngle='235' gaugeendAngle='-55' lowerLimit='0' upperLimit='10' majorTMNumber='11' majorTMThickness='5' majorTMColor='F48900' majorTMHeight='15' minorTMNumber='4' minorTMThickness='2' minorTMColor='FFFFFF' minorTMHeight='13' placeValuesInside='1' gaugeOuterRadius='140' gaugeInnerRadius='85%25' baseFontColor='F48900' baseFont='Impact' baseFontSize='30' showShadow='0' pivotRadius='20' pivotFillColor='000000,383836'   pivotFillType='linear' pivotFillRatio='50,50' pivotFillAngle='240' annRenderDelay='0'>
+	<dials>
+		<dial value='5' color='E70E00' borderColor='E70E00' baseWidth='25' topWidth='1' radius='85' />
+	</dials>
+	<trendpoints>
+        	<point startValue='8' endValue='10'  radius='140' innerRadius='0' color='F48900' alpha='35' showBorder='0'/>
+	</trendpoints>
+	<annotations autoScale='0'>
+		<annotationGroup id='Grp1' showBelow='0' xScale='200' yScale='120' x='164' y='157'>
+			<annotation type='circle' x='0' y='0' color='FFFFFF' alpha='15' radius='7' />
+		</annotationGroup>
+	</annotations>
+	<styles>
+		<definition>
+			<style name='pivotGlow' type='glow' color='F48900' blurX='15' blurY='15' alpha='60'/>
+			<style name='circleBlur' type='blur'/>
+			<style name='TTipFont' type='font' color='F48900' bgColor='000000' borderColor='F48900' font='Verdana' size='10' />
+		</definition>
+
+		<application>
+			<apply toObject='PIVOT' styles='pivotGlow' />
+			<apply toObject='Grp1' styles='circleBlur' />
+			<apply toObject='TOOLTIP' styles='TTipFont' />
+		</application>
+	</styles>
+</chart>

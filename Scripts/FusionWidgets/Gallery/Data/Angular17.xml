@@ -1,0 +1,13 @@
+<Chart bgColor='FFFFFF' upperLimit='180' lowerLimit='0' majorTMNumber='7' majorTMColor='AF9A03'  majorTMHeight='8' minorTMNumber='0' majorTMThickness='8' showGaugeBorder='0' gaugeOuterRadius='100' gaugeOriginX='140' gaugeOriginY='140' gaugeScaleAngle='280' placeValuesInside='1' gaugeInnerRadius='90' displayValueDistance='17' pivotRadius='12' pivotFillMix='{AF9A03},{ffffff}' pivotBorderColor='AF9A03' pivotBorderThickness='2' pivotFillRatio='50,50' pivotFillType='linear' showPivotBorder='1' showShadow='0'>
+	<dials>
+		<dial value='25' borderAlpha='0'  bgColor='6A6FA6,AF9A03' baseWidth='4' topWidth='4' radius='93'/>
+	</dials>
+	<annotations>
+		<!-- Draw the background 3D look gauge steel effect -->
+		<annotationGroup xPos='140' yPos='140'>
+			<annotation type='circle' xPos='0' yPos='0' radius='110' fillPattern='linear' fillColor='eeeeee,ebce05,eeeeee' fillRatio='0,100,0' fillAngle='270' showBorder='1' borderColor='444444' borderThickness='1'/>
+			<annotation type='circle' xPos='0' yPos='0' radius='100' fillPattern='linear' fillColor='ffffff,ebce05,eeeeee' fillAlpha='100,10,100'  fillRatio='5,83,12' fillAngle='270'/>
+		</annotationGroup>
+	</annotations>
+</Chart>
+

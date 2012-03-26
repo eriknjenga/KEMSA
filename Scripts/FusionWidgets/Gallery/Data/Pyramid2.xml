@@ -1,0 +1,12 @@
+<chart bgColor='FFFFFF' showBorder='0' decimalPrecision='2' numberPrefix='$' showPercentageValues='0' isSliced='1' chartRightMargin='100' baseFontColor='453269'>
+   <set value='102494' name=' Item A' />
+   <set value='248982' name=' Item B' />
+   <set value='182731' name=' Item C' />
+   <set value='223461' name=' Item D' />
+   <set value='234532' name=' Item E' /> 
+   <annotations>
+      <annotationGroup showBelowChart='1'>
+         <object type='rectangle' xPos='5' yPos='5' toXPos='445' toYPos='345' Color='453269, FFFFFF' fillAlpha='10' fillAngle='90' radius='15' showBorder='1' borderColor='453269' borderThickness='7'/>
+      </annotationGroup>
+   </annotations>
+</chart>

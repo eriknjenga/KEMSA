@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<TITLE>FusionWidgets v3 - Real-time Line Chart Example</TITLE>
+<script type="text/javascript" src="../Charts/FusionCharts.js"></script>
+<script language="javascript">
+function clearChart1(){
+	//Get reference to the chart using its ID
+	var chartToClear = getChartFromId("ChId1");
+	//Invoke clearChart() command
+	chartToClear.clearChart();
+}
+</script>
+</HEAD>
+<BODY>
+<CENTER>
+<div id="chart1div">
+  This text is replaced by the Flash movie.
+</div>
+<script type="text/javascript">
+   var chart1 = new FusionCharts("../Charts/RealTimeLine.swf", "ChId1", "500", "350", "0", "1");
+   chart1.setDataURL("Data.xml");
+   chart1.render("chart1div");
+</script>
+<input type='button' value='Clear Chart' onClick='javascript:clearChart1();' >
+</BODY>
+</HTML>

@@ -1,0 +1,13 @@
+<Chart lowerLimit='-40' upperLimit='120' majorTMNumber='11' majorTMColor='A4D1FF' minorTMColor='A4D1FF' majorTMWidth='4' minorTMNumber='3' majorTMThickness='1' baseFontColor='A4D1FF' decimalPrecision='0' tickMarkDecimalPrecision='0' thmFillColor='FF5904' chartLeftMargin='40' chartTopMargin='40' chartBottomMargin='40' numberSuffix='°' borderThickness='2' thmbulbRadius='20'>
+	<value>32</value>
+	<annotations>
+		<!-- Draw the background thermometer board  -->
+		<annotationGroup showBelowChart='1'>
+			<annotation type='rectangle' xPos='0' yPos='0' toXPos='130' toYPos='380'  radius='0' showBorder='0' borderThickness='1' fillColor='666666,CCCCCC' fillAlpha='100' fillAsGradient='1' fillDegree='90' fillPattern='linear'/>
+			<annotation type='rectangle' xPos='5' yPos='5' toXPos='125' toYPos='375'  radius='0' fillColor='CCCCCC,888888' fillAlpha='100,100' fillAsGradient='1' fillDegree='90' fillPattern='linear'/>
+			<annotation type='rectangle' xPos='10' yPos='10' toXPos='120' toYPos='370'  radius='0' fillColor='004F9D'/>
+			<annotation type='text' xPos='90' yPos='345' label= 'F' fontSize='40' fontColor='A4D1FF'/>
+		</annotationGroup>
+	</annotations>
+</Chart>
+

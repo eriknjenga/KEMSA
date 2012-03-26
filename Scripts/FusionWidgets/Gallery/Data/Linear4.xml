@@ -1,0 +1,30 @@
+<Chart upperLimit='9' lowerLimit='0' bgColor='FFFFFF' gaugeRoundRadius='7' borderColor='DCCEA1' chartTopMargin='17' chartBottomMargin='10' ticksBelowGauge='0' valuePadding='0' majorTMColor='323433' majorTMNumber='10' minorTMNumber='4' minorTMHeight='-4' majorTMHeight='-8' placeValuesInside='1' showShadow='0' pointerRadius='5' pointerBgColor='E00000' pointerBorderColor='E00000' showGaugeBorder='0' baseFontColor='FFFFFF' gaugeFillMix=''  gaugeFillAlpha='0,0,0,0,0,0' sgaugeFillMix='{09DBFE},{32A6CF},{C1DFEA}' gaugeFillRatio='20,40,40' gaugeFillAngle='90' chartLeftMargin='30' chartRightMargin='30' animation='0'>
+	<colorRange> 
+        	<color minValue='0' maxValue='9' alpha='0'/>
+	</colorRange>
+	<value>6.7</value>
+	<annotations>
+		<annotationGroup id='Grp1' showBelow='1' >
+			<!--The gradient rectangle which replaces the gauge-->
+			<annotation type='rectangle' x='13' y='15' toX='367' toY='70' radius='8' color='004D69' />
+			<!--Border arund the gauge-->
+			<annotation type='rectangle' x='13' y='54' toX='367' toY='70' radius='8' color='055472,1D89AF' fillAngle='90'/>
+			<!--The extended deep blue rectangle-->
+			<annotation type='rectangle' x='13' y='13' toX='367' toY='52' radius='8' color='09DBFE,32A6CF,0177A7' fillRatio='20,40,40' fillAngle='90'/>
+			<!--Gauge reflection-->
+			<annotation type='rectangle' x='15' y='15' toX='365' toY='50' radius='8' color='09DBFE,32A6CF,C1DFEA' fillRatio='20,40,40' fillAngle='90'/>
+		</annotationGroup>
+		<!--The text Richter Scale-->
+		<annotationGroup id='Grp2' showBelow='1'>
+			<annotation type='text' label='Richter Scale' color='004D69' bold='1' x='190' y='43'/>
+		</annotationGroup>
+	</annotations>
+	<styles>
+		<definition>
+			<style name='TTipFont' type='Font' color='FFFFFF' bgColor='004D69' borderColor='004D69'/>
+		</definition>
+		<application>
+			<apply toObject='TOOLTIP' styles='TTipFont' />
+		</application>	
+	</styles>
+</Chart>

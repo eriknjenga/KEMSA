@@ -1,0 +1,19 @@
+<chart lowerLimit='0' upperLimit='100' numberSuffix='%25' chartTopMargin='100' bgColor='FFFFFF' showBorder='0' chartBottomMargin='20' basefontColor='FFFFFF' toolTipBgColor='453269'>
+   <colorRange>
+      <color minValue='0' maxValue='75' code='FF654F'/>
+      <color minValue='75' maxValue='90' code='F6BD0F'/>
+      <color minValue='90' maxValue='100' code='8BBA00'/>
+   </colorRange>
+   <dials>
+      <dial value='92' rearExtension='10'/>
+   </dials>
+	<annotations>
+		<annotationGroup id='Grp1' showBelow='1' >
+			<!--Rectangles behind the gauge-->
+			<annotation type='rectangle' x='0' y='0' toX='400' toY='200' radius='10' fillColor='333333, 453269' fillAngle='180' />
+			<annotation type='rectangle' x='5' y='5' toX='395' toY='195' radius='10' color='000000' fillAlpha='0' showBorder='1' borderColor='FFFFFF' borderThickness='3'/>
+			<!--Logo above the gauge-->
+			<annotation type='image' x='110' y='7' URL='Resources/logo.gif' />
+		</annotationGroup>
+	</annotations>
+</chart>

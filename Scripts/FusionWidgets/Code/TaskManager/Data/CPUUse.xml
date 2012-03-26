@@ -1,0 +1,11 @@
+<Chart bgColor='000000' upperLimit='100' lowerLimit='0' showLimits='0' numberSuffix='%25' baseFont='Verdana' baseFontColor='00dd00'  showTickMarks='0' decimalPrecision='0' ledGap='2' ledSize='3' ledBoxBorderColor='000000' ledBoxBorderThickness='0'>
+<colorRange>
+	<color minValue='0' maxValue='100' code='00dd00' /> 
+</colorRange> 
+<value>45</value>
+<customObjects>
+	<objectGroup xPos='48' yPos='15' showBelowChart='0'>
+		<object type='line' thickness='1' color='000000' xPos='0' yPos='0' toXPos='0' toYPos='120' />
+	</objectGroup>
+</customObjects>
+</Chart>

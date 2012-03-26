@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Debugging real-time data </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>If you've set up a real-time chart that renders initially, but doesn't update   in real time, check the following: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li>Check if path of <span class="codeInline">dataStreamURL</span> provided in XML is   correct. </li>
+      <li>Check if you've specified a valid value for <span class="codeInline">refreshInterval</span> in your XML document. </li>
+      <li>Check if <span class="codeInline">dataStreamURL</span> is returning proper   data. To test this, just open your browser and run this page. It should return   the data in text format. </li>
+      <li>Make sure the output data doesn't contain any carriage returns or HTML   elements. In many scripting languages, these are automatically added. You'll   need to remove them. </li>
+      <li>You also need to make sure that the page which provides the incremental   update data to FusionCharts must be hosted on the same sub-domain in which the   chart .swf is hosted - otherwise, FusionWidgets, owing to Flash Sandbox security   model, won't be able to receive updated data. Due to Flash sandbox security   restrictions, you are allowed to retrieve data only from the same sub-domain in   which the flash movie is residing. Data can only be loaded from a domain that is   an exact match to the location of the SWF, including subdomains. For this reason   a SWF residing at <span class="codeInline">server1.mydomain.com</span> will not be able to access data from a   SWF at <span class="codeInline">mydomain.com</span>.
+        <p>If you wish to load data from a different domain, you can set up a proxy page   at the same sub domain which would actually request data from the distant domain   and then relay it to FusionWidgets. You must be able to upload and run a   server-side script on a server in the same domain as the Flash movie. In this   method, the Flash movie accesses the script, which loads the information,   retrieves it, and returns the information back to the Flash movie. This method   is best if the server hosting the data is not under your control (for example, a   public source or a web service).</p>
+      </li>
+      <li><strong>Switch on the debug mode of chart. It will provide you with a lot of   valuable information when debugging.</strong></li>
+    </ul>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

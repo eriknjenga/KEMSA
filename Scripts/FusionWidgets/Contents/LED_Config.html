@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">LED Gauge &gt; Configurations </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The LED gauge chart from FusionWidgets suite offers you a lot of   configuration options. Here, we'll see how to:</p>
+      <ul>
+        <li><a href="#palette">Using palettes</a></li>
+        <li><a href="#singlecolor"> Using single color for LED fill/LED background</a></li>
+        <li><a href="#gauge">Customizing gauge properties </a></li>
+        <li><a href="#led">Configuring LED  Size &amp; Gap </a></li>
+        <li><a href="#value">Hiding chart value </a></li>
+        <li><a href="#tick"> Configuring tick marks &amp; values</a></li>
+      </ul>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="palette" id="palette"></a>Using palettes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The LED gauge offer 5 pre-defined color palettes for you to choose from.   Each of these palettes are accessible by the number 1-5. To choose a palette,   all you need to do is set: </p>
+      <p class="codeInline">&lt;chart palette='2' or '3' or ..&gt;</p>
+    <p>Shown below are a few examples of palettes applied on our previous chart: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_Palette2.jpg" width="356" height="106" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Palette 2 applied </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_Palette3.jpg" width="353" height="103" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Palette 3 applied </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Additionally,  you can also define an entire new palette by setting a   single theme color using:</p>
+      <p>&lt;chart paletteThemeColor='669933' ..&gt;</p>
+    <p>This will create a new palette derived from this color and then color the   chart as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_Palette4.jpg" width="356" height="104" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"> <a name="singlecolor" id="singlecolor"></a>Using single color for LED fill/LED background</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>When you divide the LED scale into color range, the LED bars in each zone take up the fill color of that color range. However, if you want the entire LED bars to be filled with a single color (color of the range in whose zone the current value is falling), you can set:</p>
+    <p class="codeInline">&lt;chart ... useSameFillColor='1' ...&gt;</p>
+    <p>This results in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_Color1.jpg" width="355" height="104" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">As you can see above, all the LED bars are now colored in green, since the value of chart (102) is in green zone. Similarly, if value was say 67 (in yellow zone 60-90), it would appear as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_Color2.jpg" width="356" height="108" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also make the non-activated (background) LEDs of the same color using:</p>
+    <p class="codeInline">&lt;chart ... useSameFillBgColor='1' ...&gt; </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="gauge" id="gauge"></a>Customizing gauge properties </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can hide the gauge border using:</p>
+      <p class="codeInline">&lt;chart  showGaugeBorder='0' ...&gt;</p>
+      <p>Or, you can customize gauge border properties using:</p>
+      <p class="codeInline">&lt;chart ... gaugeBorderColor='FFFFFF' gaugeBorderThickness='2' gaugeBorderAlpha='100' ...&gt;</p>
+      <p>This will result in:</p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_Gauge1.jpg" width="354" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To configure the background color for gauge, you can set:</p>
+    <p>&lt;chart ... gaugeFillColor='CCCCCC' ...&gt; </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="led" id="led"></a>Configuring LED Size &amp; Gap </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure LED size &amp; gap in pixels using:</p>
+    <p class="codeInline">&lt;chart ... ledSize='5' ledGap='5' ..&gt;</p>
+    <p>This results in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p><img src="Images/LED_LED1.jpg" width="353" height="105" /></p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To make the LEDs continuous, you can set <span class="codeInline">ledGap</span> as 0, as under: </p>
+    <p class="codeInline">&lt;chart ... ledSize='1' ledGap='0' ...&gt;</p>
+    <p>This results in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_LED2.jpg" width="353" height="106" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="value" id="value"></a>Hiding chart value </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to hide chart value using: </p>
+    <p class="codeInline">&lt;chart showValue='0' ...&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_Value.jpg" width="353" height="103" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="tick" id="tick"></a>Configuring tick marks &amp; values </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to hide all tick marks &amp; values using:</p>
+    <p class="codeInline">&lt;chart ... showTickMarks='0' showTickValues='0' ...&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_Tick1.jpg" width="354" height="104" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can place the ticks above gauge (or on left/right in vertical LED) using:</p>
+    <p><span class="codeInline">&lt;chart ... ticksBelowGauge='0' ..&gt;</span> or <span class="codeInline">&lt;chart ... ticksOnRight='0' ...&gt; </span></p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_Tick2.jpg" width="355" height="106" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure the number of tick marks as under: </p>
+        <p class="codeInline">&lt;chart ... majorTMNumber='8' minorTMNumber='3' ...&gt;</p>
+      <p>It will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_Tick4.jpg" width="354" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The chart can automatically adjust the number of major ticks to a best   feasible value. However, if you do not want the chart to do the same, you can   add:</p>
+      <p class="codeInline">&lt;chart ... adjustTM='0' majorTMNumber='8'   minorTMNumber='3' ...&gt;</p>
+      <p>You can opt to show every nth tick value by setting:</p>
+      <p class="codeInline">&lt;chart ... tickValueStep='2' ...&gt;</p>
+    <p>This will result in every 2nd major tick mark's value being shown, as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_Tick3.jpg" width="356" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure tick mark cosmetics using: </p>
+      <p class="codeInline">&lt;chart ... majorTMColor='333333' majorTMAlpha='100'   majorTMHeight='10' majorTMThickness='2' minorTMColor='666666' minorTMAlpha='100'   minorTMHeight='7' minorTMThickness='1' ...&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_Tick5.jpg" width="355" height="106" /></td>
+  </tr>
+</table>
+</body>
+</html>

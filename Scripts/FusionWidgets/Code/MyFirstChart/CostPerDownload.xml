@@ -1,0 +1,9 @@
+<Chart bgColor='FFFFFF' lowerLimit='0' upperLimit='30' gaugeRoundRadius='5' showGaugeBorder='1' numberPrefix='$'>
+    <colorRange> 
+        <color minValue='0' maxValue='30' name='Cost Per Download'  />
+            </colorRange>
+    <pointers>
+	<pointer value='17.9' borderColor='000000' borderThickness='0' bgColor='FF5904' toolText='My own' />
+    </pointers>
+    
+</Chart>

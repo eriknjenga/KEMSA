@@ -1,0 +1,21 @@
+<chart caption='Sales distribution by Employee' subCaption='Jan 07 - Jul 07' numberPrefix='$' is2D='1' isSliced='1' showPlotBorder='1' plotBorderThickness='1' plotBorderAlpha='100' plotBorderColor='FFFFFF' enableSmartLabels='0' chartLeftMargin='0'>
+   <set label='Buchanan' value='50000' />
+   <set label='Callahan' value='49000' />
+   <set label='Davolio' value='63000' />
+   <set label='Dodsworth' value='41000' />
+   <set label='Fuller' value='74000' />
+   <set label='King' value='49000' />
+   <set label='Leverling' value='77000' />
+   <set label='Peacock' value='54000' />
+   <set label='Suyama' value='14000' />
+   <styles>
+      <definition>
+         <style type='font' name='captionFont' size='15' />
+         <style type='shadow' name='myShadow' />
+      </definition>
+      <application>
+         <apply toObject='CAPTION' styles='captionFont' />
+         <apply toObject='DATAPLOT' styles='myShadow' />
+      </application>
+   </styles>
+</chart> 

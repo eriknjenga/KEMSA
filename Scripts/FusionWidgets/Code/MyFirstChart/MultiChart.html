@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>FusionWidgets - Multiple charts in the same page</title>
+	<script language="JavaScript" src="../Charts/FusionCharts.js"></script>
+    <style type="text/css">
+<!--
+.style1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+-->
+    </style>
+</head>
+
+<body bgcolor="#ffffff">
+
+   <table width="95%" border="0" cellspacing="0" cellpadding="2">
+     <tr>
+       <td><div align="center" class="style1">Customer Satisfaction</div></td>
+     </tr>
+     <tr>
+       <td>
+	   <div id="chart1div" align="center">The chart will appear within this DIV. This text will be replaced by the chart.</div>
+	   <script type="text/javascript">
+		var myChart1 = new FusionCharts("../Charts/AngularGauge.swf", "myChart1Id", "400", "200", "0", "0");
+		myChart1.setDataURL("Data.xml");
+		myChart1.render("chart1div");
+	   </script>	   </td>
+     </tr>
+     <tr>
+       <td>&nbsp;</td>
+     </tr>
+     <tr>
+       <td>
+	   <div id="chart2div" align="center">The chart will appear within this DIV. This text will be replaced by the chart.</div>
+	   <script type="text/javascript">
+		var myChart2 = new FusionCharts("../Charts/HLinearGauge.swf", "myChart2Id", "400", "100", "0", "0");
+		myChart2.setDataURL("CostPerDownload.xml");
+		myChart2.render("chart2div");
+	   </script>	   </td>
+     </tr>
+     <tr>
+       <td>&nbsp;</td>
+     </tr>
+     <tr>
+       <td>
+   	   <div id="chart3div" align="center">The chart will appear within this DIV. This text will be replaced by the chart.</div>
+	   <script type="text/javascript">
+		var myChart3 = new FusionCharts("../Charts/HBullet.swf", "myChart3Id", "400", "60", "0", "0");
+		myChart3.setDataURL("ProfitPerSale.xml");
+		myChart3.render("chart3div");
+	   </script>	   </td>
+     </tr>
+   </table>
+
+</body>
+</html>

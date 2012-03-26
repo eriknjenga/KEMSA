@@ -1,0 +1,29 @@
+<Chart bgColor='FFFFFF' bgAlpha='0' showBorder='0' upperLimit='100' lowerLimit='0' numberSuffix='%25' gaugeRoundRadius='5' ticksBelowGauge='1' placeValuesInside='0' showGaugeLabels='0' valueAbovePointer='1' pointerOnTop='1' pointerRadius='6' chartTopMargin='15' chartBottomMargin='15' chartLeftMargin='25' chartRightMargin='30' majorTMColor='666666'>
+    <colorRange> 
+        <color minValue='0' maxValue='100' code='F6BD0F' />
+    </colorRange>
+
+    <value>65</value>
+
+    <trendpoints>
+        <point value='75' displayValue='Target' dashed='1' dashLen='1' dashGap='3' color='FFFFFF' thickness='2'/>
+    </trendpoints>
+
+    <annotations>
+        <annotationGroup id='Grp1' showBelow='1'>
+            <annotation type='rectangle' x='0' y='0' toX='450' toY='120' radius='10' fillColor='AEC0CA, 333333, AEC0CA' fillAngle='90' />
+            <annotation type='rectangle' x='5' y='5' toX='445' toY='115' radius='10' fillColor='333333, C3D0D8, 333333' fillAngle='90' />
+            <annotation type='rectangle' x='10' y='10' toX='440' toY='110' radius='10' fillColor='C4D5DC, A3A5A4' fillAngle='180' />
+        </annotationGroup>
+    </annotations>
+
+    <styles>
+        <definition>
+            <style name='valueFont' type='Font' bgColor='333333' size='10' color='FFFFFF'/>
+        </definition>
+        <application>
+            <apply toObject='VALUE' styles='valueFont'/>
+        </application>
+    </styles>
+
+</Chart>

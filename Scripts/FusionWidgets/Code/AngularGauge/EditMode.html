@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>FusionWidgets v3 - Edit Mode</TITLE>
+<script type="text/javascript" src="../Charts/FusionCharts.js"></script>
+<script language="javascript">
+	//FC_ChartUpdated method is called when user has changed dial value.
+	function FC_ChartUpdated(DOMId){
+		//Check if DOMId is that of the chart we want
+		if (DOMId=="ChId1"){
+			//Get reference to the chart
+			var chartRef = getChartFromId(DOMId);
+			//Get the current value
+			var dialValue = chartRef.getData(1);			
+			//You can also use getDataForId method as commented below, to get the dial value.
+			//var dialValue = chartRef.getDataForId("CS");				
+			//Update display
+			var divToUpdate = document.getElementById("contentDiv");
+			divToUpdate.innerHTML = "<span class='text'>Your satisfaction index: <B>" + Math.round(dialValue) + "%</B></span>";
+			
+		}
+	}	
+</script>
+<style type="text/css">
+.text{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10pt;
+}
+</style>
+</HEAD>
+<BODY>
+<CENTER>
+<div id="chart1div">
+  This text is replaced by the Flash movie.
+</div>
+<script type="text/javascript">
+   var chart1 = new FusionCharts("../Charts/AngularGauge.swf", "ChId1", "350", "190", "0", "1");
+   chart1.setDataURL("Data.xml");
+   chart1.render("chart1div");
+</script>
+<BR>
+<DIV id="contentDiv">
+	<span class='text'>Please drag the dial above to indicate your satisfaction index.
+</DIV>
+</BR>
+</BODY>
+</HTML>

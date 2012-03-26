@@ -1,0 +1,8 @@
+<chart upperLimit='100' lowerLimit='0' numberSuffix='%25' majorTMNumber='11' majorTMColor='646F8F'  majorTMHeight='9' minorTMNumber='2' minorTMColor='646F8F' minorTMHeight='3' majorTMThickness='1' decimalPrecision='0' ledGap='0' ledSize='1' ledBorderThickness='4' >
+	<colorRange>
+		<color minValue='0' maxValue='30' code='cf0000' /> 
+		<color minValue='30' maxValue='60' code='ffcc33' /> 
+		<color minValue='60' maxValue='100' code='99cc00' /> 
+	</colorRange>
+	<value>95</value>
+</chart>

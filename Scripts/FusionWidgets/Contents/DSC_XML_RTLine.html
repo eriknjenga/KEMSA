@@ -1,0 +1,1966 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Data-streaming Charts &gt; Real-time Line Chart XML Sheet </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p class="header">List of Chart Objects </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="15%" valign="top" class="header">Object Name </td>
+        <td width="50%" valign="top" class="header">Description</td>
+        <td width="20%" valign="top" class="header">STYLES supported </td>
+        <td width="15%" valign="top" class="header">Animation Parameters </td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">BACKGROUND</td>
+        <td width="50%" valign="top" class="text">Background refers to the background for entire chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td width="15%" valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+          <li>_x<br />
+            </li>
+          <li>_y<br />
+            </li>
+          <li>_xScale<br />
+            </li>
+          <li>_yScale</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">CANVAS</td>
+        <td width="50%" valign="top" class="text">The entire area inside which the  chart is plotted. </td>
+        <td width="20%" valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur<br />
+            </li>
+        </ul></td>
+        <td width="15%" valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+          <li>_x<br />
+            </li>
+          <li>_y<br />
+            </li>
+          <li>_xScale<br />
+            </li>
+          <li>_yScale<br />
+            </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">CAPTION</td>
+        <td width="50%" valign="top" class="text">Caption of the chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Font<br />
+            </li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td width="15%" valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+          <li>_x<br />
+            </li>
+          <li>_y<br />
+            </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">SUBCAPTION</td>
+        <td width="50%" valign="top" class="text">Sub-caption of the chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Font<br />
+            </li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td width="15%" valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+
+          <li>_x<br />
+            </li>
+          <li>_y</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">XAXISNAME</td>
+        <td valign="top" class="text">X-axis label of the chart. </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">YAXISNAME</td>
+        <td valign="top" class="text">Y-axis label of the chart. </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">DATAPLOT</td>
+        <td valign="top" class="text">Lines belonging to the actual chart.</td>
+        <td valign="top" class="text"><ul>
+          <li>Animation
+            <br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y<br />
+          </li>
+          <li>_xScale<br />
+          </li>
+          <li>_yScale</li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">ANCHORS</td>
+        <td valign="top" class="text">Anchors of the line. </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation
+            <br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y<br />
+          </li>
+          <li>_xScale<br />
+          </li>
+          <li>_yScale</li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">DATALABELS</td>
+        <td valign="top" class="text">X-axis labels of the chart. </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">DATAVALUES</td>
+        <td valign="top" class="text">Data value for each line point. </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y<br />
+          </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">DIVLINES</td>
+        <td valign="top" class="text">Horizontal lines running through the   canvas. Each divisional line signifes a smaller unit of the entire axis thus   aiding the users in interpreting the chart. </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">VDIVLINES</td>
+        <td valign="top" class="text">VDIVLINES are vertical divisional lines which aid in data   interpretation. </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation</li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_yScale</li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">HGRID</td>
+        <td valign="top" class="text">HGRID refers to alternate color bands between two successive   horizontal divisional lines. </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha          </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">VGRID</td>
+        <td valign="top" class="text">VGRID refers to vertical color bands between two successive   vertical divisional lines. </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation
+            <br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x
+            <br />
+          </li>
+          <li>_xScale<br />
+          </li>
+          <li>_yScale</li>
+        </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td valign="top" class="text">YAXISVALUES</td>
+        <td valign="top" class="text">YAXISVALUES refers to the limit values or divisional line   values, which are displayed along the y-axis of the chart. </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y<br />
+          </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">REALTIMEVALUE</td>
+        <td valign="top" class="text">If you've opted to show the real-time value on the chart, REALTIMEVALUE object represents that text field. </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y<br />
+          </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">TRENDLINES</td>
+        <td valign="top" class="text">TRENDLINES refer to horizontal lines spanning the   chart canvas which aid in interpretation of data with respect to some   pre-determined value. </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">TRENDVALUES</td>
+        <td valign="top" class="text">TRENDVALUES refer to the display values of trend-lines (if   any). </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y<br />
+          </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">VLINES</td>
+        <td valign="top" class="text">VLINES are vertical separator lines that help you separate   blocks of data. These lines run through the height of the chart, thereby   segregating data into different blocks. </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation
+            <br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">VLINELABELS</td>
+        <td valign="top" class="text">Labels of the vertical line </td>
+        <td valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>
+        </td>
+        <td valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y          </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">TOOLTIP</td>
+        <td width="50%" valign="top" class="text">Tool tip for the chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+            <li>Font<br />
+            </li>
+        </ul></td>
+        <td width="15%" valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">LEGEND</td>
+        <td width="50%" valign="top" class="text">Legend for the chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+            <li>Animation<br />
+            </li>
+          <li>Font<br />
+            </li>
+          <li>Shadow<br />
+            </li>
+          <li>Glow<br />
+            </li>
+          <li>Bevel<br />
+            </li>
+          <li>Blur</li>
+        </ul></td>
+        <td width="15%" valign="top" class="text"><ul>
+            <li>_alpha<br />
+            </li>
+        </ul></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br />
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr>
+    <td valign="top" class="lightYellowTr"><p class="header">&lt;chart&gt; element </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Functional Attributes </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">animation</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">This attribute lets you set the configuration whether the chart   should appear in an animated fashion. If you do not want to animate any part of   the chart, set this as 0. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">defaultAnimation</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">By default, each chart animates some of its elements. If you   wish to switch off the default animation patterns, you can set this attribute to   0. It can be particularly useful when you want to define your own animation   patterns using STYLE feature. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">connectNullData</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">This attributes lets you control whether empty data sets in   your data will be connected to each other OR would they appear as broken data   sets? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">clickURL</td>
+        <td valign="top" class="text">URL in FusionCharts format </td>
+        <td valign="top" class="text">The entire chart can now act as a hotspot. Use this URL to   define the hotspot link for the chart. The link can be specified in FusionCharts   Link Format. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">palette</td>
+        <td valign="top" class="text">Number (1-5) </td>
+        <td valign="top" class="text">Each   chart has 5 pre-defined color palettes which you can choose from. Each palette   renders the chart in a different color theme. Valid values are 1-5. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">paletteThemeColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">If you want your own palette derived from a particular hex color, you an specify the same here. All other colors on the chart would automatically derive from that palette. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showRTMenuItem</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show the real-time update related menu items (like Start/Stop Update or Clear Chart) in chart's context menu? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showPrintMenuItem</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show &quot;<em>Print Chart</em>&quot; item in the context menu of the chart? Even if you opt to hide the item in context menu, you can still opt to invoke <span class="codeInline">print()</span> JavaScript method of the chart to print the same. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">showAboutMenuItem</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign='top' class="text">Setting this to 1 shows up a custom context menu in the chart, which can be customized to show your text and can be linked to your URL. For e.g., you can set the context menu of the chart to include &quot;About your company name&quot; and then link to your company home page. By default, the chart shows &quot;About FusionCharts&quot; when right clicked. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">aboutMenuItemLabel</td>
+        <td valign="top" class="text">String</td>
+        <td valign='top' class="text">The menu item label for the custom context menu item. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">aboutMenuItemLink</td>
+        <td valign="top" class="text">String</td>
+        <td valign='top' class="text">Link for the custom context menu item. You can specify the link in FusionCharts link format to be able to open the same in new window, pop-ups, frames or as JavaScript links. </td>
+      </tr>
+      <tr>
+        <td colspan="3" valign="top" class="codeInline">&nbsp;</td>
+        </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Chart captions &amp; Axis labels </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">caption</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Caption of the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">subCaption</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Sub-caption of the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">xAxisName</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">X-Axis Title of the Chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">yAxisName</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Y-Axis Title of the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">rotateYAxisName</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">If you do not wish to rotate y-axis name, set this as 0. It   specifically comes to use when you've special characters (UTF8) in your y-axis   name that do not show up in rotated mode. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">yAxisNameWidth</td>
+        <td valign="top" class="text">Number (Pixels) </td>
+        <td valign="top" class="text">If you opt to not rotate y-axis name, you can choose a maximum   width that will be applied to y-axis name. </td>
+      </tr>
+      <tr>
+        <td colspan="3" valign="top" class="codeInline">&nbsp;</td>
+        </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Chart Axis &amp; Plotting </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">setAdaptiveYMin</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">This attribute lets you set whether the y-axis lower limit   would be 0 (in case of all positive values on chart) or should the y-axis lower   limit adapt itself to a different figure based on values provided to the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">yAxisMinValue</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">This attribute helps you explicitly set the lower limit of the   chart. If you don't specify this value, it is automatically calculated by   FusionCharts based on the data provided by you. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">yAxisMaxValue</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">This attribute helps you explicitly set the upper limit of the   chart. If you don't specify this value, it is automatically calculated by   FusionCharts based on the data provided by you. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showYAxisValues</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">FusionCharts y-axis is divided into vertical sections using div   (divisional) lines. Each div line assumes a value based on its position. Using   this attribute you can set whether to show those div line (y-axis) values or   not. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">yAxisValuesStep</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">By default, all div lines show their values. However, you can   opt to skip every x(th) div line value using this attribute. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">yAxisValueDecimals</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Decimal places for y-axis values. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">forceYAxisDecimals</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to force decimal places for y-axis values. </td>
+      </tr>
+      <tr>
+        <td colspan="3" valign="top" class="codeInline">&nbsp;</td>
+        </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Chart Labels &amp; Values </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">showLabels</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">It sets the configuration whether the x-axis labels will be   displayed or not. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">labelDisplay</td>
+        <td valign="top" class="text">WRAP, STAGGER, ROTATE or NONE </td>
+        <td valign="top" class="text">Using this attribute, you can control how your data labels   (x-axis labels) would appear on the chart. There are 4 options: WRAP, STAGGER,   ROTATE or NONE. WRAP wraps the label text if it's longer than the allotted area.   ROTATE rotates the label in vertical or slanted position. STAGGER divides the   labels into multiple lines. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">slantLabels</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">If you've opted to show rotated labels on chart, this attribute   lets you set the configuration whether the labels would show as slanted labels   or fully vertical ones. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">labelStep</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">By default, all the labels are displayed on the chart. However,   if you've a set of streaming data (like name of months or days of week), you can   opt to hide every n-th label for better clarity. This attributes just lets you   do so. It allows to skip every n(th) X-axis label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">staggerLines</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">If you've opted for STAGGER mode as labelDisplay, using this   attribute you can control how many lines to stagger the label to. By default,   all labels are displayed in a single line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showValues</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Sets the configuration whether data values would be displayed   along with the data plot on chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">rotateValues</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">If you've opted to show data values, you can rotate them using   this attribute. </td>
+      </tr>
+      <tr>
+        <td colspan="3" valign="top" class="codeInline">&nbsp;</td>
+        </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Real-time properties </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">dataStreamURL</td>
+        <td valign="top" class="text">URL</td>
+        <td valign="top" class="text">This parameter sets the path of the page which is supposed to relay real-time   data to the chart. If you've special characters as a part of your data stream   URL, like ? or &amp;, you'll need to URL Encode the entire <span class="codeInline">dataStreamURL</span><br />
+          <br />
+          This page needs to be on the same   sub-domain on which the chart is hosted and invoked from. Otherwise, the Flash   sandbox security would restrict it from accessing the data and hence the   real-time feature won't work.<br />
+          Example: <span class="codeInline">dataStreamURL='liveQuote.aspx?name=xyz' </span></td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">refreshInterval</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">For this parameter, you can specify the number of seconds after which the chart   will look for new data. This process will happen continuously - i.e., if you   specify 5 seconds here, the chart will look for new data every 5 seconds. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">clearChartInterval</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The time after which the chart will keep clearing its contents. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">updateInterval</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">If you want the chart to keep polling for new data every x seconds and queue it, you can specify that x seconds as <span class="codeInline">updateInterval</span>. This helps you poll at different intervals and then draw at another interval (specified as <span class="codeInline">refreshInterval</span>). </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">numDisplaySets</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">This value helps you specify the number of data items that you want as history   on the chart. For example, when you set it as 50, only 50 data items (per   dataset) will be displayed on the chart. As soon as the 51st data comes in, the   first data will be deleted and the rest of the data will be shifted by 1   position left - the new data will come and take the last position. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dataStamp</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Constantly changing data stamp that can be added to real time data URL, so as to maintain a state. Please see the section &quot;Real time capabilities &gt; Adding data-stamp&quot; </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showRealTimeValue </td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">This parameter lets you set whether you want the latest value (received from   server) to be displayed on the chart or not. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">realTimeValueSep</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">If you are showing real time values for multiple data-sets on the chart, this attribute lets you define the separator character to separate each value's display. </td>
+      </tr>
+      <tr>
+        <td colspan="3" valign="top" class="codeInline">&nbsp;</td>
+        </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Number Formatting Properties </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">formatNumber</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">This configuration determines whether the numbers displayed on   the chart will be formatted using commas, e.g., 40,000 if formatNumber='1' and   40000 if formatNumber='0 ' </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">numberPrefix</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Using this attribute, you could add prefix to all the numbers   visible on the graph. For example, to represent all dollars figure on the chart,   you could specify this attribute to ' $' to show like $40000, $50000. For more   details, please see Advanced Number Formatting section. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">numberSuffix</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Using this attribute, you could add suffix to all the numbers   visible on the graph. For example, to represent all figure quantified as per   annum on the chart, you could specify this attribute to ' /a' to show like   40000/a, 50000/a. For more details, please see Advanced Number Formatting   section. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">decimals</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Number of decimal places to which all numbers on the chart   would be rounded to. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">forceDecimals</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to add 0 padding at the end of decimal numbers? For   example, if you set decimals as 2 and a number is 23.4. If forceDecimals is set   to 1, FusionCharts will convert the number to 23.40 (note the extra 0 at the   end) </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">formatNumberScale</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Configuration whether to add K (thousands) and M (millions) to   a number after truncating and rounding it - e.g., if formatNumberScale is set to   1, 1043 would become 1.04K (with decimals set to 2 places). Same with numbers in   millions - a M will added at the end. For more details, please see Advanced   Number Formatting section. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">defaultNumberScale</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">The default unit of the numbers that you're providing to the   chart. For more details, please see Advanced Number Formatting section. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">numberScaleUnit</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Unit of each block of the scale. For more details, please see   Advanced Number Formatting section. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">numberScaleValue</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Range of the various blocks that constitute the scale. For more   details, please see Advanced Number Formatting section. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">scaleRecursively</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to scale the number recursively? For more   details, please see Advanced Number Formatting section. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">maxScaleRecursion</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">How many recursions to complete during recursive scaling? -1 completes the entire set of recursion. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">scaleSeparator</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">What character to use to separte the scales that generated after recursion? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">decimalSeparator</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">This option helps you specify the character to be used as the   decimal separator in a number. For more details, please see Advanced Number   Formatting section. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">thousandSeparator</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">This option helps you specify the character to be used as the   thousands separator in a number. For more details, please see Advanced Number   Formatting section. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">inDecimalSeparator</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">In some countries, commas are used as decimal separators and   dots as thousand separators. In XML, if you specify such values, it will give a   error while converting to number. So, FusionCharts accepts the input decimal and   thousand separator from user, so that it can covert it accordingly into the   required format. This attribute lets you input the decimal separator. For more   details, please see Advanced Number Formatting section. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">inThousandSeparator</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">In some countries, commas are used as decimal separators and   dots as thousand separators. In XML, if you specify such values, it will give a   error while converting to number. So, FusionCharts accepts the input decimal and   thousand separator from user, so that it can covert it accordingly into the   required format. This attribute lets you input the thousand separator. For more   details, please see Advanced Number Formatting section. </td>
+      </tr>
+      <tr>
+        <td colspan="3" valign="top" class="codeInline">&nbsp;</td>
+        </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Message Logger</td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">useMessageLog</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to use message logger for the chart? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messageLogWPercent</td>
+        <td valign="top" class="text">Number (percent) </td>
+        <td valign="top" class="text">This attribute lets you set the width percent of the message logger window w.r.t   entire chart width. So, if you set it as 80, the message logger window will take   up 80% of chart width. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messageLogHPercent</td>
+        <td valign="top" class="text">Number (percent) </td>
+        <td valign="top" class="text">This attribute lets you set the height percent of the message logger window   w.r.t entire chart height. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messageLogShowTitle</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show the title for message logger? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messageLogTitle</td>
+        <td valign="top" class="text">String </td>
+        <td valign="top" class="text">If you've opted to show the title for message logger, you can define your custom   title here. Examples are &quot;Error log&quot;, &quot;Server History&quot; etc. The title displays   at the top left corner of chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messageLogColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">You can customize the color of the entire message log window by setting a hex   value for this attribute. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messageGoesToLog </td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">The messages streamed to the chart can either be displayed in the message log   window or can be passed to JavaScript (which we'll see next). This attribute   lets you control whether the messages should be logged in the in-built log   window. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messageGoesToJS </td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">This attribute lets you configure whether each message streamed from the server   should be passed to a local JavaScript function. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messageJSHandler</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">If you've opted to pass each message to JavaScript function, this attribute lets   you define the name of the function. This helps you create your custom functions   to react to messages streamed from server. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">messagePassAllToJS </td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether all parameters passed as part of message envelope be passed to the   custom JavaScript function. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Plot (Line) Properties </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">showShadow </td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show shadows for data plot? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">lineColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Color using which the lines on the chart will be drawn. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">lineThickness</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Thickness of the lines on the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">lineAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Alpha of the lines on the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">lineDashed</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Configuration whether to show the lines on the chart as dash. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">lineDashLen</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">If the lines are to be shown as dashes, this attribute defines   the length of dash. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">lineDashGap</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">If the lines are to be shown as dashes, this attribute defines   the length of dash gap. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Anchor Properties </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">drawAnchors</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to draw anchors on the chart? If the anchors are not   shown, then the tool tip and links won't work. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorSides</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">This attribute sets the number of sides the anchor will have.   For e.g., an anchor with 3 sides would represent a triangle, with 4 it would be   a square and so on. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorRadius</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">This attribute sets the radius (in pixels) of the anchor.   Greater the radius, bigger would be the anchor size. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorBorderColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Lets you set the border color of anchors. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorBorderThickness</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Helps you set border thickness of anchors. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorBgColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Helps you set the background color of anchors. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Helps you set the alpha of entire anchors. If you need to hide   the anchors on chart but still enable tool tips, set this as 0. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorBgAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Helps you set the alpha of anchor background. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Background Cosmetics </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">This attribute sets the background color for the chart. You can   set any hex color code as the value of this attribute. To specify a gradient as   background color, separate the hex color codes of each color in the gradient   using comma. Example: FF5904,FFFFFF. Remember to remove # and any spaces in   between. See the gradient specification page for more details. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Sets the alpha (transparency) for the background. If you've   opted for gradient background, you need to set a list of alpha(s) separated by   comma. See the gradient specification page for more details. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgRatio</td>
+        <td valign="top" class="text">Numbers separated by comma </td>
+        <td valign="top" class="text">If you've opted for a gradient background, this attribute lets   you set the ratio of each color constituent. See the gradient specification page   for more details. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgAngle</td>
+        <td valign="top" class="text">Number (0-360) </td>
+        <td valign="top" class="text">Angle of the background color, in case of a gradient. See the   gradient specification page for more details. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showBorder</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show a border around the chart or not? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">borderColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Border color of the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">borderThickness</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Border thickness of the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">borderAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Border alpha of the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgSWF</td>
+        <td valign="top" class="text">URL of SWF </td>
+        <td valign="top" class="text">To place any Flash movie as background of the chart, enter the   (path and) name of the background SWF. It should be in the same domain as the   chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgSWFAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Helps you specify alpha for the loaded background SWF. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="tableGreyBorder"><span class="text"> logoURL </span> </td>
+        <td valign="top" class="tableGreyBorder"><span class="text"> String </span> </td>
+        <td valign='top' class="tableGreyBorder"><span class="text">You can load an external logo (JPEG/PNG/SWF) on the chart once it has rendered. This attribute lets you specify the URL of the same. Owing to Flash Player security settings, you can only specify logo that are on the sub-domain as the SWF file of the chart. </span></td>
+      </tr>
+      <tr>
+        <td valign="top" class="trLightBlueBg"><span class="text"> logoPosition </span> </td>
+        <td valign="top" class="trLightBlueBg"><span class="text"> String ( TL, TR, BL, BR, CC )</span> </td>
+        <td valign='top' class="trLightBlueBg"><p class="text"> <span class="text">Where to position the logo on the chart:</span></p>
+            <ul>
+              <li class="text">TL - Top-left</li>
+              <li class="text">TR - Top-right</li>
+              <li class="text">BR - Bottom right</li>
+              <li class="text">BL - Bottom left</li>
+              <li class="text"><span class="text">CC - Center of screen</span> </li>
+            </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="tableGreyBorder"><span class="text"> logoAlpha </span> </td>
+        <td valign="top" class="text"><span class="text"> Number </span> (0-100) </td>
+        <td valign='top' class="tableGreyBorder"><span class="text">Once the logo has loaded on the chart, you can configure its opacity using this atribute.</span></td>
+      </tr>
+      <tr>
+        <td valign="top" class="trLightBlueBg"><span class="text"> logoScale </span> </td>
+        <td valign="top" class="text"><span class="text"> Number </span> (0-100) </td>
+        <td valign='top' class="trLightBlueBg"><span class="text">You can also change the scale of externally loaded logo at run-time by specifying a value for this parameter. </span></td>
+      </tr>
+      <tr>
+        <td valign="top" class="tableGreyBorder"><span class="text"> logoLink </span> </td>
+        <td valign="top" class="tableGreyBorder"><span class="text"> String </span> </td>
+        <td valign='top' class="tableGreyBorder"><span class="text">If you want to link the logo to an external URL, specify the link in this attribute. The link can be in FusionCharts link format, allowing you to link to new windows, pop-ups, frames etc. </span> </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Canvas Cosmetics </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">canvasBgColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Sets Canvas background color. For Gradient effect, enter colors   separated by comma. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">canvasBgAlpha </td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Sets alpha for Canvas Background. For gradient, enter alpha   list separated by commas. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">canvasBgRatio</td>
+        <td valign="top" class="text">Numbers separted by comma </td>
+        <td valign="top" class="text">Helps you specify canvas background ratio for gradients. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">canvasBgAngle</td>
+        <td valign="top" class="text">Number (0-360) </td>
+        <td valign="top" class="text">Helps you specify canvas background angle in case of gradient. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">canvasBorderColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Lets you specify canvas border color. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">canvasBorderThickness</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Lets you specify canvas border thickness. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">canvasBorderAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Lets you control transparency of canvas border. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Divisional Lines </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">numDivLines</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Number of horizontal axis division lines that you want on the   chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">divLineColor </td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Color for divisional lines </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">divLineThickness </td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Thickness of divisional lines </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">divLineAlpha </td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Alpha of divisional lines. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">divLineIsDashed </td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether the divisional lines should display as dash? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">divLineDashLen </td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">If the divisional lines are to be displayed as dash, this   attribute lets you control the length of each dash. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">divLineDashGap </td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">If the divisional lines are to be displayed as dash, this   attribute lets you control the length of each gap between dash. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showAlternateHGridColor </td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show alternate colored horizontal grid bands? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alternateHGridColor </td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Color of the alternate horizontal grid bands. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alternateHGridAlpha </td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Alpha (transparency) of the alternate horizontal grid bands. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Vertical divisional lines </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">numVDivLines </td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Number of vertical axis division lines </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vDivLineColor </td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Color of vertical axis division lines. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vDivLineThickness </td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Thickness of vertical axis division lines. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vDivLineAlpha </td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Alpha of vertical axis division lines. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vDivLineIsDashed </td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether vertical divisional lines appear as dashed? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vDivLineDashLen </td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">If vertical div lines are dashed, this attribute lets you   control the width of dash. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vDivLineDashGap </td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">If vertical div lines are dashed, this attribute lets you   control the width of dash gap. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showAlternateVGridColor </td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show alternate vertical colored grid bands? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alternateVGridColor </td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Color of alternate vertical colored grid bands. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alternateVGridAlpha </td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Alpha of alternate vertical colored grid bands. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Zero Plane properties </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">showZeroPlane </td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show the zero plane on chart (if negative values are   present)? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">zeroPlaneColor </td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Color for the Zero Plane. Zero Plane is the line/plane that   appears at 0 y-position on canvas, when negative data is being shown on the   chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">zeroPlaneThickness </td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Thickness of zero plane. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">zeroPlaneAlpha </td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Alpha of zero plane. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Font Properties </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">baseFont </td>
+        <td valign="top" class="text">Font Name </td>
+        <td valign="top" class="text">This attribute lets you set the font face (family) of all the   text (data labels, values etc.) on chart. If you specify outCnvBaseFont   attribute also, then this attribute controls only the font face of text within   the chart canvas bounds. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">baseFontSize </td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">This attribute sets the base font size of the chart i.e., all   the values and the names in the chart which lie on the canvas will be displayed   using the font size provided here. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">baseFontColor </td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">This attribute sets the base font color of the chart i.e., all   the values and the names in the chart which lie on the canvas will be displayed   using the font color provided here. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">outCnvBaseFont</td>
+        <td valign="top" class="text">Font Name </td>
+        <td valign="top" class="text">This attribute sets the base font family of the chart font   which lies outside the canvas i.e., all the values and the names in the chart   which lie outside the canvas will be displayed using the font name provided   here. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">outCnvBaseFontSize </td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">This attribute sets the base font size of the chart i.e., all   the values and the names in the chart which lie outside the canvas will be   displayed using the font size provided here. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">outCnvBaseFontColor </td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">This attribute sets the base font color of the chart i.e., all   the values and the names in the chart which lie outside the canvas will be   displayed using the font color provided here. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">realTimeValueFont</td>
+        <td valign="top" class="text">Font Name </td>
+        <td valign="top" class="text">If real time value is to be displayed on the chart, this attribute lets you set the font face of the same. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">realTimeValueFontSize</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">If real time value is to be displayed on the chart, this attribute lets you set the font size of the same.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">realTimeValueFontColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">If real time value is to be displayed on the chart, this attribute lets you set the font color of the same.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Legend Properties </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">showLegend</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show legend for the chart (only multi-series and   combination charts)? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendPosition</td>
+        <td valign="top" class="text">RIGHT or BOTTOM </td>
+        <td valign="top" class="text">The legend can be plotted at two positions on the chart - below   the chart (BOTTOM) and on the RIGHT side of the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">interactiveLegend</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to have an interactive legend that allows user to show hide data-sets on the chart? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendCaption</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">You can add a caption for the entire legend by setting the same here. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendMarkerCircle</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to use square legend keys or circular ones? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendBorderColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Border Color for the legend. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendBorderThickness</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Border thickness for the legend. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendBorderAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Border alpha for the legend. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendBgColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Background color for the legend. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendBgAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Background alpha for the legend. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendShadow</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show a shadow for legend? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendAllowDrag</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">The legend can be made drag-able by setting this attribute to   1. End viewers of the chart can drag the legend around on the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendScrollBgColor </td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">If you've too many items on the legend, a scroll bar shows up   on the same. This attribute lets you configure the background color of the   scroll bar. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendScrollBarColor </td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">If you've too many items on the legend, a scroll bar shows up   on the same. This attribute lets you configure the bar color of the scroll bar. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendScrollBtnColor </td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">If you've too many items on the legend, a scroll bar shows up   on the same. This attribute lets you configure the color of buttons of the   scroll bar. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">reverseLegend</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">You can reverse the ordering of datasets in the legend by setting this attribute to 1. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Tool tip properties </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">showToolTip</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show tool tip on chart? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">seriesNameInToolTip </td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">This attribute lets you control   whether series name would show up in tool tip or not.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">toolTipBgColor </td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Background Color for tool tip. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">toolTipBorderColor </td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Border Color for tool tip. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">toolTipSepChar </td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">The character specified as the value of this attribute   separates the name and value displayed in tool tip. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showToolTipShadow</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show shadow for tool-tips on the chart.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">Chart Paddings &amp; Margins </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">captionPadding</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">This attribute lets you control the space (in pixels) between   the sub-caption and top of the chart canvas. If the sub-caption is not defined,   it controls the space between caption and top of chart canvas. If neither   caption, nor sub-caption is defined, this padding does not come into play. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">canvasPadding</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Lets you set the space between the canvas border and first   &amp; last data points </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">xAxisNamePadding</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Using this, you can set the distance between the top end of   x-axis title and the bottom end of data labels (or canvas, if data labels are   not to be shown). </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">yAxisNamePadding</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Using this, you can set the distance between the right end of   y-axis title and the start of y-axis values (or canvas, if the y-axis values are   not to be shown). </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">yAxisValuesPadding</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">This attribute helps you set the horizontal space between the   canvas left edge and the y-axis values or trend line values (on left/right   side). This is particularly useful, when you want more space between your canvas   and y-axis values. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">labelPadding</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">This attribute sets the vertical space between the labels and   canvas bottom edge. If you want more space between the canvas and the x-axis   labels, you can use this attribute to control it. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">valuePadding</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">It sets the vertical space between the end of columns and start   of value textboxes. This basically helps you control the space you want between   your columns/anchors and the value textboxes. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">realTimeValuePadding</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Vertical distance between the real-time value and x-axis labels. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">legendPadding</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Padding of legend from right/bottom side of canvas </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">chartLeftMargin</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Amount of empty space that you want to put on the left side of   your chart. Nothing is rendered in this space. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">chartRightMargin</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Amount of empty space that you want to put on the right side of   your chart. Nothing is rendered in this space. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">chartTopMargin</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Amount of empty space that you want to put on the top of your   chart. Nothing is rendered in this space. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">chartBottomMargin</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Amount of empty space that you want to put on the bottom of   your chart. Nothing is rendered in this space. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">canvasLeftMargin</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Left margin of canvas. Canvas will start from that position. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">canvasRightMargin</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Right margin of canvas. Canvas will end at that position. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">canvasTopMargin</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Top margin of canvas. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">canvasBottomMargin</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Bottom margin of canvas. </td>
+      </tr>
+
+
+    </table></td>
+  </tr>
+</table>
+<br />
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr>
+    <td valign="top" class="lightYellowTr"><p class="header">&lt;categories&gt; --&gt; &lt;category&gt; and &lt;vline&gt; element </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">&lt;categories&gt; element </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">font </td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Lets you specify font face for the x-axis data labels. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontSize </td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Lets you specify font size for the x-axis data labels. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontColor </td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Lets you specify font color for the x-axis data labels. </td>
+      </tr>
+      <tr>
+        <td colspan="3" valign="top" class="codeInline">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">&lt;category&gt; element </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">label</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">This attribute determines the label for the data item. The   label appears on the x-axis of chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showLabel</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">You can individually opt to show/hide labels of individual data   items using this attribute. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">tooltext</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">The label of each category shows up on the x-axis. However,   there might be cases where you want to display short label (or abbreviated   label) on the axis and show the full label as tool tip. This attribute lets you   specify the tool tip text for the label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+        <td valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="header">&lt;vLine&gt; element </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">label</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Display label for the vLine. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">This attribute defines the color of vertical separator line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">thickness</td>
+        <td valign="top" class="text">Number (pixels)</td>
+        <td valign="top" class="text">Thickness in pixels of the vertical separator line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Alpha of the vertical separator line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashed</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether the vertical separator line should appear as dashed? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashLen</td>
+        <td valign="top" class="text">Number (pixels)</td>
+        <td valign="top" class="text">If the vertical separator line is to appear as dashed, this   attribute defines the length of dash. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashGap</td>
+        <td valign="top" class="text">Number (pixels)</td>
+        <td valign="top" class="text">If the vertical separator line is to appear as dashed, this   attribute defines the length of dash gap. </td>
+      </tr>
+      
+    </table></td>
+  </tr>
+</table>
+<br />
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr>
+    <td valign="top" class="lightYellowTr"><p class="header">&lt;dataset&gt;element </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      
+      <tr>
+        <td valign="top" class="codeInline">seriesName</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Lets you specify the series name for a particular data-set. For   example, if you're plotting a chart to indicate monthly sales analysis for 2005   and 2006, the seriesName for the first dataset would be 2005 and that of the   second would be 2006. The seriesName of a data-set is shown in legend. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">This attribute sets the color using which columns, lines, area   of that data-set would be drawn. For column chart, you can specify a list of   comma separated hex codes to get a gradient plot. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">This attribute sets the alpha (transparency) of the entire   data-set. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showValues</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show the values for this data-set? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">includeInLegend</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to include the seriesName of this data-set in legend?   This can be particularly useful when you're using combination charts and you've   used the area/line chart to plot a trend, and you do not want the seriesName of   that trend to appear in legend. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">checkForAlerts</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to run the values of this data-set through alert manager, each time an update is received? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashed</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether this data-set would appear as dashed? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">lineDashLen</td>
+        <td valign="top" class="text">Number (pixels)</td>
+        <td valign="top" class="text">If the lines are to be shown as dash for the particular   data-set, this attribute defines the length of dash. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">lineDashGap</td>
+        <td valign="top" class="text">Number (pixels)</td>
+        <td valign="top" class="text">If the lines are to be shown as dash for the particular   data-set, this attribute defines the length of dash gap. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">lineThickness</td>
+        <td valign="top" class="text">Number (pixels)</td>
+        <td valign="top" class="text">Thickness of the lines for the particular data-set. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">drawAnchors</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to draw anchors for the particular data-set? If the   anchors are not shown, then the tool tip and links won't work for the data-set. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorSides</td>
+        <td valign="top" class="text">Number (3-15) </td>
+        <td valign="top" class="text">Sets the number of sides that the anchors of the particular   data-set will have. For e.g., an anchor with 3 sides would represent a triangle,   with 4 it would be a square and so on. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorRadius</td>
+        <td valign="top" class="text">Number (pixels)</td>
+        <td valign="top" class="text">This attribute sets the radius (in pixels) of the anchors of   the particular data-set. Greater the radius, bigger would be the anchor size. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorBorderColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Lets you set the border color of anchors of the particular   data-set. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorBorderThickness</td>
+        <td valign="top" class="text">Number (pixels)</td>
+        <td valign="top" class="text">Helps you set border thickness of anchors of the particular   data-set. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorBgColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Helps you set the background color of anchors of the particular   data-set. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Helps you set the alpha of entire anchors of the particular   data-set. If you need to hide the anchors for the data-set but still enable tool   tips, set this as 0. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorBgAlpha </td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Helps you set the alpha of anchor background of the particular   data-set. </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br />
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr>
+    <td valign="top" class="lightYellowTr"><p class="header">&lt;set&gt;element </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">value</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Numerical value for the data item. This value would be plotted   on the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">link</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">You can define links for individual data items. That enables   the end user to click on data items (columns, lines, bars etc.) and drill down   to other pages. To define the link for data items, use the link attribute. You   can define links that open in same window, new window, pop-up window or frames.   Please see &quot;Drill Down Charts&quot; section for more information.   Also, you'll need to URL Encode all the special characters (like ? and &amp;)   present in the link. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">toolText</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">By default, FusionCharts shows the series Name, Category Name   and value as tool tip text for that data item. But, if you want to display more   information for the data item as tool tip, you can use this attribute to specify   the same. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">For multi-series charts, you can define the   color of data-sets at dataset level. However, if you wish to highlight a   particular data element, you can specify it's color at &quot;set&quot; level using this   attribute. This attribute accepts hex color codes without #. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">For multi-series charts, you can define the   alpha of data-sets at dataset level. However, if you wish to highlight a   particular data element, you can specify it's alpha at &quot;set&quot; level using this   attribute. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showValue</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">You can individually opt to show/hide values of individual data   items using this attribute. This value over-rides the data-set level value. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashed</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether the border of this data item should appear as dashed?   This is particularly useful when you want to highlight a data (such as forecast   or trend etc.). This value over-rides the data-set level value. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorSides</td>
+        <td valign="top" class="text">Number (3-15) </td>
+        <td valign="top" class="text">Lets you specify &quot;set&quot; specific sides of the anchor. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorRadius</td>
+        <td valign="top" class="text">Number (Pixels) </td>
+        <td valign="top" class="text">Lets you specify &quot;set&quot; specific radius (in pixels) of the   anchor. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorBorderColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Lets you specify &quot;set&quot; specific border color of the anchor. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorBorderThickness</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Lets you specify &quot;set&quot; specific border thickness of the anchor. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorBgColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Lets you specify &quot;set&quot; specific background color of the anchor. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorAlpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Lets you specify &quot;set&quot; specific alpha of the anchor. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">anchorBgAlpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Lets you specify &quot;set&quot; specific alpha of the anchor background. </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br />
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr>
+    <td valign="top" class="lightYellowTr"><p class="header">&lt;trendlines&gt; --&gt; &lt;line&gt; element </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">startValue</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The starting value for the trendline. Say, if you want to plot   a slanted trendline from value 102 to 109, the startValue would be 102. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">endValue</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The ending y-axis value for the trendline. Say, if you want to   plot a slanted trendline from value 102 to 109, the endValue would be 109. If   you do not specify a value for endValue, it would automatically assume the same   value as startValue. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">displayValue</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">If you want to display a string caption for the trend line by   its side, you can use this attribute. Example: displayValue='Last Month High'.   When you don't supply this attribute, it automatically takes the value of   startValue. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Color of the trend line and its associated text. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">thickness</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">If you've opted to show the trend as a line, this attribute   lets you define the thickness of trend line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isTrendZone</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether the trend would display a line, or a zone (filled   colored rectangle). </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alpha</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Alpha of the trend line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showOnTop</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether the trend line/zone would be displayed over data plots   or under them? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashed</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">If you've opted to show the trend as a line, this attribute   lets you define whether the trend line would appear as dashed? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashLen</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">If you've opted to show trend line as dash, this attribute lets   you control the length of each dash. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashGap</td>
+        <td valign="top" class="text">Number (Pixels) </td>
+        <td valign="top" class="text">If you've opted to show trend line as dash, this attribute lets   you control the length of each dash gap. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">valueOnRight</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show the trend line value on left side or right side   of chart? This is particularly useful when the trend line display values on the   chart are colliding with divisional lines values on the chart. </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br />
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr>
+    <td valign="top" class="text"><p>The chart also accepts the following XML elements, which have not been discussed here: </p>
+      <ul>
+        <li><span class="codeInline">&lt;annotations&gt;</span> - Discussed in the section Annotations  </li>
+        <li><span class="codeInline">&lt;alerts&gt;</span> - Discussed in the section Alert Manager </li>
+        <li><span class="codeInline">&lt;styles&gt;</span> - Discussed in the section STYLEs </li>
+    </ul></td>
+  </tr>
+</table>
+</body>
+</html>

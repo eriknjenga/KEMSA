@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Data-streaming Charts &gt; Alert Manager </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Alert Manager helps you define your own thresholds for data values and then   perform specific actions for each defined threshold. For example, if you&rsquo;re   plotting a real-time temperature chart and you wish to play a sound when the   temperature reaches between say 90 and 100 Fahrenheit, you can easily do so   using Alert Manager. </p>      
+      <p>Alert Manager allows you define any number of alert threshold ranges for the   chart. The threshold range just shouldn&rsquo;t overlap. For each threshold range, you can specify one of the following   actions:</p>
+      <ul>
+        <li>Call a JavaScript function and pass parameters to it </li>
+        <li>Show a pre-defined annotation on the chart </li>
+        <li>Play a MP3 sound, which is dynamically loaded. </li>
+      </ul>
+    <p>All the data-streaming charts in FusionWidgets v3 suite support alert manager. <strong>You may please see the section &quot;Alert Manager&quot; on how to implement alert manager for data-streaming charts. </strong></p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Setting alert manager control for individual datasets </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In data streaming charts, you can additionally control the datasets that are checked by alert manager to raise any events.</p>
+    <p> For example, if you're comparing the stock price of Google and Dell on a single real-time line chart but want alerts to be defined and raised only for Google, you can disable the alert for Dell's data set using: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;dataset seriesName='Dell' showValues='0' checkForAlerts='0'&gt;<br />
+&lt;/dataset&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The <span class="codeInline">checkForAlerts</span> attribute when set to 0 eliminates a dataset's value from being checked for alerts. </p>
+    <p>By default, if alerts are defined, all datasets are checked for alerts. </p></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" /></head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Spark Charts &gt; Spark Line &gt; Configuration </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we'll see how to configure the various facets of the chart. We'll see how to:</p>
+      <ul>
+        <li><a href="#period">Specify period blocks for the chart</a></li>
+        <li><a href="#ohlc">Configure open, close, high/low points</a></li>
+        <li><a href="#line">Configure line and anchor cosmetics</a></li>
+        <li><a href="#points">Showing only points but no lines</a> </li>
+        <li><a href="#trend">Adding trend-lines/zones</a> </li>
+      </ul>      
+      <p>Let's see each of them one by one. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="period" id="period"></a>Specifying period blocks for the chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets spark line chart allows you to show period blocks on the chart using colored bands. This helps you easily interpret periods on the chart. For example, if we want to show 3 months period block on the chart, we can set:</p>
+    <p class="codeInline">&lt;chart ... periodLength='12' periodColor='CCCCCC' periodAlpha='50'&gt;</p>
+    <p> Here, we've set <span class="codeInline">periodLength='12'</span> as we've specified weekly data. So, 12 data points (i.e., 12 weeks will make 3 months). This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkLine_Period.jpg" width="304" height="34" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Similarly, if you want to highlight 2 months block instead of 3, you can set:</p>
+    <p class="codeInline">&lt;chart ... periodLength='8' periodColor='CCCCCC' periodAlpha='50' ..&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkLine_Period2.jpg" width="305" height="35" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">When specifying periods, you just need to make sure that your period length is always less than the number of data points that you've specified, as period length is directly numbered on data points. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="ohlc" id="ohlc"></a>Configuring open, close, high/low points, values and anchors </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>By default, the spark line chart highlights the open, close, high &amp; low points and also shows their value. You can configure the chart to:</p>
+      <ul>
+        <li>Change color of open, close, high, low points</li>
+        <li>Opt whether to highlight each one   using anchors</li>
+        <li>Whether to show values for each one of them</li>
+      </ul>
+      <p>To change the color of open, close, high or low points, you can set:</p>
+    <p class="codeInline">&lt;chart ... openColor='0099FF' closeColor='0099FF' highColor='00CC33' lowColor='FF0000' ...&gt;    </p>
+    <p>Here, we've colored open and low anchors in blue color, high in green and low in red, as shown below: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkLine_Colors.jpg" width="304" height="35" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also opt not to highlight any of these anchors by setting:</p>
+    <p class="codeInline">&lt;chart ... showOpenAnchor='0' showCloseAnchor='0' showHighAnchor='1' showLowAnchor='1' ...&gt;</p>
+    <p>Here, we're just showing high and low anchors, but not open and close anchors, as shown below:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkLine_ShowAnc.jpg" width="305" height="36" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Additionally, you can choose which values to show using:</p>
+    <p class="codeInline">&lt;chart ... showOpenValue='1' showCloseValue='1' showHighLowValue='0' ...&gt;</p>
+    <p>In the chart below, we're just showing the opening and closing values, but not high/low value:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkLine_Values.jpg" width="304" height="35" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="line" id="line"></a>Configuring line &amp; anchor properties </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure the line properties using:</p>
+    <p class="codeInline">&lt;chart ... lineColor='996600' thickness='2' lineAlpha='60' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkLine_LineProp.jpg" width="297" height="34" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also configure to show all the anchor points and then set their properties using:</p>
+    <p class="codeInline">&lt;chart ... drawAnchors='1' anchorSides='4' anchorRadius='4' anchorColor='666666' anchorAlpha='80' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkLine_Anchors.jpg" width="299" height="38" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="points" id="points"></a>Showing only points but no lines</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also show only points in the chart, but no lines using:</p>
+    <p class="codeInline">&lt;chart animation='0' ... lineAlpha='0' drawAnchors='1' anchorSides='4' anchorRadius='4' anchorColor='666666' anchorAlpha='80' ... &gt;</p>
+    <p>Here, we've hidden the line by setting <span class="codeInline">lineAlpha='0'</span>. Also, we've set <span class="codeInline">animation='0'</span> to remove the delay in rendering of anchors.This will result in something like:        </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="Images/SparkLine_Point.jpg" width="306" height="36" /></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="trend" id="trend"></a>Adding trend-lines/zones </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can add trend-lines to spark line chart as under. For example, if we had wanted to show previous day's closing figure as a trend-line, we can add the following to XML: </p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart ...&gt;<br />
+      <span class="codeComment">&nbsp;&nbsp;&nbsp;... data ....</span><br />
+      &nbsp;&nbsp;&nbsp;&lt;trendlines&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;line startvalue='32' color='FF0000' thickness='1'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/trendlines&gt;<br />
+      &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">This will result in: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p><img src="Images/SparkLine_Trend1.jpg" width="305" height="36" /></p>
+    <p>You can make this line appear as dashed using:</p>
+    <p><span class="codeInline">&lt;line startvalue='32' color='FF0000' thickness='1' dashed='1' dashLen='3' dashGap='3' alpha='100'/&gt;</span></p>
+    <p>This will result in:</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkLine_Trend2.jpg" width="304" height="34" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can make slanted trend-lines using:</p>
+    <p class="codeInline">&lt;line startvalue='29' endValue='35' color='FF0000' thickness='1' /&gt;    </p>
+    <p>This  will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkLine_Trend3.jpg" width="305" height="34" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Or, you can make the trend appear as a zone by setting:</p>
+    <p class="codeInline">&lt;line startvalue='29' endValue='35' color='FF0000' thickness='1' isTrendZone='1'/&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkLine_Trend4.jpg" width="303" height="34" /></td>
+  </tr>
+</table>
+</body>
+</html>

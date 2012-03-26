@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Data-streaming charts &gt; Getting data using JavaScript </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The data-streaming charts also allow you to get the current view state of data (i.e., the data which is currently being shown on the chart) using JavaScript. </p>
+    <p>Additionally, the charts allow you to track events in JavaScript whenever new data is provided to the chart (either from real-time data provider page or using JavaScript).</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">FC_ChartUpdated() method - event when chart is updated</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you wish, you can track the event of chart data update - i.e., each time the chart fetches new data and updates itself, it can notify you by calling a JavaScript method. The method is named as <span class="codeInline">FC_ChartUpdated(DOMId)</span>.</p>
+    <p>To enable this, you'll first need to set <span class="codeInline">registerWithJS</span> flag of the chart to 1: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">var chart1 = new FusionCharts(&quot;../Charts/RealTimeLine.swf&quot;, &quot;ChId1&quot;, &quot;500&quot;, &quot;350&quot;, &quot;0&quot;, &quot;1&quot;);</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Now, you can define the <span class="codeInline">FC_ChartUpdated</span> method in your HTML code as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">function FC_ChartUpdated(DOMId){<br />
+&nbsp;&nbsp;<span class="codeComment">&nbsp;//Check if DOMId is that of the chart we want</span><br />
+&nbsp;&nbsp;&nbsp;if (DOMId==&quot;ChId1&quot;){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Get reference to the chart</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var chartRef = getChartFromId(DOMId);<br />
+<span class="codeComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Now you can do anything with the chart...</span> <br />
+&nbsp;&nbsp;&nbsp;}<br />
+}</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, whenever a real-time chart (present in this page) receives new data (from data provider page or even JavaScript <span class="codeInline">feedData()</span> method), it will now call <span class="codeInline">FC_ChartUpdated() </span>method and pass its DOM Id to this method.</p>
+    <p>If you've multiple data-streaming charts on the  same page, you can use <span class="codeInline">DOMId</span> to track which chart was updated, and based on that, take future actions. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">getData() method </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">For any data-streaming chart present in the HTML page, you can use the<span class="codeInline"> getData()</span> method to get the chart's current data in a JavaScript array. Shown below is an example: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">function FC_ChartUpdated(DOMId){<br />
+&nbsp;&nbsp;&nbsp;<span class="codeComment">//Check if DOMId is that of the chart we want</span><br />
+&nbsp;&nbsp;&nbsp;if (DOMId==&quot;ChId1&quot;){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Get reference to the chart</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var chartRef = getChartFromId(DOMId);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Get the current view state data of chart (in array)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var arrData = chartRef.getData();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;//Update our display container</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updateDisplay(arrData);<br />
+&nbsp;&nbsp;&nbsp;}<br />
+}</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the above code, we've combined <span class="codeInline">FC_ChartUpdated()</span> and <span class="codeInline">getData() </span>method. </p>
+    <p>Whenever a chart (with ID as <span class="codeInline">ChId1</span>) updates in the page, this function is invoked. In this function, we get the new data of chart in a JavaScript array using <span class="codeInline">getData()</span> method and then pass it to another custom function called <span class="codeInline">updateDisplay()</span>. </p>
+    <p>The structure of the array returned by<span class="codeInline"> getData() </span>function is as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="90%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="20%" valign="top" class="text"><strong>[0,0] - Empty </strong></td>
+        <td width="20%" valign="top" class="text"><strong>[0,1]- Dataset series name </strong></td>
+        <td width="20%" valign="top" class="text"><strong>[0,2] - Dataset series name  </strong></td>
+        <td width="20%" valign="top" class="text"><strong>[0,n]- Dataset series name  </strong></td>
+        </tr>
+      <tr>
+        <td valign="top" class="text"><strong>[1,0] - Category label of data index 1 </strong></td>
+        <td valign="top" class="text"><p>Data for dataset [1] data index [1]</p>          </td>
+        <td valign="top" class="text"><p>Data for dataset [2] data index [1]</p>          </td>
+        <td valign="top" class="text"><p>Data for dataset [n] data index [m]</p>          </td>
+        </tr>
+      <tr>
+        <td valign="top" class="text"><strong>[2,0] - Category label of data index 2 </strong></td>
+        <td valign="top" class="text"><p>Data for dataset [1] data index [2]</p>          </td>
+        <td valign="top" class="text">Same as above </td>
+        <td valign="top" class="text">Same as above </td>
+        </tr>
+      <tr>
+        <td valign="top" class="text"><strong>[m,0] - Category label of data index m </strong></td>
+        <td valign="top" class="text"><p>Data for dataset [n] data index [m] </p>          </td>
+        <td valign="top" class="text">Same as above </td>
+        <td valign="top" class="text">Same as above </td>
+        </tr>
+      <tr>
+        <td valign="top" class="text"><strong>[m,0] - Category label of data index m </strong></td>
+        <td valign="top" class="text">Same as above </td>
+        <td valign="top" class="text">Same as above </td>
+        <td valign="top" class="text">Same as above </td>
+        </tr>
+      <tr>
+        <td valign="top" class="text"><strong>[m,0] - Category label of data index m </strong></td>
+        <td valign="top" class="text">Same as above</td>
+        <td valign="top" class="text">Same as above </td>
+        <td valign="top" class="text">Same as above </td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">To explain the concept further, let's build a simple example. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">An example </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>We'll build further on our previous Multiple dataset example, where we were comparing the stock prices of Dell and Google. This time, we'll extend it to show the data retrieved by chart in a table that'll be controlled by JavaScript. That is:</p>
+      <ol>
+        <li>The chart will function normally and retrieve the data for both Dell &amp; Google from the data provider page.</li>
+        <li>We'll enable to chart to register with JavaScript.</li>
+        <li>Now, whenever the chart's data is updated, our <span class="codeInline">FC_ChartUpdated()</span> method will be invoked.</li>
+        <li>Here, we'll get the data of chart using <span class="codeInline">getData()</span> method.  </li>
+        <li>Finally, we'll convert the data in this array in a presentable HTML table. </li>
+      </ol>      
+    <p>The following code (contained in <span class="codeInline">Download Package &gt; Code &gt; RealTime &gt;   GetData_JS.html)</span> does the trick: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;HTML&gt;<br />
+      &lt;HEAD&gt;
+      <br />
+      &nbsp;&nbsp;&lt;script type=&quot;text/javascript&quot; src=&quot;../Charts/FusionCharts.js&quot;&gt;&lt;/script&gt;<br />
+      &nbsp;&nbsp;&lt;script language=&quot;javascript&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//FC_ChartUpdated method is called when any real-time chart present in the<br />
+&nbsp;&nbsp;&nbsp;&nbsp;//page has received new data (either from data-provider page or from JavaScript)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;function FC_ChartUpdated(DOMId){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;//Check if DOMId is that of the chart we want</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (DOMId==&quot;ChId1&quot;){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Get reference to the chart</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var chartRef = getChartFromId(DOMId);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;//Get the current view state data of chart (in array)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var arrData = chartRef.getData();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;//Update our display container</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updateDisplay(arrData);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;//This method is called when the chart has updated.</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;function updateDisplay(arrData){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;//Here, we access the array of data, build HTML code to represent<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//the same data and finally update the page display container.</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var i,j;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var tableCode = &quot;&lt;table width='500' align='center' border='1' bordercolor='#f1f1f1' cellpadding='2' cellspacing='1'&gt;&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Iterate through each row in the array;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Note: arrData[0][0] is empty<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//arrData[0][i] contains data set series names<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//arrData[i][0] contains category labels (x-axis labels)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Rest of the cells contain data in numeric format (or null).</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i=0; i&lt;arrData.length; i++){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Create a table row for each row</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tableCode = tableCode + &quot;&lt;tr&gt;&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (j=0; j&lt;arrData[i].length; j++){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//If it's the first row, we add data set series name</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i==0){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;//if it's the first cell [0][0], we add &quot;Time&quot; as header</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (j==0){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tableCode = tableCode + &quot;&lt;td class='textBold'&gt;Time&lt;/td&gt;&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tableCode = tableCode + &quot;&lt;td class='textBold'&gt;&quot; + arrData[i][j] + &quot;&lt;/td&gt;&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//If it's first cell, we add it as category label, else as normal</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (j==0){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tableCode = tableCode + &quot;&lt;td class='textBold'&gt;&quot; + arrData[i][j] + &quot;&lt;/td&gt;&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;//We add data only if it's not null</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (arrData[i][j]!=null){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tableCode = tableCode + &quot;&lt;td class='text'&gt;$&quot; + arrData[i][j] + &quot;&lt;/td&gt;&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tableCode = tableCode + &quot;&lt;td class='text'&gt;&amp;nbsp;&lt;/td&gt;&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Close row</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tableCode = tableCode + &quot;&lt;/tr&gt;&quot;; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Close table element</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tableCode = tableCode + &quot;&lt;/table&gt;&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Update the DIV container with this.</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var divC = document.getElementById(&quot;tableDiv&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;divC.innerHTML = tableCode;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;//Return</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&lt;/script&gt;<br />
+&nbsp;&nbsp;&lt;style type=&quot;text/css&quot;&gt;<br />
+&nbsp;&nbsp;.text{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-family:Arial, Helvetica, sans-serif;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-size:10pt;<br />
+&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;.textBold{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-family:Arial, Helvetica, sans-serif;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-size:10pt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;font-weight:bold;<br />
+&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&lt;/style&gt;<br />
+&lt;/HEAD&gt;<br />
+&lt;BODY&gt;<br />
+&lt;CENTER&gt;<br />
+&nbsp;&nbsp;&lt;div id=&quot;chart1div&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;This text is replaced by the Flash movie.<br />
+&nbsp;&nbsp;&lt;/div&gt;<br />
+&nbsp;&nbsp;&lt;script type=&quot;text/javascript&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;var chart1 = new FusionCharts(&quot;../Charts/RealTimeLine.swf&quot;, &quot;ChId1&quot;, &quot;500&quot;, &quot;350&quot;, &quot;0&quot;, &quot;1&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;chart1.setDataURL(&quot;MultipleDS.xml&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;chart1.render(&quot;chart1div&quot;);<br />
+&nbsp;&nbsp;&lt;/script&gt;<br />
+&lt;BR&gt;<br />
+&nbsp;&nbsp;&lt;DIV id=&quot;tableDiv&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;table width=&quot;500&quot; align=&quot;center&quot; border=&quot;1&quot; bordercolor=&quot;#f1f1f1&quot; cellpadding=&quot;2&quot; cellspacing=&quot;1&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td align='center'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='text'&gt;Once the chart starts updating (fetching data from real-time data provider page), this table will be updated using JavaScript.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;<br />
+&nbsp;&nbsp;&lt;/DIV&gt;<br />
+&lt;/BR&gt;<br />
+&lt;/BODY&gt;<br />
+&lt;/HTML&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">When you run this page, you'll first get a blank chart as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_JS_Get1.jpg" width="508" height="416" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">And after a few updates, you'll be able to see the table being updated by JavaScript, as shown under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_JS_Get2.jpg" width="509" height="539" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Using the methods explained above, you can build a wide variety of interactive AJAX driven applications. You can use the chart as an interface to retrieve the data and then handle it in your JavaScript code too. </td>
+  </tr>
+</table>
+</body>
+</html>

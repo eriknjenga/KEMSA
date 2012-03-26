@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style>
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Drawing Pad &gt; Overview  </h2></td>
+  </tr>
+  
+  <tr>
+    <td valign="top" class="text"><p>The drawing pad is an SWF file which allows you to create only annotations, but not charts. Like all other charts in the suite, it accepts XML data and can be integrated with JavaScript. You can create any type of annotation on the pad and then apply STYLEs to it. </p>
+      <p>You can effectively use the drawing pad to create the following: </p>
+      <ul>
+        <li>XML based diagrams &amp; animations </li>
+        <li>Flowcharts   </li>
+        <li>Process flow diagrams</li>
+        <li>Organization charts</li>
+        <li>Seating arangement</li>
+        <li>etc</li>
+      </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Using the drawing pad </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The drawing pad can be found in <span class="codeInline">Download Package &gt; Charts</span> &gt; <span class="codeInline">DrawingPad.swf</span>. The drawing pad can be treated like any other chart, just that it draws only annotations and no charts.</p>
+      <p>So when creating annotations in the drawing pad, you just have to write the annotations part of the XML enclosed within the <span class="codeInline">&lt;chart&gt;</span> and <span class="codeInline">&lt;/chart&gt;</span> elements. Thus, the XML to create a text annotation in the drawing pad would look like: </p></td>
+  </tr>
+  
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;annotations&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' &gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='text' x='100' y='100' label='Text' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+    &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The result would be: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DP1.GIF" width="400" height="300" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">To know more about how to create annotations using XML, please see the Annotations Section.</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Annotations &gt; JavaScript API </h2></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The annotations can be controlled by JavaScript using the following methods: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="98%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+        <tr>
+          <td width="30%" class="header">Function Name </td>
+          <td width="20%" class="header">Parameter</td>
+          <td width="50%" class="header">Description</td>
+        </tr>
+        
+        <tr>
+          <td valign="top" class="codeInline">showAnnotation(strGroupID)</td>
+          <td valign="top" class="codeInline">strGroupID</td>
+          <td valign="top" class="text">Shows an annotation with the specified group ID. </td>
+        </tr>
+        <tr>
+          <td valign="top" class="codeInline">hideAnnotation(strGroupID)</td>
+          <td valign="top" class="codeInline">strGroupID</td>
+          <td valign="top" class="text">Hides an annotation with the specified group ID. </td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Using these methods </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To use any of the methods above, you'll first need to register the chart with JavaScript by setting <span class="codeInline">registerWithJS</span> flag to 1, as under.</p>
+        <p>(Note the last parameter set as 1) </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">var chart1 = new FusionCharts(&quot;HLED.swf&quot;, &quot;ChId1&quot;, &quot;350&quot;, &quot;100&quot;, &quot;0&quot;, &quot;1&quot;);</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Thereafter, you can refer to the chart using its DOM Id and call any of these methods as shown below: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p class="codeBlock">&lt;HTML&gt;<br />
+      &lt;HEAD&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;TITLE&gt;FusionWidgets v3 - JS API&lt;/TITLE&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;script type=&quot;text/javascript&quot;   src=&quot;../Charts/FusionCharts.js&quot;&gt;&lt;/script&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;script   language=&quot;javascript&quot;&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//FC_ChartUpdated   method is called when chart has changed  value in real-time. </span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function   FC_ChartUpdated(DOMId){<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Check if DOMId is   that of the chart we want</span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if   (DOMId==&quot;ChId1&quot;){<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Get reference to the   chart</span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var chartRef =   getChartFromId(DOMId);<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Show a particular annotation </span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var chartValue = chartRef.<span class="codeInline">showAnnotation</span>(&quot;GRPRED&quot;); <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">... Do what your application demands... </span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br />
+      &nbsp;&nbsp;&nbsp;&lt;/script&gt;
+      &nbsp;&nbsp;<br />
+      &lt;/HEAD&gt;<br />
+      &lt;BODY&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;CENTER&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div   id=&quot;chart1div&quot;&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This text is replaced by the Flash   movie.<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script   type=&quot;text/javascript&quot;&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var chart1 = new   FusionCharts(&quot;../Charts/HLED.swf&quot;, &quot;ChId1&quot;, &quot;350&quot;, &quot;100&quot;, &quot;0&quot;,   &quot;1&quot;);<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chart1.setDataURL(&quot;Data.xml&quot;);<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chart1.render(&quot;chart1div&quot;);<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+      &lt;/BODY&gt;<br />
+      &lt;/HTML&gt;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

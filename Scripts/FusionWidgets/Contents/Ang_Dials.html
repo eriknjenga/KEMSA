@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Angular Gauge &gt; Configuring Dials </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we'll see how to configure various aspects of the dials. Specifically, we'll see how to:</p>
+      <ul>
+        <li><a href="#fill">Configure background and border color of the dial</a></li>
+        <li><a href="#radius">Configure radius of the dial</a></li>
+        <li><a href="#widths">Configure base width, top width &amp; rear extension to render realistic dials</a></li>
+        <li><a href="#tooltext">Adding custom tool text for dial</a></li>
+        <li><a href="#multiple">Adding multiple dials on the chart </a></li>
+      </ul>
+      <p>Let's see each of them one by one. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="fill" id="fill"></a>Configuring background and border of dial </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to have the dial fill in single color or as a gradient. To fill the dial using a single color, you can use:</p>
+    <p class="codeInline">&lt;dial bgColor='666666' value='92' rearExtension='10' borderAlpha='0'/&gt;    </p>
+    <p>Here we've specified the dial background color as <span class="codeInline">666666</span> and hidden the border using <span class="codeInline">borderAlpha='0'</span>. This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Dial1.jpg" width="342" height="183" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also fill the dial with a gradient by specifying the list of colors separated as comma. Each color will then form an equal part of gradient. Example:</p>
+    <p>&lt;dial bgColor='666666,FFFFFF,666666' value='92' rearExtension='10' borderAlpha='0'/&gt;    </p>
+    <p>This will  result in:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Dial2.jpg" width="343" height="180" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure to show/hide the dial border using:</p>
+    <p class="codeInline">&lt;dial .... borderAlpha='0'/&gt; </p>
+    <p>Here, we've set border alpha to 0 to hide it. </p>
+    <p>Additionally, you can configure border properties as under:</p>
+    <p class="codeInline"> &lt;dial bgColor='F1F1F1' value='92' rearExtension='10' borderColor='666666' borderThickness='1' borderAlpha='100'/&gt;</p>
+    <p>This will result in: <br />
+    </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Dial3.jpg" width="343" height="179" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="radius" id="radius"></a>Configuring radius of dial </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can make the length of dial longer/shorter by specifying its exact radius in pixels as under:</p>
+    <p class="codeInline"> &lt;dial value='92' rearExtension='10' radius='100'/&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Dial4.jpg" width="342" height="177" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="widths" id="widths"></a>Configuring base width, top width and rear extension </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure the base and top width of dials using:</p>
+      <p class="codeInline">&lt;dial value='92' baseWidth='20' topWidth='4'/&gt;      </p>
+    <p>This will result in the image below (we've also increased pivot radius here). As you can see, the thickness of both the base and top part of dial has increased. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Dial5.jpg" width="347" height="178" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt for the dial to have a rear extension (i.e., extension on the opposite side) using:</p>
+    <p class="codeInline">&lt;dial value='92' rearExtension='10' baseWidth='6'/&gt;</p>
+    <p>This will result in: <br />
+    </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Dial6.jpg" width="345" height="180" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="tooltext" id="tooltext"></a>Adding custom tool text for dial</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can add custom tool text for each dial using:</p>
+    <p class="codeInline"> &lt;dial value='92' ... toolText='Customer Satisfaction Index'/&gt; </p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Dial7.jpg" width="342" height="180" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="multiple" id="multiple"></a>Adding multiple dials </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can add any number of dials to each chart, with each dial having its own value and individual properties as under: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;dials&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;dial value='92' rearExtension='10' baseWidth='8' toolText='Current year'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;dial value='79' bgcolor='FFFFFF' borderColor='999999' baseWidth='4' toolText='Previous year' rearExtension='10' showValue='0' radius='95'/&gt;<br />
+  &lt;/dials&gt;<br />
+    </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">This will result in: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Dial8.jpg" width="345" height="182" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The visual stacking order of each dial would depend on its order in the XML document. That is, the dial defined first in the XML would appear at the bottom of the dial stack. </td>
+  </tr>
+</table>
+</body>
+</html>

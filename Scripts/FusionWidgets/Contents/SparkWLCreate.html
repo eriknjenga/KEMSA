@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" /></head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Spark Charts &gt; Win/Loss Chart &gt; Simple Example </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we'll create a simple spark win/loss chart to show the performance of Yankees this season. </p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">XML Data </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Our fictional season's data can be converted into XML as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart caption='Yankees' subcaption='Current season' &gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;dataset&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='W' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='W' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='D' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='L' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='W' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='W' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='L' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='L' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='W' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='L' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='W' scoreless='1'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='L' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='W' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='W' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/dataset&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the above XML, we're:</p>
+      <ul>
+        <li>Created the <span class="codeInline">&lt;chart&gt;</span> element, which is   the root element of each chart. </li>
+        <li>Specified the caption &amp; sub-caption. You can specify a lot more properties for the <span class="codeInline">&lt;chart&gt;</span> element, which have been discussed in next   sections. </li>
+        <li>Thereafter, we've added the <span class="codeInline">&lt;dataset&gt;</span>   element to contain data. Each spark win/loss chart XML can have only <span class="codeInline">&lt;dataset&gt;</span> element, under which individual data   points can be specified using <span class="codeInline">&lt;set value='W' /&gt;</span>. </li>
+        <li>Set value can be of 3 types:
+          <ul>
+            <li>W - Indicating a win</li>
+            <li>L - Indicating a loss</li>
+            <li>D - Indicating a draw   </li>
+          </ul>
+        </li>
+      </ul>
+    <p>When you now view the chart, you'll get something as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p><img src="Images/SparkWinLoss1.jpg" width="207" height="41" class="imageBorder" /></p>
+    <p>Next, we'll see how to configure the various aspects of this chart. </p></td>
+  </tr>
+</table>
+</body>
+</html>

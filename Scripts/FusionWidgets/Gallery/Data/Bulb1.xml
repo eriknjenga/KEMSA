@@ -1,0 +1,8 @@
+<chart bgColor='C4D283, FFFFFF' decimalPrecision='0' numberSuffix='%25'  lowerLimit='0' upperLimit='100'>
+	<colorRange>
+		<color minValue='0' maxValue='50' name='Normal' code='8BBA00' />
+		<color minValue='50' maxValue='75' name='Warning' code='F6BD0F' />
+		<color minValue='75' maxValue='100' name='Danger' code='FF654F' />
+	</colorRange>
+	<value>52</value>
+</chart>

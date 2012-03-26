@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">FusionWidgets and Flash &gt; Using Chart API </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Most charts in FusionWidgets v3 suite exposes methods that can be utilized in your Flash code, when loading those charts. For example, the angular gauge exposes methods to set and retrieve data for each dial, show/hide message loggers etc. </p>
+      <p>You can find the list of APIs that each chart expose in each chart's &quot;Flash API&quot; or &quot;JavaScript API&quot; section. Most of the JavaScript methods exposed can be used in Flash too.</p>
+      <p>Here, we'll see a simple example where we'll update the value of an angular gauge using its API, based on user input. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">An example </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>We'll start this example from <span class="codeInline">MyFirstChart.fla</span> where we had built an angular gauge. We create a copy and save it as <span class="codeInline">UpdateValue.fla</span> in the same folder. </p>
+      <p>We'll now extend that example to include an input text field and a button in the movie. The users would be able to enter new value for the gauge in this textfield. And, when the button would be pressed, we'll update the chart's value using its API.</p>
+    <p>Shown below is how the application will finally  look: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Flash_Up_O.jpg" width="512" height="338" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, we've an input text field (with variable name as <span class="codeInline">chartValue</span>). And we've a button with instance name as <span class="codeInline">btnGo</span>.</p>
+    <p>The code in Actions layer are still the same. In this movie, we add another layer named as &quot;<span class="codeInline">Button Actions</span>&quot; and add the following code to its first frame: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">var objListener:Object = new Object();<br />
+      objListener.click = function(){<br />
+&nbsp;&nbsp;&nbsp;<span class="codeComment">//Click handler for button. Here, we need to update chart value.<br />
+&nbsp;&nbsp;&nbsp;//We've our reference of chart instance stored in myFirstChart.<br />
+&nbsp;&nbsp;&nbsp;//Now, we can directly call myFirstChart.setValue(dialIndex, value)<br />
+&nbsp;&nbsp;&nbsp;//Here, we set dialIndex as 1 as we've only 1 dial</span><br />
+&nbsp;&nbsp;&nbsp;myFirstChart.setData(1, parseInt(chartValue));<br />
+}<br />
+btnGo.addEventListener(&quot;click&quot;,objListener);</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've defined the <span class="codeInline">click</span> event handler for the button. In the handler method, we simply call the <span class="codeInline">setData(index, value)</span> method of the angular gauge and update its value. </p>
+      <p class="highlightBlock">Each chart exposes its own list of methods. For complete method list for each chart, see the &quot;Flash API&quot; or &quot;JavaScript API&quot; section of each chart. </p>
+      <p>When you now run the movie and update the value, you'll see that the chart behaves accordingly. </p></td>
+  </tr>
+</table>
+</body>
+</html>

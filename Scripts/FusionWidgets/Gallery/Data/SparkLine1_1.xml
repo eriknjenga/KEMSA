@@ -1,0 +1,35 @@
+<!--300*25-->
+<chart caption='Cisco' palette='1' canvasLeftMargin='110'>
+	<dataset>
+		<set value='38.42' />
+		<set value='41.43' />
+		<set value='34.78' />
+		<set value='40.67' />
+		<set value='44.12' />
+		<set value='38.45' />
+		<set value='40.71' />
+		<set value='49.90' />
+		<set value='40.12' />
+		<set value='34.91' />
+		<set value='42.02' />
+		<set value='35.21' />
+		<set value='43.31' />
+		<set value='40.21' />
+		<set value='40.54' />
+		<set value='40.90' />
+		<set value='54.21' />
+		<set value='41.90' />
+		<set value='33.43' />
+		<set value='46.73' />
+		<set value='50.42' />
+		<set value='40.74' />
+		<set value='42.31' />
+		<set value='50.39' />
+		<set value='51.10' />
+		<set value='44.84' />
+		<set value='51.64' />
+		<set value='47.62' />
+		<set value='39.61' />
+		<set value='35.13' />
+	</dataset>
+</chart>

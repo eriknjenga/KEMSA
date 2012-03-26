@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Annotations &gt; Auto-Scale </h2></td>
+  </tr>
+  
+  <tr>
+    <td valign="top" class="text"><p>Auto-scaling is a new feature introduced in FusionWidgets v3. Consider this - you make a chart, create lots of annotations for it. And then all of a sudden you have to change the dimensions of the chart for some good reason. What do you do with the annotations? Sit down and change the size and position of each of the annotations individually. Sounds really really tedious...doesn't it? That's exactly where auto-scale comes to the rescue. </p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>&nbsp;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Let' take an example now. Suppose we have the following chart: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_AS1.jpg" width="400" height="200" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML for the same is: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="codeBlock"><p>&lt;chart lowerLimit='0' upperLimit='100' gaugeStartAngle='180' gaugeEndAngle='0' numberSuffix='%' bgColor='FFFFFF' showBorder='0' basefontColor='FFFFFF'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='75' code='FF654F'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='90' code='F6BD0F'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='100' code='8BBA00'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;dials&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dial value='92' rearExtension='10'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/dials&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;annotations&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' showBelow='1'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='rectangle' x='0' y='0' toX='400' toY='200' radius='10' fillColor='333333, 453269' fillAngle='180' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='rectangle' x='5' y='5' toX='395' toY='195' radius='10' color='000000' fillAlpha='0' showBorder='1' borderColor='FFFFFF' borderThickness='3'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+&lt;/chart&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Now if you are more curious about how the angular gauge was made, then please have a look at the Angular Gauge section. But to understand the auto-scale feature, all we need to understand is about the annotations. The chart is 400x200 px in dimension. We have used 2 rectangle annotations in the chart:</p>
+      <ul>
+        <li>One which makes for the gradient background of the chart</li>
+        <li>Another one which makes for the white border we  have around the chart</li>
+      </ul>
+    <p>Now for some good reason (we repeat: good), you need to change the dimensions of the chart to 480x240 px and wanted the chart to look like this: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_AS3.jpg" width="480" height="240" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Changing the dimensions of the Flash movie would make the angular gauge re-calculate the space available automatically and adjust to its new surroundings. To make the annotations do the same, all you have to do is tell the Flash movie what the original dimensions of the chart were (the dimensions when you created the annotations) and ask it to auto-scale them accordingly. All of this is done through XML itself - the original dimensions conveyed by the <span class="codeInline">origW</span> and <span class="codeInline">origH</span> attribute and the instruction to auto-scale using the <span class="codeInline">autoScale</span> attribute of the <span class="codeInline">&lt;annotations&gt;</span> element. Since the original dimensions of the chart were 400x200 px, the required attributes would be: <span class="codeInline">origW='400', origH='200'</span> and <span class="codeInline">autoScale='1'</span>.</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Our final XML would look as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="codeBlock"><p>&lt;chart lowerLimit='0' upperLimit='100' gaugeStartAngle='180' gaugeEndAngle='0' numberSuffix='%' bgColor='FFFFFF' showBorder='0' baseFontColor='FFFFFF'&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='75' code='FF654F'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='90' code='F6BD0F'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='100' code='8BBA00'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;dials&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dial value='92' rearExtension='10'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/dials&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;annotations <strong>origW='400' origH='200' autoScale='1'</strong>&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' showBelow='1'&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='rectangle' x='0' y='0' toX='400' toY='200' radius='10' fillColor='333333, 453269' fillAngle='180' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='rectangle' x='5' y='5' toX='395' toY='195' radius='10' color='000000' fillAlpha='0' showBorder='1' borderColor='FFFFFF' borderThickness='3'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+      &lt;/chart&gt;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Constrained and unconstrained scaling </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The case we considered above was one in which the width and the height changed by the same factor. So there were no hassles in auto-scaling the annotations. But if this is not the case, as often will be, then we can have 2 kinds of auto-scaling: </p>
+      <ul>
+        <li>Constrained (by default). </li>
+        <li>Unconstrained. </li>
+      </ul>
+      <p>Let's take the following example to understand this better.</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_AS5.jpg" width="400" height="200" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p></p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The dimensions of the chart are 400x200 px. Now, we will change its dimensions to 500x205 px. Clearly, the width and height are being change by largely varying factors. </p>
+    <p>With constrained scaling, this is how the chart would look with its new dimensions. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_AS6.jpg" width="500" height="205" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The chart would auto-scale itself to a new size and position which is deemed fit for it. But we are concerned here with the scaling of the annotations. The annotation would be auto-scaled to the extent upto which the shape of the annotation doesn't become distorted. Since height is the parameter with the smaller change, the annotation would be auto-scaled for this change and the corresponding change in width, i.e. for a change in height from 200 to 205 px and a change in width from 400 to the value which would have the same change factor as the change factor of the height. The rest of the width would be discarded. That is why the annotation is slightly displaced to the left as well. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To have unconstrained scaling, we need to set <span class="codeInline">constrainedScale='0'</span> in the <span class="codeInline">&lt;annotations&gt;</span> element. That would give us the following chart for the dimension 500x205 px: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold"><img src="Images/Ann_AS7.jpg" width="500" height="205" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The final XML is: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart lowerLimit='0' upperLimit='100' gaugeStartAngle='180' gaugeEndAngle='0' numberSuffix='%25' bgColor='CCCCCC, FFFFFF'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='75' code='FF654F'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='90' code='F6BD0F'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='100' code='8BBA00'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;dials&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dial value='92' rearExtension='10'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/dials&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;annotations origW='400' origH='200' <strong>constrainedScale='0'</strong>&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' showBelow='1'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='circle' startAngle='0' sendAngle='180' x='200' y='120' radius='20' fillColor='333333'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Partial Auto-Scaling </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p class="text">There would be times when using auto-scaling that you would want to auto-scale some annotations while keep the rest of them the way they were - the original position and size. This would be particularly true when some of the annotations you have are  images and text. </p>
+    <p class="text">Lets take this example: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold"><span class="text"><img src="Images/Ann_AS2.jpg" width="400" height="200" /></span></td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The chart above is 400x200 px in dimension. Now we resize it to 480x240 px. So what we would ideally like is this: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_AS8.jpg" width="480" height="240" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>How do we go about it? Its pretty easy to make out that while the 2 rectangles in the background have been auto-scaled, the logo at the top hasn't been. So, here instead of using the autoScale attribute in the &lt;annotations&gt; elelement which auto-scales all the annotations, we would use it in &lt;annotationGroup&gt; element and then auto-scale only those groups which we want to. As common sense would have it, we have made 2 annotation groups:</p>
+      <ul>
+        <li>One with the 2 rectangles which make for the background and border of the chart</li>
+        <li>One with  the logo</li>
+      </ul>
+    <p>We would still define the original width and height in the <span class="codeInline">&lt;annotations&gt;</span> element itself, because to control auto-scaling, the <span class="codeInline">autoScale</span> attribute is sufficient. Then we would set <span class="codeInline">autoScale='1'</span> for the 1st group  and set <span class="codeInline">autoScale='0'</span> for the 2nd group. So, our XML would look as: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart lowerLimit='0' upperLimit='100' gaugeStartAngle='180' gaugeEndAngle='0' numberSuffix='%25' chartTopMargin='100' bgColor='FFFFFF' showBorder='0' chartBottomMargin='20' basefontColor='FFFFFF'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='75' code='FF654F'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='90' code='F6BD0F'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='100' code='8BBA00'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;dials&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dial value='92' rearExtension='10'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/dials&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;annotations origW='400' origH='200'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp1' showBelow='1' <strong>autoScale='1'</strong>&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='rectangle' x='0' y='0' toX='400' toY='200' radius='10' fillColor='333333, 453269' fillAngle='180' /&gt; <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='rectangle' x='5' y='5' toX='395' toY='195' radius='10' color='000000' fillAlpha='0' showBorder='1' borderColor='FFFFFF' borderThickness='3'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup id='Grp2' showBelow='0' <strong>autoScale='0'</strong>&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='image' x='110' y='7' URL='logo.gif' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+  &nbsp;&nbsp; &lt;/annotations&gt;<br />
+    &lt;/chart&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Now what we get is this: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_AS9.jpg" width="480" height="240" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Since we have disabled the auto-scaling feature for the logo image, it remains in the same size and position as it was earlier. So, we need to shift it a little to the right. The  <span class="codeInline">xShift</span> atribute comes into use here. It can be used with the <span class="codeInline">&lt;annotations&gt;</span> element when all the annotations in the chart have to be 'x-shifted' or with <span class="codeInline">&lt;annotationGroup&gt;</span> element when a particular annotation group has to be 'x-shifted' and not all the annotations on the chart. In this case, only the annotation group with the logo in it has to be shifted. </p>
+    <p>Similarly, there is a <span class="codeInline">yShift</span> attribute which too can be used with both the <span class="codeInline">&lt;annotations&gt;</span> and <span class="codeInline">&lt;annotationGroup&gt;</span> element. </p>
+    <p>Setting <span class="codeInline">xShift='40'</span> for <span class="codeInline">Grp2</span> would give us our desired result. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Scaling text </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">You can choose whether to scale all the text in the chart or not using the <span class="codeInline">scaleText</span> attribute of the <span class="codeInline">&lt;annotations&gt;</span> element. The same attribute can also be used with the <span class="codeInline">&lt;annotationGroup&gt;</span> element to control the text in an annotation group. Setting <span class="codeInline">scaleText='0'</span> would imply that the text annotation is not to be scaled and vie-versa. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">Scaling images </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Similar to <span class="codeInline">scaleText</span>, <span class="codeInline">scaleImages</span> gives you control over the scaling of image annotations. </td>
+  </tr>
+  
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

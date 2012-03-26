@@ -1,0 +1,18 @@
+<Chart bgColor='FFFFFF' bgAlpha='0' showBorder='0' upperLimit='100' lowerLimit='-50' gaugeRoundRadius='5' chartBottomMargin='10' ticksBelowGauge='0' 
+showGaugeLabels='0' valueAbovePointer='0' pointerOnTop='1' pointerRadius='9'>
+    <colorRange> 
+        <color minValue='0' maxValue='100' name='GOOD'  />
+        <color minValue='35' maxValue='70' name='WEAK' /> 
+        <color minValue='70' maxValue='100' name='BAD' />
+    </colorRange>
+    <value>-11</value>
+
+    <styles>
+        <definition>
+            <style name='ValueFont' type='Font' bgColor='333333' size='10' color='FFFFFF'/>
+        </definition>
+        <application>
+            <apply toObject='VALUE' styles='valueFont'/>
+        </application>	
+    </styles>
+</Chart>

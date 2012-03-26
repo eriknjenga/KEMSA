@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Data-streaming Charts &gt; Configuration </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we'll explore a few of the many visual and functional configurations possible for the chart. Specifically, we'll see how to:</p>
+      <ul>
+        <li><a href="#palette">Apply pre-built or custom palettes to the chart</a></li>
+        <li><a href="#axislimits">Set  custom y-axis lower limit and upper limit</a></li>
+        <li><a href="#decimals">Specify different decimal precisions for the chart and axis </a></li>
+        <li><a href="#canvasmargins">Set custom canvas margins to accomodate larger y-axis values and labels </a></li>
+        <li><a href="#verticalspace">Make use of chart element paddings to avoid overlapping of x-axis labels </a></li>
+      </ul>
+      <p>Let's see each of them one by one. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="palette" id="palette"></a>Applying palettes to chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The data-streaming charts offer 5 pre-defined color palettes for you   to choose from. Each of these palettes are accessible by the number 1-5. To   choose a palette, all you need to do is set: </p>
+      <p>&lt;chart palette='2' or '3' or ..&gt;</p>
+    <p>Shown below are a few examples of palettes applied on our previous chart: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td class="text"><div align="center"><img src="Images/DSC_Palette2.jpg" width="280" height="197" /></div></td>
+        <td class="text"><div align="center"><img src="Images/DSC_Palette3.jpg" width="280" height="196" /></div></td>
+      </tr>
+      <tr>
+        <td class="text"><div align="center">&lt;chart palette='2'...&gt;</div></td>
+        <td width="50%" class="text"><div align="center">&lt;chart palette='3'...&gt;</div></td>
+      </tr>
+      <tr>
+        <td class="text"><div align="center"><img src="Images/DSC_Palette4.jpg" width="280" height="196" /></div></td>
+        <td class="text"><div align="center"><img src="Images/DSC_Palette5.jpg" width="280" height="197" /></div></td>
+      </tr>
+      <tr>
+        <td class="text"><div align="center">&lt;chart palette='4'...&gt;</div></td>
+        <td class="text"><div align="center">&lt;chart palette='5'...&gt;</div></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Additionally,  you can also define an entire new palette by setting a   single theme color using:</p>
+      <p class="codeInline">&lt;chart paletteThemeColor='669933' ..&gt;</p>
+    <p>This will create a new palette derived from this color and then color the   chart as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_PaletteCustom.jpg" width="506" height="354" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To change the color of each dataset's line or column, you can set:</p>
+    <p><span class="codeInline">&lt;dataset color='FF5904' ..&gt;</span> or your hex code without #.  </p>
+    <p>Similarly, the color of all visible elements on the chart is configurable either using XML attributes (defined in XML Sheet) or using STYLEs feature. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="axislimits" id="axislimits"></a>Setting custom y-axis lower limit and upper limit </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you already know the range of your real-time data and want to fix the chart limits accordingly, you can do so as under:</p>
+    <p class="codeInline">&lt;chart yAxisMinValue='20' yAxisMaxValue='40' ..&gt;</p>
+    <p>The above attributes set the lower limit of chart as 20 and upper limit as 40. This limit stays valid as long as all the historical and incremental data stay within this range. As soon as a value violates this limit, the chart automatically calculates a new y-axis limit and applies the same. </p>
+    <p>Shown below is an example of custom limits applied to our Google Stock Monitor chart: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Config_Limits.jpg" width="507" height="357" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, the chart now uses our custom defined limits, instead of automatic limits (which usually was 29.35).</p>
+    <p>However, if any incremental value  (real-time value) falls below 20 or above 40, the manual limits will be ignored and new limits will be calculated as per the incremental value. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="decimals" id="decimals"></a>Specify different decimal precisions for the chart and axis</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The data-streaming charts offer you decimal rounding controls for both the data values on chart and the y-axis values. You can do so using: </p>
+    <p class="codeInline">&lt;chart decimals='2' yAxisValueDecimals='1' ..&gt;</p>
+    <p>Here, <span class="codeInline">decimals</span> sets the decimal places for  all values on chart apart from y-axis values. And, <span class="codeInline">yAxisValueDecimals</span> attribute sets the decimal places for the y-axis values. </p>
+    <p>Shown below is the chart for above XML: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Config_Decimals.jpg" width="506" height="357" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, the y-axis values show a maximum of 1 decimal (or 0 if not required). Whereas, the chart values shown in tool tip show 2 decimals.</p>
+    <p>If you want to necessarily force decimals on both y-axis and chart values, you can set:</p>
+    <p><span class="codeInline">&lt;chart decimals='2' yAxisValueDecimals='1' forceDecimals='1' forceYAxisDecimals='1'..&gt;</span> </p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Config_Decimals2.jpg" width="505" height="355" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="canvasmargins" id="canvasmargins"></a>Set custom canvas margins to accomodate larger y-axis values and labels </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Apart from the chart margins, the data-streaming charts in FusionWidgets also allow you to set canvas margins. This is specifically useful, when in the initial state of chart your y-axis values take lesser width, but can take much more width during incremental updates.</p>
+    <p>In such cases, you can leave a bigger canvasLeftMargin to accommodate possible increase  in width of y-axis value. Shown below is an example:</p>
+    <p class="codeInline">&lt;chart canvasLeftMargin='100' ...&gt;</p>
+    <p>This results in empty space at the left side of canvas, as shown below:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Config_CanvasMar.jpg" width="512" height="359" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also set <span class="codeInline">canvasRightMargin, canvasTopMargin &amp; canvasBottomMargin.</span></p>
+    <p>This technique is also useful when you've placed more than 1 data-streaming chart in the same page vertically over each other, and want all of their canvases to start at the same x position. In that case, you can set the same width for each chart and then set same <span class="codeInline">canvasLeftMargin</span>.</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="verticalspace" id="verticalspace"></a>Make use of chart element paddings to avoid overlapping of x-axis labels </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">If you start your chart with an empty canvas (i.e., no historical data), you might often find that the x-axis labels being specified in incremental update overlap the x-axis title or real-time value as shown under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Config_XAxis1.jpg" width="513" height="356" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To overcome this, you can set the vertical padding between real-time value and canvas using:</p>
+    <p class="codeInline">&lt;chart ... realTimeValuePadding='50' ...&gt;</p>
+    <p>This will now result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Example2.gif" width="513" height="364" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Or, if you're not showing the real time value, you can set either <span class="codeInline">xAxisNamePadding</span> or <span class="codeInline">legendPadding</span> to create the required vertical space.  </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Annotations &gt; Setting visibility </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>For each <span class="codeInline">&lt;annotationGroup&gt;</span>, you can define its initial visibility using </p>
+      <p class="codeInline">&lt;annotationGroup id='GRP1' visible='0' ...&gt;  </p>
+      <p>This allows the annotation group to be hidden initially. Later, you can show/hide the group using: </p>
+      <ul><li>Alert Manager</li>
+        <li>JavaScript API   </li>
+      </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Example using Alert Manager</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Let's consider an example where we're plotting a real-time chart. Now, based on the last value received, we need to show a visual status indicator. To create the visual indicator, we defined three annotation groups each containing one of these sphere:</p>
+      <ul>
+        <li>A red sphere </li>
+        <li>A yellow sphere</li>
+        <li>A green sphere</li>
+      </ul>      
+      <p>All these spheres are different in different annotation groups, but at the same x and y position. We also specify the annotation group IDs as GRPRED, GRPYELLOW, GRPGREEN. We hide all the groups by setting <span class="codeInline">visible='0'</span>. </p>
+      <p>Now, we actitvate the alert manager for the chart to show the required group, as and when the value enters that zone. Shown below is the XML document for the chart: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart lowerLimit='0' upperLimit='100' lowerLimitDisplay='Bad' upperLimitDisplay='Good' gaugeStartAngle='180' gaugeEndAngle='0' palette='1' numberSuffix='%' tickValueDistance='20' showValue='1' decimals='0' dataStreamURL='CPUData.asp' refreshInterval='3'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='75' code='FF654F'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='90' code='F6BD0F'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='100' code='8BBA00'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;dials&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dial id='CS' value='12' rearExtension='10'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/dials&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;annotations&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup xPos='175' yPos='105' &gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='text' x='0' y='0' label='Current status' align='center' bold='1' color='666666' size='11'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt; <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup Id='GRPRED' xPos='175' yPos='125' visible='0' &gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='circle' x='0' y='0' radius='10' fillPattern='radial' color='FFBFBF,FF0000' showBorder='0'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt; <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup Id='GRPYELLOW' xPos='175' yPos='125' visible='0'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='circle' x='0' y='0' radius='10' fillPattern='radial' color='FFFF00,BBBB00' showBorder='0'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotationGroup Id='GRPGREEN' xPos='175' yPos='125' visible='0'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;annotation type='circle' x='0' y='0' radius='10' fillPattern='radial' color='00FF00,339933' showBorder='0'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/annotationGroup&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/annotations&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;alerts&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;alert minValue='0' maxValue='75' action='showAnnotation' param='GRPRED' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;alert minValue='75' maxValue='90' action='showAnnotation' param='GRPYELLOW' /&gt; <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;alert minValue='90' maxValue='100' action='showAnnotation' param='GRPGREEN' /&gt; <br />
+  &nbsp;&nbsp;&nbsp;&lt;/alerts&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='myValueFont' bgColor='F1f1f1' borderColor='999999' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Value' styles='myValueFont' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+  &lt;/chart&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, here we've defined the three annotation groups (each containing a colored sphere) with <span class="codeInline">visible='0'</span>. Thereafter, we've defined the alert manager to show each of the annotation group, based on the last value received. </p>
+    <p>When run against an angular gauge, you'll see the following chart when initialized (note that no sphere annotation groups are initially visible): </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Visible1.jpg" width="354" height="195" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">And when real-time data is received and validated against alert manager, you'll be able to see the annotations, as shown below: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Visible2.jpg" width="356" height="195" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Visible4.jpg" width="355" height="196" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Ann_Visible3.jpg" width="353" height="195" /></td>
+  </tr>
+</table>
+</body>
+</html>

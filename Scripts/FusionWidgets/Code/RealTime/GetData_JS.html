@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<TITLE>FusionWidgets v3 - Getting data using JavaScript</TITLE>
+<script type="text/javascript" src="../Charts/FusionCharts.js"></script>
+<script language="javascript">
+	//FC_ChartUpdated method is called when any real-time chart present in the
+	//page has received new data (either from data-provider page or from JavaScript)
+	function FC_ChartUpdated(DOMId){
+		//Check if DOMId is that of the chart we want
+		if (DOMId=="ChId1"){
+			//Get reference to the chart
+			var chartRef = getChartFromId(DOMId);
+			//Get the current view state data of chart (in array)
+			var arrData = chartRef.getData();
+			//Update our display container
+			updateDisplay(arrData);
+		}
+	}
+	//This method is called when the chart has updated.
+	function updateDisplay(arrData){
+		//Here, we access the array of data, build HTML code to represent
+		//the same data and finally update the page display container.
+		var i,j;
+		var tableCode = "<table width='500' align='center' border='1' bordercolor='#f1f1f1' cellpadding='2' cellspacing='1'>";
+		//Iterate through each row in the array;
+		//Note: arrData[0][0] is empty
+		//arrData[0][i] contains data set series names
+		//arrData[i][0] contains category labels (x-axis labels)
+		//Rest of the cells contain data in numeric format (or null).
+		for (i=0; i<arrData.length; i++){
+			//Create a table row for each row
+			tableCode = tableCode + "<tr>";
+			for (j=0; j<arrData[i].length; j++){
+				//If it's the first row, we add data set series name
+				if (i==0){
+					//if it's the first cell [0][0], we add "Time" as header
+					if (j==0){
+						tableCode = tableCode + "<td class='textBold'>Time</td>";
+					}else{
+						tableCode = tableCode + "<td class='textBold'>" + arrData[i][j] + "</td>";
+					}
+				}else{
+					//If it's first cell, we add it as category label, else as normal
+					if (j==0){
+						tableCode = tableCode + "<td class='textBold'>" + arrData[i][j] + "</td>";
+					}else{
+						//We add data only if it's not null
+						if (arrData[i][j]!=null){
+							tableCode = tableCode + "<td class='text'>$" + arrData[i][j] + "</td>";
+						}else{
+							tableCode = tableCode + "<td class='text'>&nbsp;</td>";
+						}
+					}
+				}
+			}
+			//Close row
+			tableCode = tableCode + "</tr>";			
+		}
+		//Close table element
+		tableCode = tableCode + "</table>";
+		//Update the DIV container with this.
+		var divC = document.getElementById("tableDiv");
+		divC.innerHTML = tableCode;
+		//Return
+		return;
+	}
+</script>
+<style type="text/css">
+.text{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10pt;
+}
+.textBold{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10pt;
+	font-weight:bold;
+}
+</style>
+</HEAD>
+<BODY>
+<CENTER>
+<div id="chart1div">
+  This text is replaced by the Flash movie.
+</div>
+<script type="text/javascript">
+   var chart1 = new FusionCharts("../Charts/RealTimeLine.swf", "ChId1", "500", "350", "0", "1");
+   chart1.setDataURL("MultipleDS.xml");
+   chart1.render("chart1div");
+</script>
+<BR>
+<DIV id="tableDiv">
+	<table width="500" align="center" border="1" bordercolor="#f1f1f1" cellpadding="2" cellspacing="1">
+		<tr>
+			<td align='center'>
+			<span class='text'>Once the chart starts updating (fetching data from real-time data provider page), this table will be updated using JavaScript.
+			</td>
+		</tr>
+	</table>
+</DIV>
+</BR>
+</BODY>
+</HTML>

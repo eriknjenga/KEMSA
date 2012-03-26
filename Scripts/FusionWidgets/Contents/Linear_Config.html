@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Linear Gauge &gt; Configuration </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The linear gauge chart from FusionWidgets suite offers you a lot of   configuration options. Here we'll learn:</p>
+      <ul>
+        <li><a href="#palette">Using palettes </a></li>
+        <li><a href="#pointer">Configuring pointer properties</a></li>
+        <li><a href="#tooltext">Adding tool text and link to pointer</a></li>
+        <li><a href="#mpointers">Adding multiple pointers</a></li>
+        <li><a href="#value">Pointer value  configurations</a></li>
+        <li><a href="#position">Configuring Pointer position</a></li>
+        <li><a href="#gradient">Configuring gauge gradient mix </a></li>
+        <li><a href="#border">Configuring gauge borders </a></li>
+        <li><a href="#round">Creating rounded gauge corners</a> </li>
+        <li><a href="#label">Hiding gauge labels </a></li>
+        <li><a href="#style">Configuring gauge labels </a></li>
+      </ul>
+      <p>Let's see each of them one by one. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="palette" id="palette"></a>Using palettes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The linear gauge offer 5 pre-defined color palettes for you to choose from.   Each of these palettes are accessible by the number 1-5. To choose a palette,   all you need to do is set: </p>
+      <p>&lt;chart palette='2' or '3' or ..&gt;</p>
+    <p>Shown below are a few examples of palettes applied on our previous chart: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Palette2.jpg" width="453" height="106" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Palette 2 applied </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Palette3.jpg" width="453" height="104" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Palette 3 applied </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Palette4.jpg" width="453" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Palette 4 applied </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Additionally,  you can also define an entire new palette by setting a   single theme color using:</p>
+      <p class="codeInline">&lt;chart paletteThemeColor='669933' ..&gt;</p>
+    <p>This will create a new palette derived from this color and then color the   chart as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Palette5.jpg" width="455" height="104" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="pointer" id="pointer"></a>Configuring pointer properties</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure almost all properties of the gauge's pointer at both <span class="codeInline">&lt;chart&gt;</span> level and individual <span class="codeInline">&lt;pointer&gt;</span> level. When using multiple pointers on the chart, it's better to customize at the <span class="codeInline">&lt;pointer&gt;</span> level. </p>
+    <p>To change the cosmetics of pointer, you can use:</p>
+    <p class="codeInline">&lt;pointer value='92' borderColor='333333' borderThickness='3' borderAlpha='100' bgColor='FFFFFF'/&gt;</p>
+    <p>This will result in: <br />
+    </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Pointer1.jpg" width="454" height="104" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure the radius and shape using:</p>
+    <p class="codeInline">&lt;pointer value='92' radius='10' sides='4' /&gt;    </p>
+    <p>This will lead to: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Pointer2.jpg" width="454" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="tooltext" id="tooltext"></a>Adding tool text and link to pointer</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can add tool text and link to each pointer using:</p>
+    <p class="codeInline">&lt;pointer value='92' toolText='Customer sastisfaction %' link='http://www.fusioncharts.com' /&gt;    </p>
+    <p>The link will need to be in FusionCharts link format. This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Tooltip.jpg" width="454" height="106" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="mpointers" id="mpointers"></a>Adding multiple pointers </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To add multiple pointers, you just need to add multiple <span class="codeInline">&lt;pointer&gt;</span> element within <span class="codeInline">&lt;pointers&gt;</span> element as under:</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;pointers&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;pointer value='92' toolText='Current year' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;pointer value='79' bgColor='CCCCCC' borderColor='333333' toolText='Last year' /&gt;<br />
+  &lt;/pointers&gt;<br />
+    </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've added two pointers - one indicating current year's value and the another previous year's value. You can provide custom cosmetics for each pointer.</p>
+    <p>This chart results in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Multiple1.jpg" width="453" height="106" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="value" id="value"></a>Pointer value  configurations</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to show/hide the value for each pointer on gauge using:</p>
+    <p class="codeInline">&lt;chart ... showValue='0'  ...&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Value1.jpg" width="456" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also opt to show the value above/below pointer using:</p>
+    <p class="codeInline">&lt;chart ... valueAbovePointer='0' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Value2.jpg" width="454" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="position" id="position"></a>Pointer position</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure the pointer to show on top of scale or bottom using:</p>
+    <p class="codeInline">&lt;chart ... pointerOnTop='0' ...&gt;</p>
+    <p>This results in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Pointer3.jpg" width="455" height="106" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="gradient" id="gradient"></a>Configuring gauge gradient mix</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets linear gauge allows you to configure the gradient fill mix of   the gauge by specifying gradient fill formula as under:</p>
+      <p class="codeInline">&lt;chart ...   gaugeFillMix='{light-10},{light-20},{light-60},{dark-30},{dark-40}, {dark-40}'   gaugeFillRatio='' ..&gt;</p>
+      <p>Here, we've specified the fill mix as gradient formula (explained in section   Advanced charting) and set <span class="codeInline">gaugeFillRatio</span> as empty   (so as to instruct chart to automatically distribute the gradient color   constituents). The color sequence starts applying from the bottom part to top part i.e., first color specified would apply to the bottom side and then move out towards top side. </p>
+      <p>The gauge will look as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Mix1.jpg" width="455" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Another example:</p>
+      <p class="codeInline">&lt;chart ... gaugeFillMix='{dark-10},FFFFFF,{dark-10}'   gaugeFillRatio='3' ..&gt;</p>
+    <p>It results in:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Mix2.jpg" width="453" height="106" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>More example:</p>
+      <p class="codeInline">&lt;chart ...   gaugeFillMix='{light-10},{light-30},{light-20},{dark-5},{color},{light-30},{light-20},{dark-10}'   gaugeFillRatio='' ..&gt;</p>
+    <p>Resulting in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Mix3.jpg" width="454" height="106" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="border" id="border"></a>Configuring gauge borders</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure to show/hide the gauge border. Additionally, you can   configure to show the entire border in single color or a color derived from the   color range fill color. </p>
+      <p>To hide the gauge border, you can set: </p>
+      <p class="codeInline">&lt;chart ... showGaugeBorder='0' ...&gt; </p>
+    <p>This will result in (we've removed the shadow from this gauge to make the   hidden border's effect more pronounced): </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Border1.jpg" width="454" height="103" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To set a single color as the border for entire gauge, you can set:</p>
+      <p class="codeInline">&lt;chart ... showGaugeBorder='1' gaugeBorderColor='666666'   gaugeBorderThickness='1' gaugeBorderAlpha='100' ...&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Border2.jpg" width="454" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Or, you can also ask the chart to color each color scale's border in a   derivative of its fill color using:</p>
+      <p class="codeInline">&lt;chart ... gaugeBorderColor='{dark-30}'   ...&gt; </p>
+    <p>Here, we've used one token of the gradient fill mix to color each color range   using 30% darker color than its fill color. It will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Border3.jpg" width="455" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, each color range now bears a border color, which is 30%   darker than its fill color.</p>
+      <p>Or, if you want a 60% lighter fill shade, you could set: </p>
+      <p>&lt;chart ... gaugeBorderColor='{light-60}'   ...&gt;</p>
+      <p>You can also set the border property for each color range invidually by   setting:</p>
+    <p class="codeInline">&lt;color minValue='0' maxValue='75' code='FF654F' <strong>borderColor='FF0000' borderAlpha='100'</strong>/&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Border4.jpg" width="455" height="103" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="round" id="round"></a>Creating rounded gauge corners</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can create gauges with rounded corners using:</p>
+    <p class="codeInline">&lt;chart ... gaugeRoundRadius='10' ..&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Round.jpg" width="453" height="105" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="label" id="label"></a>Hiding gauge labels </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt not to show gauge labels in two ways:</p>
+      <ol>
+        <li>Do not provide the <span class="codeInline">label</span> attribute for each <span class="codeInline">&lt;color&gt;</span> element.</li>
+        <li>Or, set <span class="codeInline">&lt;chart showGaugeLabels='0' ..&gt;</span></li>
+      </ol>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_GL.jpg" width="453" height="104" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="style" id="style"></a>Configuring gauge labels</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">You can use STYLEs to configure the font/effect for gauge labels. Shown below is an XML example: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;styles&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='labelFont' bgColor='FFFFFF' borderColor='999999' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='GAUGELABELS' styles='labelFont,myShadow' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+    &lt;/styles&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>This will result in: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_STYLE1.jpg" width="454" height="106" /></td>
+  </tr>
+</table>
+</body>
+</html>

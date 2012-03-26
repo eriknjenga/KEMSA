@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" /></head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Gantt Chart &gt; Adding legend </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>FusionWidgets Gantt chart allows you to add legend with custom keys &amp; colors to your chart. This is useful when you've used some color encoding in your chart and need to explain the color keys. Here, we'll see an example. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Adding legend to our &quot;Projected vs. Actual&quot; Gantt </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Recall the chart that we had built in the section <span class="codeInline">Multi-tasked Processes</span> &gt; <span class="codeInline">Showing projected vs actual dates</span>. The chart looked as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_MultiTask2.gif" width="592" height="378" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, we've used color coding to distinguish between actual dates and projected dates. In the chart above, we've repeatedly used the labels &quot;Planned&quot; and &quot;Actual&quot; to show what color indicates what. However, there's a better way to do this using the legend. </p>
+    <p>We can have a chart as under with the legend: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Legend1.gif" width="589" height="378" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The XML for the chart can be listed as under: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart palette='2' caption='Construction Timeline' dateFormat='dd/mm/yyyy' outputDateFormat='ddds mns' &gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='1/5/2008' end='31/8/2008' label='Months' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='1/5/2008' end='31/5/2008' label='May' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='1/6/2008' end='30/6/2008' label='June' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='1/7/2008' end='31/7/2008' label='July' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='1/8/2008' end='31/8/2008' label='August' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;processes headerText='Task' headerFontSize='16' fontSize='12'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Terrace' id='TRC' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Inspection' id='INS' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Wood Work' id='WDW' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Interiors' id='INT' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/processes&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;tasks showEndDate='1'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='TRC' start='5/5/2008' end='2/6/2008' id='5-1' color='4567aa' height='25%' topPadding='20%' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='TRC' start='10/5/2008' end='2/6/2008' id='5' color='EEEEEE' height='25%' topPadding='55%'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='INS' start='11/5/2008' end='12/6/2008' id='6-1' color='4567aa' height='25%' topPadding='20%' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='INS' start='13/5/2008' end='19/6/2008' id='6' color='EEEEEE' height='25%' topPadding='55%'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='WDW' start='1/6/2008' end='12/7/2008' id='7-1' color='4567aa' height='25%' topPadding='20%' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='WDW' start='2/6/2008' end='19/7/2008' id='7' color='EEEEEE' height='25%' topPadding='55%'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='INT' start='1/6/2008' end='12/8/2008' id='8-1' color='4567aa' height='25%' topPadding='20%' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task processId='INT' start='1/6/2008' end='19/8/2008' Id='8' color='EEEEEE' height='25%' topPadding='55%' /&gt; <br />
+&nbsp;&nbsp;&nbsp;&lt;/tasks&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;legend&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item label='Planned' color='4567aa' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item label='Actual' color='999999' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/legend&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='legendFont' size='13' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Legend' styles='legendFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+&lt;/chart&gt;<br /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've:</p>
+      <ul>
+        <li>Removed the label for each individual task</li>
+        <li>Added a legend containing two items and showing the intended colors. To add legend we use <span class="codeInline">&lt;legend&gt;</span> element and to add each item we use <span class="codeInline">&lt;item label='Label of item' color='Hex code without #' /&gt;</span> </li>
+        <li>Customized the legend font using STYLES to show a bigger font size </li>
+      </ul>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Customizing legend properties </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>There are a lot of legend properties which can be customized using <span class="codeInline">&lt;chart&gt;</span> element attributes.</p>
+    <p>You can add a caption to legend by setting:</p>
+    <p>&lt;chart legendCaption='Color Key : ' ..&gt;</p>
+    <p>This results in:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Legend2.gif" width="281" height="46" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can customize the cosmetics using:</p>
+    <p class="codeInline">&lt;chart ... legendBorderThickness='2' legendBorderAlpha='50' legendBgColor='e1f5ff' legendBgAlpha='20' legendShadow='0' ...&gt; </p>
+    <p>This results in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Legend3.gif" width="275" height="38" /></td>
+  </tr>
+</table>
+</body>
+</html>

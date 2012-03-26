@@ -1,0 +1,11 @@
+<chart palette='1' lowerLimit='0' upperLimit='100' caption='Profit' subCaption='per sale' roundRadius='5' numberPrefix='$' showValue='1'>
+    <colorRange>
+        <color minValue='0' maxValue='30' />
+        <color minValue='30' maxValue='50' /> 
+        <color minValue='50' maxValue='70' /> 
+	<color minValue='70' maxValue='85' /> 
+	<color1 minValue='85' maxValue='100' /> 
+    </colorRange> 
+    <value>78.9</value>
+    <target>84</target>
+</chart>

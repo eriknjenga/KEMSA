@@ -1,0 +1,26 @@
+<chart caption="Average Order Satisfaction" subcaption="For the year 2011/2012" xAxisName="Month" yAxisName="Satisfaction Rate (%)"  numberSuffix="%" showValues="0" alternateHGridColor="FCB541" alternateHGridAlpha="20" divLineColor="FCB541" divLineAlpha="50" canvasBorderColor="666666" baseFontColor="666666" lineColor="FCB541">
+	<set label="Apr" value="84"/>
+	<set label="May" value="58"/>
+	<set label="Jun" value="60"/>
+	<set label="Jul" value="74"/>
+	<set label="Aug" value="88"/>
+	<set label="Sep" value="96"/>
+	<set label="Oct" value="100"/>
+	<set label="Nov" value="100"/>
+	<set label="Dec" value="100"/>
+	<set label="Jan" value="54"/>
+	<set label="Feb" value="67"/>
+	<set label="Mar" value="80"/>
+	<styles>
+		<definition>
+			<style name="Anim1" type="animation" param="_xscale" start="0" duration="1"/>
+			<style name="Anim2" type="animation" param="_alpha" start="0" duration="0.6"/>
+			<style name="DataShadow" type="Shadow" alpha="40"/>
+		</definition>
+		<application>
+			<apply toObject="DIVLINES" styles="Anim1"/>
+			<apply toObject="HGRID" styles="Anim2"/>
+			<apply toObject="DATALABELS" styles="DataShadow,Anim2"/>
+		</application>
+	</styles>
+</chart>

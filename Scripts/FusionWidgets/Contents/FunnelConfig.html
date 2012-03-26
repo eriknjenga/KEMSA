@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Funnel Chart &gt; Configuration </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The funnel chart from FusionWidgets suite allows you to configure various properties using XML. Here, we'll see a few of them:</p>
+      <ul>
+        <li><a href="#F2D">Drawing 2D funnel with customized border properties </a></li>
+        <li><a href="#Shadow">Adding shadow to 2D funnel </a></li>
+        <li><a href="#LCenter">Showing labels at center </a></li>
+        <li><a href="#Hollow">Drawing filled funnel slices</a></li>
+        <li><a href="#slant">Drawing all slices with same slant angle (when plotting streamlined data)</a></li>
+        <li><a href="#POP">Showing values as percentage of previous value</a></li>
+        <li><a href="#Slice">Slicing out individual funnel slices </a></li>
+      </ul>
+      <p>Let's see each of them one by one. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="F2D" id="F2D"></a>Drawing 2D funnel chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>When you draw a normal funnel chart, it renders as 3D, with a context menu allowing you to switch between 2D &amp; 3D mode. However, if you intend to render the funnel as 2D itself, you can set: </p>
+    <p class="codeInline">&lt;chart ... is2D='1' ...&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Funnel2D.gif" width="452" height="455" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>When in 2D mode, you can customize the border properties of the funnel using:</p>
+    <p class="codeInline">&lt;chart ... is2D='1' showPlotBorder='1' plotBorderThickness='2' plotBorderAlpha='100' plotBorderColor='CCCCCC' &gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Funnel2D_2.jpg" width="453" height="453" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="Shadow" id="Shadow"></a>Adding shadow to 2D Plot </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Using STYLEs, you can add shadow to 2D funnel chart as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart caption='Conversion Ratio' subcaption='May 2007' showPercentValues='1' decimals='1' baseFontSize='11'      useSameSlantAngle='1' is2D='1' showPlotBorder='1' plotBorderThickness='2'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label=&quot;Website Visits&quot; value=&quot;385634&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label=&quot;Downloads&quot; value=&quot;175631&quot;  /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label=&quot;Interested to buy&quot; value=&quot;84564&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label=&quot;Contract finalized&quot; value=&quot;35654&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label=&quot;Purchased&quot; value=&quot;12342&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='captionFont' size='15' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='shadow' name='myShadow' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='CAPTION' styles='captionFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='DATAPLOT' styles='myShadow' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+&lt;/chart&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">This will result in: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Funnel_Shadow.jpg" width="456" height="452" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="LCenter" id="LCenter"></a>Showing labels at center </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to show the funnel labels at center of the chart using:</p>
+    <p class="codeInline">&lt;chart ... showLabelsAtCenter='1' ...&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Funnel_LabelCenter.jpg" width="457" height="457" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="Hollow" id="Hollow"></a>Drawing filled funnel slices (in 3D mode) </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>By default, in a 3D funnel chart, the slices show up as hollow ones. You can make them filled by setting:</p>
+    <p class="codeInline">&lt;chart .. isHollow='0' ...&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Funnel_2.jpg" width="454" height="456" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="slant" id="slant"></a>Drawing all slices with same slant angle (when plotting streamlined data)</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">By default, when plotting streamlined data, the chart uses variable funnel slice width to visually depict filtering process, as shown below: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Funnel_1.jpg" width="454" height="456" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>However, if you need the same slant angle for all of them, you can set:</p>
+    <p class="codeInline">&lt;chart useSameSlantAngle='1' ...&gt;</p>
+    <p>This will result in: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Funnel_SlantAngle.jpg" width="455" height="456" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="POP" id="POP"></a>Showing values as percentage of previous value </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>When showing values in percentange for each slice, you can ask the chart to calculate the percentage value of this slice w.r.t previous slice (instead of the first slice) by setting:</p>
+    <p class="codeInline">&lt;chart ... percentOfPrevious='1' ..&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Funnel_PercentOP.jpg" width="454" height="454" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">As you can see above, each funnel slice's percent value is now calculated with respect to the previous slice's value (and not the first one). </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="Slice" id="Slice"></a>Slicing out individual funnel slices </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can slice out individual funnel slices by setting:</p>
+    <p class="codeInline">&lt;set ... isSliced='1' ..&gt;</p>
+    <p>This will result in (here, we've sliced the yellow slice):   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Funnel_1.jpg" width="454" height="456" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">However, when you slice out individual slices from XML, the slicing interaction won't work. </td>
+  </tr>
+</table>
+</body>
+</html>

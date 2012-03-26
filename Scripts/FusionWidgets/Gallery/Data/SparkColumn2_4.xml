@@ -1,0 +1,34 @@
+<chart caption='Humidity' subcaption='%' bgColor='FFFFFF' plotFillColor='003162' canvasLeftMargin='100' showCanvasBorder='0' highColor='008301' lowColor='850001' >
+	<dataset>
+		<set value='54' />
+		<set value='43' />
+		<set value='52' />
+		<set value='56' />
+		<set value='48' />
+		<set value='55' />
+		<set value='56' />
+		<set value='67' />
+		<set value='57' />
+		<set value='59' />
+		<set value='54' />
+		<set value='50' />
+		<set value='57' />
+		<set value='87' />
+		<set value='51' />
+		<set value='57' />
+		<set value='52' />
+		<set value='57' />
+		<set value='59' />
+		<set value='51' />
+		<set value='49' />
+		<set value='45' />
+		<set value='49' />
+		<set value='53' />
+		<set value='52' />
+		<set value='58' />
+		<set value='52' />
+		<set value='51' />
+		<set value='57' />
+		<set value='50' />
+	</dataset>
+</chart>

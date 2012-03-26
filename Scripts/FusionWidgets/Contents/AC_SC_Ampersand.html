@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td width="100%"><h2 class="pageHeader">Special Characters &gt; Using &amp; sign </h2></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>&nbsp;</p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">When using dataURL method </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">If you're using dataURL method, you can directly embed the &amp; character in   your XML and then use it as under:</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart caption='Sales distribution by Employee' subCaption='Jan 07 &amp; Feb 07' isSliced='1'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label='Buchanan' value='20000' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label='Callahan' value='49000' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label='Davolio' value='63000' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label='Dodsworth' value='41000' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;set label='Fuller' value='74000' /&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">You'll now get the following output: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/AC_UsingAmpersand.jpg" width="400" height="350" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">When using dataXML method</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">When using dataXML method, you need to encode &amp; character to %26 - else, you'll get an error on many browsers.   Following is the full HTML Code to embed the chart: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;div id=&quot;chart1div&quot;&gt;<br />
+      &nbsp;&nbsp;&nbsp;This text is replaced by the   chart.<br />
+      &lt;/div&gt;<br />
+      &lt;script type=&quot;text/javascript&quot;&gt;<br />
+      &nbsp;&nbsp;&nbsp;var chart1   = new FusionCharts(&quot;Pyramid.swf&quot;, &quot;ChId1&quot;, &quot;400&quot;, &quot;350&quot;, &quot;0&quot;,   &quot;0&quot;);<br />
+      &nbsp;&nbsp;&nbsp;chart1.setDataXML(&quot;&lt;chart caption='Sales distribution by Employee' subCaption='Jan 07 %26 Feb 07' isSliced='1'&gt;&lt;set label='Buchanan' value='20000' /&gt;&lt;set label='Callahan' value='49000' /&gt;&lt;set label='Davolio' value='63000' /&gt;&lt;set label='Dodsworth' value='41000' /&gt;&lt;set label='Fuller' value='74000' /&gt;&lt;/chart&gt;&quot;);<br />
+      &nbsp;&nbsp;&nbsp;chart1.render(&quot;chart1div&quot;);<br />
+    &lt;/script&gt;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">You will get the same output as earlier. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

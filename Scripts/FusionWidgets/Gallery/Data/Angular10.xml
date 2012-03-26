@@ -1,0 +1,26 @@
+<chart bgColor='FFFFFF' gaugeStartAngle='225' gaugeEndAngle='-45' bgAlpha='100' lowerLimit='0' upperLimit='180' majorTMNumber='8' majorTMThickness='3' majorTMColor='FFFFFF' majorTMHeight='7' minorTMNumber='0' placeValuesInside='1' sgaugeOriginY='160' gaugeOuterRadius='110' gaugeInnerRadius='100' showShadow='0' pivotRadius='20' pivotFillColor='000000,383836'   pivotFillType='linear' pivotFillRatio='50,50' pivotFillAngle='240' annRenderDelay='0' gaugeFillMix='' showPivotBorder='1' pivotBorderColor='999999' pivotBorderThickness='2'>
+	<dials>
+		<dial value='50' color='FFFFFF,999999' alpha='100' showBorder='0' baseWidth='3' topWidth='3' radius='100' />
+	</dials>
+	<annotations autoScale='0'>
+		<annotationGroup id='Grp1' showBelow='1'>
+			<annotation type='circle' x='150' y='150' color='1C1C1C,AAAAAA,1C1C1C' radius='127' fillPattern='linear' />
+			<annotation type='circle' x='150' y='150' color='9E9E9E,ECECEC' radius='117' fillPattern='linear' fillAngle='270'/>
+			<annotation type='circle' x='150' y='150' color='000000,6C6C6C' radius='115' fillPattern='linear' fillAngle='270'/>
+		</annotationGroup>
+
+	</annotations>
+	<styles>
+		<definition>
+			<style name='TTipFont' type='font' color='FFFFFF' bgColor='333333' borderColor='333333' font='Verdana' size='10' />
+			<style name='ValueFont' type='font' size='12' color='FFFFFF' bold='1' />
+			<style name='LimitFont' type='font' size='12' color='70E300' bold='1' />
+		</definition>
+
+		<application>
+			<apply toObject='TOOLTIP' styles='TTipFont' />
+			<apply toObject='TICKVALUES' styles='ValueFont' />
+			<apply toObject='LIMITVALUES' styles='LimitFont' />
+		</application>
+	</styles>
+</chart>

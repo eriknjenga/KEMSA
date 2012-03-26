@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">What's new in FusionWidgets v3? </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>FusionWidgets v3 offers the following new features over FusionCharts Instrumentation Suite v2:</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Common changes: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li>7 new charts:
+        <ul>
+          <li>Real-time stacked column and real-time dual Y line chart</li>
+          <li>Bullet graphs - horizontal and vertical</li>
+          <li>Spark Line, Spark Column and Spark Win/Loss charts</li>
+          </ul>
+      </li>
+      <li>Made using FusionCharts v3 framework, thereby offering:
+        <ul>
+          <li>Easy but advanced integration with JavaScript</li>
+          <li>STYLE support from FusionCharts v3 framework </li>
+          <li>Built in Adobe Flash 8 using ActionScript 2</li>
+          <li>New Debug Mode</li>
+          <li>Gradient Support</li>
+          <li>Palette Support</li>
+          <li>Dashed Line Support</li>
+          <li>Number scale support</li>
+          <li>Better printing support</li>
+          <li>Advanced drill down features</li>
+          <li>Entire chart as a hotspot</li>
+          <li>Custom tool tip for each data plot item</li>
+          <li>Multiple language support for application messages</li>
+          </ul>
+      </li>
+      <li>Edit mode supported for angular and linear gauges  </li>
+      <li>Message logger supported in all real-time charts for streaming real-time messages from server to client</li>
+      <li>Alert Manager supported in all real-time charts</li>
+      <li>More control over Annotations (previously custom objects) using XML and JavaScript</li>
+      <li>Context Menu in all real-time charts  to stop/start update, clear chart. Helps user stop an update,   if he feels that this counter is not needed to monitor for the given timeframe.   After stopping, he can also restart the update dynamically. </li>
+      <li>JavaScript API in all real-time charts to stop/start update, clear chart, reload chart etc. at client side. </li>
+      <li>New JavaScript API to feed data to chart </li>
+      <li>Single color theme introduced to help you create your own color palettes for the chart, based on a single color. </li>
+      <li>In real-time charts - ability to add a&nbsp;data stamp (similar to timestamp) at the end of real-time   data stream URL - for easy tracking of &quot;what value was last sent to chart?&quot; No   need to use registers, sessions or database fields to control this. Use this   simple and effective technique over stateless environment. </li>
+    </ul></td>
+  </tr>
+  
+  <tr>
+    <td valign="top" class="header">Real-time data-streaming charts specific changes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li>Axis updates each time to reflect the limits from data in current view </li>
+      <li>Annotations introduced - helps you draw any custom shapes, objects, load   images anywhere on the chart. </li>
+      <li>Canvas Margins can be adjusted allowing you to set increased canvas   margins so that if you've larger data labels or y-axis values, you can adjust the margins accordingly. </li>
+      <li>Selectable (Interactive) Legend - so that you can opt to show/hide a full   data-set at client side. Helps if you're comparing multiple streams of input and   just want to focus on one - but keep others in frame.&nbsp;</li>
+      <li>Real-time vLines with labels. </li>
+      <li>Ability to send clear command from server - so that chart can be cleared as and   when required</li>
+      <li>Ability to send <span class="codeInline">stopUpdate</span> command from server, if you need to stop update   of a specific chart. </li>
+      <li>Ability to retrieve the chart's current data view using client side JavaScript.   </li>
+      <li>JavaScript event <span class="codeInline">FC_ChartUpdated</span> raised when new data feed is received by chart. You can use this event to update your other display containers whenever the   chart updates in real-time. </li>
+      <li>Ability to specify different <span class="codeInline">updateInterval</span> and <span class="codeInline">clearInterval</span> (apart from   <span class="codeInline">refreshInterval</span>) - helps you specify when data is retrieved and queued - and   when chart is refreshed to show new data. Also, you can set pre-defined clear   intervals to clear the chart. </li>
+    </ul></td>
+  </tr>
+  
+  <tr>
+    <td valign="top" class="header">Angular Gauge specific changes</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li >Gauge can now be drawn in any angle and any direction </li>
+      <li >Auto-scale facility for the gauge and annotations</li>
+      <li >Customizable gradient fill mix for color scale</li>
+      <li >Customizable gradient properties for pivot </li>
+      <li >Percent based gauge radius supported</li>
+      <li >Edit mode supported  </li>
+      <li >Option to show value for each dial, with customizable co-ordinates </li>
+      <li >Ability to add trend-points, trend-arcs &amp; trend-markers </li>
+      <li >Option to show tick and trend values inside or outside gauge</li>
+      <li >Message logger supported</li>
+      <li >Alert Manager supported</li>
+      <li >Rear-extension supported for each dial to render more realistic gauges  </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Gantt chart specific changes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li>Supports both date &amp; time now. </li>
+      <li>Customizable output date format. </li>
+      <li>Ability to show each task&rsquo;s completion in percentage as either empty bar or   using a different fill color (slack fill color) </li>
+      <li>Scrolling support for both data table and Gantt pane.</li>
+      <li>Ability to show individual task bars as groups &ndash; to indicate task groups. </li>
+      <li>Customizable tooltip properties &ndash; also, you can opt to show whether to show   task date as part of tool tip content. </li>
+      <li>Ability to add a legend to the chart to show color keys. Fully customizable   legend cosmetics. </li>
+      <li>Ability to define each task&rsquo;s height and top-padding in percentage, instead   of just pixels. </li>
+      <li>Pre-define palettes and single color theme selectors to help you easily set   colors for the chart. </li>
+      <li>Round edged task bars supported </li>
+      <li>Customizable gradient mix &amp; shadow for task bars. </li>
+      <li>Ability to define annotations over the Gantt chart to show further   information. </li>
+      </ul>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Funnel Chart specific changes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li>Ability to draw the same data as either streamlined funnel chart or as section funnel chart</li>
+      <li>Interactive funnel slices, when clicked can separate from the main funnel.</li>
+      <li>Option to plot funnel slices as hollow or filled</li>
+      <li>Option to set same slant angle for each funnel slice (or make them dependent on data) </li>
+      <li>Ability to seamlessly convert 3D funnel to 2D funnel, by right clicking on chart and selecting View 2D</li>
+      <li>Option to render the funnel in 2D mode   itself with more control over border and fill properties</li>
+      <li>Option to show values as actual values or in percentage</li>
+      <li>If shown as percentage, you can opt to show it as percentage of the first value or percentage of previous value.</li>
+      <li>Smart labels to avoid overlapping of funnel labels</li>
+      <li>Option to place labels at side or at center </li>
+      <li>Custom tool text for each funnel slice</li>
+    </ul>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Pyramid Chart specific changes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li>Interactive pyramid slices, when clicked can separate from the main pyramid.</li>
+      <li>Ability to seamlessly convert 3D pyramid to 2D pyramid, by right clicking on chart and selecting View 2D</li>
+      <li>Option to render the pyramid in 2D mode   itself with more control over border and fill properties</li>
+      <li>Option to show values as actual values or in percentage</li>
+      <li>Smart labels to avoid overlapping of pyramid labels</li>
+      <li>Option to place labels at side or at center </li>
+      <li>Custom tool text for each pyramid slice</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Linear Gauge specific changes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li>Multiple pointers supported</li>
+      <li>Each pointer can have tool text and link </li>
+      <li>Edit mode supported</li>
+      <li>Customizable gradient fill for gauge</li>
+      <li>Round edged gauges supported </li>
+      <li>Much better control over tick marks &amp; tick values</li>
+      <li>Ablity to show pointer above or below gauge</li>
+      <li>Option to create trend-lines/zones </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">LED Gauge specific changes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li>Better control over tick marks &amp; values</li>
+      <li>Single color fill supported for entire LED  </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Thermometer Gauge specific changes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li>2D/3D fill mode. </li>
+      <li>Better control over tick marks &amp; values.</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Cylinder Gauge specific changes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li>Enhanced and realistic 3D look </li>
+      <li>Better control over tick marks and values</li>
+      <li>Animation supporte for fill  </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Bulb Gauge specific changes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li>Ability to show value inside or outside the bulb</li>
+      <li>Option to show color range label as chart value, instead of actual numerical value  </li>
+    </ul></td>
+  </tr>
+</table>
+</body>
+</html>

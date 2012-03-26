@@ -1,0 +1,36 @@
+<chart dateFormat='mm/dd/yyyy' outputDateFormat='hh:mn' caption='Work Schedule' subCaption='For next 2 days'>
+   <categories>
+      <category start='7/15/2007 00:00:00' end='7/15/2007 23:59:59' label='Today' />
+      <category start='7/16/2007 00:00:00' end='7/16/2007 23:59:59' label='Tomorrow' />
+   </categories>
+   <categories align='right'>
+      <category start='7/15/2007 00:00:00' end='7/15/2007 05:59:59' label='6 am' />
+      <category start='7/15/2007 06:00:00' end='7/15/2007 11:59:59' label='12 pm' />
+      <category start='7/15/2007 12:00:00' end='7/15/2007 17:59:59' label='6 pm' />
+      <category start='7/15/2007 18:00:00' end='7/15/2007 23:59:59' label='Midnight' />
+      <category start='7/16/2007 00:00:00' end='7/16/2007 05:59:59' label='6 am' />
+      <category start='7/16/2007 06:00:00' end='7/16/2007 11:59:59' label='12 pm' />
+      <category start='7/16/2007 12:00:00' end='7/16/2007 17:59:59' label='6 pm' />
+      <category start='7/16/2007 18:00:00' end='7/16/2007 23:59:59' label='Midnight' />
+   </categories>
+   <processes fontSize='12' isBold='1' align='left' headerText='Who?' headerFontSize='18' headerVAlign='bottom' headerAlign='left'>
+      <process label='John.S' id='EMP121'/>
+      <process label='David.G' id='EMP122'/>
+      <process label='Mary.P' id='EMP123'/>
+      <process label='Andrew.H' id='EMP124'/>
+      <process label='Neil.M' id='EMP125'/>
+   </processes>
+   <tasks showLabels='1' showStartDate='1'>
+      <task processId='EMP121' start='7/15/2007 08:00:00' end='7/15/2007 12:30:00' label='Logo A'/>
+      <task processId='EMP121' start='7/15/2007 17:00:00' end='7/15/2007 19:30:00' label='Logo B'/>
+      <task processId='EMP121' start='7/16/2007 09:00:00' end='7/16/2007 19:30:00' label='Website template'/>
+      <task processId='EMP122' start='7/15/2007 10:00:00' end='7/15/2007 20:30:00' label='PHP Blueprint'/>
+      <task processId='EMP122' start='7/16/2007 10:00:00' end='7/16/2007 20:30:00' label='PHP Blueprint'/>
+      <task processId='EMP123' start='7/15/2007 08:00:00' end='7/15/2007 12:00:00' label='Support'/>
+      <task processId='EMP123' start='7/16/2007 15:00:00' end='7/16/2007 21:30:00' label='Support'/>
+      <task processId='EMP124' start='7/15/2007 08:00:00' end='7/15/2007 20:30:00' label='Level 2 support'/>
+      <task processId='EMP124' start='7/16/2007 08:00:00' end='7/16/2007 20:30:00' label='Level 2 support'/>
+      <task processId='EMP125' start='7/15/2007 10:00:00' end='7/15/2007 14:30:00' label='Network Maintenance'/>
+      <task processId='EMP125' start='7/16/2007 12:00:00' end='7/16/2007 14:30:00' label='System OS Updates'/>
+   </tasks>
+</chart>

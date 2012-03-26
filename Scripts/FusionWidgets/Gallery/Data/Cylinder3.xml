@@ -1,0 +1,8 @@
+<chart bgColor='FFFFFF' bgAlpha='0' showBorder='0' lowerLimit='0' upperLimit='100' showTickMarks='0' showTickValues='0' showLimits='0' numberSuffix='%25' decimalPrecision='0' cylFillColor='CC0000' baseFontColor='CC0000' chartLeftMargin='15' chartRightMargin='15' chartTopMargin='15'>
+	<value>44</value>
+	<annotations>
+		<annotationGroup showBelowChart='1'> 
+			<annotation type='rectangle' xPos='1' yPos='1' toXPos='139' toYPos='179' color='FFFFFF' alpha='100' showBorder='1' borderColor='CC0000' borderThickness='2' radius='10'/>
+		</annotationGroup>
+	</annotations>
+</chart>

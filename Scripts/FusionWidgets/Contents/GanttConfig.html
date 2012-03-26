@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Gantt Chart &gt; Basic Configuration </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>In this section, we'll see a few of the basic configuration properties exposed by the chart. </p>
+      <p class="highlightBlock">Please note that the chart actually offers a lot more properties than what's discussed here - you can find a list of all of them in the XML Sheet. </p>
+      <p>We'll study the following properties here (click on each one of them to directly scroll to the respective section):</p>
+    <ul>
+      <li><a href="#colorp">Customizing color palettes</a></li>
+      <li><a href="#font">Customizing font properties for categories, process names etc. </a></li>
+      <li><a href="#label">Defining task labels and showing/hiding them </a></li>
+      <li><a href="#date">Showing/hiding task start and end dates </a></li>
+      <li><a href="#processheader">Adding process header and customizing its cosmetics</a> </li>
+      <li><a href="#datatable">Adding more columns to data table</a></li>
+      </ul>
+    <p>Let's see each of them in detail. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="colorp" id="colorp"></a>Color Palettes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets Gantt chart  offers 5 pre-defined color palettes for you to choose from. Each of these palettes are accessible by the number 1-5. To choose a palette, all you need to do is set: </p>
+    <p class="codeInline">&lt;chart palette='2' or '3' or ..&gt;</p>
+    <p>Shown below are a few examples of palettes applied on our previous chart: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td class="text"><div align="center"><img src="Images/Gantt_Palette_2.gif" width="280" height="162" /></div></td>
+        <td class="text"><div align="center"><img src="Images/Gantt_Palette_3.gif" width="280" height="162" /></div></td>
+      </tr>
+      <tr>
+        <td class="text"><div align="center">&lt;chart palette='2'...&gt;</div></td>
+        <td width="50%" class="text"><div align="center">&lt;chart palette='3'...&gt;</div></td>
+      </tr>
+      <tr>
+        <td class="text"><div align="center"><img src="Images/Gantt_Palette_4.gif" width="280" height="162" /></div></td>
+        <td class="text"><div align="center"><img src="Images/Gantt_Palette_5.gif" width="280" height="162" /></div></td>
+      </tr>
+      <tr>
+        <td class="text"><div align="center">&lt;chart palette='4'...&gt;</div></td>
+        <td class="text"><div align="center">&lt;chart palette='5'...&gt;</div></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Additionally,  you can also define an entire new palette by setting a single theme color using:</p>
+    <p class="codeInline">&lt;chart paletteThemeColor='669933' ..&gt;</p>
+    <p>This will create a new palette derived from this color and then color the chart as under:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Palette_Custom.gif" width="579" height="373" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="font" id="font"></a>Customizing font properties</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The Gantt chart offers you multiple ways to customize font properties for various objects, like:</p>
+      <ul>
+        <li>For the caption, sub-caption and legend, you can use the STYLES feature to individually customize their font properties. Please see the section &quot;FusionWidgets and STYLES&quot; </li>
+        <li>For categories and category labels, you've individual attributes to specify their font properties</li>
+        <li>For process names also, you can specify the font properties using individual attributes.</li>
+      </ul>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><strong>Specifying font properties for processes </strong></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can specify font properties for all processes on the chart as a whole by setting:</p>
+    <p class="codeInline">&lt;processes font='Arial' fontColor='0372AB'  fontSize='13' isBold='1' isItalic='1' isUnderLine='1' bgColor='FFFFFF' align='center' vAlign='middle' ...&gt; </p>
+    <p>There are a lot more possible attributes which have been discussed in the XML Sheet for Gantt chart.</p>
+    <p>Additionally, you can also over-ride the collective font settings for all processes by specifying the font property of each process individually as under:</p>
+    <p class="codeInline">&lt;process font='Arial' fontColor='0372AB'  fontSize='13' isBold='1' isItalic='1'  ...&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><strong>Specifying font properties for categories </strong></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Similar to processes, you can specify the collective font properties of all sub-categories within a &lt;categories&gt; element by specifying:</p>
+    <p><span class="codeInline">&lt;categories font='Arial' fontColor='0372AB'  fontSize='13' isBold='1' isItalic='1' isUnderLine='1' bgColor='FFFFFF' align='center' vAlign='middle' ...&gt; </span></p>
+    <p>Or, you can specify the font property for each category individually using:</p>
+    <p><span class="codeInline">&lt;category font='Arial' fontColor='0372AB'  fontSize='13' isBold='1' isItalic='1'  ...&gt;</span> </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="label" id="label"></a>Defining task labels and showing/hiding them </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Apart from the process labels, you can also define task labels for each task and then show/hide them on the chart. To define a task label, you set:</p>
+    <p class="codeInline">&lt;task start='04/06/2007' end='07/21/2007' label='Design &amp; Code'/&gt;    </p>
+    <p>Here, we've  defined the task label for a single task. By default, the task label is not visible on the chart. To make it visible, you need to set:</p>
+    <p class="codeInline">&lt;chart showTaskLabels='1'..&gt; <br />
+      or <br />
+      &lt;tasks showLabels='1'&gt; <br />
+      or <br />
+      &lt;task start='04/06/2007' end='07/21/2007' label='Design &amp; Code' showLabel='1'/&gt;</p>
+    <p>Basically, the above attribute lets you control whether to show labels or not - collectively for all tasks or individually for a single task. </p>
+    <p>When you now view the chart, the task bar would show up with the label. Also, the label of task would appear in the tool text of the task bar: <br />
+        </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Config_Label1.gif" width="429" height="38" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">And the tool text would show as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Config_Label2.gif" width="443" height="40" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Font properties for both task labels and tool tips can either be set using <span class="codeInline">&lt;task&gt;</span> element attributes or using STYLE feature. Refer to the Chart XML Sheet for more on this. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="date" id="date"></a>Showing/hiding task dates </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Apart from showing the task labels, you can also show the task start and end dates by setting:</p>
+    <p><span class="codeInline">&lt;chart showTaskStartDate='1' showTaskEndDate='1' &gt;</span> to show start and end dates for all tasks as shown under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Config_Date1.gif" width="585" height="340" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Or, you can opt to show the start and end date for individual task by setting:</p>
+    <p class="codeInline">&lt;task start='04/06/2007' end='07/21/2007' label='Design &amp; Code' showLabel='1' showStartDate='1' showEndDate='1'/&gt; </p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Config_Date2.gif" width="575" height="334" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p class="highlightBlock">The format in which the dates are displayed on the chart is customizable. Please see the section &quot;Configuring date formats&quot; on how to do the same.</p>
+    <p>&nbsp; </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="processheader" id="processheader"></a>Adding process header </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can add header (title) for the processes column in data table and customize its cosmetics by setting:</p>
+    <p class="codeInline">&lt;processes fontSize='12' isBold='1' align='right' <strong>headerText='What to do?' headerFontSize='18' headerVAlign='bottom' headerAlign='right'</strong>&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Config_ProcessH.gif" width="244" height="337" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="datatable" id="datatable"></a>Adding more columns to data table </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Apart from the process labels, the data table can also contain more columns. To do so, you need to add <span class="codeInline">&lt;datatable&gt;</span>, <span class="codeInline">&lt;datacolumn&gt;</span> and <span class="codeInline">&lt;text&gt;</span> elements as under. Each of these elements can have a number of cosmetic attributes which have been defined in Chart XML Sheet. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+      ...<br />      &nbsp;&nbsp;&nbsp;&lt;datatable headerVAlign='bottom'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;datacolumn headerText='Who does?' headerFontSize='18' headerVAlign='bottom' headerAlign='right' align='left' fontSize='12' &gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='John' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='David' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Mary' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Andrew' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Tiger' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Sharon' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Neil' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Harry' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Chris' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Richard' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/datacolumn&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/datatable&gt;<br />
+...<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">With this, you'll get the following result: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Config_Scroll.gif" width="580" height="337" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can add any number of columns to this grid. </p>
+      <p>Since our chart width is relatively small here, a scroll bar comes up and allows the users to scroll through the data table. You can increase the width of data table by:</p>
+      <ul>
+        <li>Either increasing chart width.</li>
+        <li>Or, by setting <span class="codeInline">&lt;chart ganttWidthPercent='0-100' &gt;</span> to a lower value. This attribute indicates the percent space (width) the gantt pane takes.  </li>
+      </ul>
+    <p>The data grid on the left is both scrollable and resizable i.e., the users can click on the drag handlers (vertical line separating two data columns) and drag them to resize the data column. Additionally, if you wish, you can also explicitly set the width of each data column using:</p>
+    <p><span class="codeInline">&lt;datacolumn width='200' ..&gt;</span> - Sets data column width as 200 pixels<br />
+      or<br />
+      <span class="codeInline">&lt;datacolumn width='40%' ..&gt;</span> - Sets data column width as 40% of the entire data grid width </p>
+    <p>If you wish to hide the scroll bar of the data column, you can set:</p>
+    <p class="codeInline"> &lt;chart showFullDataTable='0' ..&gt; </p>
+    <p>This will wrap &amp; truncate the data labels and try to squeeze them in the required space (only if possible). </p></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<chart bgColor='CCCCCC,FFFFFF' caption='Population Distribution' baseFontColor='333333' enableSmartLabels='0' plotfillAlpha='80' decimalPrecision='0' numberSuffix='%25' pyramidYScale='40' chartRightMargin='130' chartBottomMargin='0' captionPadding='0'>
+   <set value='17' name=' East Asia &amp; Pacific' color='FFCC33' />
+   <set value='21' name=' Europe &amp; Central Asia' color='339900' />
+   <set value='20' name=' Latin America &amp; Carib.' color='0066CC' />
+   <set value='14' name=' Middle East &amp; North Africa' color='D95000' />
+   <set value='16' name=' South Asia' color='9B72CF' /> 
+   <set value='12' name=' Sub-Saharan Africa' color='A10303' /> 
+</chart>

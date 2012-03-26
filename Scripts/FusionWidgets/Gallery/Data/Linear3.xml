@@ -1,0 +1,30 @@
+<Chart editMode='1' bgColor='FFFFFF' bgAlpha='0' showBorder='0' upperLimit='1000' lowerLimit='0' numberPrefix='$' gaugeRoundRadius='5' chartBottomMargin='30' ticksBelowGauge='0' placeTicksInside='0' showGaugeLabels='0' pointerOnTop='1' pointerRadius='14' chartLeftMargin='25' chartRightMargin='30' majorTMColor='868F9B' majorTMHeight='10' majorTMThickness='2' pointerBgAlpha='0' pointerBorderThickness='2' majorTMNumber='0' minorTMNumber='0' showToolTip='0' decimals='0'>
+
+    <colorRange> 
+        <color minValue='0' maxValue='100' code='F6BD0F' />
+    </colorRange>
+
+    <value>665</value>
+
+    <trendpoints>
+        <point value='350' fontcolor='FF4400' useMarker='0' dashed='1' dashLen='1' dashGap='3' markerRadius='5' color='FF654F' alpha='100' thickness='2'/>
+        <point value='800' fontcolor='FF4400' useMarker='0' dashed='1' dashLen='1' dashGap='3' markerRadius='5' color='8BBA00' alpha='100' thickness='2'/>
+    </trendpoints>
+
+    <annotations>
+        <annotationGroup id='Grp1' showBelow='1'>
+            <annotation type='rectangle' x='2' y='2' toX='445' toY='95' radius='10' fillColor='D6E0F6' fillAngle='90' borderColor='868F9B' borderThickness='2'/>
+        </annotationGroup>
+    </annotations>
+
+    <styles>
+        <definition>
+            <style name='ValueFont' type='Font' bgColor='333333' size='10' color='FFFFFF'/>
+            <style name='RectShadow' type='Shadow' strength='3'/>
+        </definition>
+        <application>
+            <apply toObject='VALUE' styles='valueFont'/>
+            <apply toObject='Grp1' styles='RectShadow' />
+        </application>
+    </styles>
+</Chart>

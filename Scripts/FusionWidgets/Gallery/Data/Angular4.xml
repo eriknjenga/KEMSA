@@ -1,0 +1,21 @@
+<Chart palette='3' bgColor='333333, 453269' bgAlpha='100' lowerLimit='0' upperLimit='100' gaugeStartAngle='240' gaugeEndAngle='-60' gaugeInnerRadius='60%' gaugeFillMix='{light-10},{light-30},{light-20},{dark-5},{color},{light-30},{light-20},{dark-10}' gaugeFillRatio=''  baseFontColor='FFFFFF' toolTipBgColor='333333' toolTipBorderColor='333333' decimals='1'>
+    <colorRange>
+	<color minValue='0' maxValue='30' />
+        <color minValue='30' maxValue='50' /> 
+	<color minValue='50' maxValue='80' /> 
+        <color minValue='80' maxValue='100'  /> 
+    </colorRange> 
+
+    <dials> 
+	<dial id='Dial1' value='60.2' baseWidth='6' topWidth='1' editMode='1' showValue='1' rearExtension='10' valueY='270' />
+	<dial id='Dial2' value='50.3' baseWidth='6' topWidth='1' editMode='1' rearExtension='10' showValue='1' valueY='250'/>	
+    </dials>
+    <styles>
+        <definition>
+            <style type='font' name='valueFont' borderColor='FFFFFF' bold='1' size='13'/>
+        </definition>
+        <application>
+            <apply toObject='value' styles='valueFont'/>
+        </application>
+    </styles>
+</Chart>

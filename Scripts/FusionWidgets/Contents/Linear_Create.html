@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Linear Gauge &gt; Creating a simple gauge </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>As a first chart, we would be plotting the value of Customer Satisfaction   Survey, on a scale of 0 to 100%. The final result would look something as   under:</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Linear_Create1.jpg" width="454" height="106" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The various tasks involved in building this chart are:</p>
+      <ul>
+        <li>Defining the minimum and maximum value which would be plotted on the gauge   scale. They are termed as the lower and upper limits of the gauge scale and in   this case setting them to 0 and 100 respectively would suit our purpose just   fine - as we're plotting the chart indicating a %, which cannot go below 0 or   beyond 100. The limits are displayed at the starting and ending points of the   circular scale as in the image above.<br />
+        </li>
+        <li>Dividing the gauge scale into 3 regions, the ones shown in red, yellow and   green above which convey the Customer Satisfaction Index to be in the bad,   satisfactory and good regions respectively. <br />
+        </li>
+        <li>Pointing the pointer of the linear chart to a certain value, 92 in the above   image. </li>
+      </ul>
+    <p>With the tasks defined, now lets get to the XML side of things. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Defining the color range scale </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Since we're plotting customer satisfaction index for a fictional company, let   us first define the scales for measuring this index. The scales would look as   under in a tabular form: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="61" class="header">Range</td>
+        <td width="199" class="header"><div align="left">What it means? </div></td>
+        <td width="192" class="header">Color to be represented in </td>
+      </tr>
+      <tr>
+        <td class="text">0-75%</td>
+        <td class="text"><div align="left">Bad customer satisfaction </div></td>
+        <td class="text">Red</td>
+      </tr>
+      <tr>
+        <td class="text">75-90%</td>
+        <td class="text"><div align="left">Moderate customer satisfaction </div></td>
+        <td class="text">Yellow</td>
+      </tr>
+      <tr>
+        <td class="text">90-100%</td>
+        <td class="text"><div align="left">Good customer satisfaction </div></td>
+        <td class="text">Green</td>
+      </tr>
+    </table>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">XML for the chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML for the entire chart can be listed as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart lowerLimit='0' upperLimit='100' lowerLimitDisplay='Bad' upperLimitDisplay='Good' palette='1' numberSuffix='%'      chartRightMargin='20'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='75' code='FF654F' label='Bad'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='90' code='F6BD0F' label='Moderate'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='100' code='8BBA00' label='Good'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;pointers&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;pointer value='92' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/pointers&gt;<br />
+&lt;/chart&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Explanation</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>First of all comes the <span class="codeInline">&lt;chart&gt;</span> element   which is the starting element for any chart that you create using FusionWidgets.   Now we define the lower and upper limits of the gauge scale. To define the   limits, we use the <span class="codeInline">lowerLimit</span> and <span class="codeInline">upperLimit</span> attributes of the <span class="codeInline">&lt;chart&gt;</span> element. We've asked the chart to show   lower limit text as <span class="codeInline">Bad</span> and upper limit text as   <span class="codeInline">Good</span>. </p>
+    <p>We also set the palette number and number suffix (the character   which would show up at the end of end number). </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart lowerLimit='0' upperLimit='100' lowerLimitDisplay='Bad' upperLimitDisplay='Good' palette='1' numberSuffix='%' chartRightMargin='20'&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>There are other attributes of the <span class="codeInline">&lt;chart&gt;</span>   element which we would not be delving into now, because of this being a   really basic chart.</p>
+    <p>Next, we need to define our color range. As we had earlier seen, this chart   has 3 color ranges. To define the color range, we use the <span class="codeInline">&lt;colorRange&gt;</span> element, which is an immediate child   of the <span class="codeInline">&lt;chart&gt;</span> element. Under each <span class="codeInline">&lt;colorRange&gt;</span> element, we place a <span class="codeInline">&lt;color&gt;</span> element specifying a single color range as   shown in the code below. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;colorRange&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='75' code='FF654F' label='Bad'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='90' code='F6BD0F' label='Moderate'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='100' code='8BBA00' label='Good'/&gt;<br />
+    &lt;/colorRange&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Now that we've the color ranges in place, we need the pointer to point to the   desired value (92% in our case). We create the pointer using the <span class="codeInline">&lt;pointers&gt;&lt;pointer .../&gt;&lt;/pointers&gt;</span> elements, as   shown below.</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;pointers&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;pointer value='92' /&gt;<br />
+    &lt;/pointers&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can customize the pointer's visual properties using the attributes of &lt;pointer&gt; element, as explained in next sections.</p>
+    <p>FusionWidgets linear gauge chart allows you to have multiple pointers on a   single chart. To have multiple pointers, just keep on adding <span class="codeInline">&lt;pointer...&gt;</span> element within the <span class="codeInline">&lt;pointers&gt;</span> tag with the required attributes. </p>
+    <p>And with this, you've created your first linear gauge. Next, we'll see how to customize the various facets of this chart. </p></td>
+  </tr>
+</table>
+</body>
+</html>

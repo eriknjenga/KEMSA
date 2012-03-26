@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Gantt Chart &gt; Task Bar Configurations </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>In this section, we'll see the various possible configurations we can have for the task bar. Specifically, we'll be looking at following:</p>
+      <ul>
+        <li><a href="#percent">How to create task bars that indicate what percent of task is complete?  </a></li>
+        <li><a href="#group">How to create task bars that look like task group</a></li>
+        <li><a href="#round">Drawing task bar with rounded corners</a></li>
+        <li><a href="#tooltext">Customizing the tool text for each task and removing dates from the same</a></li>
+      </ul>
+    <p>Let's see them one by one. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="percent" id="percent"></a>Task bars to indicate percent complete figures </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets Gantt chart allows you to create task bars that can show percentage complete figures. For example, if you've a task which is only 50% complete, you can easily show the same on the chart by setting:</p>
+    <p><span class="codeInline">&lt;task start='04/06/2007' end='07/21/2007' percentComplete='50' /&gt;</span><br />
+    </p>
+    <p>Here, <span class="codeInline">percentComplete</span> attribute takes a value between 0-100, which represents what percent of the task is complete. When you view this chart, you'll get the following result: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_Percent.gif" width="451" height="35" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, the part that is not complete has been filled by a shade of red. This color can be customized by setting:</p>
+    <p class="codeInline">&lt;chart slackFillColor='00CCFF'...&gt;</p>
+    <p>Here, we've changed the slack fill color to a shade of blue, as shown under:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_Percent2.gif" width="450" height="36" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Or, you can opt to show the slack without a fill by setting:</p>
+    <p class="codeInline">&lt;chart showSlackAsFill='0' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_Percent3.gif" width="447" height="31" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Showing the percent complete figures </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you want to show the percent complete figures as part of each task bar, you can set:</p>
+    <p class="codeInline">&lt;chart showPercentLabel='1' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_Percent4.gif" width="449" height="37" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">You can also show the task label and percent figures together, as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_Percent5.gif" width="471" height="36" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="group" id="group"></a>Making the task bars appear like a group </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you want to represent a task as a parent group visually, you can set the <span class="codeInline">showAsGroup</span> attribute of <span class="codeInline">&lt;task&gt;</span> element to 1. </p>
+    <p>Consider the following XML: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p class="codeBlock">&lt;chart dateFormat='mm/dd/yyyy' caption='Project Gantt' subCaption='From 1st Feb 2007 - 31st Aug 2007' showSlackAsFill='0' showPercentLabel='1'&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='04/01/2007' label='Q1' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='07/01/2007' label='Q2' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='09/01/2007' label='Q3' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='03/01/2007' label='Feb' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='03/01/2007' end='04/01/2007' label='Mar' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='05/01/2007' label='Apr' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='05/01/2007' end='06/01/2007' label='May' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='06/01/2007' end='07/01/2007' label='Jun' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='08/01/2007' label='Jul' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='08/01/2007' end='09/01/2007' label='Aug' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;processes fontSize='12' isBold='1' align='right' headerText='What to do?' headerFontSize='18' headerVAlign='bottom' headerAlign='right'&gt;<br />
+  <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Research Phase' /&gt;</strong><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Identify Customers' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Survey 50 Customers' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Interpret Requirements' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Study Competition' /&gt;<br />
+  <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Production Phase' /&gt;</strong><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of features' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Brainstorm concepts'  /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Design &amp; Code'  /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Testing / QA' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of product' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Global Release' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/processes&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;tasks &gt;<br />
+  <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/04/2007' end='04/06/2007' showAsGroup='1' label='Research' showLabel='1'/&gt;<br />
+  </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/04/2007' end='02/10/2007' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/08/2007' end='02/19/2007' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/19/2007' end='03/02/2007' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/24/2007' end='03/02/2007' /&gt;<br />
+  <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='03/02/2007' end='08/27/2007' showAsGroup='1' label='Production' showLabel='1'/&gt;<br />
+  </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='03/02/2007' end='03/21/2007' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='03/21/2007' end='04/06/2007' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='04/06/2007' end='07/21/2007' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='07/21/2007' end='08/19/2007' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='07/28/2007' end='08/24/2007' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='08/24/2007' end='08/27/2007' /&gt; <br />
+  &nbsp;&nbsp;&nbsp;&lt;/tasks&gt;<br />
+  &lt;/chart&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Here, we've added 2 more processes and 2 more tasks to group other tasks. The final result would be:</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_Group.gif" width="581" height="438" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="round" id="round"></a>Using round corners for task bars </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets allows you to use round corners for the task bars in Gantt chart, if you're NOT using the <span class="codeInline">percentComplete</span> feature. </p>
+    <p>To use round radius, you need to set:</p>
+    <p class="codeInline">&lt;chart taskBarRoundRadius='6' ...&gt;  </p>
+    <p>You'll get the output as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_Round.gif" width="574" height="332" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="tooltext" id="tooltext"></a>Customizing tool text for task </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">If you roll over a task bar (whose label is not defined), you'll get the tooltext as <span class="codeInline">Start Date - End Date</span> for the task bar, as shown below: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_ToolTip1.gif" width="451" height="46" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you've a label defined for the task, you can additionally see the labels as part of tool tip, as shown under: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_ToolTip2.gif" width="453" height="39" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you want to show just the label and not dates in tool tip, you can set:</p>
+    <p class="codeInline">&lt;chart dateInToolTip='0' ...&gt;</p>
+    <p>It will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_ToolTip3.gif" width="429" height="40" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Setting custom tool text for each task </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also set custom tool text for each task using: </p>
+    <p class="codeInline">&lt;task ... toolText='My own tool text' &gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_ToolTip4.gif" width="426" height="45" class="imageBorder" /></td>
+  </tr>
+</table>
+</body>
+</html>

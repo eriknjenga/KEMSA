@@ -1,0 +1,9 @@
+<chart palette='1' lowerLimit='0' upperLimit='5' chartLeftMargin='10' chartBottomMargin='10' caption='Rating' subcaption='(1-5)' showBorder='0'>
+    <colorRange>
+        <color minValue='0' maxValue='3.5' />
+        <color minValue='3.5' maxValue='4.5' /> 
+        <color minValue='4.5' maxValue='5' /> 
+    </colorRange> 
+    <value>4.7</value>
+    <target>4.6</target>
+</chart>

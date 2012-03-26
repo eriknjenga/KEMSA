@@ -1,0 +1,19 @@
+<chart caption='Stock Price Monitor' subCaption='Google' dataStreamURL='StockPrice.asp' refreshInterval='2' numberPrefix='$' setAdaptiveYMin='1' xAxisName='Time' showRealTimeValue='1' realTimeValuePadding='60' labelDisplay='Rotate' slantLabels='1'>
+	<categories>
+	</categories>
+	<dataset seriesName='Google' showValues='0'>
+	</dataset>
+	<trendlines>
+		<line1 startValue='32.45' displayValue='Opening' color='0372AB' />
+		<line startValue='32.7' endValue='34.3' displayValue='Sell' isTrendZone='1' alpha='15' color='FF5904'/>
+	</trendlines>
+	<styles>
+		<definition>
+			<style type='font' name='captionFont' size='14' />
+		</definition>
+		<application>
+			<apply toObject='Caption' styles='captionFont' />
+			<apply toObject='Realtimevalue' styles='captionFont' />
+		</application>
+	</styles>
+</chart>

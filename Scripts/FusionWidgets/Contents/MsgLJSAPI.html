@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Message Logger &gt; Client side JavaScript API </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>FusionWidgets allows you to control few aspects of the message logger using its client side JavaScript API. Basically, you can do the following:</p>
+      <ul>
+        <li>Show/hide the logger using client side JavaScript</li>
+        <li>Clear the logger using client side JavaScript</li>
+      </ul>
+    <p>Here, we'll see how to do these. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Manipulating the logger using client side JavaScript </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To use client side JavaScript API, you first need to make sure that you've embedded the chart with <span class="codeInline">registerWithJS</span> flag set to 1. Else, you'll get JavaScript errors stating that the object is undefined.</p>
+      <p>You'll need to initialize the chart using following code. Note the last parameter (<span class="codeInline">registerWithJS</span>) set to 1. </p>
+      <p class="codeInline">var myChart = new FusionCharts(&quot;RealTimeLine.swf&quot;, &quot;ChId1&quot;, &quot;500&quot;, &quot;350&quot;, &quot;0&quot;, &quot;1&quot;);</p>
+    <p>Once the chart has loaded, initialized and rendered, you can get reference back to the chart in your JavaScript code using the code below. Here, <span class="codeInline">ChId1</span> is the id of the chart which we've defined  in the chart constructor above.</p>
+    <p class="codeInline">var refToChart = getChartFromId(&quot;ChId1&quot;); </p>
+    <p class="highlightBlock">You can access the chart using this function only after it has loaded. As such, we always recommend to put this code block in FC_Rendered event tracker code block. For more information, please see the section &quot;FusionWidgets and JavaScript&quot;</p>
+    <p>Once the reference to chart is attained, you can use any of the functions below  on the chart's logger (provided it's set to on):</p>
+    <ul>
+      <li><span class="codeInline">refToChart.showLog()</span> - To show the log, if it's not already visible. </li>
+      <li><span class="codeInline">refToChart.hideLog()</span> - To hide the log, if it's visible. </li>
+      <li><span class="codeInline">refToChart.clearLog()</span> - To clear the contents of log. </li>
+      </ul>
+    <p>If you get  JavaScript errors when accessing the above functions, make sure of following:</p>
+    <ol>
+      <li>You've set the  <span class="codeInline">registerWithJS</span> flag to 1</li>
+      <li>You've enabled the message logger for the chart. </li>
+      <li>You're accessing these functions after the chart has loaded (i.e., in <span class="codeInline">FC_Rendered</span> event tracker block)  </li>
+      <li>You're not running the chart from local file system (i.e., C:\, D:\ etc.) Instead, run it from a server (localhost or remote server) </li>
+    </ol></td>
+  </tr>
+</table>
+</body>
+</html>

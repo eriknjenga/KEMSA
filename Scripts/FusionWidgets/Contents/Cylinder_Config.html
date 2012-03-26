@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Cylinder Gauge &gt; Configuration </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The cylinder gauge chart from FusionWidgets suite offers you a lot of configuration options. Here, we'll see how to:</p>
+      <ul>
+        <li><a href="#palette">Using palettes </a></li>
+        <li><a href="#manual"> Customizing cylinder origin, radius &amp; height </a></li>
+        <li><a href="#fill">Setting cylinder fill color </a></li>
+        <li><a href="#value"> Hiding chart value </a></li>
+        <li><a href="#tick"> Configuring tick marks &amp; values</a></li>
+      </ul>
+      <p>Let's see each of them one by one. <br />
+      </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="palette" id="palette"></a>Using palettes </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The cylinder gauge offer 5 pre-defined color palettes for you to choose   from. Each of these palettes are accessible by the number 1-5. To choose a   palette, all you need to do is set: </p>
+      <p class="codeInline">&lt;chart palette='2' or '3' or ..&gt;</p>
+    <p>Shown below are a few examples of palettes applied on our previous chart:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="0" cellspacing="0" cellpadding="2">
+      <tr>
+        <td><div align="center"><img src="Images/Cylinder_Palette1.jpg" width="203" height="255" /></div></td>
+        <td><div align="center"><img src="Images/Cylinder_Palette2.jpg" width="204" height="254" /></div></td>
+      </tr>
+      <tr>
+        <td class="text"><div align="center">Palette 1 applied </div></td>
+        <td class="text"><div align="center">Palette 2 applied </div></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Additionally,  you can also define an entire new palette by setting a   single theme color using:</p>
+      <p class="codeInline">&lt;chart paletteThemeColor='669933' ..&gt;</p>
+    <p>This will create a new palette derived from this color and then color the   chart as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Cylinder_PaletteC.jpg" width="204" height="255" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"> <a name="manual" id="manual"></a>Customizing cylinder origin, radius &amp; height </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>By default, FusionWidgets automatically calculates the best-fit co-ordinates and size for cylinder. However, if for some reason, you need to specify your own sizes for the gauge, you can do so using: </p>
+    <p class="codeInline">&lt;chart ... cylOriginX='30' cylOriginY='160' cylRadius='40' cylHeight='100' ...&gt;</p>
+    <p>Here, we've changed the origin of the cylinder, its radius and height. Origin of the cylinder refers to the bottom left portion of the cylinder. This results in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Cylinder_Manual.jpg" width="204" height="255" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="fill" id="fill"></a>Setting cylinder fill color</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can set the cylinder fill color using:</p>
+    <p class="codeInline">&lt;chart ... cylFillColor='ff5904' ...&gt;</p>
+    <p>This results in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Cylinder_Fill1.jpg" width="204" height="255" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="value" id="value"></a>Hiding chart value </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can hide the chart's value using: </p>
+    <p class="codeInline">&lt;chart ... showValue='0' ...&gt;</p>
+    <p>This results in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Cylinder_Value.jpg" width="205" height="253" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="tick" id="tick"></a>Configuring tick marks &amp; values</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to hide all tick marks &amp; values using:</p>
+      <p class="codeInline">&lt;chart ... showTickMarks='0' showTickValues='0'   ...&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Cylinder_Tick1.jpg" width="205" height="255" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can place the ticks to the left or right of cylinder using:</p>
+      <p class="codeInline">&lt;chart ... ticksOnRight='0' ...&gt;</p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Cylinder_Tick2.jpg" width="204" height="255" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure the number of tick marks as under: </p>
+      <p class="codeInline">&lt;chart ... majorTMNumber='8' minorTMNumber='3'   ...&gt;</p>
+    <p>It will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Cylinder_Tick3.jpg" width="206" height="255" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The chart can automatically adjusted the number of major ticks to a best   feasible value. However, if you do not want the chart to do the same, you can   add:</p>
+      <p class="codeInline">&lt;chart ... adjustTM='0' majorTMNumber='8'   minorTMNumber='3' ...&gt;</p>
+      <p>You can opt to show every nth tick value by setting:</p>
+      <p class="codeInline">&lt;chart ... tickValueStep='2' ...&gt;</p>
+    <p>This will result in every 2nd major tick mark's value being shown, as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Cylinder_Tick4.jpg" width="202" height="254" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure tick mark cosmetics using: </p>
+      <p class="codeInline">&lt;chart ... majorTMColor='333333' majorTMAlpha='100'   majorTMHeight='10' majorTMThickness='2' minorTMColor='666666' minorTMAlpha='100'   minorTMHeight='7' minorTMThickness='1' tickMarkDistance='2'...&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Cylinder_Tick5.jpg" width="204" height="256" /></td>
+  </tr>
+</table>
+</body>
+</html>

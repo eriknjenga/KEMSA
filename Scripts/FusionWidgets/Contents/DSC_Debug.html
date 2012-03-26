@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Data-streaming charts &gt; Troubleshooting </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>This section helps you debug errors that might crop up with data-streaming charts. We've grouped the possible errors and suggested solutions for them. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">If you do not see any chart at all </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you see an endless loading progress bar in your browser, or if the right   click menu (right click at the place where the chart is supposed to be) shows   &quot;Movie not loaded&quot;, check the following:</p>
+      <ul>
+        <li>Have you pasted the chart SWF files in the required folder? </li>
+        <li>In your HTML code, have you provided the SWF path properly? </li>
+        <li>Do you have Adobe Flash Player 8 (or above) installed for this browser? </li>
+        <li>Have you enabled your browser to show ActiveX controls? Normally, all   browsers are Flash-enabled. </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p class="header">If you get a screen showing &quot;The chart will appear within this DIV...&quot;, check if: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li>You've copied <span class="codeInline">FusionCharts.js</span> in the right folder. </li>
+      <li>You've included the proper path to this JS file in your HTML code. </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p class="header">If you get a &quot;Error in Loading Data&quot; message, check the following:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li>Whether you've provided proper path to the XML Data document in your HTML file?</li>
+      <li>Whether <span class="codeInline">Data.xml</span> is named as <span class="codeInline">Data.xml</span> and not <span class="codeInline">Data.xml.txt</span>, as many basic text editors append <span class="codeInline">.txt</span>   after the file name? </li>
+      <li>If you're using an operating system that uses case sensitive naming for file   system, check for the names of your XML and SWF file. </li>
+      <li>Whether your SWF file and XML Data document are on the same sub-domain? Flash Player doesn't allow cross domain data loading. </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p class="header">If you get an &quot;Invalid XML Data&quot; message</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you get an &quot;Invalid XML Data&quot; message, it means that the XML data document   is malformed. Check it again for common errors like:</p>
+      <ul>
+        <li>Difference in case of tags. &lt;chart&gt;   should end with &lt;/chart&gt; and <strong>not</strong> &lt;/Chart&gt; or &lt;/CHART&gt; </li>
+        <li>Missing opening/closing quotation marks for any attributes. e.g., &lt;chart numberSuffix=%' should be &lt;chart numberSuffix='%'.  </li>
+        <li>Missing closing tag for any element. </li>
+        <li>If you're using special characters, then switch to <span class="codeInline">dataURL</span> method instead of <span class="codeInline">dataXML</span> method. </li>
+      </ul>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">If the chart renders initially, but doesn't update in real time </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><ul>
+      <li><strong>Switch on the debug mode of chart. It will provide you with a lot of valuable information when debugging.</strong></li>
+      <li>Check if path <span class="codeInline">dataStreamURL</span> provided in XML is correct. </li>
+      <li>Check if you've specified a valid value for <span class="codeInline">refreshInterval</span> in your XML document. </li>
+      <li>Check if <span class="codeInline">dataStreamURL</span> is returning proper data. To test this, just open your browser and run this page. It should return the data in text format.</li>
+      <li>Make sure the output data doesn't contain any carraige returns or HTML elements. In many scripting languages, these are automatically added. You'll need to remove them.</li>
+      <li>You also need to make sure that the page which provides the incremental update data   to FusionCharts must be hosted on the same sub-domain in which the chart .swf is   hosted - otherwise, FusionWidgets, owing to Flash Sandbox security model, won't   be able to receive updated data. Due to Flash sandbox security restrictions, you   are allowed to retrieve data only from the same sub-domain in which the flash   movie is residing. Data can only be loaded from a domain that is an exact match   to the location of the SWF, including subdomains. For this reason a SWF residing   at server1.mydomain.com will not be able to access data from a SWF at   mydomain.com.
+        <p>If you wish to load data from a different domain, you can set up a proxy page   at the same sub domain which would actually request data from the distant domain   and then relay it to FusionWidgets. You must be able to upload and run a   server-side script on a server in the same domain as the Flash movie. In this   method, the Flash movie accesses the script, which loads the information,   retrieves it, and returns the information back to the Flash movie. This method   is best if the server hosting the data is not under your control (for example, a   public source or a web service).</p>
+</li>
+    </ul></td>
+  </tr>
+</table>
+</body>
+</html>

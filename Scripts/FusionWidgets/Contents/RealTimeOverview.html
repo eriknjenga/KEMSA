@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Real-time Capabilities &gt; Overview </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Real-time charts are those charts which automatically update themselves every n seconds by getting new data from   server, but not involving any page refreshes. The chart initializes itself, loads new data every n seconds and silently updates itself to reflect the current state of data. </p>
+      <p>Potential uses of these charts are in:</p>
+      <ul>
+        <li>Network monitoring applications </li>
+        <li>Stock/finance monitoring applications </li>
+        <li>Manufacturing process indicators </li>
+        <li>any other place where a continuous check of application/mechanism state is   to be maintained </li>
+      </ul>
+      <p>The real-time charts in FusionWidgets v3 can be divided into two categories: </p>
+      <ul>
+        <li>Data streaming charts</li>
+        <li>Real-time gauges </li>
+      </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Data streaming charts</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Data streaming charts can update themselves in real time and show historical data for the pre-defined period, along with the latest data. For example, in a stock monitoring application showing a real-time line chart, you can see the price of a stock for say last 20 minutes, along with the latest price. Whenever a price update occurs (new price comes in), the first price data (one on the extreme left) is pushed out of the chart and the new price takes the right most position. </p>
+      <p>FusionWidgets v3 currently offers the following 6 data-streaming charts: </p>
+      <ul>
+        <li>Real-time Area </li>
+        <li>Real-time Column </li>
+        <li>Real-time Line </li>
+        <li>Real-time Stacked Area</li>
+        <li>Real-time Stacked Column </li>
+        <li>Real-time Line (Dual Y) </li>
+      </ul>
+    <p>These charts are used in showing data that needs to be monitored over a period of time and whose historical comparison is equally relevant. For example, monitoring stock prices, CPU temperature, number of threads/processes, network usage etc. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Real-time gauges </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Real-time gauges show only a single (or multiple pointers with single value) in real-time. These are useful when you're just concerned with the current value of the monitored device, without any consideration for any historical values. For example, when you're monitoring temperature of a particular device and are only interested in the single value (i.e., the current temperature), the gauges are an ideal way to show that.</p>
+      <p>FusionWidgets v3 offers the following real-time gauges: </p>
+      <ul><li>Real-time Angular</li>
+      <li>Real-time Bulb</li>
+      <li>Real-time Cylinder</li>
+      <li>Real-time Horizontal LED </li>
+      <li>Real-time Horizontal Linear </li>
+      <li>Real-time Thermometer </li>
+      <li>Real-time Vertical LED </li>
+    </ul>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Process flow </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To setup a chart with real-time update capabilities, the following steps need to be taken:</p>
+      <ol>
+        <li>Initialize the chart with XML data. The chart necessarily needs XML data to initialize, as this XML contains the URL of the real-time data provider page (<span class="codeInline">dataStreamURL</span>) and the time interval for regular polling (to get new data). <br />
+          <br />
+        </li>
+        <li>If you're using data-streaming charts and wish to show historical data on chart, you can push that data in this XML document. This enables the chart to initialize and show the data present in XML, and then initiate the method for regular polling of new data. <br />  
+          <br />
+        </li>
+        <li>Setup your script at <span class="codeInline">dataStreamURL</span> to provide the real-time data in the required format. The format has been explained in next section. This data is called incremental data - as each time the chart accesses this URL only, the new data (on incremental basis) is provided to it. <br />
+          <br />
+          You can use any scripting language like ASP, .NET, ColdFusion, PHP etc. to   provide this incremental data, as the end data needs to be pure text and it   doesn't matter to FusionWidgets where this data is coming from. <br />
+          <br />
+        However, you need to make sure that the page which provides the incremental   update data to FusionWidgets must be hosted on the same sub-domain in which the   chart .swf is hosted - otherwise, FusionWidgets, owing to Flash Sandbox security   model, won't be able to receive updated data. Due to Flash sandbox security   restrictions, you are allowed to retrieve data only from the same sub-domain in   which the flash movie is residing. Data can only be loaded from a domain that is   an exact match to the location of the SWF, including subdomains. For this reason   a SWF residing at server1.mydomain.com will not be able to access data from a   SWF at mydomain.com.
+          <p>If you wish to load data from a different domain, you can set up a proxy page   at the same sub domain which would actually request data from the distant domain   and then relay it to FusionWidgets. You must be able to upload and run a   server-side script on a server in the same domain as the Flash movie. In this   method, the Flash movie accesses the script, which loads the information,   retrieves it, and returns the information back to the Flash movie. This method   is best if the server hosting the data is not under your control (for example, a   public source or a web service).</p>
+        </li>
+        <li>The chart now constantly polls the given URL, reads the new data and updates itself. </li>
+    </ol></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Features offered by real-time charts </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The following features are exposed by real-time charts in FusionWidgets w.r.t real-time capabilities only:</p>
+      <ul>
+        <li>In data-streaming charts, you can send multiple data updates in each update i.e., a single poll to the server can come back with any number of data values update.</li>
+        <li>In gauges, if you've multiple pointers with defined IDs, you can update the value either using the pointer/dial index or its value.</li>
+        <li>Real-time data can also be fed using client JavaScript.</li>
+        <li>The real-time data accessed by the chart can be retrieved using client side JavaScript.</li>
+        <li>You can stop the real-time update of any chart either by sending a command from server, or by using client side JavaScript.</li>
+        <li>Context menu to help user to start and stop updates as and when he needs it. Additionally, you can opt to show/hide these menu items in the context menu. </li>
+        <li>In data-streaming charts, you've the option to set different refresh, update and clear interval. </li>
+        <li>In data-streaming charts, you can clear the historical data shown on chart by sending a command from server or using client side JavaScript. </li>
+        <li>Message Logger supported in all real-time charts.</li>
+        <li>Alert Manager supported in   all real-time charts. </li>
+    </ul></td>
+  </tr>
+</table>
+</body>
+</html>

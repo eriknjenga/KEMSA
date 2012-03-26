@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Data-streaming charts &gt; Adding historical data </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>In our previous examples, we had always started the chart with blank canvas (no data) and had it update itself over a span of time. However, if you want to the chart to initially show historical data and then keep on updating itself, you can easily do so by specifying the historical data in XML. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Specifying historical data in XML </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The following XML shows how to push historical data in XML:  </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart caption='Stock Price Monitor' subCaption='Google vs Dell' dataStreamURL='http://localhost/FusionChartsOld/RealTime/StockPriceGoogDell.asp' refreshInterval='2' numberPrefix='$' setAdaptiveYMin='1' xAxisName='Time' showRealTimeValue='1' labelDisplay='Rotate' slantLabels='1'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category label='6 mins ago' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category label='5 mins ago' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category label='4 mins ago' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category label='3 mins ago' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category label='2 mins ago' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category label='1 mins ago' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;dataset seriesName='Google' showValues='0'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='32.34' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='34.35' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='31.25' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='33.23' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='31.34' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='33.76' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/dataset&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;dataset seriesName='Dell' showValues='0'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='22.34' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='22.34' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='24.75' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='23.34' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='21.23' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set value='23.65' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/dataset&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='captionFont' size='14' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Caption' styles='captionFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Realtimevalue' styles='captionFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, we've:</p>
+      <ul>
+        <li>Added <span class="codeInline">&lt;category&gt;</span> element to create the historical x-axis labels.</li>
+        <li>Within each dataset, we've created an equal number of <span class="codeInline">&lt;set&gt;</span> element - equal to number of <span class="codeInline">&lt;category&gt;</span> element. Each <span class="codeInline">&lt;set&gt;</span> element within <span class="codeInline">&lt;dataset&gt;</span> element represents one data point for that data-set. </li>
+        <li>We've removed the <span class="codeInline">realTimeValuePadding</span> attribute, as there are some historical    x-axis labels present in XML. FusionWidgets automatically blocks space for them. </li>
+      </ul>
+    <p>When you now see the chart, you'll get something as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Historical1.jpg" width="515" height="363" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Shown above is the chart when it intializes. You can see historical data being shown. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Historical2.jpg" width="513" height="362" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">And the same chart after a few updates.</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Increasing the number of points displayed on chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see, here the chart now shows only 6 points in the chart. This is because when you specify historical data and do not specify <span class="codeInline">numDisplaySets</span> attribute, the chart shows only that many number of data points as specified in historical data.</p>
+    <p>If you need to increase the number of points, you'll need to set it as under:</p>
+    <p class="codeInline">&lt;chart ... numDisplaySets='20' ..&gt;</p>
+    <p>This will enable the chart to show 20 data points for each data-set, as shown under:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Historical3.jpg" width="507" height="356" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The space on left will be filled as and when chart receives more incremental data. </p>
+    <p>Also, now, in this case if you've more than 20 historical data, the chart will show only the last 20 and ignore the others. </p></td>
+  </tr>
+</table>
+</body>
+</html>

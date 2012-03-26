@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Gantt Chart &gt; Connectors </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>FusionWidgets Gantt chart allows you draw connectors between any two tasks on the chart to indicate process flow. Here, we'll see how to create the same. </p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">How to create? </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To draw a connector, all you need to do is specify   the Id of the two tasks that you want to connect. Apart from this, you can   also specify where the connector joins the start and end task bar individually &ndash;   at their start or end. </p>
+    <p>To show the connectors, we'll revert to our example of &quot;Gantt Project Schedule&quot; chart and connect a few tasks in the following ways:</p>
+    <ul>
+      <li><span class="codeInline">Interpret requirements</span> can begin  only when <span class="codeInline">Custom Survey</span> is over </li>
+      <li><span class="codeInline">Documentation of features</span> can begin only after <span class="codeInline">Study completion</span></li>
+      <li><span class="codeInline">Testing/QA</span> &amp; <span class="codeInline">Documentation</span> can begin at the same time </li>
+    </ul>    
+    <p>Shown below is the final output: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Connectors1.gif" width="575" height="340" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML for the same can be listed as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart dateFormat='mm/dd/yyyy' caption='Project Gantt' subCaption='From 1st Feb 2007 - 31st Aug 2007'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='04/01/2007' label='Q1' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='07/01/2007' label='Q2' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='09/01/2007' label='Q3' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='03/01/2007' label='Feb' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='03/01/2007' end='04/01/2007' label='Mar' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='05/01/2007' label='Apr' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='05/01/2007' end='06/01/2007' label='May' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='06/01/2007' end='07/01/2007' label='Jun' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='08/01/2007' label='Jul' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='08/01/2007' end='09/01/2007' label='Aug' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;processes fontSize='12' isBold='1' align='right'&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Identify Customers' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Survey 50 Customers' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Interpret Requirements' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Study Competition' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of features' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Brainstorm concepts'  /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Design &amp; Code'  /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Testing / QA' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of product' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Global Release' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/processes&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;tasks&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/04/2007' end='02/10/2007' id='TSKIDC' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/08/2007' end='02/20/2007' id='TSKSRC' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/19/2007' end='03/02/2007' id='TSKINR' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/24/2007' end='03/03/2007' id='TSKSTC' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='03/02/2007' end='03/21/2007' id='TSKDOC' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='03/21/2007' end='04/06/2007' id='TSKBRS' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='04/06/2007' end='07/21/2007' id='TSKDSC' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='07/21/2007' end='08/19/2007' id='TSKTQA' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='07/28/2007' end='08/24/2007' id='TSKDCP' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='08/23/2007' end='08/27/2007' id='TSKREL' /&gt; <br />
+  &nbsp;&nbsp;&nbsp;&lt;/tasks&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;connectors&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;connector fromTaskId='TSKSRC' toTaskId='TSKINR' thickness='2'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;connector fromTaskId='TSKSTC' toTaskId='TSKDOC' thickness='2'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;connector fromTaskId='TSKTQA' toTaskId='TSKDCP' fromTaskConnectStart='1' thickness='2'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;connector fromTaskId='TSKDCP' toTaskId='TSKREL' thickness='2'/&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/connectors&gt;<br />
+    &lt;/chart&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've:</p>
+      <ul>
+        <li>First defined our visual timeline and processes.</li>
+        <li>Defined our tasks and allotted a  task ID to each task.</li>
+        <li>Defined <span class="codeInline">&lt;connectors&gt;</span> element to contain all the connectors for the chart. </li>
+        <li>Defined each connector using <span class="codeInline">&lt;connector&gt;</span> element. For this element, we've specified:
+          <ul>
+            <li>From Task ID - representing which task to start connecting from</li>
+            <li>To Task ID - representing which task to connect to</li>
+            <li>Cosmetics - You can define color, thickness, alpha, isDashed etc.</li>
+            <li><span class="codeInline">fromTaskConnectStart</span> - Whether to connect from the starting position of the from task bar. </li>
+          </ul>
+        </li>
+      </ul>
+      <p>FusionWidgets allows you select whether to connect the start or end of each task bar using <span class="codeInline">fromTaskConnectStart</span>, <span class="codeInline">fromTaskConnectEnd</span>, <span class="codeInline">toTaskConnectStart</span> and <span class="codeInline">toTaskConnectEnd</span> attributes for each <span class="codeInline">&lt;connector&gt;</span> element. For example, if you wanted to connect the ends of both bars, you could set:</p>
+      <p class="codeInline">&lt;connector ... fromTaskConnectEnd='1' toTaskConnectEnd='1' ..&gt; </p></td>
+  </tr>
+</table>
+</body>
+</html>

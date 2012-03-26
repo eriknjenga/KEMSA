@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Gantt Chart &gt; Trend lines &amp; Zones </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>FusionWidgets Gantt chart allows you to add trend lines and trend zones to your Gantt chart. These are helpful when you want to show an event for a particular date - like say, you want to draw a line for &quot;Today&quot; or color the vacations. Here, we'll see how to create the same. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Creating a trend line </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">For a simple example, we'll create a trend line showing today in our &quot;Gantt Project&quot; example. The final result will look as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Trend1.gif" width="582" height="352" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML for the chart looks as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart dateFormat='mm/dd/yyyy' caption='Project Gantt' subCaption='From 1st Feb 2007 - 31st Aug 2007'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='04/01/2007' label='Q1' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='07/01/2007' label='Q2' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='09/01/2007' label='Q3' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='03/01/2007' label='Feb' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='03/01/2007' end='04/01/2007' label='Mar' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='05/01/2007' label='Apr' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='05/01/2007' end='06/01/2007' label='May' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='06/01/2007' end='07/01/2007' label='Jun' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='08/01/2007' label='Jul' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='08/01/2007' end='09/01/2007' label='Aug' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;processes fontSize='12' isBold='1' align='right'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Identify Customers' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Survey 50 Customers' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Interpret Requirements' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Study Competition' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of features' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Brainstorm concepts'  /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Design &amp; Code'  /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Testing / QA' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of product' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Global Release' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/processes&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;tasks&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/04/2007' end='02/10/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/08/2007' end='02/19/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/19/2007' end='03/02/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/24/2007' end='03/02/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='03/02/2007' end='03/21/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='03/21/2007' end='04/06/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='04/06/2007' end='07/21/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='07/21/2007' end='08/19/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='07/28/2007' end='08/24/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='08/24/2007' end='08/27/2007' /&gt; <br />
+&nbsp;&nbsp;&nbsp;&lt;/tasks&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;trendlines&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;line start='08/14/2007' displayValue='Today' color='333333' thickness='2' dashed='1' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/trendlines&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, we've added the trendline under the <span class="codeInline">&lt;trendlines&gt;</span> element. All trend lines of the chart need to be defined within this element.</p>
+    <p>Each trend line on the chart is represented by <span class="codeInline">&lt;line&gt;</span> element and can have a number of attributes. Here, we've used:</p>
+    <ul>
+      <li><span class="codeInline">start</span> to indicate the start date of trend line. If you're using trend zones (explained below), then you'll need to specify the <span class="codeInline">end</span> attribute too. Also, <span class="codeInline">end</span> attribute can be used if you want a slanted trend line.</li>
+      <li><span class="codeInline">displayValue</span> to specify the label for the trend line.</li>
+      <li>Various cosmetic properties, which have been discussed in detail in the Chart XML Sheet  </li>
+    </ul>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Creating trend zones </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">If you need to highlight a block of dates, you can use trend zones to do so. Shown below is an example, where we highlight a full week as &quot;Vacation&quot; </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Trend2.gif" width="587" height="395" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML for the chart looks as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart dateFormat='mm/dd/yyyy' caption='Project Gantt' subCaption='From 1st Feb 2007 - 31st Aug 2007'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='04/01/2007' label='Q1' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='07/01/2007' label='Q2' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='09/01/2007' label='Q3' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='03/01/2007' label='Feb' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='03/01/2007' end='04/01/2007' label='Mar' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='05/01/2007' label='Apr' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='05/01/2007' end='06/01/2007' label='May' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='06/01/2007' end='07/01/2007' label='Jun' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='08/01/2007' label='Jul' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='08/01/2007' end='09/01/2007' label='Aug' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;processes fontSize='12' isBold='1' align='right'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Identify Customers' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Survey 50 Customers' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Interpret Requirements' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Study Competition' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of features' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Brainstorm concepts'  /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Design &amp; Code'  /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Testing / QA' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of product' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Global Release' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processes&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;tasks&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/04/2007' end='02/10/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/08/2007' end='02/19/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/19/2007' end='03/02/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/24/2007' end='03/02/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='03/02/2007' end='03/21/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='03/21/2007' end='04/06/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='04/06/2007' end='07/21/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='07/21/2007' end='08/19/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='07/28/2007' end='08/24/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='08/24/2007' end='08/27/2007' /&gt; <br />
+&nbsp;&nbsp;&nbsp;&lt;/tasks&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;trendlines&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;line start='05/3/2007' end='05/10/2007' displayValue='Vacation' isTrendZone='1' alpha='20' color='FF5904'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/trendlines&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">To defined a trend zone, we've to set both start and end date for the line and also set <span class="codeInline">isTrendZone='1'</span>.  </td>
+  </tr>
+</table>
+</body>
+</html>

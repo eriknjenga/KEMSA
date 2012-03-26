@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Annotations &gt; Using IDs </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>For each <span class="codeInline">&lt;annotationGroup&gt;</span>, you can define a unique ID as under:</p>
+      <p class="codeInline">&lt;annotationGroup id='GRP1' ...&gt;  </p>
+      <p>This allows the group to be now referred using:</p>
+      <ul>
+        <li>STYLEs</li>
+        <li>Alert Manager</li>
+        <li>JavaScript API   </li>
+      </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Referring in STYLEs </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">After specifying annotation groups, the group name can be treated as a chart object and then styles can be applied as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+      ...<br />
+      &nbsp;&nbsp; &lt;annotations&gt;<br />
+      &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotationGroup   id='GRP1' &gt;<br />
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;annotation type='rectangle' color='639ACE'   x='100' y='100' toX='200' toY='200'/&gt;<br />
+      &nbsp;&nbsp; &nbsp;&nbsp; &lt;/annotationGroup&gt;<br />
+      &nbsp;&nbsp;   &lt;/annotations&gt;<br />
+      &nbsp;&nbsp; &lt;styles&gt;<br />
+      &nbsp;&nbsp; &nbsp;&nbsp; &lt;definition&gt;<br />
+      &nbsp;&nbsp; &nbsp;&nbsp;   &nbsp;&nbsp; &lt;style name='myShadow' type='shadow' distance='10' /&gt;<br />
+      &nbsp;&nbsp; &nbsp;&nbsp;   &lt;/definition&gt;<br />
+      &nbsp;&nbsp; &nbsp;&nbsp; &lt;application&gt;<br />
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;apply   toObject='GRP1' styles='myShadow'/&gt;<br />
+      &nbsp;&nbsp; &nbsp;&nbsp; &lt;/application&gt;<br />
+      &nbsp;&nbsp;   &lt;/styles&gt;<br />
+      ...<br />
+    &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Here, we've created an annotation group with ID as GRP1 and then applied shadow style to it. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Using in Alert Managers </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">If you've defined an alert manager with action as show/hide annotation, you'll need the ID of the annotation group to refer to it, as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+&hellip;<br />
+&hellip;<br />
+&nbsp;&nbsp;&nbsp;&lt;alerts&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;alert minValue='300' maxValue='360' action='showAnnotation' param='GRP1' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/alerts&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

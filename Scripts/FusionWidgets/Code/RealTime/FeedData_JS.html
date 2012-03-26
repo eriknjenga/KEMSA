@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<TITLE>FusionWidgets v3 - Feeding data using JavaScript</TITLE>
+<script type="text/javascript" src="../Charts/FusionCharts.js"></script>
+<script language="javascript">
+//This method is called when user clicks on the feed data button
+function feedDataToChart(){
+	//Get reference to the chart using its ID
+	var chartRef = getChartFromId("ChId1");
+
+	//We need to create a querstring format incremental update, containing label in hh:mm:ss format
+	//and a value (random).
+	var currDate = new Date();
+	var label= currDate.getHours() + ":" + currDate.getMinutes() + ":" + currDate.getSeconds();
+	//Get random number between 30 & 35 - rounded to 2 decimal places
+	var randomValue = Math.floor(Math.random()*500)/100 + 30;
+	
+	//Build data string in format &label=...&value=...
+	var strData = "&label=" + label + "&value=" + randomValue;
+
+	//Feed it to chart.
+	chartRef.feedData(strData);
+	
+	return;	
+}
+</script>
+</HEAD>
+<BODY>
+<CENTER>
+<div id="chart1div">
+  This text is replaced by the Flash movie.
+</div>
+<script type="text/javascript">
+   var chart1 = new FusionCharts("../Charts/RealTimeLine.swf", "ChId1", "500", "350", "0", "1");
+   chart1.setDataURL("Data.xml");
+   chart1.render("chart1div");
+</script>
+<input type='button' value='Feed Random Data' onClick='javascript:feedDataToChart();' >
+</BODY>
+</HTML>

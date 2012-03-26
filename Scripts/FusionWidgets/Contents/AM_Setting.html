@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Alert Manager &gt; Setting it up </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>For any real-time chart, you can set up the alert manager as under:<br />
+      <br />
+      </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+&nbsp;&nbsp;&nbsp;&hellip;<br />
+&nbsp;&nbsp;&nbsp;&hellip;<br />
+&nbsp;&nbsp;&nbsp;&lt;alerts&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;alert minValue='240' maxValue='300' action='callJS' param=&quot;alert('Value between 240 and 300');&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;alert minValue='300' maxValue='360' action='showAnnotation' param='statusRed' occurOnce='0'/&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;alert minValue='360' maxValue='400' action='playsound' param='YourSound.mp3'/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&lt;/alerts&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The container element for alerts is <span class="codeInline">&lt;alerts&gt;</span>, which is a child of <span class="codeInline">&lt;chart&gt;</span> element. This element cannot have any attribute. </p>
+    <p>Now, for each alert range, you need to define an <span class="codeInline">&lt;alert&gt;</span> element as child of <span class="codeInline">&lt;alerts&gt;</span> element. The <span class="codeInline">&lt;alert&gt;</span> element can have the following attributes:</p>
+    <ul>
+      <li> <span class="codeInline">minValue</span> &ndash; The minimum value for the alert range. For example, if you want to define an alert for the range 100-120, 100 will be <span class="codeInline">minValue</span>. When real-time values are matched against <span class="codeInline">minValue</span>, it&rsquo;s taken as inclusive. For example, if you define 100 as <span class="codeInline">minValue</span>, and the value which is being checked is 100, it&rsquo;ll fall in this defined alert range.<br />
+        <br />
+      </li>
+      <li>	<span class="codeInline">maxValue</span> - The maximum value for the alert range. For example, if you want to define an alert for the range 100-120, 120 will be <span class="codeInline">maxValue</span>. Like <span class="codeInline">minValue</span>, even <span class="codeInline">maxValue</span> is inclusive during value checks against alert ranges.<br />
+        <br />
+      </li>
+      <li><span class="codeInline"> action</span> &ndash; This attribute defines the action to be taken, when the value on the chart matches an alert range. Possible values for this attribute are:
+        <br />
+        <br />
+        <ul>
+          <li> 	<span class="codeInline">CALLJS</span> &ndash; Calls a JavaScript function (specified in <span class="codeInline">param</span> attribute &ndash; explained next) when a value is matched against an alert range. If you need to pass parameters to JavaScript function, specify the exact function name and parameters in param attribute &ndash; e.g., <span class="codeInline">param=&quot;alert('Value between 240 and 300');&quot;</span><br />
+            <br />
+          </li>
+          <li>	<span class="codeInline">PLAYSOUND</span> &ndash; Plays a MP3 sound (located relative to the chart), when an alert range is matched. The relative URL of MP3 sound should be declared in <span class="codeInline">param</span> attribute.<br />
+            <br />
+          </li>
+          <li>	<span class="codeInline">SHOWANNOTATION</span> &ndash; FusionWidgets  allows you to create your custom annotations and annotation groups (with named IDs). This action lets you show a pre-defined annotation group in the chart. For example, you may define 3 status indicators as 3 circles having green, yellow and red color, and assign an annotation group ID for each one of them. By default, you may hide all status indicators. Later, based on the chart&rsquo;s value, you may show an annotation. The group Id of the annotation to be shown is defined in <span class="codeInline">param</span> attribute. When the value again falls out of alert range, FusionWidgets hides that annotation automatically.<br />
+            <br />
+          </li>
+          </ul>
+      </li>
+      <li>	<span class="codeInline">param</span> &ndash; This attribute accepts the parameter for the action, depending on the action. For <span class="codeInline">CALLJS</span> action, it takes the name of JavaScript function. For <span class="codeInline">PLAYSOUND</span> action, it takes the relative path of MP3 file, and for <span class="codeInline">SHOWANNOTATION</span> action, it takes the ID of the annotation group to show.<br />
+        <br />
+      </li>
+      <li>	<span class="codeInline">occurOnce</span> &ndash; Often, you might need an alert threshold range to act only once, irrespective of how many times the value goes into the range. For example, if you want to be notified only the first time when the temperature goes into an alert range, set this attribute to 1. That will make sure that alert action for that range takes place only once, irrespective of how many times the value goes into the range later.</li>
+    </ul></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" /></head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Creating your First Chart &gt; Using HTML code to embed charts </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>In our previous method, we had used FusionCharts JavaScript class to embed the chart. This method is the recommended method for embedding any chart/map from FusionCharts suite. </p>
+    <p>However, if for some reason you do not wish to use the JavaScript class to embed the charts, you can do so using direct HTML code too.</p>
+    <p>Shown below is an example of embedding the same angular gauge using HTML this time, instead of JavaScript. This page is saved as <span class="codeInline">HTMLEmbed.html</span> in <span class="codeInline">MyFirstChart</span> folder. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;html&gt;<br />
+  &lt;head&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;title&gt;My First FusionWidgets - using HTML Embed method&lt;/title&gt;<br />
+  &lt;/head&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;body bgcolor=&quot;#ffffff&quot;&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;object classid=&quot;clsid:d27cdb6e-ae6d-11cf-96b8-444553540000&quot; codebase=&quot;http://fpdownload.macromedia.com/pub/shockwave/<br />
+  cabs/flash/swflash.cab#version=8,0,0,0&quot; width=&quot;400&quot; height=&quot;200&quot; id=&quot;MyFirstChart&quot; &gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;param name=&quot;movie&quot; value=&quot;Charts/AngularGauge.swf&quot; /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;param name=&quot;FlashVars&quot; value=&quot;&amp;dataURL=Data.xml&quot;&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;param name=&quot;quality&quot; value=&quot;high&quot; /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;embed src=&quot;Charts/AngularGauge.swf&quot; flashVars=&quot;&amp;dataURL=Data.xml&quot; quality=&quot;high&quot; width=&quot;400&quot; height=&quot;200&quot; name=&quot;MyFirstChart&quot; type=&quot;application/x-shockwave-flash&quot; pluginspage=&quot;http://www.macromedia.com/go/getflashplayer&quot; /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/object&gt;<br />
+  &lt;/body&gt;<br />
+  &lt;/html&gt;</p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the above code, we've </p>
+      <ul>
+        <li>used &lt;OBJECT&gt;   and &lt;EMBED&gt; tags to embed the Angular Gauge (<span class="codeInline">AngularGauge.swf</span>) within the HTML page. </li>
+        <li>used <span class="codeInline">&amp;dataUrl=Data.xml</span> under <span class="codeInline">FlashVars</span> parameter to indicate the source of data to   chart &ndash; <span class="codeInline">Data.xml</span> in this case. This method of   indicating data is referred to as <span class="codeInline">dataURL</span> method   of providing data. </li>
+        <li>specified chart width as 400 and chart height as 200. </li>
+    </ul></td>
+  </tr>
+  
+  <tr>
+    <td valign="top" class="highlightBlock"><p>To display a Flash movie correctly in a browser, HTML page should contain   specific tags that specify the Flash movie file to be opened and played. There   are two tags which are intended for it: &lt;OBJECT&gt; and   &lt;EMBED&gt; tags. </p>
+    <p>These two tags are required to display a Flash movie in different Internet   browsers properly. The &lt;OBJECT&gt; tag is used   by Internet Explorer under Microsoft Windows and the   &lt;EMBED&gt; tag is used by Netscape Navigator under Microsoft Windows   or Mac OS. Each of these two tags acts in the same way, however using only one   tag may cause incompatibility of one of the browsers. To ensure that most   browsers will play your Flash movies, you should place the &lt;EMBED&gt; tag nested within the &lt;OBJECT&gt; tag as shown in the example.   ActiveX-enabled browsers will ignore the &lt;EMBED&gt; tag inside the &lt;OBJECT&gt; tag. Netscape and old Microsoft browsers   will not recognize the &lt;OBJECT&gt; tag and will   use only the &lt;EMBED&gt; tag to load the   Macromedia Flash Player. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>When you now view your chart, you'll see it as before. </p>
+      <p>However, with the recent updates in the way Internet Explorer handles ActiveX   Object (Flash is ActiveX Object), end users would first be required to click the   chart to activate it, as shown below.</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/HTMLEmbed.jpg" width="409" height="217" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Until the user clicks the chart, he wouldn't be able to interact with the   chart i.e., the tool tips and links won't function. This can sometimes be   misleading when you've links in your chart.</p>
+    <p>To overcome this, you'll have to necessarily use the JavaScript embed method. </p></td>
+  </tr>
+</table>
+</body>
+</html>

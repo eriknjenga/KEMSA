@@ -1,0 +1,2074 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Gantt Chart &gt; XML Sheet </h2></td>
+  </tr>
+  
+  <tr>
+    <td valign="top" class="header">List of Objects for the Gantt chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="15%" valign="top" class="header">Object Name </td>
+        <td width="50%" valign="top" class="header">Description</td>
+        <td width="20%" valign="top" class="header">STYLES supported </td>
+        <td width="15%" valign="top" class="header">Animation Parameters </td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">BACKGROUND</td>
+        <td width="50%" valign="top" class="text">Background refers to the background for entire chart. </td>
+        <td width="20%" valign="top" class="text">
+          <ul>
+            <li>Animation<br />
+            </li>
+            <li>Shadow<br />
+            </li>
+            <li>Glow<br />
+            </li>
+            <li>Bevel<br />
+            </li>
+            <li>Blur</li>
+          </ul>        </td>
+        <td width="15%" valign="top" class="text">
+          <ul>
+            <li>_alpha<br />
+            </li>
+            <li>_x<br />
+            </li>
+            <li>_y<br />
+            </li>
+            <li>_xScale<br />
+            </li>
+            <li>_yScale</li>
+          </ul>        </td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">CANVAS</td>
+        <td width="50%" valign="top" class="text">The entire area inside which the Gantt chart is plotted. </td>
+        <td width="20%" valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur<br />
+          </li>
+        </ul>        </td>
+        <td width="15%" valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y<br />
+          </li>
+          <li>_xScale<br />
+          </li>
+          <li>_yScale<br />
+          </li>
+        </ul>        </td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">CAPTION</td>
+        <td width="50%" valign="top" class="text">Caption of the chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>        </td>
+        <td width="15%" valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y<br />
+          </li>
+        </ul>        </td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">SUBCAPTION</td>
+        <td width="50%" valign="top" class="text">Sub-caption of the chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>        </td>
+        <td width="15%" valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y</li>
+        </ul>        </td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">TASKS</td>
+        <td width="50%" valign="top" class="text">All the task bars being shown on the chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>        </td>
+        <td width="15%" valign="top" class="text"><ul>
+          <li>_alpha</li>
+          <li>_xScale<br />
+                    </li>
+          <li>_yScale</li>
+        </ul>        </td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">TASKLABELS</td>
+        <td width="50%" valign="top" class="text">Labels of the task bar. </td>
+        <td width="20%" valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>        </td>
+        <td width="15%" valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y</li>
+        </ul>        </td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">TASKDATELABELS</td>
+        <td width="50%" valign="top" class="text">Date labels for each task bar (both start and end date) </td>
+        <td width="20%" valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>        </td>
+        <td width="15%" valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y</li>
+        </ul>        </td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">MILESTONES</td>
+        <td width="50%" valign="top" class="text">All the milestones plotted on the chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>        </td>
+        <td width="15%" valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+          <li>_x<br />
+          </li>
+          <li>_y<br />
+          </li>
+          <li>_xScale<br />
+          </li>
+          <li>_yScale</li>
+        </ul>        </td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">CONNECTORS</td>
+        <td width="50%" valign="top" class="text">All the connectors that have been drawn to connect different tasks. </td>
+        <td width="20%" valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>        </td>
+        <td width="15%" valign="top" class="text"><ul>
+          <li>_alpha</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">TRENDLINES</td>
+        <td width="50%" valign="top" class="text">All the trend lines or trend zones drawn on the chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>        </td>
+        <td width="15%" valign="top" class="text"><ul>
+          <li>_alpha</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">TRENDVALUES</td>
+        <td width="50%" valign="top" class="text">Display label of the trend lines or trend zones drawn on the chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>        </td>
+        <td width="15%" valign="top" class="text"><ul>
+          <li>_alpha</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">TOOLTIP</td>
+        <td width="50%" valign="top" class="text">Tool tip for the chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+          <li>Font<br />
+          </li>
+        </ul>        </td>
+        <td width="15%" valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="15%" valign="top" class="text">LEGEND</td>
+        <td width="50%" valign="top" class="text">Legend for the chart. </td>
+        <td width="20%" valign="top" class="text"><ul>
+          <li>Animation<br />
+          </li>
+          <li>Font<br />
+          </li>
+          <li>Shadow<br />
+          </li>
+          <li>Glow<br />
+          </li>
+          <li>Bevel<br />
+          </li>
+          <li>Blur</li>
+        </ul>        </td>
+        <td width="15%" valign="top" class="text"><ul>
+          <li>_alpha<br />
+          </li>
+        </ul>        </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="lightYellowTr">
+    <td valign="top" class="header">&lt;chart&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="textBold">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">dateFormat</td>
+        <td width="20%" valign="top" class="text">mm/dd/yyyy or dd/mm/yyyy or yyyy/mm/dd</td>
+        <td valign="top" class="text">This attribute helps you specify the input date format for all the dates in your XML. This is a mandatory attribute to specify, and once specified, all the dates in your XML data document should conform to the format specified herein. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">outputDateFormat</td>
+        <td width="20%" valign="top" class="text">String </td>
+        <td valign="top" class="text">You can also specify how the dates look on your Gantt chart using this attribute. This attribute takes the output date format as string. You can build your own output date format string as explained in the section &quot;Configuring date formats&quot; </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">ganttPaneDuration</td>
+        <td width="20%" valign="top" class="text">Number</td>
+        <td valign="top" class="text">If you want your Gantt pane to scroll through a specified timeline, you can use this attribute to set what timeline the pane will represent. For example, if you want your Gantt pane to show date only for 3 months and then scroll the rest, you can set this attribute as 3. More of this has been explained in the section &quot;Enabling scroll&quot; </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">ganttPaneDurationUnit</td>
+        <td width="20%" valign="top" class="text">String - y,m,d, h, mn or s </td>
+        <td valign="top" class="text">If you've opted to scroll the Gantt pane, this attribute lets you choose the unit of your specified duration. More of this has been explained in the section &quot;Enabling scroll&quot; </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">showFullDataTable</td>
+        <td width="20%" valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show full names of the process labels and data columns in grid. If you set this as on, the labels will not wrap and always show in full. When required, a scroll bar would automatically appear for the entire grid. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">ganttWidthPercent</td>
+        <td width="20%" valign="top" class="text">Numbe (10-100) </td>
+        <td valign="top" class="text">You can opt to set the width of the Gantt view pane in percent using this attribute. The rest of the width will be taken by the grid. If the data grid takes lesser space, the chart will automatically adjust the Gantt pane to assume more width. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">forceGanttWidthPercent</td>
+        <td width="20%" valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">If you want the chart to never automatically adjust the Gantt width and stick to the percent width that you've specified, you can set this attribute to 1. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">caption</td>
+        <td width="20%" valign="top" class="text">String</td>
+        <td valign="top" class="text">Caption for the chart. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">subCaption</td>
+        <td width="20%" valign="top" class="text">String</td>
+        <td valign="top" class="text">Sub-caption for the chart. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">showTaskStartDate</td>
+        <td width="20%" valign="top" class="text">Boolean</td>
+        <td valign="top" class="text">For each task bar in the Gantt chart, you can show its respective start date on its left. To do so, set this attribute as 1. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">showTaskEndDate</td>
+        <td width="20%" valign="top" class="text">Boolean</td>
+        <td valign="top" class="text">For each task bar in the Gantt chart, you can show its end date value too by setting this attribute as 1. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">showTaskLabels</td>
+        <td width="20%" valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show task labels for each task bar in the Gantt chart. The task labels show up only if they've been defined for the chart. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">showPercentLabel</td>
+        <td width="20%" valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">If you've used the percentage task feature, you can opt to show the percent complete for each task as part of the task label by setting this attribute as 1. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">showSlackAsFill</td>
+        <td width="20%" valign="top" class="text">Boolean</td>
+        <td valign="top" class="text">If you've used the percentage task feature, you can opt to show the slack (percent of work not completed) as either a filled bar or empty bar. To draw as empty bars, set this attribute as 0. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">slackFillColor</td>
+        <td width="20%" valign="top" class="text">Hex Color </td>
+        <td valign="top" class="text">If you've opted to fill the slack bars with color, you can define the color code for the same here.</td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">animation</td>
+        <td width="20%" valign="top" class="text">Boolean</td>
+        <td valign="top" class="text">Whether to animate the chart while rendering? If you define this attribute as 0, even your custom defined STYLE animations wouldn't work. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">defaultAnimation</td>
+        <td width="20%" valign="top" class="text">Boolean</td>
+        <td valign="top" class="text">Whether to use the default animations specified in the chart? This can be specifically useful when you want to disable the default animations and then define your own custom animations. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">clickURL</td>
+        <td width="20%" valign="top" class="text">String URL </td>
+        <td valign="top" class="text">Click URL for the entire chart. The entire chart can then act as a hotspot. This URL can be provided in FusionCharts URL format. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">annRenderDelay</td>
+        <td width="20%" valign="top" class="text">Number (time in seconds) </td>
+        <td valign="top" class="text">If you've defined any annotation groups to be rendered over the chart, using this attribute you can control the time duration after which they'll appear on the chart.</td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">extendCategoryBg</td>
+        <td width="20%" valign="top" class="text">Boolean</td>
+        <td valign="top" class="text">If you set this attribute as 1, the gantt pane grid will take the same bacgkround and border properties as that of the last category (visual dateline) defined. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showPrintMenuItem</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show &quot;<em>Print Chart</em>&quot; item in the context menu of the chart? Even if you opt to hide the item in context menu, you can still opt to invoke <span class="codeInline">print()</span> JavaScript method of the chart to print the same. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">showAboutMenuItem</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign='top' class="text">Setting this to 1 shows up a custom context menu in the chart, which can be customized to show your text and can be linked to your URL. For e.g., you can set the context menu of the chart to include &quot;About your company name&quot; and then link to your company home page. By default, the chart shows &quot;About FusionCharts&quot; when right clicked. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">aboutMenuItemLabel</td>
+        <td valign="top" class="text">String</td>
+        <td valign='top' class="text">The menu item label for the custom context menu item. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="text">aboutMenuItemLink</td>
+        <td valign="top" class="text">String</td>
+        <td valign='top' class="text">Link for the custom context menu item. You can specify the link in FusionCharts link format to be able to open the same in new window, pop-ups, frames or as JavaScript links. </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="header">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" class="header">Cosmetic Properties </td>
+        </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">palette</td>
+        <td width="20%" valign="top" class="text">Number (1-5) </td>
+        <td valign="top" class="text">Which pre-defined color palette to use? </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">paletteThemeColor</td>
+        <td width="20%" valign="top" class="text">Hex Code </td>
+        <td valign="top" class="text">If you want your own palette derived from a particular hex color, you an specify the same here. All other colors on the chart would automatically derive from that palette. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">bgColor</td>
+        <td width="20%" valign="top" class="text">Color</td>
+        <td valign="top" class="text">This attribute sets the background color for the chart. You can   set any hex color code as the value of this attribute. To specify a gradient as   background color, separate the hex color codes of each color in the gradient   using comma. Example: FF5904,FFFFFF. Remember to remove # and any spaces in   between. See the gradient specification page for more details. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">bgAlpha</td>
+        <td width="20%" valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Sets the alpha (transparency) for the background. If you've   opted for gradient background, you need to set a list of alpha(s) separated by   comma. See the gradient specification page for more details. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">bgRatio</td>
+        <td width="20%" valign="top" class="text">String of numbers (0-100) </td>
+        <td valign="top" class="text">If you've opted for a gradient background, this attribute lets   you set the ratio of each color constituent. See the gradient specification page   for more details. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">bgAngle</td>
+        <td width="20%" valign="top" class="text">Number (0-360) </td>
+        <td valign="top" class="text">Angle of the background color, in case of a gradient. See the   gradient specification page for more details. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">showBorder</td>
+        <td width="20%" valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show a border around the chart or not? </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">borderColor</td>
+        <td width="20%" valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Border color of the chart. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">borderThickness</td>
+        <td width="20%" valign="top" class="text">Number</td>
+        <td valign="top" class="text">Border thickness of the chart. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">borderAlpha</td>
+        <td width="20%" valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Border alpha of the chart. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">bgSWF</td>
+        <td width="20%" valign="top" class="text">Path to SWF </td>
+        <td valign="top" class="text">To place any Flash movie as background of the chart, enter the   (path and) name of the background SWF. It should be in the same domain as the   chart. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">bgSWFAlpha</td>
+        <td width="20%" valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Helps you specify alpha for the loaded background SWF. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">canvasBgColor</td>
+        <td width="20%" valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Sets Canvas background color. For Gradient effect, enter colors   separated by comma. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">canvasBgAlpha</td>
+        <td width="20%" valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Sets alpha for Canvas Background. For gradient, enter alpha   list separated by commas. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">canvasBgRatio</td>
+        <td width="20%" valign="top" class="text">String</td>
+        <td valign="top" class="text">Helps you specify canvas background ratio for gradients. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">canvasBgAngle</td>
+        <td width="20%" valign="top" class="text">Number (0-360) </td>
+        <td valign="top" class="text">Helps you specify canvas background angle in case of gradient. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">canvasBorderColor</td>
+        <td width="20%" valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Lets you specify canvas border color. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">canvasBorderThickness</td>
+        <td width="20%" valign="top" class="text">Number (pixels) </td>
+        <td valign="top" class="text">Lets you specify canvas border thickness. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">canvasBorderAlpha</td>
+        <td width="20%" valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Lets you control transparency of canvas border. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">ganttLineColor</td>
+        <td width="20%" valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Lets you specify the color in which the grid border for the gantt pane view would be drawn. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">ganttLineAlpha</td>
+        <td width="20%" valign="top" class="text">Number (0-100 )</td>
+        <td valign="top" class="text">Alpha for the grid border of gantt view pane. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">gridBorderColor</td>
+        <td width="20%" valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Color for the data grid border. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">gridBorderAlpha</td>
+        <td width="20%" valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Alpha for the data grid border. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">gridResizeBarColor</td>
+        <td width="20%" valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Color for the drag line that appears when resizing the data grid.</td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">gridResizeBarThickness</td>
+        <td width="20%" valign="top" class="text">Number</td>
+        <td valign="top" class="text">Thickness of the drag line that appears when resizing the data grid, </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">gridResizeBarAlpha</td>
+        <td width="20%" valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Alpha of the drag line that appears when resizing the data grid. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">taskBarRoundRadius</td>
+        <td width="20%" valign="top" class="text">Number</td>
+        <td valign="top" class="text">If you want your task bars to be rounded (when not using percent complete feature), you can set the radius of the round corner here. That'll result in all task bars having rounded corners. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">taskBarFillMix</td>
+        <td width="20%" valign="top" class="text">String Gradient Formula</td>
+        <td valign="top" class="text">This attribute lets you specify the gradient fill formula for the task bars. Please refer to the section &quot;Advanced Charting&quot; &gt; Gradient mix for more details on this. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">taskBarFillRatio</td>
+        <td width="20%" valign="top" class="text">String of ratios separated by comma </td>
+        <td valign="top" class="text">If you're using gradient fill formula for the task bars, this attribute lets you specify the ratio for each color in the gradient. Please refer to the section &quot;Advanced Charting&quot; &gt; Gradient mix for more details on this.</td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">baseFont</td>
+        <td width="20%" valign="top" class="text">Font face name </td>
+        <td valign="top" class="text">Global font face for all text on the chart. You can individually customize font properties of each element using their respective attributes or STYLEs. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">baseFontSize</td>
+        <td width="20%" valign="top" class="text">Number</td>
+        <td valign="top" class="text">Global font size for all text on the chart. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">baseFontColor</td>
+        <td width="20%" valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Global font color for all text on the chart. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">showShadow</td>
+        <td width="20%" valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show shadow for the task bars? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="tableGreyBorder"><span class="text"> logoURL </span> </td>
+        <td valign="top" class="tableGreyBorder"><span class="text"> String </span> </td>
+        <td valign='top' class="tableGreyBorder"><span class="text">You can load an external logo (JPEG/PNG/SWF) on the chart once it has rendered. This attribute lets you specify the URL of the same. Owing to Flash Player security settings, you can only specify logo that are on the sub-domain as the SWF file of the chart. </span></td>
+      </tr>
+      <tr>
+        <td valign="top" class="trLightBlueBg"><span class="text"> logoPosition </span> </td>
+        <td valign="top" class="trLightBlueBg"><span class="text"> String ( TL, TR, BL, BR, CC )</span> </td>
+        <td valign='top' class="trLightBlueBg"><p class="text"> <span class="text">Where to position the logo on the chart:</span></p>
+            <ul>
+              <li class="text">TL - Top-left</li>
+              <li class="text">TR - Top-right</li>
+              <li class="text">BR - Bottom right</li>
+              <li class="text">BL - Bottom left</li>
+              <li class="text"><span class="text">CC - Center of screen</span> </li>
+            </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" class="tableGreyBorder"><span class="text"> logoAlpha </span> </td>
+        <td valign="top" class="text"><span class="text"> Number </span> (0-100) </td>
+        <td valign='top' class="tableGreyBorder"><span class="text">Once the logo has loaded on the chart, you can configure its opacity using this atribute.</span></td>
+      </tr>
+      <tr>
+        <td valign="top" class="trLightBlueBg"><span class="text"> logoScale </span> </td>
+        <td valign="top" class="text"><span class="text"> Number </span> (0-100) </td>
+        <td valign='top' class="trLightBlueBg"><span class="text">You can also change the scale of externally loaded logo at run-time by specifying a value for this parameter. </span></td>
+      </tr>
+      <tr>
+        <td valign="top" class="tableGreyBorder"><span class="text"> logoLink </span> </td>
+        <td valign="top" class="tableGreyBorder"><span class="text"> String </span> </td>
+        <td valign='top' class="tableGreyBorder"><span class="text">If you want to link the logo to an external URL, specify the link in this attribute. The link can be in FusionCharts link format, allowing you to link to new windows, pop-ups, frames etc. </span> </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="header">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" class="header">Tool tip properties </td>
+        </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">showToolTip</td>
+        <td width="20%" valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show tool tip for the chart? </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">toolTipBgColor</td>
+        <td width="20%" valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Background color for the tool tip </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">toolTipBorderColor</td>
+        <td width="20%" valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Border Color for the tool tip. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">dateInToolTip</td>
+        <td width="20%" valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show starting and ending date for each task in tool tip? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showToolTipShadow</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show shadow for tool-tips on the chart.</td>
+      </tr>
+	  <tr>
+	    <td colspan="3" class="header">&nbsp;</td>
+	    </tr>
+	  <tr class="greyTr">
+        <td colspan="3" class="header">Legend properties </td>
+        </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">showLegend</td>
+        <td width="20%" valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show legend for the chart?</td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">legendCaption</td>
+        <td width="20%" valign="top" class="text">String</td>
+        <td valign="top" class="text">Text caption for the legend. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">legendBorderColor</td>
+        <td width="20%" valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Border Color for the legend. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">legendBorderThickness</td>
+        <td width="20%" valign="top" class="text">Number</td>
+        <td valign="top" class="text">Border thickness for the legend. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">legendBorderAlpha</td>
+        <td width="20%" valign="top" class="text">Number (0-100) </td>
+         <td valign="top" class="text">Border alpha for the legend. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">legendBgColor</td>
+        <td width="20%" valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Background color for the legend. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">legendBgAlpha</td>
+        <td width="20%" valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Background alpha for the legend. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">legendShadow</td>
+        <td width="20%" valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show a shadow for legend? </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">legendAllowDrag</td>
+        <td width="20%" valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">The legend can be made drag-able by setting this attribute to   1. End viewers of the chart can drag the legend around on the chart. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">legendScrollBgColor</td>
+        <td width="20%" valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">If you've too many items on the legend, a scroll bar shows up   on the same. This attribute lets you configure the background color of the   scroll bar. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">legendScrollBarColor</td>
+        <td width="20%" valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">If you've too many items on the legend, a scroll bar shows up   on the same. This attribute lets you configure the bar color of the scroll bar. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">legendScrollBtnColor</td>
+        <td width="20%" valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">If you've too many items on the legend, a scroll bar shows up   on the same. This attribute lets you configure the color of buttons of the   scroll bar. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">reverseLegend</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">You can reverse the ordering of datasets in the legend by setting this attribute to 1. </td>
+      </tr>
+	  <tr>
+	    <td colspan="3" class="header">&nbsp;</td>
+	    </tr>
+	  <tr class="greyTr">
+        <td colspan="3" class="header">Scroll bar properties </td>
+        </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">scrollColor</td>
+        <td width="20%" valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Color for the scroll bar. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">scrollPadding</td>
+        <td width="20%" valign="top" class="text">Number (Pixels) </td>
+        <td valign="top" class="text">Vertical padding between the scroll bar and chart canvas. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">scrollHeight</td>
+        <td width="20%" valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Height of scroll bar. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">scrollBtnWidth</td>
+        <td width="20%" valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Width of scroll buttons. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">scrollBtnPadding</td>
+        <td width="20%" valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Horizontal padding between the scroll bar and its buttons. </td>
+      </tr>
+	  <tr>
+	    <td colspan="3" class="header">&nbsp;</td>
+	    </tr>
+	  <tr class="greyTr">
+        <td colspan="3" class="header">Chart Margins &amp; Padding </td>
+        </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">chartLeftMargin</td>
+        <td width="20%" valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Amount of empty space that you want to put on the left side of   your chart. Nothing is rendered in this space. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">chartRightMargin</td>
+        <td width="20%" valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Amount of empty space that you want to put on the right side of   your chart. Nothing is rendered in this space. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">chartTopMargin</td>
+        <td width="20%" valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Amount of empty space that you want to put on the top of your   chart. Nothing is rendered in this space. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">chartBottomMargin</td>
+        <td width="20%" valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Amount of empty space that you want to put on the bottom of   your chart. Nothing is rendered in this space. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">taskDatePadding</td>
+        <td width="20%" valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Horizontal padding between the task bars and start of date labels (if you've opted to show them for the chart). </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">captionPadding</td>
+        <td width="20%" valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">This attribute lets you control the space (in pixels) between   the sub-caption and top of the chart canvas. If the sub-caption is not defined,   it controls the space between caption and top of chart canvas. If neither   caption, nor sub-caption is defined, this padding does not come into play. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">legendPadding</td>
+        <td width="20%" valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">Padding of legend from bottom side of canvas.</td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="lightYellowTr">
+    <td valign="top" class="header">&lt;categories&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Each &lt;categories&gt; element represents one visual timeline on the chart. The timeline divisions are controlled by child &lt;category&gt;  elements of &lt;categories&gt; element. </p>
+    <p>The following attributes of &lt;categories&gt; element apply to all child &lt;category&gt;  elements, unless explicitly specified for each &lt;category&gt;  element. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">bgColor</td>
+        <td width="20%" valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Background color for each horizontal visual date line.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgAlpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Background alpha for each horizontal visual date line.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">font</td>
+        <td valign="top" class="text">Font Face </td>
+        <td valign="top" class="text">Font for this category. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontSize</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Font size for this category. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Font color for this category. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isBold</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to render font as bold for this category? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isItalic</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to render font as italic for this category?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isUnderline</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to render font as underline for this category?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">verticalPadding</td>
+        <td valign="top" class="text">Number (pixels) </td>
+        <td valign="top" class="text">Vertical padding for the category line - both top &amp; bottom. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">align</td>
+        <td valign="top" class="text">left, center or right </td>
+        <td valign="top" class="text">Horizontal alignment position of category labels. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vAlign</td>
+        <td valign="top" class="text">top, middle or bottom </td>
+        <td valign="top" class="text">Vertical alignment position of category labels. </td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="textBold">&lt;category&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Each &lt;category&gt; element distributes the time line into visual divisions. You can specify the following attributes for the same. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">start</td>
+        <td width="20%" valign="top" class="text">Date</td>
+        <td valign="top" class="text">Start date for this category. Needs to be specified in the date format for the chart. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">end</td>
+        <td valign="top" class="text">Date</td>
+        <td valign="top" class="text">End date for this category. Needs to be specified in the date format for the chart.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Background color for this category division. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgAlpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Background alpha for this category division. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">label</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Label for the category. You can specify any text label to be displayed as the category label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">link</td>
+        <td valign="top" class="text">Link in FusionCharts format </td>
+        <td valign="top" class="text">Each category label can be linked to an external URL. You need to provide the URL in FusionCharts format. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">align</td>
+        <td valign="top" class="text">left, center or right </td>
+        <td valign="top" class="text">Horizontal alignment position of the label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vAlign</td>
+        <td valign="top" class="text">top, middle or bottom </td>
+        <td valign="top" class="text">Vertical alignment position of the label.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isBold</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether this label would appear as bold? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isItalic</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether this label would appear as italic?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isUnderline</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether this label would appear as underlined?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">font</td>
+        <td valign="top" class="text">Font face </td>
+        <td valign="top" class="text">Font face for the label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontSize</td>
+        <td valign="top" class="text">Font size </td>
+        <td valign="top" class="text">Font size for the label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Font color for the label. </td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="lightYellowTr">
+    <td valign="top" class="header">&lt;processes&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>All the processes for the chart are grouped under the &lt;processes&gt; element. Each process is represented by an individual &lt;process&gt; element. </p>
+    <p>The following attributes of &lt;processes&gt; element let you collectively specify cosmetic properties for each &lt;process&gt; element. You can also over-ride these properties by specifying the same for each &lt;process&gt; element. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">positionInGrid</td>
+        <td valign="top" class="text">left or right </td>
+        <td valign="top" class="text">Whether the process column appears as the left-most column of data grid or right-most? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">width</td>
+        <td valign="top" class="text">Number or percent </td>
+        <td valign="top" class="text">Width of the process column in data table. You can either specify it as exact pixels (e.g. 150 or 200) or in percentage (25% or 30%) </td>
+      </tr>
+      
+      <tr>
+        <td colspan="3" valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="text">The processes column can have a header, whose properties can be customized using the attributes below. </td>
+        </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">headertext</td>
+        <td width="20%" valign="top" class="text">String</td>
+        <td valign="top" class="text">Header label for the processes column in data table. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerFont</td>
+        <td valign="top" class="text">Font face </td>
+        <td valign="top" class="text">Font for the process header </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerFontSize</td>
+        <td valign="top" class="text">Number </td>
+        <td valign="top" class="text">Font size for the process header</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerFontColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Font color for the process header</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerIsBold</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether process header should appear bold? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerIsItalic</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether process header should appear in italics?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerIsUnderline</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether process header should appear as underlined?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerAlign</td>
+        <td valign="top" class="text">left, center or right </td>
+        <td valign="top" class="text">Horizontal alignment position of the header label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerVAlign</td>
+        <td valign="top" class="text">top, middle or bottom </td>
+        <td valign="top" class="text">Vertical alignment position of the header label.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerBgColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Background color of the process header. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerBgAlpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Background alpha of the process header. </td>
+      </tr>
+      <tr>
+        <td colspan="3" valign="top" class="text">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="text">The following properties allow you to collectively specify cosmetics for all <span class="codeInline">&lt;process&gt;</span> elements, which can further be specified for each <span class="codeInline">&lt;process&gt;</span> element. </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Background color for the process name column. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Background alpha for the process name column. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">font</td>
+        <td valign="top" class="text">Font Face </td>
+        <td valign="top" class="text">Font for process name. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontSize</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Font size for process name.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Font color for process name.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isBold</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show  process names in bold? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isItalic</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show  process names in italics?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isUnderline</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show process names as underline? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">align</td>
+        <td valign="top" class="text">left, center or right</td>
+        <td valign="top" class="text">Horizontal alignment for all process names. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vAlign</td>
+        <td valign="top" class="text">top, middle or bottom</td>
+        <td valign="top" class="text">Vertical alignment for all process names. </td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="textBold">&lt;process&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Each &lt;process&gt; element represents one process on the Gantt chart. You can show team members, projects or task list as a process - there's no restriction to that.  </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">label</td>
+        <td width="20%" valign="top" class="text">String</td>
+        <td valign="top" class="text">The label for the process. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">link</td>
+        <td valign="top" class="text">Link in FusionCharts format </td>
+        <td valign="top" class="text">Each process label can be linked to external links. You can specify the link for each process in FusionCharts link format as value of this attribute. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">id</td>
+        <td valign="top" class="text">String </td>
+        <td valign="top" class="text"><p>String ID for the process. Each process needs to have a unique identifier to enable cross linking with tasks. </p>          </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">font</td>
+        <td valign="top" class="text">Font face </td>
+        <td valign="top" class="text">Font face for this process label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Font color for this process label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontSize</td>
+        <td valign="top" class="text">Font Size </td>
+        <td valign="top" class="text">Font size for this process label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isBold</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show this process name in bold? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isItalic</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show this process name in italics?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isUnderline</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show this process name as underline? </td>
+      </tr>
+      
+      <tr>
+        <td valign="top" class="codeInline">align</td>
+        <td valign="top" class="text">left, center or right </td>
+        <td valign="top" class="text">Horizontal alignment position for the process name. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vAlign</td>
+        <td valign="top" class="text">top, middle or bottom </td>
+        <td valign="top" class="text">Vertical alignment position for the process name. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Background color for the process name. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgAlpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Background alpha for the process name. </td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="lightYellowTr">
+    <td valign="top" class="header">&lt;tasks&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The &lt;tasks&gt; element groups all the tasks that we've to show in the chart. Each task is represented by a &lt;task&gt; element which is a child of &lt;tasks&gt; element. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">showlabels</td>
+        <td width="20%" valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show the label for each task (if defined)? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showpercentlabel</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">If percent complete has been defined for each task, whether to show the same as part of label? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showstartdate</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show start date for each task? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showenddate</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show end date for each task? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">font</td>
+        <td valign="top" class="text">Font face </td>
+        <td valign="top" class="text">Font for all the task labels. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontcolor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Font color for all the task labels. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontsize</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Font size for all the task labels. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Fill color for the task bars. This color is manipulated by the task fill gradient formula to attain the required gradient. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Alpha for the task bar fill. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showborder</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show border for task bars? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bordercolor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">If border is to be shown for task bars, this attribute defines the color. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">borderthickness</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">If border is to be shown for task bars, this attribute defines the thickness.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">borderalpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+         <td valign="top" class="text">If border is to be shown for task bars, this attribute defines the alpha.</td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="textBold">&lt;task&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Each &lt;task&gt; element represents a task bar on the chart and can have the following properties: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">start</td>
+        <td width="20%" valign="top" class="text">Date in the format specified </td>
+        <td valign="top" class="text">Start date for the task in the date format specified in XML. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">end</td>
+        <td valign="top" class="text">Date in the format specified</td>
+        <td valign="top" class="text">End date for the task in the date format specified in XML. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">id</td>
+        <td valign="top" class="text">String identifier</td>
+        <td valign="top" class="text">Each task can have its own unique ID. It is used for linking connectors and milestones. </td>
+      </tr>
+      
+      <tr>
+        <td valign="top" class="codeInline">processId</td>
+        <td valign="top" class="text">String identifier</td>
+        <td valign="top" class="text">You can relate each task to its process using the process ID, which can be specified here. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">label</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">String label for the task. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">link</td>
+        <td valign="top" class="text">Link in FusionCharts format </td>
+        <td valign="top" class="text">Link for the task bar (in FusionCharts link format) </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">percentComplete</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Each task can be shown as incomplete task by specifying the percent completed here. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showAsGroup</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to render the task bar visually as a group? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">animation</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to animate this particular bar? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">font</td>
+        <td valign="top" class="text">Font face </td>
+        <td valign="top" class="text">Font for the task label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Font color for the task label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontSize</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Font size for the task label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Fill color for the task bar. This color is manipulated by the task fill gradient formula to attain the required gradient. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Fill alpha for the task bar. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showBorder</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show border for the task bar? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">borderColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Border color for the task bar. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">borderThickness</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Border thickness for the task bar. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">borderAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Border alpha for the task bar. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">height</td>
+        <td valign="top" class="text">In Pixels or Percent </td>
+        <td valign="top" class="text">Height for the task bar either in pixels (e.g., 30 or 25) or in percent (e.g., 25% or 50%) </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">topPadding</td>
+        <td valign="top" class="text">In Pixels or percent </td>
+        <td valign="top" class="text">Padding required at the top of the task bar either in pixels or in percent. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showLabel</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show the label for this task bar? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showPercentLabel</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to include percent complete in the label for this task bar? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showStartDate</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show start date for the task bar? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showEndDate</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show end date label for the task bar? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">toolText</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">If you want to have custom tool text for each task bar, you can specify it here. </td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="lightYellowTr">
+    <td valign="top" class="header">&lt;datatable&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The &lt;datatable&gt; element lets you add your own data to the data-grid of the chart. </p>
+    <p>The following attributes of &lt;datatable&gt; element help you collectively control the cosmetics of each cell within the table. You can, however, control the properties of individual cell using attributes of &lt;datacolumn&gt; element or individual &lt;text&gt; element. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="text">Properties to customize header label for each data column </td>
+        </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">headerFont</td>
+        <td width="20%" valign="top" class="text">Font face </td>
+        <td valign="top" class="text">Font face for all column headers in the data table. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerFontSize</td>
+        <td valign="top" class="text">Number </td>
+        <td valign="top" class="text">Font size  for all column headers in the data table.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerFontColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Font color  for all column headers in the data table.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerIsBold</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether header should appear bold  for all column headers in the data table?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerIsItalic</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text"> Whether header should appear in italics for all column headers in the data table?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerIsUnderline</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether header should appear in underline  for all column headers in the data table?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerAlign</td>
+        <td valign="top" class="text">left, center or right </td>
+        <td valign="top" class="text">Horizontal alignment position  for all column headers in the data table.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerVAlign</td>
+        <td valign="top" class="text">top, middle or bottom </td>
+        <td valign="top" class="text">Vertical alignment position  for all column headers in the data table.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerBgColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Background color  for all column headers in the data table.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerBgAlpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Background alpha  for all column headers in the data table.</td>
+      </tr>
+      <tr>
+        <td colspan="3" valign="top" class="codeInline">&nbsp;</td>
+        </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="text">The following attributes let you collectively specify the cosmetic properties for all the cells in data table. </td>
+        </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text"> Background color for all the cells in the data table.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Background alpha for all the cells in the data table.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">font</td>
+        <td valign="top" class="text">Font face </td>
+        <td valign="top" class="text">Font for all the cells in the data table. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Font color for all the cells in the data table.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontSize</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Font size for all the cells in the data table.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isBold</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show text in bold for all the cells in the data table?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isItalic</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show text in italics for all the cells in the data table?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isUnderline</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show text as underline for all the cells in the data table?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">align</td>
+        <td valign="top" class="text">left, center or right</td>
+        <td valign="top" class="text">Horizontal alignment position for all the cells in the data table.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vAlign</td>
+        <td valign="top" class="text">top, middle or bottom</td>
+        <td valign="top" class="text">Vertical alignment position for all the cells in the data table.</td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="textBold">&lt;datacolumn&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Each &lt;datacolumn&gt; element adds a column to the chart's data grid. It can have the following elements: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="text">Properties to customize header label for each data column </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerText</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Label for the header. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerLink</td>
+        <td valign="top" class="text">Link in FusionCharts format </td>
+        <td valign="top" class="text">Link for the header. </td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top" class="codeInline">headerFont</td>
+        <td width="20%" valign="top" class="text">Font face </td>
+        <td valign="top" class="text">Font face for the column header. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerFontSize</td>
+        <td valign="top" class="text">Number </td>
+        <td valign="top" class="text">Font size  for the column header.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerFontColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Font color  for the column header.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerIsBold</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether header should appear bold  for the column header?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerIsItalic</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text"> Whether header should appear in italics for the column header?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerIsUnderline</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether header should appear in underline the column header?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerAlign</td>
+        <td valign="top" class="text">left, center or right </td>
+        <td valign="top" class="text">Horizontal alignment position  for the column header.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerVAlign</td>
+        <td valign="top" class="text">top, middle or bottom </td>
+        <td valign="top" class="text">Vertical alignment position  for the column header.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerBgColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Background color  for the column header.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">headerBgAlpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Background alpha  for the column header.</td>
+      </tr>
+      <tr>
+        <td colspan="3" valign="top" class="codeInline">&nbsp;</td>
+      </tr>
+      <tr class="greyTr">
+        <td colspan="3" valign="top" class="text">The following attributes let you collectively specify the cosmetic properties for all the cells in this column. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">width</td>
+        <td valign="top" class="text">Number or percent </td>
+        <td valign="top" class="text">Width of this column in number (100 or 200) or percent (25% or 45%) </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text"> Background color for all the cells in this data column.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Background alpha for all the cells in this data column.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">font</td>
+        <td valign="top" class="text">Font face </td>
+        <td valign="top" class="text">Font for all the cells in this data column. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Font color for all the cells in this data column.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontSize</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Font size for all the cells in this data column.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isBold</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show text in bold for all the cells in this data column?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isItalic</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show text in italics for all the cells in this data column?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isUnderline</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show text as underline for all the cells in this data column?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">align</td>
+        <td valign="top" class="text">left, center or right</td>
+        <td valign="top" class="text">Horizontal alignment position for all the cells in this data column.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vAlign</td>
+        <td valign="top" class="text">top, middle or bottom</td>
+        <td valign="top" class="text">Vertical alignment position for all the cells in this data column.</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="textBold">&lt;text&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Each &lt;text&gt; element, child of &lt;datacolumn&gt; element, represents a single cell in the data column. It can have the following attributes: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+
+      <tr>
+        <td valign="top" class="codeInline">label</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">String label to be displayed in the cell. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">link</td>
+        <td valign="top" class="text">Link in FusionCharts format </td>
+        <td valign="top" class="text">Link for the label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text"> Background color for the cell. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">bgAlpha</td>
+        <td valign="top" class="text">Number (0-100)</td>
+        <td valign="top" class="text">Background alpha for the cell.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">font</td>
+        <td valign="top" class="text">Font face </td>
+        <td valign="top" class="text">Font for the cell.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontColor</td>
+        <td valign="top" class="text">Color Code</td>
+        <td valign="top" class="text">Font color for the cell.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fontSize</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Font size for the cell.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isBold</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show text in bold?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isItalic</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show text in italics?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isUnderline</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to show text as underline?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">align</td>
+        <td valign="top" class="text">left, center or right</td>
+        <td valign="top" class="text">Horizontal alignment position of the label. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">vAlign</td>
+        <td valign="top" class="text">top, middle or bottom</td>
+        <td valign="top" class="text">Vertical alignment position of the label. </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="lightYellowTr">
+    <td valign="top" class="header">&lt;connectors&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The following attributes specify the cosmetics for all the connectors collectively. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Color for the connector line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Alpha of the connector lines. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">thickness</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Thickness of the connector lines.  </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isDashed</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to plot the lines as dash? </td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="greyTr">
+    <td valign="top" class="textBold">&lt;connector&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Each &lt;connector&gt; element represents a connector that connects two tasks. You can specify the following properties for it: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fromTaskId</td>
+        <td valign="top" class="text">String ID </td>
+        <td valign="top" class="text">ID of the task which will act as the starting point for connector. You'll need to define IDs for each task before you can define connectors. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">toTaskId</td>
+        <td valign="top" class="text">String ID </td>
+        <td valign="top" class="text">ID of the task which will act as the ending point for connector. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">fromTaskConnectStart</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to connect left side of the starting task bar? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">toTaskConnectStart</td>
+        <td valign="top" class="text">Boolean (0/1)</td>
+        <td valign="top" class="text">Whether to connect left side of the ending task bar?</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Color of the connector. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">thickness</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Thickness of the connector. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Alpha of the connector line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isDashed</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show connector line as dashed? </td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="lightYellowTr">
+    <td valign="top" class="header">&lt;connectors&gt; --&gt; &lt;connector&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">date</td>
+        <td valign="top" class="text">Date</td>
+        <td valign="top" class="text">Date for the milestone in the specified date format. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">taskId</td>
+        <td valign="top" class="text">String ID </td>
+        <td valign="top" class="text">ID of the task to which this milestone relates to. You must define task IDs before you can use milestones. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">shape</td>
+        <td valign="top" class="text">star or polygon </td>
+        <td valign="top" class="text">Shape of the milestone. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">numSides</td>
+        <td valign="top" class="text">Number (3-15) </td>
+        <td valign="top" class="text">Number of sides that the milestone should have. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">startAngle</td>
+        <td valign="top" class="text">Number (0-360) </td>
+        <td valign="top" class="text">Starting angle for the star/polygon. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">radius</td>
+        <td valign="top" class="text">Number (2-15) </td>
+        <td valign="top" class="text">Radius for the milestone (in pixels). </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Color for the milestone. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Alpha for the milestone. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">borderColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Border color for the milestone. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">borderThickness</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Border thickness for the milestone. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">link</td>
+        <td valign="top" class="text">Link in FusionCharts format </td>
+        <td valign="top" class="text">Each milestone can be linked to external links. The link should be specified in FusionCharts link format. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">toolText</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Each milestone can have its own tool text, which you can specify here. </td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="lightYellowTr">
+    <td valign="top" class="header">&lt;trendlines&gt; --&gt; &lt;line&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">start</td>
+        <td valign="top" class="text">Date</td>
+        <td valign="top" class="text">Start date for the trend line/zone.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">end</td>
+        <td valign="top" class="text">Date</td>
+        <td valign="top" class="text">End date for the trend line/zone. If you intend to draw a trend line instead of a trend zone, then you do not need to specify a value for this attribute. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Color for the trend line/zone. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">displayValue</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">If you want to display your custom value beneath the trend line, you can do so here. Example, you can show the trend line and label it as &quot;Today&quot;. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">thickness</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">Thickness of the trend line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">isTrendZone</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Option to set whether it will appear as a trend zone or a trend line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">alpha</td>
+        <td valign="top" class="text">Number (0-100) </td>
+        <td valign="top" class="text">Alpha of the trend line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashed</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to show the trend line as dashed? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashLen</td>
+        <td valign="top" class="text">Number (1-10) </td>
+        <td valign="top" class="text">If it is to be shown as dashed, this attribute lets you define the length of each dash. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashGap</td>
+        <td valign="top" class="text">Number (1-10)</td>
+        <td valign="top" class="text">If it is to be shown as dashed, this attribute lets you define the length of each dash gap.</td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr class="lightYellowTr">
+    <td valign="top" class="header">&lt;legend&gt; --&gt; &lt;item&gt; element </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">label</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Label for the legend item. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Color code for the legend item. </td>
+      </tr>
+
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

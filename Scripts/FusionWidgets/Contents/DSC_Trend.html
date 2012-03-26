@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Data-streaming Charts &gt; Adding trend-lines </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Trend lines are horizontal lines spanning the chart canvas which aid in   interpretation of data with respect to some pre-determined value. For example,   if you are monitoring a stock's price, you can add trend lines to show yesterday's closing price or support/resistance levels. </p>
+      <p>You can add trend lines/zones to all the data streaming charts in FusionWidgets v3. </p>
+      <p>For each trend line on the chart, you need to define a <span class="codeInline">&lt;line&gt;</span> element under <span class="codeInline">&lt;trendLines&gt;</span> element as under:<br />
+        <br />
+        <span class="codeInline">&lt;trendLines&gt;<br />
+&lt;line startValue='895' color='FF0000'   displayvalue='Average' /&gt; <br />
+&lt;/trendLines&gt;</span><br />
+        </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">An example </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Here, we're going to add a trend line to our previous Google Stock Monitor example, indicating previous day's closing value. To do so, you'll have to add the following in XML: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart caption='Stock Price Monitor' subCaption='Google' dataStreamURL='http://localhost/FusionChartsOld/RealTime/StockPrice.asp' refreshInterval='60' numberPrefix='$' setAdaptiveYMin='1' xAxisName='Time' showRealTimeValue='1' realTimeValuePadding='50' labelDisplay='Rotate' slantLabels='1'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;dataset seriesName='Google' showValues='0'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/dataset&gt;<br />
+&nbsp;&nbsp;<strong>&nbsp;&lt;trendlines&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;line startValue='32.45' displayValue='Opening' color='0372AB' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/trendlines&gt;</strong><br />
+&nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='captionFont' size='14' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Caption' styles='captionFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Realtimevalue' styles='captionFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've added a trend line with  value (specified as <span class="codeInline">startValue</span>) as 32.45 and given it a label of <span class="codeInline">Opening</span>. Also, we've specified its color. </p>
+    <p>When you now run the chart, you'll see the trend line as under. Since the chart has no data initially, therefore the chart limits are 0-100. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Trend1.jpg" width="506" height="356" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">However, when real time feeds come in and chart limits adjust to the same, the trend lines also automatically acquire new positions, as shown under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Trend2.jpg" width="506" height="355" /></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="highlightBlock">During real-time update of the chart, if any trend line values fall out of chart axis limits, they do not show up on the chart. However, if the charts limits later adjust to accommodate the trend line values, they will then automatically re-appear. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Creating slanted trend lines </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The data-streaming charts also allow you to create slanted trend lines by setting:</p>
+    <p class="codeInline">&lt;line startValue='33' endValue='34.3' displayValue='Prediction' color='FF5904' dashed='1'/&gt;</p>
+    <p>As you can see here, we've specified both the <span class="codeInline">startValue</span> and <span class="codeInline">endValue</span> attributes for the trend line.  The values specified for these attributes should be within the limits of chart axis. </p>
+    <p>The above trend line would result in something as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Trend3.jpg" width="508" height="360" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Creating trend zones </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also create trend zones by setting:</p>
+    <p class="codeInline">&lt;line startValue='32.7' endValue='34.3' displayValue='Sell' isTrendZone='1' alpha='15' color='FF5904'/&gt;</p>
+    <p>For a trend zone, you need to specify both the <span class="codeInline">startValue</span> and <span class="codeInline">endValue</span>. Additionally, you need to set<span class="codeInline"> isTrendZone='1'.</span></p>
+    <p>This will result in something as under:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Trend4.jpg" width="508" height="359" /></td>
+  </tr>
+</table>
+</body>
+</html>

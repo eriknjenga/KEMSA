@@ -1,0 +1,8 @@
+<chart chartBottomMargin='5' lowerLimit='0' upperLimit='100' lowerLimitDisplay='Low' upperLimitDisplay='High' numberSuffix='%25' showTickMarks='1' tickValueDistance='0'  majorTMNumber='5' majorTMHeight='4' minorTMNumber='0' showTickValues='1' decimalPrecision='0' ledGap='1' ledSize='1' ledBoxBgColor='333333' ledBorderColor='666666' borderThickness='2' chartRightMargin='20' >
+	<colorRange>
+		<color minValue='0' maxValue='30' code='FF0000' />
+		<color minValue='30' maxValue='50' code='FFFF00' /> 
+		<color minValue='50' maxValue='100' code='00FF00' /> 
+	</colorRange> 
+	<value>70</value>
+</chart>

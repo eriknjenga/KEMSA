@@ -1,0 +1,18 @@
+<chart bgColor='F1F1FD' lowerLimit='0' upperLimit='5000' showTickMarks='0' numberSuffix=' Ltrs' displayValueDistance='20' decimalPrecision='0' tickMarkDecimalPrecision='0' cylFillColor='996633' cylRadius='45' showValue='0'>
+	<value>3000</value>
+	<annotations>
+		<annotationGroup>
+				<annotation type='rectangle' xPos='120' yPos='60' toXPos='280' toYPos='120' radius='0' fillcolor='333333' fillAlpha='5'/>
+				<annotation type='line' xPos='120' yPos='60' toYPos='120' color='333333' thickness='2'/>
+				<annotation type='line' xPos='280' yPos='60' toYPos='120' color='333333'  thickness='2'/>
+				<annotation type='line' xPos='120' yPos='60' toXPos='125' color='333333'  thickness='2'/>
+				<annotation type='line' xPos='120' yPos='120' toXPos='125' color='333333'  thickness='2'/>
+				<annotation type='line' xPos='275' yPos='60' toXPos='280' color='333333'  thickness='2'/>
+				<annotation type='line' xPos='275' yPos='120' toXPos='280' color='333333'  thickness='2'/>
+				<annotation type='text' label='Fuel left in tanker' font='Verdana' xPos='145' yPos='65' align='left' vAlign='left' fontcolor='333333' fontSize='10' isBold='1'/>		
+				<annotation type='text' label='(expressed in ltrs)' font='Verdana' xPos='144' yPos='80' align='left' vAlign='left' fontcolor='333333' fontSize='10'/>		
+				<annotation type='text' label='3650' font='Verdana' xPos='145' yPos='95' align='left' vAlign='left' fontcolor='333333' fontSize='10' isbold='1'/>		
+		</annotationGroup>
+	</annotations>
+</chart>
+

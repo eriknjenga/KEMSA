@@ -1,0 +1,11 @@
+<chart streamlinedData='0' isHollow='0' isSliced='1' palette='4' caption='Sales distribution by Employee' subCaption='Jan 07 - Jul 07' numberPrefix='$'>
+	<set label='Buchanan' value='50000' />
+	<set label='Callahan' value='49000' />
+	<set label='Davolio' value='63000' />
+	<set label='Dodsworth' value='41000' />
+	<set label='Fuller' value='74000' />
+	<set label='King' value='49000' />
+	<set label='Leverling' value='77000' />
+	<set label='Peacock' value='54000' />
+	<set label='Suyama' value='24000' />
+</chart>

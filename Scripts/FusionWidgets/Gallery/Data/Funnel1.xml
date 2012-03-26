@@ -1,0 +1,16 @@
+<!--450*450-->
+<chart caption='Conversion Ratio' subcaption='May 2007' showPercentValues='1' decimals='1' baseFontSize='11' isSliced='1'>
+   <set label="Website Visits" value="385634" />
+   <set label="Downloads" value="175631" />
+   <set label="Interested to buy" value="84564" />
+   <set label="Contract finalized" value="35654" />
+   <set label="Purchased" value="12342" />
+   <styles>
+      <definition>
+         <style type='font' name='captionFont' size='15' />
+      </definition>
+      <application>
+      <apply toObject='CAPTION' styles='captionFont' />
+      </application>
+   </styles>
+</chart>

@@ -1,0 +1,19 @@
+<chart palette='2' caption='Revenue (USD)' subcaption='(12 months)' periodLength='4' highColor='99CC00' lowColor='CC0000'  numberPrefix='$'>
+	<dataset>
+		<set value='3400' />
+		<set value='4400' />
+		<set value='3400' />
+		<set value='7600' />
+		<set value='9400' />
+		<set value='5800' />
+		<set value='2300' />
+		<set value='4600' />
+		<set value='6500' />
+		<set value='6400' />
+		<set value='3400' />
+		<set value='7600' />
+	</dataset>
+	<trendlines>
+		<line startValue='7000' color='FFCC00'/>
+	</trendlines>
+</chart>

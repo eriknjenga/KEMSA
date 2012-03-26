@@ -1,0 +1,35 @@
+<!--300*35-->
+<chart caption='Max Temp' subcaption='°C' bgColor='FFFFFF' plotFillColor='003162' canvasLeftMargin='100' showCanvasBorder='0' highColor='008301' lowColor='850001' >
+	<dataset>
+		<set value='23' />
+		<set value='27' />
+		<set value='22' />
+		<set value='26' />
+		<set value='24' />
+		<set value='25' />
+		<set value='23' />
+		<set value='26' />
+		<set value='21' />
+		<set value='19' />
+		<set value='24' />
+		<set value='26' />
+		<set value='22' />
+		<set value='23' />
+		<set value='26' />
+		<set value='21' />
+		<set value='25' />
+		<set value='22' />
+		<set value='21' />
+		<set value='20' />
+		<set value='22' />
+		<set value='21' />
+		<set value='24' />
+		<set value='25' />
+		<set value='31' />
+		<set value='26' />
+		<set value='21' />
+		<set value='20' />
+		<set value='23' />
+		<set value='20' />
+	</dataset>
+</chart>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Gantt Chart &gt; Configuring Date Format </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>FusionWidgets Gantt chart allows you to configure both the input and output date format. This allows you to provide the date and show them on the chart using your own custom format.</p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Setting Input Date Format </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You've already seen how to set the input date format by setting:</p>
+    <p class="codeInline">&lt;chart dateFormat='mm/dd/yyyy' ... &gt;</p>
+    <p>The <span class="codeInline">dateFormat</span> attribute can take any one of these values, and all your dates specified in the XML should conform to that format. </p>
+    <ul>
+      <li>mm/dd/yyyy </li>
+      <li>dd/mm/yyyy </li>
+      <li>yyyy/mm/dd  </li>
+    </ul>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Configuring output date format </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets Gantt chart also allows you to customize the format for dates which are outputted (shown) on the chart. This format can be different from your input format and can accept a lot more types. By default, if you do not specify an explicit output date format, it assumes the same format as input date format.</p>
+    <p>To set output date format, you use:</p>
+    <p class="codeInline">&lt;chart dateFormat='mm/dd/yyyy' outputDateFormat='mns ddds, yyyy' ...&gt; </p>
+    <p>Here, <span class="codeInline">mns ddds, yyyy</span> is the custom date format template which is applied to output dates. We'll see how to build this template soon. However, when you run this chart, you'll see the dates as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_Date1.gif" width="321" height="85" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see, our input dates have been converted into a more readable format by applying output date format. This is possible using the output date format template.</p>
+    <p>This template can consist of various pre-defined tokens. You can add those tokens to form up a date format. </p>
+    <p>Currently supported tokens for building output date format template are: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="80%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="30%" class="header">Token</td>
+        <td class="header">What it represents? </td>
+      </tr>
+      <tr>
+        <td width="30%" class="codeInline">dd</td>
+        <td class="text">Numeric Date </td>
+      </tr>
+      <tr>
+        <td width="30%" class="codeInline">mm</td>
+        <td class="text">Numeric Month </td>
+      </tr>
+      <tr>
+        <td width="30%" class="codeInline">yy</td>
+        <td class="text">Numeric year (2 digits only) </td>
+      </tr>
+      <tr>
+        <td class="codeInline">yyyy</td>
+        <td class="text">Numeric year (4 digits) </td>
+      </tr>
+      <tr>
+        <td class="codeInline">hh</td>
+        <td class="text">Hour in 24 hour format - Numeric </td>
+      </tr>
+      <tr>
+        <td class="codeInline">hh12</td>
+        <td class="text">Hour in 12 hour format - Numeric </td>
+      </tr>
+      <tr>
+        <td class="codeInline">mn</td>
+        <td class="text">Minute</td>
+      </tr>
+      <tr>
+        <td class="codeInline">ss</td>
+        <td class="text">Second</td>
+      </tr>
+      <tr>
+        <td class="codeInline">ampm</td>
+        <td class="text">When using 12 hour format, this specifies whether it's AM or PM </td>
+      </tr>
+      <tr>
+        <td class="codeInline">mnl</td>
+        <td class="text">Month Name Long (Full) </td>
+      </tr>
+      <tr>
+        <td class="codeInline">mns</td>
+        <td class="text">Month Name Short </td>
+      </tr>
+      <tr>
+        <td class="codeInline">dnl</td>
+        <td class="text">Week Day Name (Long) </td>
+      </tr>
+      <tr>
+        <td class="codeInline">dns</td>
+        <td class="text">Week Day Name (short) </td>
+      </tr>
+      <tr>
+        <td class="codeInline">ds</td>
+        <td class="text">Suffix for the date (like st, nd, rd, th etc.) </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Let's quickly see some sample template examples to get a clearer idea of how to build custom output formats: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="80%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="50%" class="header">Output date format that you need </td>
+        <td class="header">What date format to use? </td>
+      </tr>
+      <tr>
+        <td width="50%" class="text">21st March, 2007</td>
+        <td class="codeInline">ddds mnl, yyyy</td>
+      </tr>
+      <tr>
+        <td width="50%" class="text">March 21 2007 </td>
+        <td class="codeInline">mnl dd yyyy</td>
+      </tr>
+      <tr>
+        <td width="50%" class="text">21-Mar-07</td>
+        <td class="codeInline">mns-dd-yy</td>
+      </tr>
+      <tr>
+        <td class="text">3/7/2007</td>
+        <td class="codeInline">mm/dd/yyyy</td>
+      </tr>
+      <tr>
+        <td class="text">21-03</td>
+        <td class="codeInline">dd-mm</td>
+      </tr>
+      <tr>
+        <td class="text">Friday, 21st March 07 </td>
+        <td class="codeInline">dnl, ddds mnl yy</td>
+      </tr>
+      <tr>
+        <td class="text">21-7-2007 13:11:20 </td>
+        <td class="codeInline">dd-mm-yyyy hh:mn:ss</td>
+      </tr>
+      <tr>
+        <td class="text">21-7-2007 1:11:20 PM </td>
+        <td class="codeInline">dd-mm-yyyy hh12:mn:ss ampm</td>
+      </tr>
+      <tr>
+        <td class="text">1:11:20 PM </td>
+        <td class="codeInline">hh12:mn:ss ampm</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Please note that the output format is not restricted to the examples listed above. Using the tokens, you can build your own custom date format templates. </td>
+  </tr>
+</table>
+</body>
+</html>

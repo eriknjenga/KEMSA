@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">FusionWidgets and Flash &gt; Loading external XML Data </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>In our previous examples, we had seen how to build XML data in a string variable using concatenation and then provide it to the chart. </p>
+      <p>However, often you'll feel the need to load external XML data and then provide it to chart. However, FusionWidgets chart doesn't directly accept path to the XML file. As such, you'll need to load the XML data in your code and then pass the XML object to the chart.</p>
+      <p>Here, we'll see an example.  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">An example </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>For this example, we first create a physical XML file named as <span class="codeInline">MyData.xml</span> and store the following data in this. We'll use this data to plot an angular gauge: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart showBorder='0' bgColor='FFFFFF' lowerLimit='0' upperLimit='100' lowerLimitDisplay='Bad' upperLimitDisplay='Good' gaugeStartAngle='180' gaugeEndAngle='0' palette='1' numberSuffix='%' tickValueDistance='20' showValue='1'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='75' code='FF654F'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='75' maxValue='90' code='F6BD0F'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='100' code='8BBA00'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;dials&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dial value='92' rearExtension='10'/&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/dials&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Now, we create <span class="codeInline">ExternalData.fla</span> in the same folder. It contains the background and other setup like <span class="codeInline">MyFirstChart.fla</span>. We just change the code present in <span class="codeInline">Actions</span> layer to: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p><span class="codeComment">/*<br />
+      * In this example, we'll show to load data stored in external XML files in the chart.<br />
+      * Since the chart accepts only XML Objects (and not path to XML), you'll need to load<br />
+      * the XML in your code and then pass the object to chart.<br />
+      * In this example, we've stored data in an external XML file called MyData.xml<br />
+      */<br />
+      //Include the relevant files</span><br />
+      #include &quot;com/fusioncharts/is/includes/LoadingFunctions.as&quot;<br />
+      #include &quot;com/fusioncharts/is/includes/AppMessages.as&quot;</p>
+      <p><span class="codeComment">//Import the required chart class.</span><br />
+      import com.fusioncharts.is.core.charts.AngularGauge;</p>
+      <p><span class="codeComment">// ------------- Load XML Data for the chart -------------- //</span><br />
+        var xmlData:XML = new XML();<br />
+        <span class="codeComment">//Delegate the onLoad event of XML to our custom createChart function</span><br />
+        xmlData.onLoad = createChart;<br />
+      xmlData.load(&quot;MyData.xml&quot;);</p>
+      <p><span class="codeComment">//createChart method is called when XML has loaded</span><br />
+        function createChart(success){<br />
+        <span class="codeComment">&nbsp;&nbsp;&nbsp;</span>if (success){<br />
+        <span class="codeComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Create the container movie clip. Note the use of _root here, as we're still<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//in scope of XML object. To come out of that, you may use Delegate class.</span><br />
+        <span class="codeComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>var chartContainerMC:MovieClip = _root.createEmptyMovieClip(&quot;ChartHolder&quot;,1);<br />
+        <span class="codeComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Now, instantiate the chart using Constructor function of the chart.</span><br />
+        <span class="codeComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>var myFirstChart:AngularGauge = new AngularGauge(chartContainerMC, 1, 450, 220, 20, 15, false, false, &quot;&quot;, &quot;EN&quot;, &quot;noScale&quot;);<br />
+        <span class="codeComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Convey the XML data object to chart. </span><br />
+        <span class="codeComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>myFirstChart.setXMLData(xmlData);<br />
+        <span class="codeComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Draw the chart</span><br />
+        <span class="codeComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>myFirstChart.render();<br />
+        <span class="codeComment">&nbsp;&nbsp;&nbsp;</span>}else{<br />
+        <span class="codeComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>trace(&quot;Error in loading data&quot;);<br />
+        <span class="codeComment">&nbsp;&nbsp;&nbsp;</span><span class="codeComment">&nbsp;&nbsp;&nbsp;</span>}<br />
+        <span class="codeComment">&nbsp;&nbsp;&nbsp;</span>}<br />
+        //Stop<br />
+    stop();</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the above code, we're:</p>
+      <ol>
+        <li>First including <span class="codeInline">com/fusioncharts/is/includes/LoadingFunctions.as</span> &amp;   <span class="codeInline">com/fusioncharts/is/includes/AppMessages.as</span> -   required files for pre-loading chart. </li>
+        <li>Thereafter, we import the <span class="codeInline">AngularGauge</span> class   . </li>
+        <li>Now, since our data is present in the external <span class="codeInline">MyData.xml</span> file, we create an XML object named as <span class="codeInline">xmlData</span> and load this XML. </li>
+        <li>We define the <span class="codeInline">onLoad</span> event handler of this XML object as our custom function <span class="codeInline">createChart</span>. </li>
+        <li>Now, it is inside this function  that we do the work of chart creation and rendering. We create the empty movie clip, initialize chart, set XML data as our XML object (<span class="codeInline">xmlData</span>) and finally render the chart. </li>
+    </ol>
+    <p>As you can see, the only basic difference is that, here you're loading the XML in your objects and then providing it to the chart. </p>
+    <p>When you now compile the file, you'll get similar results. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Flash_O_Out.jpg" width="512" height="308" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Next, we'll see how to use the APIs exposed by chart. </td>
+  </tr>
+</table>
+</body>
+</html>

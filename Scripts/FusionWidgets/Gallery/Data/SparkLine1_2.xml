@@ -1,0 +1,35 @@
+<!--300*25-->
+<chart caption='Google' palette='1' canvasLeftMargin='110'>
+	<dataset>
+		<set value='23.41' />
+		<set value='31.43' />
+		<set value='34.78' />
+		<set value='36.67' />
+		<set value='44.12' />
+		<set value='38.45' />
+		<set value='30.71' />
+		<set value='46.90' />
+		<set value='55.12' />
+		<set value='34.91' />
+		<set value='39.02' />
+		<set value='51.21' />
+		<set value='34.31' />
+		<set value='44.21' />
+		<set value='34.54' />
+		<set value='26.90' />
+		<set value='44.21' />
+		<set value='51.90' />
+		<set value='33.43' />
+		<set value='46.73' />
+		<set value='35.42' />
+		<set value='44.74' />
+		<set value='39.31' />
+		<set value='42.39' />
+		<set value='30.10' />
+		<set value='34.84' />
+		<set value='35.64' />
+		<set value='46.62' />
+		<set value='50.61' />
+		<set value='46.31' />
+	</dataset>
+</chart>

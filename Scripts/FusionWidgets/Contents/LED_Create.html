@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">LED Gauge &gt; Creating a simple gauge </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>LED Charts are like the ones used to display CPU Usage. The values are   displayed in an LED chart by filling up the LED box to that particular level,   horizontally in the horizontal LED and vertically in the vertical LED chart. In   this sample that we are going to build, we would be using and referring to the   horizontal LED throughout.</p>
+      <p>Now as a first chart, we would be building a sound meter to show the sound produced by a particular equipment on a scale on 0-120dB. The final result would look something   as under:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/LED_First1.jpg" width="355" height="106" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The various tasks involved in building this chart are:</p>
+      <ul>
+        <li>Defining the minimum and maximum value which would be plotted on the gauge   scale. They are termed as the lower and upper limits of the gauge scale and in   this case, we would set them to 0 and 120 respectively. The limits are displayed   at the starting and ending points of the gauge scale as in the image above.<br />
+        </li>
+        <li>Dividing the gauge scale into 3 regions, the ones shown in red, yellow and   green above which convey the various sound levels to be in the faint,   moderate or loud bands respectively. <br />
+        </li>
+        <li>Filling up the LED to indicate the required value, 102 in this case. </li>
+      </ul>
+    <p>Tasks defined, now lets get to the XML side of things. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">XML for the chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML for this chart can be listed as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart lowerLimit='0' upperLimit='120' lowerLimitDisplay='Low' upperLimitDisplay='High' palette='1' numberSuffix='dB' chartRightMargin='20' &gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='60' code='FF0000' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='60' maxValue='90' code='FFFF00' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='120' code='00FF00' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/colorRange&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;value&gt;102&lt;/value&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Explanation</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>First of all comes the <span class="codeInline">&lt;chart&gt;</span> element   which is the starting element for any chart that you create using FusionWidgets.   Now we define the lower and upper limits of the gauge scale. To define the   limits, we use the <span class="codeInline">lowerLimit</span> and <span class="codeInline">upperLimit</span> attributes of the <span class="codeInline">&lt;chart&gt;</span> element. We've asked the chart to show   lower limit text as <span class="codeInline">Bad</span> and upper limit text as   <span class="codeInline">Good</span>. </p>
+    <p>We also set the palette number and number suffix as <span class="codeInline">dB</span> (the character which would   show up at the end of end number). </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart lowerLimit='0' upperLimit='120' lowerLimitDisplay='Low' upperLimitDisplay='High' palette='1' numberSuffix='dB' chartRightMargin='20' &gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>There are other attributes of the <span class="codeInline">&lt;chart&gt;</span>   element which we would not be delving into now, because of this being a really   basic chart.</p>
+    <p>Next, we need to define our color range. As we had earlier seen, this chart   has 3 color ranges. To define the color range, we use the <span class="codeInline">&lt;colorRange&gt;</span> element, which is an immediate child   of the<span class="codeInline"> &lt;chart&gt; </span>element. Under each <span class="codeInline">&lt;colorRange&gt; </span>element, we place a <span class="codeInline">&lt;color&gt;</span> element specifying a single color range as   shown in the code below. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;colorRange&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;color minValue='0' maxValue='60' code='FF0000' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;color minValue='60' maxValue='90' code='FFFF00' /&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;color minValue='90' maxValue='120' code='00FF00' /&gt;<br />
+    &lt;/colorRange&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Now that we've the color ranges in place, we need to set the value for the chart. We do so using: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;value&gt;102&lt;/value&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>And with this, you've created your first LED gauge. Next, we'll see how to   customize the various facets of this chart. </p></td>
+  </tr>
+</table>
+</body>
+</html>

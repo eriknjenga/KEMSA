@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Gantt Chart &gt; Enabling Scrolling </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>FusionWidgets Gantt chart support scrolling for both the data table and the gantt view pane. Here, we'll see how to enable and configure them. </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Enabling scroll for data table </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The data table automatically starts to scroll when you data columns that do not fit in the specified area of the grid. For example, consider the XML below:</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart dateFormat='mm/dd/yyyy' caption='Project Gantt' subCaption='From 1st Feb 2007 - 31st Aug 2007'&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='04/01/2007' label='Q1' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='07/01/2007' label='Q2' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='09/01/2007' label='Q3' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='02/01/2007' end='03/01/2007' label='Feb' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='03/01/2007' end='04/01/2007' label='Mar' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='04/01/2007' end='05/01/2007' label='Apr' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='05/01/2007' end='06/01/2007' label='May' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='06/01/2007' end='07/01/2007' label='Jun' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='07/01/2007' end='08/01/2007' label='Jul' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category start='08/01/2007' end='09/01/2007' label='Aug' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;processes fontSize='12' isBold='1' align='right'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Identify Customers'  /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Survey 50 Customers' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Interpret Requirements' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Study Competition' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of features' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Brainstorm concepts' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Design &amp; Code' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Testing / QA' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Documentation of product' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;process label='Global Release' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/processes&gt;<br />
+&nbsp;&lt;datatable headerVAlign='bottom'&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;datacolumn headerText='Who does?' headerFontSize='18' headerVAlign='bottom' headerAlign='right' align='left' fontSize='12' &gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='John' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='David' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Mary' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Andrew' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Tiger' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Sharon' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Neil' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Harry' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Chris' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;text label='Richard' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/datacolumn&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/datatable&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;tasks&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/04/2007' end='02/10/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/08/2007' end='02/19/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/19/2007' end='03/02/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='02/24/2007' end='03/02/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='03/02/2007' end='03/21/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='03/21/2007' end='04/06/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='04/06/2007' end='07/21/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='07/21/2007' end='08/19/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='07/28/2007' end='08/24/2007' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;task start='08/24/2007' end='08/27/2007' /&gt; <br />
+&nbsp;&nbsp;&nbsp;&lt;/tasks&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The above XML results in a chart as below: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_Config_Scroll.gif" width="580" height="337" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, the scroll bar for data-grid automatically becomes active when the data in grid cannot fit itself in one screen.</p>
+    <p>To disable the scrollbar for data-grid, you've 3 options:</p>
+    <ul>
+      <li>Increase chart width so that the data-grid fits in fully in one screen</li>
+      <li>Set <span class="codeInline">&lt;chart ganttWidthPercent='0-100' &gt;</span> to a lower value. This attribute indicates the percent space (width) the gantt pane takes. If the gantt takes lesser space, the grid will get more space and as such might fit in the full labels.</li>
+      <li>Set <span class="codeInline"> &lt;chart showFullDataTable='0' ..&gt; </span>This asks the chart to wrap &amp; truncate the data labels and try to squeeze them in the required space (only if possible).   </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Enabling scrolling for the Gantt pane </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>By default, the Gantt pane never automatically scrolls, unless you explicitly specify it. To enable scrolling for the Gantt pane, you'll first need to decide the following - &quot;What time frame should be visible in one screen of the Gantt pane?&quot;. Once this is decided and specified for the chart, the rest of time frame is shown upon scrolling. For example, you may decide that instead of showing all data at once, you just want to see any 3 month's data only in 1 screen. As such, you'll need to specify:</p>
+    <p class="codeInline">&lt;chart ganttPaneDuration='3' ganttPaneDurationUnit='m' ..&gt;</p>
+    <p>This tells the chart to set the gantt pane duration as 3 months. And, the chart now looks as under:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_Scroll1.gif" width="574" height="331" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, the chart now shows only 3 months data in the Gantt pane - the rest can be viewed upon scrolling.</p>
+    <p><span class="codeInline">ganttPaneDurationUnit</span> can take the following values: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="80%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="30%" class="header">Value</td>
+        <td class="header">What it represents? </td>
+      </tr>
+      <tr>
+        <td width="30%" class="codeInline">y</td>
+        <td class="text">How many years to display? </td>
+      </tr>
+      <tr>
+        <td width="30%" class="codeInline">m</td>
+        <td class="text">How many months to display? </td>
+      </tr>
+      <tr>
+        <td width="30%" class="codeInline">d</td>
+        <td class="text">How many days to display? </td>
+      </tr>
+      <tr>
+        <td class="codeInline">h</td>
+        <td class="text">How many hours to display? </td>
+      </tr>
+      <tr>
+        <td class="codeInline">mn</td>
+        <td class="text">How many minutes to display? </td>
+      </tr>
+      <tr>
+        <td class="codeInline">s</td>
+        <td class="text">How many seconds to display? </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">If the duration specified by you is more than the actual time span of the chart, no scroll bar is displayed for the Gantt pane. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Configuring scroll properties </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets allows you to completely configure the scroll bar cosmetics.</p>
+    <p>To change the scroll bar color, you can use:</p>
+    <p class="codeInline">&lt;chart scrollColor='99CCCC' ..&gt;</p>
+    <p>This changes the scroll bar to something as under:     </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_Scroll2.gif" width="575" height="335" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also increase its height, padding, button width etc using:</p>
+    <p class="codeInline">&lt;chart scrollColor='99CCCC' scrollPadding='3' scrollHeight='20' scrollBtnWidth='28' scrollBtnPadding='3' ...&gt;</p>
+    <p>This gives a result as under:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Gantt_TaskC_Scroll3.gif" width="575" height="333" /></td>
+  </tr>
+</table>
+</body>
+</html>

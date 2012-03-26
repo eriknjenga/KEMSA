@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>FusionGadgets Chart Gallery</title>
+	<script language="JavaScript" src="../JSClass/FusionCharts.js"></script>
+</head>
+<body bgcolor="#ffffff">
+<table width='98%' align='center' cellpadding='2' cellspacing='0'>
+  <tr>
+  <td align="center">
+   <div id="chartdiv" align="center">FusionGadgets</div>
+   <script type="text/javascript">
+	var myChart = new FusionCharts("../Charts/AngularGauge.swf", "myChartId", "400", "200", "0", "0");
+	myChart.setDataURL("Data/Angular2.xml");
+	myChart.render("chartdiv");
+   </script>
+   </td>
+   </tr>
+   <tr height='10'>
+   <td></td>
+   </tr>
+   <tr>
+    <td align="center">
+	<a href='Data/Angular2.xml' target='_blank'><img src='../Contents/Images/BtnViewXML.gif' border='0' alt='View XML for above chart'></a>
+    </td>
+   </tr>
+</table>
+</body>
+</html>

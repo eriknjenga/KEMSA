@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Cylinder Gauge &gt; Creating a gauge </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>We will create our first cylinder gauge to depict the amount of petrol left in a fuel tanker, whose capacity is 4000 litres. We'll show a value of 2452 litres. The final gauge would look as under: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Cylinder_Create.jpg" width="203" height="255" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>To create this chart, our tasks can be broken down into the following   segments:</p>
+      <ul>
+        <li>Deciding the minimum and the maximum value that would be plotted on the   chart. The minimum value is called the lower limit and the maximum value is   termed as the upper limit. The limits are displayed on the vertical scale to the   left/right of the cylinder. Since we are plotting the amount of fuel left in a tanker,   the lower and upper limits have been set to 0 litres and 4000 litres respectively.<br />
+        </li>
+        <li>Plotting the desired value on the chart which would be depicted by filling   up the cylinder to that level on the scale. We've set it to 2,452 litres here.</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">XML for the chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The XML for the chart can be listed as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart palette='3' lowerLimit='0' upperLimit='4000' numberSuffix=' ltrs.' bgColor='FFFFFF'&gt; <br />
+      &nbsp;&nbsp;&nbsp;&lt;value&gt;2452&lt;/value&gt;<br />
+    &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Explanation</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>First of all comes the <span class="codeInline">&lt;chart&gt;</span> element   which is the starting element for any chart that you create using FusionWidgets.   Now we define the lower and upper limits of the gauge scale. To define the   limits, we use the <span class="codeInline">lowerLimit</span> and <span class="codeInline">upperLimit</span> attributes of the <span class="codeInline">&lt;chart&gt;</span> element. </p>
+      <p>We also set the palette number and number suffix as <span class="codeInline">' ltrs.'</span> <br />
+    </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart palette='3' lowerLimit='0' upperLimit='4000' numberSuffix=' ltrs.' bgColor='FFFFFF'&gt; </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">After that, we set the value of the chart using: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;value&gt;2452&lt;/value&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">And this finishes our first cylinder gauge. </td>
+  </tr>
+</table>
+</body>
+</html>

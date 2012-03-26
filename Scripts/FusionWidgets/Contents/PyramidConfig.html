@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Pyramid Chart &gt; Configurations </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The pyramid chart from FusionWidgets suite allows you to configure various   properties using XML. Here, we'll see a few of them:</p>
+      <ul>
+        <li><a href="#P2D">Drawing 2D pyramid with customized border properties </a></li>
+        <li> <a href="#Shadow">Applying shadow to 2D pyramid </a></li>
+        <li><a href="#LC"> Showing labels at center </a></li>
+        <li><a href="#Percent"> Showing values as percentage</a></li>
+        <li><a href="#Slice"> Slicing out individual pyramid slices </a></li>
+      </ul>      
+      <p>Here we'll see each one of them. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="P2D" id="P2D"></a>Drawing 2D pyramid</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>When you draw a normal pyramid chart, it renders as 3D, with a context menu   allowing you to switch between 2D &amp; 3D mode. However, if you intend to   render the pyramid as 2D itself, you can set: </p>
+      <p class="codeInline">&lt;chart ... is2D='1' ...&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Pyramid2D1.jpg" width="505" height="405" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>When in 2D mode, you can customize the border properties of the pyramid   using:</p>
+      <p class="codeInline">&lt;chart ... is2D='1' isSliced='1' showPlotBorder='1' plotBorderThickness='1' plotBorderAlpha='100' plotBorderColor='333333'&gt;</p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Pyramid2D2.jpg" width="503" height="406" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="Shadow" id="Shadow"></a>Applying shadow to 2D pyramid </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Using STYLEs, you can add shadow to 2D pyramid chart as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;chart caption='Sales distribution by Employee' subCaption='Jan 07 - Jul 07' numberPrefix='$' is2D='1' isSliced='1' showPlotBorder='1' plotBorderThickness='1' plotBorderAlpha='100' plotBorderColor='FFFFFF' &gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Buchanan' value='50000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Callahan' value='49000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Davolio' value='63000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Dodsworth' value='41000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Fuller' value='74000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='King' value='49000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Leverling' value='77000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Peacock' value='54000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;set label='Suyama' value='14000' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='captionFont' size='15' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='shadow' name='myShadow' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='CAPTION' styles='captionFont' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='DATAPLOT' styles='myShadow' /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+  &nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+  &lt;/chart&gt;
+    </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">This will result in: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/PyramidShadow.jpg" width="505" height="404" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="LC" id="LC"></a>Showing labels at center (in 2D Mode) </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In 2D pyramid chart, you can opt to show the pyramid labels at center of the chart using:</p>
+      <p class="codeInline">&lt;chart ... is2D='1' showLabelsAtCenter='1' ...&gt;</p>
+      <p>This will result in (with shadow filter applied to data labels): </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/PyramidLabelCenter.jpg" width="505" height="404" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="Percent" id="Percent"></a>Showing values as percentage </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to show the values in pyramid chart as percentage by setting:</p>
+    <p class="codeInline">&lt;chart ... showPercentValues='1' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/PyramidPercent.jpg" width="505" height="407" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="Slice" id="Slice"></a>Slicing out individual pyramid slices </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can slice out individual pyramid slices by setting:</p>
+      <p class="codeInline">&lt;set ... isSliced='1' ..&gt;</p>
+    <p>This will result in (here, we've sliced Fuller's slice): </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/PyramidSlice.jpg" width="504" height="405" /></td>
+  </tr>
+</table>
+</body>
+</html>

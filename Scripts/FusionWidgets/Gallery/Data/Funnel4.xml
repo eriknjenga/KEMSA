@@ -1,0 +1,17 @@
+<chart caption='Sales distribution by Employee' subCaption='Jan 07 - Jul 07' numberPrefix='$' is2D='1' isSliced='1' showPlotBorder='1' plotBorderThickness='1' plotBorderColor='000000' streamlinedData='0'>
+   <set label='Buchanan' value='50000' />
+   <set label='Callahan' value='49000' />
+   <set label='Davolio' value='63000' />
+   <set label='Dodsworth' value='41000' />
+   <set label='Fuller' value='74000' />
+   <set label='King' value='49000' />
+   <set label='Leverling' value='77000' />
+   <styles>
+      <definition>
+         <style type='font' name='captionFont' size='15' />
+      </definition>
+      <application>
+         <apply toObject='CAPTION' styles='captionFont' />
+      </application>
+   </styles>
+</chart> 

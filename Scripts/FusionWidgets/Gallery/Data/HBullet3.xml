@@ -1,0 +1,9 @@
+<chart palette='4' formatNumberScale='1' lowerLimit='0' upperLimit='500000' caption='Page Hits' subcaption='(July 2007)' chartTopMargin='15' chartRightMargin='20' roundRadius='5' colorRangeFillMix='{light-60},{color},{dark-20},{dark-60}' colorRangeFillRatio='20,50,20,10'>
+    <colorRange>
+        <color minValue='0' maxValue='300000' />
+        <color minValue='300000' maxValue='400000' /> 
+        <color minValue='400000' maxValue='500000' /> 
+    </colorRange> 
+    <value>420000</value>
+    <target>460000</target>
+</chart>

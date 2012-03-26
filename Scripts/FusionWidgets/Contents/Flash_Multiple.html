@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" /></head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">FusionWidgets and Flash &gt; Loading Multiple Charts </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>In our previous example, we had seen how to load a single angular gauge  in a Flash movie. Here, we'll see how to load two charts in a single Flash Movie.</p>
+      <p>Loading two (or n charts) in your Flash movie is as simple and straight-forward as loading a single chart. You just need to create instances of each chart class, provide it the right XML data and then ask it to render. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">In Example</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">For this example, we create <span class="codeInline">MultipleCharts.fla</span> under <span class="codeInline">FlashExamples</span> folder. As we did in previous example, we create a layer <span class="codeInline">&quot;Graphic Elements&quot;</span> in this file too and add two oval backgrounds instead of one, as we'll now be loading two charts. Shown below is a reference image: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Flash_M_GE.jpg" width="531" height="630" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Now, in the <span class="codeInline">Actions</span> Layer of this movie, punch the following code: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"> <span class="codeComment">//You first need to include the following two files in your movie.<br />
+//These two files contain pre-loading functions and application<br />
+//messages for the chart.<br />
+//Note: If you're loading multiple charts in your Flash movie, you<br />
+//do NOT need to include these files for each each. You can put these<br />
+//lines in the main timeline, so that it gets loaded only once.</span><br />
+#include &quot;com/fusioncharts/is/includes/LoadingFunctions.as&quot;<br />
+#include &quot;com/fusioncharts/is/includes/AppMessages.as&quot;<br />
+<br />
+<span class="codeComment">//To create the chart, you now need to import the Class of the <br />
+//chart which you want to create. All charts are present in the package <br />
+//com.fusioncharts.is.core.charts (Download Package &gt; SourceCode folder)<br />
+//If you're using multiple charts, you can import all the requisite<br />
+//chart classes in the main timeline of your movie. That ways, you<br />
+//wouldn't have to import the chart classes everytime you wish to use.</span><br />
+import com.fusioncharts.is.core.charts.AngularGauge;<br />
+import com.fusioncharts.is.core.charts.CylinderGauge;<br />
+<br />
+<span class="codeComment">// ------------- XML Data for the chart -------------- //<br />
+//Data for chart 1</span><br />
+var strXML1:String = &quot;&lt;chart bgColor='FFFFFF' showBorder='0' lowerLimit='0' upperLimit='100' lowerLimitDisplay='Bad' upperLimitDisplay='Good' gaugeStartAngle='180' gaugeEndAngle='0' palette='1' numberSuffix='%' tickValueDistance='20' showValue='1'&gt;&quot;;<br />
+<span class="codeComment">//Create color range</span><br />
+strXML1 = strXML1 + &quot;&lt;colorRange&gt;&quot;;<br />
+strXML1 = strXML1 + &quot;&lt;color minValue='0' maxValue='75' code='FF654F'/&gt;&quot;;<br />
+strXML1 = strXML1 + &quot;&lt;color minValue='75' maxValue='90' code='F6BD0F'/&gt;&quot;;<br />
+strXML1 = strXML1 + &quot;&lt;color minValue='90' maxValue='100' code='8BBA00'/&gt;&quot;;<br />
+strXML1 = strXML1 + &quot;&lt;/colorRange&gt;&quot;;<br />
+<span class="codeComment">//Add simple data for demo.</span><br />
+strXML1 = strXML1 + &quot;&lt;dials&gt;&quot;;<br />
+strXML1 = strXML1 + &quot;&lt;dial value='92' rearExtension='10'/&gt;&quot;;<br />
+strXML1 = strXML1 + &quot;&lt;/dials&gt;&quot;;<br />
+strXML1 = strXML1 + &quot;&lt;/chart&gt;&quot;; <br />
+var xmlData1:XML = new XML(strXML1);<br />
+<br />
+<span class="codeComment">// Data for Chart 2</span><br />
+var strXML2:String = &quot;&lt;chart showBorder='0' palette='3' lowerLimit='0' upperLimit='4000' numberSuffix=' ltrs.' bgColor='FFFFFF' ticksOnRight='0'&gt; &quot;;<br />
+<span class="codeComment">//Add simple data for demo.</span><br />
+strXML2 = strXML2+&quot;&lt;value&gt;2452&lt;/value&gt;&quot;;<br />
+strXML2 = strXML2+&quot;&lt;/chart&gt;&quot;;<br />
+var xmlData2:XML = new XML(strXML2);<br />
+<br />
+<span class="codeComment">// Data for Chart 3</span><br />
+var strXML3:String = &quot;&lt;chart showBorder='0' palette='4' lowerLimit='0' upperLimit='4000' numberSuffix=' ltrs.' bgColor='FFFFFF'&gt; &quot;;<br />
+<span class="codeComment">//Add simple data for demo.</span><br />
+strXML3 = strXML3+&quot;&lt;value&gt;1853&lt;/value&gt;&quot;;<br />
+strXML3 = strXML3+&quot;&lt;/chart&gt;&quot;;<br />
+var xmlData3:XML = new XML(strXML3);<br />
+<span class="codeComment">// --------------------------------------------------- // <br />
+// -------------- Actual Code to create the chart ------------//</span><br />
+//Create movie clips required for the three charts<br />
+var chartContainer1MC:MovieClip = this.createEmptyMovieClip(&quot;ChartHolder1&quot;, 1);<br />
+var chartContainer2MC:MovieClip = this.createEmptyMovieClip(&quot;ChartHolder2&quot;, 2);<br />
+var chartContainer3MC:MovieClip = this.createEmptyMovieClip(&quot;ChartHolder3&quot;, 3);<br />
+<br />
+<span class="codeComment">//Now, instantiate the charts using Constructor function of the chart.</span><br />
+var chart1:AngularGauge = new AngularGauge(chartContainer1MC, 1, 380, 200, 20, 25, false, false, &quot;&quot;, &quot;EN&quot;, &quot;noScale&quot;);<br />
+var chart2:CylinderGauge = new CylinderGauge(chartContainer2MC, 1, 190, 200, 20, 260, false, false, &quot;&quot;, &quot;EN&quot;, &quot;noScale&quot;);<br />
+var chart3:CylinderGauge = new CylinderGauge(chartContainer3MC, 1, 190, 200, 220, 260, false, false, &quot;&quot;, &quot;EN&quot;, &quot;noScale&quot;);<br />
+<br />
+<span class="codeComment">//Convey the XML data to charts. </span><br />
+chart1.setXMLData(xmlData1);<br />
+chart2.setXMLData(xmlData2);<br />
+chart3.setXMLData(xmlData3);<br />
+<br />
+<span class="codeComment">//Draw the charts</span><br />
+chart1.render();<br />
+chart2.render();<br />
+chart3.render();<br />
+<br />
+<span class="codeComment">//Stop</span><br />
+stop();<br /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the above code, we're:</p>
+      <ol>
+        <li>First including   <span class="codeInline">com/fusioncharts/is/includes/LoadingFunctions.as</span> &amp; <span class="codeInline">com/fusioncharts/is/includes/AppMessages.as</span> - required files for pre-loading chart. </li>
+        <li>Thereafter, we import the <span class="codeInline">AngularGauge</span> class and <span class="codeInline">Cylinder</span> Class as we'll be plotting two chart types and three charts in this example.</li>
+        <li>We now create XML data for all the charts. In this example, again, we've hard-coded the XML data. You can create the XML data dynamically based on your data sources.</li>
+        <li>We convert the XML data into XML Objects.</li>
+        <li>We now create three empty movie clips - one for each chart.</li>
+        <li>Next, we create instances of each chart and pass the required parameters. We set the x and y offset  for each chart, so that the chart draws at the right co-ordinates. </li>
+        <li>Moving on, we convey the XML data of each chart using <span class="codeInline">setXMLData</span> method.  </li>
+        <li>Finally, we draw  the charts by calling the <span class="codeInline">render()</span> method for each chart's instance object. </li>
+      </ol>
+    <p>When you now view the application, you'll get the following output. Again, you might need to adjust the FPS of the movie based on your requirements. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Flash_M_O.jpg" width="437" height="538" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In this example, we've included just the angular and cylinder gauges. You can include any FusionWidgets v3 chart in your application in the same way. </p>
+      <p>Also, here we've shown just 3 charts together. You can include any number of charts in your application (on a single screen too).</p>
+      <p>Now that you're fairly convinced of the power of FusionWidgets in conjunction with Flash, let's move ahead and see an example where the chart loads data from an external physical XML data file, instead of building it using string concatenation. </p></td>
+  </tr>
+</table>
+</body>
+</html>

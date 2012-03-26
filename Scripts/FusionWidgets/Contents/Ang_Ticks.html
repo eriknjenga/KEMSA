@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" /></head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Angular Gauge &gt; Configuring tick marks &amp; values </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we'll see how to: </p>
+      <ul>
+        <li><a href="#showhide">Show/hide tick marks and tick values</a></li>
+        <li><a href="#tickvalues">Configuring tick values </a></li>
+        <li><a href="#inside">Placing tick marks &amp; values inside</a></li>
+        <li><a href="#number">Configuring number of major and minor tick marks</a></li>
+        <li><a href="#cosmetics">Configuring cosmetics </a></li>
+        <li><a href="#distance">Setting tick value distance </a></li>
+      </ul>
+    <p>Let's see them one by one. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="showhide" id="showhide"></a>Show/hide tick marks and tick values</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to hide both the tick marks and tick values using:</p>
+    <p class="codeInline">&lt;chart ... showTickMarks='0' showTickValues='0' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Ticks1.jpg" width="356" height="193" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="tickvalues" id="tickvalues"></a>Configuring tick values </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to show every nth tick value by setting:</p>
+    <p class="codeInline">&lt;chart ... tickValueStep='2' ...&gt;</p>
+    <p>This will result in every 2nd major tick mark's value being shown, as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Ticks2.jpg" width="353" height="195" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also set the decimals for the tick values using:</p>
+    <p class="codeInline">&lt;chart ... tickValueDecimals='2' forceTickValueDecimals='1' ..&gt;</p>
+    <p>Here, we've set tick value decimals as 2 and forced them to display. It will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Ticks3.jpg" width="356" height="194" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="inside" id="inside"></a>Placing tick marks &amp; values inside </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to show tick marks &amp; tick values inside by setting: </p>
+    <p class="codeInline">&lt;chart ... placeTicksInside='1' placeValuesInside='1' ...&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Ticks4.jpg" width="356" height="196" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="number" id="number"></a>Configuring number of major and minor tick marks</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure the number of tick marks as under: </p>
+    <p class="codeInline">&lt;chart ... majorTMNumber='12' minorTMNumber='3' ...&gt;</p>
+    <p>It will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Ticks5.jpg" width="355" height="193" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, the chart has automatically adjusted the number of major ticks to a best feasible value. However, if you do not want the chart to do the same, you can add:</p>
+    <p><span class="codeInline">&lt;chart ... adjustTM='0' majorTMNumber='12' minorTMNumber='3' ...&gt;</span> </p>
+    <p>It will then result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Ticks6.jpg" width="354" height="194" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="cosmetics" id="cosmetics"></a>Configuring tick mark cosmetics </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure tick mark cosmetics using: </p>
+    <p class="codeInline">&lt;chart ... majorTMColor='333333' majorTMAlpha='100' majorTMHeight='10' majorTMThickness='2' minorTMColor='666666' minorTMAlpha='100' minorTMHeight='7' minorTMThickness='1' ...&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Ticks7.jpg" width="354" height="196" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="distance" id="distance"></a>Setting tick value paddings </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure the tick value padding (in pixels) as under:</p>
+      <p class="codeInline">&lt;chart ... tickValueDistance='25' ...&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Ticks8.jpg" width="353" height="194" /></td>
+  </tr>
+</table>
+</body>
+</html>

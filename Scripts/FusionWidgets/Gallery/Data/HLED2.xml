@@ -1,0 +1,7 @@
+<chart lowerLimit='0' upperLimit='100' showTickMarks='1' numberSuffix='%25' decimalPrecision='0' ledGap='0' ledSize='2' ledBoxBgColor='333333' ledBorderColor='666666' borderThickness='5' chartLeftMargin='25' chartRightMargin='25' baseFontColor='333333' ticksBelowGauge='0'>
+	<colorRange>
+		<color minValue='0' maxValue='30' code='00cccc' />
+		<color minValue='50' maxValue='100' code='0066ff' /> 
+	</colorRange> 
+	<value>70</value>
+</chart>

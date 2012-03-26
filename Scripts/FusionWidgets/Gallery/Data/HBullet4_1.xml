@@ -1,0 +1,9 @@
+<chart palette='1' lowerLimit='0' upperLimit='300' canvasLeftMargin='120' caption='Revenue' subcaption='US $ (1,000s)' showBorder='0'>
+    <colorRange>
+        <color minValue='0' maxValue='150' />
+        <color minValue='150' maxValue='220' /> 
+        <color minValue='220' maxValue='300' /> 
+    </colorRange> 
+    <value>260</value>
+    <target>250</target>
+</chart>

@@ -1,0 +1,12 @@
+<Chart showBorder='0' bgColor='FFFFFF' bgAlpha='0' lowerLimit='0' upperLimit='100' majorTMNumber='11' majorTMHeight='2' minorTMNumber='9' decimalPrecision='0' thmFillColor='FF5904' chartLeftMargin='33' chartRightMargin='17' chartTopMargin='40' chartBottomMargin='40' numberSuffix='°' borderThickness='2'>
+	<value>32</value>
+	<annotations>
+		<!-- Draw the background thermometer board  -->
+		<annotationGroup showBelowChart='1'>
+			<annotation type='rectangle' xPos='0' yPos='0' toXPos='130' toYPos='480'  radius='15' showBorder='0' borderThickness='2' fillColor='914800,000000' fillAlpha='100' fillAsGradient='1' fillDegree='45' fillPattern='linear'/>
+			<annotation type='rectangle' xPos='10' yPos='10' toXPos='120' toYPos='470'  radius='10' showBorder='1' borderThickness='2'  fillColor='FFBC79,FFBA75' fillAlpha='50' fillDegree='45'/>
+			<annotation type='text' xPos='75' yPos='435' label= 'C' fontSize='20' fontColor='000000'/>
+		</annotationGroup>
+	</annotations>
+</Chart>
+

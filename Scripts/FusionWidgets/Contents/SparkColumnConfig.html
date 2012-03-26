@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Spark Chart &gt; Spark Column Chart &gt; Configuration </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we'll see how to configure the various facets of the chart. We'll see   how to:</p>
+      <ul>
+        <li><a href="#period">Specify period blocks for the chart </a></li>
+        <li><a href="#hl"> Configure high/low column colors</a></li>
+        <li><a href="#trend"> Adding trend-lines/zones </a></li>
+      </ul>
+      <p>Let's see each of them one by one. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="period" id="period"></a>Specifying period blocks for the chart </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>FusionWidgets spark column chart allows you to show period blocks on the chart   using colored bands. This helps you easily interpret periods on the chart. For   example, if we want to show 3 months period block on the chart, we can set:</p>
+      <p class="codeInline">&lt;chart ... periodLength='3' periodColor='CCCCCC'   periodAlpha='50'&gt;</p>
+    <p>Here, we've set <span class="codeInline">periodLength='3</span>' as we've specified monthly data - so, 3 data   points make 3 months. This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkColumn_Period1.jpg" width="203" height="43" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">When specifying periods, you just need to make sure that your period length is   always less than the number of data points that you've specified, as period   length is directly numbered on data points. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"> <a name="hl" id="hl"></a>Configuring high/low column colors</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can configure the chart to color the highest and lowest values in the chart using separate colors as shown below:</p>
+    <p class="codeInline">&lt;chart ... highColor='00CC33' lowColor='CC0000' ...&gt;</p>
+    <p>Here, we've asked the chart to color the column with highest in green and the one with lowest value in red. It will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkColumn1.jpg" width="200" height="39" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><a name="trend" id="trend"></a>Adding trend-lines/zones </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can add trend-lines to spark column chart as under. For example, if we had   wanted to show previous year's average revenue as a trend-line, we can add the   following to XML: </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart ...&gt;<br />
+      &nbsp;&nbsp;&nbsp;<span class="codeComment">... data   ....</span><br />
+      &nbsp;&nbsp;&nbsp;&lt;trendlines&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;line startvalue='215700' color='FF0000' thickness='1'/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;/trendlines&gt;<br />
+    &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">This will result in: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkColumn_Trend1.jpg" width="199" height="38" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can make this line appear as dashed using:</p>
+      <p class="codeInline">&lt;line startvalue='215700' color='FF0000' thickness='1' dashed='1' dashLen='3' dashGap='3' alpha='100'/&gt;</p>
+      <p>This will result in: <br />
+        </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkColumn_Trend2.jpg" width="200" height="42" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can make slanted trend-lines using:</p>
+    <p class="codeInline">&lt;line startvalue='215700' endvalue='346400' color='FF0000' thickness='1'/&gt;    </p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkColumn_Trend3.jpg" width="201" height="42" class="imageBorder" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Or, you can make the trend appear as a zone by setting:</p>
+    <p class="codeInline">&lt;line startvalue='215700' endvalue='396400' color='FF0000' thickness='1' isTrendZone='1'/&gt;</p>
+    <p>This will result in: <br />
+    </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/SparkColumn_Trend4.jpg" width="199" height="41" class="imageBorder" /></td>
+  </tr>
+</table>
+</body>
+</html>

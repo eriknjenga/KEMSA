@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Data Streaming Charts &gt; Creating a simple example </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>Here, we'll build a simple live stock monitor using the real-time line chart to monitor the price of a stock (say Google). To create any real-time chart, you'll need to assimilate the following things:</p>
+      <ol>
+        <li>Chart SWF file and FusionCharts  JavaScript class</li>
+        <li>XML file that initializes the chart and tells it where to pull the real time data from</li>
+        <li>Real time data provider page   that provides updated data to chart in real-time data format.</li>
+      </ol>
+      <p class="highlightBlock">For this example, we've created a folder named RealTime. It's present in <span class="codeInline">Download Package &gt; Code &gt; RealTime</span>. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">How the chart will look? </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Before we actually get to the code, let's quickly look at how the chart will look like. Shown below is the chart when initialized (i.e., real time data has not been fetched even once): </td>
+  </tr>
+  <tr>
+    <td valign="top" class="header"><img src="Images/DSC_Example1.gif" width="505" height="358" class="text" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">After a few incremental updates, the chart would look as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Example2.gif" width="513" height="364" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>As you can see above, here we're monitoring the stock price of Google in a real-time line chart. We've: </p>
+      <ul>
+        <li>Initialized the chart with no data</li>
+        <li>Configure the chart to attain right visual look. </li>
+        <li>Set it to update itself in real-time from our own data provider page. The chart updates itself every 60 seconds. </li>
+        <li>Our data provider page provides a value between 30 and 35 for demo. We've just generated random numbers between 30 and 35 for this example. In real life, you can drive it from web services or databases. </li>
+        <li>The data provider page also provides the x-axis labels for the chart, which is in the format hh:mm:ss. </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Building the XML </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The following  XML drives this chart: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart caption='Stock Price Monitor' subCaption='Google' dataStreamURL='StockPrice.asp' refreshInterval='60' numberPrefix='$' setAdaptiveYMin='1' xAxisName='Time' showRealTimeValue='1' realTimeValuePadding='50' labelDisplay='Rotate' slantLabels='1'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/categories&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;dataset seriesName='Google' showValues='0'&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/dataset&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;styles&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style type='font' name='captionFont' size='14' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/definition&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;application&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Caption' styles='captionFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apply toObject='Realtimevalue' styles='captionFont' /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/styles&gt;<br />
+&lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've first:</p>
+      <ul>
+        <li>Defined the caption, sub-caption and other labels of the chart.</li>
+        <li>Set number prefix as $, as we'll be plotting stock prices. </li>
+        <li>We've set the chart to show the real time value and set a padding between the real time value and the chart canvas. This enables you to avoid overlapping of x-axis labels when they are not present initially in the XML document, but are pushed by the real-time data provider page. </li>
+        <li>We've set the <span class="codeInline">dataStreamURL</span> of the chart as <span class="codeInline">StockPrice.asp</span> and refresh interval as 60 seconds. This means that the chart will poll <span class="codeInline">StockPrice.asp</span> every 60 seconds to fetch new data and thereafter update itself. We'll discuss the code in page in next section. </li>
+        <li>Since we do not intend to show any historical data in this chart, we just provide empty<span class="codeInline"> &lt;categories&gt;</span> and &lt;dataset&gt; element. We, however, set the seriesName of <span class="codeInline">&lt;dataset&gt;</span> element as Google - this will appear in legend.<br />
+          <br />
+          In next sections we'll see how to use <span class="codeInline">&lt;categories&gt;</span> and <span class="codeInline">&lt;dataset&gt;</span> element to push historical data, so that the chart doesn't start with an empty canvas.</li>
+        <li>We've also applied font STYLE to caption and the real-time value for better visuals. </li>
+      </ul>
+    <p>When providing <span class="codeInline">dataStreamURL</span> path in XML, you need to make sure that:</p>
+    <ul>
+      <li>If there are any special characters in the URL, you'll need to URL Encode them before providing in XML. For example, if you want to set <span class="codeInline">dataStreamURL as  StockPrice.asp?symbol=Goog&amp;fromId=34564</span>, you'll need to encode it as <span class="codeInline">StockPrice%2Easp%3Fsymbol%3DGoog%26fromId%3D34564</span></li>
+      <li>You'll need to make sure that the chart SWF and real-time data provider page should be hosted on the same sub-domain. Else, due to cross domain restrictions in Flash Player, the chart would not be able to access the data provider page. </li>
+      </ul>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Sample data provider page </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In this example, we've defined our data provider page as StockPrice.asp. Instead of ASP, you can use any technology like PHP, ASP.NET, JSP, ColdFusion etc. to provide the real-time data. All you need to make sure is:</p>
+      <ul>
+        <li>The real-time data output is in the format specified  earlier.</li>
+        <li>It doesn't contain any HTML tags.</li>
+        <li>It doesn't contain any carriage returns.   </li>
+      </ul>
+    <p>For our demo, we generate random numbers between 30 and 35 and output them to the chart. The following ASP code does it: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;%@ Language=VBScript %&gt;<br />
+      &lt;%<br />
+      <span class="codeComment">'This page is meant to output the Stock Price of Google in real-time data format. <br />
+      'The data will be picked by FusionWidgets real-time line chart and plotted on chart.<br />
+      'You need to make sure that the output data doesn't contain any HTML tags or carriage returns.</span></p>
+      <p class="codeComment">'For the sake of demo, we'll just be generating a random value between 30 and 35 and returning the same.<br />
+        'In real life applications, you can get the data from web-service or your own data systems, convert it into real-time data format and then return to the chart.</p>
+      <p><span class="codeComment">'Set randomize timers on</span><br />
+        Randomize()<br />
+        Randomize Timer</p>
+      <p>Dim lowerLimit, upperLimit<br />
+        Dim randomValue<br />
+        Dim dateTimeLabel</p>
+      <p>lowerLimit = 30<br />
+        upperLimit = 35</p>
+      <p><span class="codeComment">'Generate a random value - and round it to 2 decimal places</span><br />
+        randomValue = Int(Rnd()*100*(upperLimit-lowerLimit))/100+lowerLimit</p>
+      <p><span class="codeComment">'Get label for the data - time in format hh:mn:ss</span><br />
+        dateTimeLabel = Datepart(&quot;h&quot;,Now()) &amp; &quot;:&quot; &amp; Datepart(&quot;n&quot;,Now()) &amp; &quot;:&quot; &amp; Datepart(&quot;s&quot;,Now())</p>
+      <p><span class="codeComment">'Now write it to output stream</span><br />
+        Response.Write(&quot;&amp;label=&quot;&amp; dateTimeLabel &amp; &quot;&amp;value=&quot; &amp; randomValue)<br />
+    %&gt;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The above code is pretty self explanatory. Here, we're:</p>
+      <ul>
+        <li>Initializing random timers to get random values</li>
+        <li>Creating a random value between 30 and 35</li>
+        <li>Generating the time in format hh:mm:ss</li>
+        <li>Finally, outputting the data in format <span class="codeInline">&amp;label=hh:mm:ss&amp;value=xx</span></li>
+      </ul>
+    <p>A sample output from this code is given below: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&amp;label=18:36:27&amp;value=32.9</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">PHP Version of data provider page </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The ASP code can be replaced by the following PHP code: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;?php<br />
+        <span class="codeComment">/*<br />
+      This page is meant to output the Stock Price of Google in real-time data format. <br />
+      The data will be picked by FusionWidgets real-time line chart and plotted on chart.<br />
+      You need to make sure that the output data doesn't contain any HTML tags or carriage returns.        </span></p>
+      <p class="codeComment">For the sake of demo, we'll just be generating a random value between 30 and 35 and returning the same.<br />
+        In real life applications, you can get the data from web-service or your own data systems, convert it into real-time data format and then return to the chart. </p>
+      <p class="codeComment">Set randomize timers on<br />
+        */</p>
+      <p><span class="codeComment">//Generate a random value between 30 and 35</span> <br />
+      $randomValue =rand(30,35);</p>
+      <p><span class="codeComment">//Get label for the data - time in format hh:mn:ss</span><br />
+        $dateTimeLabel = date('h:i:s'); </p>
+      <p><span class="codeComment">//Now write it to output stream</span><br />
+        print &quot;&amp;label=&quot; . $dateTimeLabel . &quot;&amp;value=&quot; . $randomValue;<br />
+    ?&gt;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Like ASP, the above code outputs the same data. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">C# Version of Data provider page </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">The code will look as under in ASP.NET (C#): </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;%@ Page Language=&quot;C#&quot; %&gt;<br />
+      &lt;script runat=&quot;server&quot;&gt;<br />
+      void Page_Load(Object sender, EventArgs e) <br />
+      {<br />
+      &nbsp;&nbsp;<span class="codeComment">&nbsp;//Define variable</span><br />
+      &nbsp;&nbsp;&nbsp;int randomValue;<br />
+      &nbsp;&nbsp;&nbsp;string dateTimeLabel;<br />
+      &nbsp;&nbsp;&nbsp;<span class="codeComment">//Define limits</span><br />
+      &nbsp;&nbsp;&nbsp;int lowerLimit = 30;<br />
+      &nbsp;&nbsp;&nbsp;int upperLimit = 35;</p>
+      <p> &nbsp;&nbsp;&nbsp;<span class="codeComment">//Random object</span><br />
+        &nbsp;&nbsp;&nbsp;System.Random rand;<br />
+        &nbsp;&nbsp;&nbsp;rand = new System.Random();</p>
+      <p> &nbsp;&nbsp;<span class="codeComment">&nbsp;//Generate a random value</span><br />
+        &nbsp;&nbsp;&nbsp;randomValue = (int)rand.Next(lowerLimit, upperLimit);</p>
+      <p> &nbsp;&nbsp;&nbsp;<span class="codeComment">//Get date object</span><br />
+        &nbsp;&nbsp;&nbsp;DateTime objToday = DateTime.Now;<br />
+        &nbsp;&nbsp;&nbsp;<span class="codeComment">//Create time string in hh:mm:ss format</span><br />
+        &nbsp;&nbsp;&nbsp;dateTimeLabel = objToday.Hour + &quot;:&quot; + objToday.Minute + &quot;:&quot; + objToday.Second;</p>
+      <p> &nbsp;&nbsp;&nbsp;<span class="codeComment">//Now write it to output stream</span><br />
+        &nbsp;&nbsp;&nbsp;Response.Write(&quot;&amp;label=&quot; + dateTimeLabel + &quot;&amp;value=&quot; + randomValue); <br />
+        }<br />
+  &lt;/script&gt;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">C# version (with code behind) of data provider page </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">With C# (with code behind), the code will look as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p><u><strong>StockPrice.aspx</strong></u><br />
+    &lt;%@ Page Language=&quot;C#&quot; AutoEventWireup=&quot;true&quot;  CodeFile=&quot;StockPrice.aspx.cs&quot; Inherits=&quot;_Default&quot; %&gt;</p>
+    <p><strong><u>StockPrice.aspx.cs</u></strong><br />
+    using System;<br />
+      using System.Data;<br />
+      using System.Configuration;<br />
+      using System.Web;<br />
+      using System.Web.Security;<br />
+      using System.Web.UI;<br />
+      using System.Web.UI.WebControls;<br />
+      using System.Web.UI.WebControls.WebParts;<br />
+      using System.Web.UI.HtmlControls;</p>
+    <p>public partial class _Default : System.Web.UI.Page <br />
+      {<br />
+      &nbsp;&nbsp;&nbsp;protected void Page_Load(object sender, EventArgs e)<br />
+      &nbsp;&nbsp;&nbsp;{<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Define variable</span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int randomValue;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string dateTimeLabel;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;//Define limits</span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int lowerLimit = 30;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int upperLimit = 35;</p>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Create random object</span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Random rand;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rand = new System.Random();</p>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Generate a random value</span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;randomValue = (int)rand.Next(lowerLimit, upperLimit);</p>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Get date object</span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DateTime objToday = DateTime.Now;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Create time string in hh:mm:ss format</span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dateTimeLabel = objToday.Hour + &quot;:&quot; + objToday.Minute + &quot;:&quot; + objToday.Second;<br />
+  <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">//Now write it to output stream</span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response.Write (&quot;&amp;label=&quot; + dateTimeLabel + &quot;&amp;value=&quot; + randomValue);<br />
+      &nbsp;&nbsp;&nbsp;}<br />
+      }<br />
+    </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">VB.NET version of data provider page </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">In ASP.NET (VB.NET), the code will look as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;%@ Page Language=&quot;VB&quot; Culture=&quot;Auto&quot; UICulture=&quot;Auto&quot; %&gt;<br />
+      &lt;script runat=&quot;server&quot;&gt;<br />
+      &nbsp;&nbsp;&nbsp;Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">'Define variables</span><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim dateTimeLabel As String<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim lowerLimit As Integer, upperLimit As Integer</p>
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">'Set the limits</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lowerLimit = 30<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;upperLimit = 35</p>
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">'Generate a random value - and round it to 2 decimal places</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim randomValue As Integer, randomNum As New Random<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;randomValue = randomNum.Next(lowerLimit, upperLimit)</p>
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">'Get the time in hh:mm:ss format</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim objToday As Date = Now<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dateTimeLabel = objToday.Hour.ToString + &quot;:&quot; + objToday.Minute.ToString + &quot;:&quot; + &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objToday.Second.ToString<br />
+  <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">'Now write it to output stream</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response.Write(&quot;&amp;label=&quot; + dateTimeLabel + &quot;&amp;value=&quot; + randomValue.ToString)</p>
+      <p> &nbsp;&nbsp;&nbsp;End Sub<br />
+    &lt;/script&gt;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">VB.NET (with code behind) version of data provider page </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">In VB.NET, the code would look as under with a code-behind page: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p><strong><u>StockPrice.aspx</u></strong><br />
+      &lt;%@ Page Language=&quot;VB&quot; AutoEventWireup=&quot;false&quot; CodeFile=&quot;StockPrice.aspx.vb&quot; Inherits=&quot;StockPrice&quot; %&gt;</p>
+      <p><strong><u>StockPrice.aspx.vb</u></strong><br />
+        Partial Class StockPrice<br />
+        &nbsp;&nbsp;&nbsp;Inherits System.Web.UI.Page</p>
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load</p>
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">'Define variables</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim dateTimeLabel As String<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim lowerLimit As Integer, upperLimit As Integer</p>
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">'Setting limits</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lowerLimit = 30<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;upperLimit = 35</p>
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">'Generate a random value - and round it to 2 decimal places</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim randomValue As Integer, randomNum As New Random<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;randomValue = randomNum.Next(lowerLimit, upperLimit)</p>
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">'Generate the x-axis label (time in hh:mm:ss format)</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim objToday As Date = Now<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dateTimeLabel = objToday.Hour.ToString + &quot;:&quot; + objToday.Minute.ToString + &quot;:&quot; + objToday.Second.ToString</p>
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&nbsp;'Now write it to output stream</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response.Write(&quot;&amp;label=&quot; + dateTimeLabel + &quot;&amp;value=&quot; + randomValue.ToString)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End Sub <br />
+        End Class<br />
+    </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">JSP version of data provider page </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">In JSP, the code would look as under: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;%@page language=&quot;java&quot;%&gt;&lt;%@page import=&quot;java.util.Calendar&quot; %&gt;&lt;%@page import=&quot;java.text.SimpleDateFormat&quot; %&gt;&lt;%<br />
+        <span class="codeComment">/*<br />
+      This page is meant to output the Stock Price of Google in real-time data format. <br />
+      The data will be picked by FusionWidgets real-time line chart and plotted on chart.<br />
+      You need to make sure that the output data doesn't contain any HTML tags or carriage returns.<br />
+      For the sake of demo, we'll just be generating a random value between 30 and 35 and returning the same.<br />
+      In real life applications, you can get the data from web-service or your own data systems, convert it into real-time data format and then return to the chart.<br />
+      */<br />
+      /*<br />
+      <strong><u>Note: In order to get the output without addition of any <br />
+      carriage-returns or tab spaces, there should not be spaces or empty lines<br />
+      between scriptlet tags or at the end of the page.</u></strong><br />
+      */</span><br />
+      int lowerLimit = 30;<br />
+      int upperLimit = 35;<br />
+      <span class="codeComment">//Generate a random value - between lower and upper limits</span><br />
+      double randomValue = Math.random()*100*(upperLimit-lowerLimit)/100+lowerLimit;</p>
+      <p><span class="codeComment">// Next few steps, to round this double to 2 decimal places</span><br />
+      long factor = (long)Math.pow(10,2);</p>
+      <p><span class="codeComment">// Shift the decimal the correct number of places<br />
+        // to the right.</span><br />
+      randomValue = randomValue * factor;</p>
+      <p><span class="codeComment">// Round to the nearest integer.</span><br />
+      long tmp = Math.round(randomValue);</p>
+      <p><span class="codeComment">// Shift the decimal the correct number of places<br />
+        // back to the left.</span><br />
+        double roundedRandomValue=(double)tmp / factor;<br />
+        <span class="codeComment">//Get label for the data - time in format HH:mm:ss</span></p>
+      <p>Calendar cal = Calendar.getInstance();<br />
+        SimpleDateFormat sdf = new SimpleDateFormat(&quot;HH:mm:ss&quot;);<br />
+        String timeLabel = sdf.format(cal.getTime());</p>
+      <p>String dataParameters = &quot;&amp;label=&quot; +timeLabel+ &quot;&amp;value=&quot; +roundedRandomValue;</p>
+      <p><span class="codeComment">//Now write it to output stream</span><br />
+    out.print(dataParameters);%&gt;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Changing chart type</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">This chart can be very easily converted to area/column chart, by just changing the name of SWF file used.  Shown below are examples of same data but different chart: </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Example3.jpg" width="510" height="361" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Real-time column chart run against the same data.</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_Example4.jpg" width="508" height="355" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">Real-time area chart run against the same data. </td>
+  </tr>
+</table>
+</body>
+</html>

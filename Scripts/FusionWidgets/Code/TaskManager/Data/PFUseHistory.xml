@@ -1,0 +1,9 @@
+<graph bgColor='000000' canvasBorderThickness='1' canvasBorderColor='008040' canvasBgColor='000000' showLimits='0' showDivLineValue='0' yAxisMaxValue='100'  hovercapbg='FFECAA' hovercapborder='F47E00' formatNumberScale='1' decimalPrecision='2' divLineDecimalPrecision='0' showvalues='0' numdivlines='10' numVDivLines='30' numDisplaySets='100' showNames='0' showLegend='0' divLineColor='008040' vDivLineColor='008040' chartLeftMargin='10' showRealTimeValue='0'>
+<categories>
+<category name='1' />
+</categories>
+<dataset color='FFFF00' showValues='0' alpha='100' showAnchors='0' lineThickness='2'>
+<set value='23' />
+</dataset>
+</graph>
+

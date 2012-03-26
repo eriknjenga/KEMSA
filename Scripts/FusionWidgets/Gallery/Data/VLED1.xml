@@ -1,0 +1,19 @@
+<chart upperLimit='100' lowerLimit='0' numberSuffix='%25' majorTMNumber='11' majorTMColor='646F8F'  majorTMHeight='9' minorTMNumber='2' minorTMColor='646F8F' minorTMHeight='3' majorTMThickness='1' decimalPrecision='0' ledGap='2' ledSize='2' annRenderDelay='1.7'>
+	<colorRange>
+		<color minValue='0' maxValue='20' code='00dd00' /> 
+	</colorRange>
+	<annotations>
+		<annotationGroup id='GRP1' showBelowChart='0' xPos='95' yPos='10' > 
+			<annotation type='line' xPos='0' yPos='0' toYPos='208' color='000000' lineThickness='3' />
+		</annotationGroup>
+	</annotations>
+	<value>45</value>
+	<styles>
+		<definition>
+			<style type='animation' name='lineAnim' param='_yscale' duration='0.7' start='0' />
+		</definition>
+		<application>
+			<apply toObject='GRP1' styles='lineAnim' />
+		</application>
+	</styles>
+</chart>

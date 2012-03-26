@@ -1,0 +1,17 @@
+<Chart upperLimit='360' lowerLimit='0' upperLimitDisplay=' ' lowerLimitDisplay='Start'  bgColor='FFFFFF' bgAlpha='0' showBorder='0' majorTMNumber='12' majorTMHeight='9' minorTMNumber='5' minorTMColor='000000' minorTMHeight='3' majorTMThickness='2' gaugeInnerRadius='0' gaugeScaleAngle='360' displayValueDistance='15' chartTopMargin='30' chartLeftMargin='30' chartRightMargin='30' chartBottomMargin='30' baseFontColor='333333'>
+	<colorRange>
+		<color minValue='0' maxValue='120' code='00B900' alpha='60' borderColor='00B900'/>
+		<color minValue='120' maxValue='240' code='FDC12E' alpha='60' borderColor='FDC12E'/> 
+		<color minValue='240' maxValue='360' code='E95D0F' alpha='60' borderColor='E95D0F'/> 
+	</colorRange> 
+	<dials> 	
+		<dial value='160' radius='85'/>
+	</dials>
+	<annotations>
+		<annotationGroup>	
+			<annotation type='rectangle' xPos='1' yPos='1' radius='15' toXPos='269' toYPos='269' showBorder='1' fillColor='333333' borderColor='333333' borderThickness='2'/>
+			<annotation type='rectangle' xPos='8' yPos='8' radius='15' toXPos='262' toYPos='262' showBorder='1' fillColor='FFFFFF,009999,FFFFFF' fillAngle='45' fillAlpha='60' borderColor='333333'/>
+		</annotationGroup>
+	</annotations>
+</Chart>
+

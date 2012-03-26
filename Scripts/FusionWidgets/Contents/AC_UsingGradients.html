@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td width="100%" colspan="2"><h2 class="pageHeader">Using Gradient Fill Mixture </h2></td>
+  </tr>
+  
+  <tr>
+    <td colspan="2" valign="top" class="text"><p>FusionWidgets  v3 accepts gradient mix formula for many elements in different charts. </p>
+    <p>For  example, in an angular gauge, you can set a gradient mix formula for the color scale, pivot etc. In a horizontal linear gauge, you can again set a gradient mix formula for the color scale. The gradient mix for the color scale in an angular gauge is set using <span class="codeInline">gaugeFillMix=&rsquo;{light-10},{light-70},{dark-10}&rsquo;</span>. </p></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top" class="text"><div align="center"><img src="Images/GMix_2.jpg" width="300" height="160" /></div></td>
+    <td width="50%" valign="top" class="text"><div align="center"><img src="Images/GMix_1.jpg" width="300" height="160" /></div></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top" class="text"><div align="center">Chart with the default gradient mix for the color scale </div></td>
+    <td width="50%" valign="top" class="text"><div align="center">Chart with the gradient mix set by <span class="codeInline">&lt;chart ... gaugeFillMix=&rsquo;{light-10},{light-70},{dark-10}&rsquo;...&gt;</span> for the color scale </div></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text"><p>Here, we  explain how you can build the formula for complex gradient formations.</p>
+      <p><strong>How gradient fill mix works? </strong></p>
+      <ul type="disc">
+        <li>It takes a base color for fill       and manipulates it to achieve light and dark color combinations.</li>
+        <li>From the base color, you can       derive lighter and darker shades of the color by specifying a percentage       between 0-100 (as we&rsquo;ll see next)</li>
+        <li>You can include other colors       (not related to base color) by directly entering their hex code in the       formula.</li>
+        <li>You can also include the base       color itself in the gradient formation using the word <span class="codeInline">color</span>.</li>
+        <li>Each color variation has to be       necessarily enclosed between parenthesis {}</li>
+        <li>The  color variations have to be       necessarily separated by comma.</li>
+      </ul>
+    <p>Examples:</p>
+    <ul type="disc">
+      <li><span class="codeInline">{light-10},{light-70},{dark-10},{color}</span> <br />
+          <span class="codeInline">light-10</span> represents a color which is 10% lighter than the color originally present there. Suppose you have an angular gauge chart having 3 color ranges, one red, one green and one yellow. So when the gauge comes across this formula (which lets say we have applied to the color scale), the color scale would be filled with a color which is 10% lighter than the color present there originally - in the red part of the color range, the color would be 10% lighter than the red color defined for it, in the green part of the color range, it would be 10% lighter than the green color defined there and so on. Similarly, <span class="codeInline">light-70</span> and <span class="codeInline">dark-10</span> would represent a color 70% lighter and 10% darker than the color originally present and <span class="codeInline">color</span> would represent the color which is originally present over there.<br /> 
+          <br />
+      </li>
+      <li><span class="codeInline">{light-10},{light-20},{light-60},{FFFFFF},{dark-30},{dark-40},{dark-40}</span> <br />
+      In this gradient mix, as soon as <span class="codeInline">FFFFFF</span> is encountered, the color scale would be filled with <span class="codeInline">FFFFFF</span> irrespective of the color originally present over there. </li>
+      </ul>
+    <p>These are how the angular gauges with the above gradient formulas applied to their color scales would look: </p>    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top" class="text"><div align="center"><img src="Images/GMix_4.jpg" width="300" height="160" /></div></td>
+    <td width="50%" valign="top" class="text"><div align="center"><img src="Images/GMix_3.jpg" width="300" height="160" /></div></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top" class="text"><div align="center"><span class="codeInline">{light-10},{light-70},{dark-10},{color}</span></div></td>
+    <td width="50%" valign="top" class="text"><div align="center"><span class="codeInline">{light-10},{light-20},{light-60},{FFFFFF},{dark-30},{dark-40},{dark-40}</span></div></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top" class="text">&nbsp;</td>
+    <td width="50%" valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text">To sum up, 
+      the  gradient fill mix formula can take any of the following literals:
+      <ul type="disc">
+        <li>{dark-xx} &ndash; where xx represents       the percentage of darkness w.r.t base color</li>
+        <li>{light-xx} &ndash; where xx       represents the percentage of lightness w.r.t base color</li>
+        <li>{color} &ndash; Actual base color</li>
+        <li>{HexCode} like {FFFFFF} or       {FF0000}</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="textBold">Specifying ratio</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text"><p>Apart from  specifying the color mix, you can also specify the ratio of each color in the mix. The  ratio determines how far that particular color will spread before mixing with  the next color and forming a gradient.</p>
+      <p>Ratio is  specified by separating them by commas e.g., <br />
+        <span class="codeInline">&lt;chart  gaugeFillMix='{light-10},{light-70},{dark-10}' gaugeFillRatio='60,20,20'&hellip;&gt;</span></p>
+    <p>The ratios should sum upto 100 and the number of ratios should be equal to the number of colors you have specified in the gradient mix. FusionWidgets would automatically map each ratio to the corresponding color in the gradient mix. </p></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text"><div align="center"><img src="Images/GMix_5.jpg" width="400" height="80" /></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text"><div align="center" class="codeInline"><span class="text">Horizontal linear gauge with</span> &lt;chart ... gaugeFillMix='{light-10},{light-70},{dark-10}'...&gt;</div></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text"><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text"><div align="center"><img src="Images/GMix_6.jpg" width="400" height="80" /></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text"><div align="center"><span class="codeInline">&lt;chart  gaugeFillMix='{light-10},{light-70},{dark-10}' gaugeFillRatio='60,20,20'&hellip;&gt;</span></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

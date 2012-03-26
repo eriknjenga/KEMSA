@@ -1,0 +1,9 @@
+<chart palette='1' lowerLimit='0' upperLimit='30' canvasLeftMargin='120' caption='Profit' subcaption='%' numberSuffix='%' showBorder='0'>
+    <colorRange>
+        <color minValue='0' maxValue='20' />
+        <color minValue='20' maxValue='25' /> 
+        <color minValue='25' maxValue='30' /> 
+    </colorRange> 
+    <value>22</value>
+    <target>26</target>
+</chart>

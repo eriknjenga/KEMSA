@@ -1,0 +1,13 @@
+<!--200*35-->
+<chart palette='1' caption='Australia' subcaption='(2007)' canvasLeftMargin='70'>
+	<dataset>
+		<set value='W' />
+		<set value='W' />
+		<set value='W' />
+		<set value='W' />
+		<set value='D' />
+		<set value='W' />
+		<set value='L' />
+		<set value='w' />
+	</dataset>	
+</chart>

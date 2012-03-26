@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Data-streaming charts &gt; Pushing Multiple Updates </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>In our previous examples we saw how to pass single update from the data provider page for each dataset on the chart. However, in each update, you can pass any number of updates for each dataset. </p>
+      <p>To do so, you just need to output the values in following format:</p>
+      <p>&amp;label=11:45,11:46,11:47&amp;value=33,32,34|22,24,25 </p>
+      <p>In the above data, we're providing three updates to both dataset present on the chart. Also, we're providing three new labels for the x-axis. When providing multiple values to update, the values within each dataset need to be separated by comma. And like before, each dataset should be separated by <span class="codeInline">|</span> (pipe) character. </p>      </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Creating the data provider page to output multiple values </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">We create <span class="codeInline">StockPriceGoogDellMultiple.asp</span> with the following code to output 3 values each for both the dataset. </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock"><p>&lt;%@ Language=VBScript %&gt;<br />
+      &lt;%<br />
+      <span class="codeComment">'This page is meant to output the Stock Price of Google in real-time data format. <br />
+      'The data will be picked by FusionWidgets real-time line chart and plotted on chart.<br />
+      'You need to make sure that the output data doesn't contain any HTML tags or carriage returns.</span></p>
+      <p class="codeComment">'For the sake of demo, we'll just be generating random values and returning them<br />
+        'In real life applications, you can get the data from web-service or your own data systems, convert it into real-time data format and then return to the chart.</p>
+      <p><span class="codeComment">'Set randomize timers on</span><br />
+        Randomize()<br />
+        Randomize Timer</p>
+      <p>Dim lowerLimitGoog, upperLimitGoog<br />
+        Dim lowerLimitDell, upperLimitDell<br />
+        Dim googlePrice1, googlePrice2, googlePrice3<br />
+        Dim dellPrice1, dellPrice2, dellPrice3<br />
+        Dim currDateTime, dateTimeLabel1, dateTimeLabel2, dateTimeLabel3</p>
+      <p>lowerLimitGoog = 30<br />
+        upperLimitGoog = 35<br />
+        lowerLimitDell = 22<br />
+        upperLimitDell = 26      </p>
+      <p><span class="codeComment">'Generate random values - and round them to 2 decimal places</span><br />
+        googlePrice1 = Int(Rnd()*100*(upperLimitGoog-lowerLimitGoog))/100+lowerLimitGoog <br />
+        googlePrice2 = Int(Rnd()*100*(upperLimitGoog-lowerLimitGoog))/100+lowerLimitGoog <br />
+        googlePrice3 = Int(Rnd()*100*(upperLimitGoog-lowerLimitGoog))/100+lowerLimitGoog </p>
+      <p>dellPrice1 = Int(Rnd()*100*(upperLimitDell-lowerLimitDell))/100+lowerLimitDell<br />
+        dellPrice2 = Int(Rnd()*100*(upperLimitDell-lowerLimitDell))/100+lowerLimitDell<br />
+        dellPrice3 = Int(Rnd()*100*(upperLimitDell-lowerLimitDell))/100+lowerLimitDell</p>
+      <p><span class="codeComment">'Get the current date</span><br />
+        currDateTime = Now()</p>
+      <p><span class="codeComment">'Get 3 labels for the data - time in format hh:mn:ss</span><br />
+        dateTimeLabel1 = Datepart(&quot;h&quot;,currDateTime) &amp; &quot;:&quot; &amp; Datepart(&quot;n&quot;,currDateTime ) &amp; &quot;:&quot; &amp; Datepart(&quot;s&quot;,currDateTime)<br />
+        <span class="codeComment">'To change date time, we increment currDateTime by 20 seconds</span><br />
+        currDateTime = Dateadd(&quot;s&quot;,20, currDateTime)<br />
+        dateTimeLabel2 = Datepart(&quot;h&quot;,currDateTime) &amp; &quot;:&quot; &amp; Datepart(&quot;n&quot;,currDateTime ) &amp; &quot;:&quot; &amp; Datepart(&quot;s&quot;,currDateTime)<br />
+        currDateTime = Dateadd(&quot;s&quot;,20, currDateTime)<br />
+        dateTimeLabel3 = Datepart(&quot;h&quot;,currDateTime) &amp; &quot;:&quot; &amp; Datepart(&quot;n&quot;,currDateTime ) &amp; &quot;:&quot; &amp; Datepart(&quot;s&quot;,currDateTime)</p>
+      <p><span class="codeComment">'Now write it to output stream</span><br />
+        Response.Write(&quot;&amp;label=&quot;&amp; dateTimeLabel1 &amp; &quot;,&quot; &amp; dateTimeLabel2 &amp; &quot;,&quot; &amp; dateTimeLabel3 &amp; &quot;&amp;value=&quot; &amp; googlePrice1 &amp; &quot;,&quot; &amp; googlePrice2 &amp; &quot;,&quot; &amp;googlePrice3 &amp; &quot;|&quot; &amp; dellPrice1 &amp; &quot;,&quot; &amp; dellPrice2 &amp; &quot;,&quot; &amp; dellPrice3)<br />
+    %&gt;</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>This page outputs the data in following format:</p>
+    <p class="codeInline">&amp;label=20:59:24,20:59:44,21:0:4&amp;value=34.23,30.46,34.74|22.15,23.91,25.92</p>
+    <p>As you can see, we're adding three labels and three values to each dataset.  When you run the chart, you'll see 3 values being added to each dataset in each update, as shown below: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/DSC_MUpdate1.jpg" width="505" height="359" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">For each data in the stream, you can also push tool text, color and vLine the same way (separated by comma). </td>
+  </tr>
+</table>
+</body>
+</html>

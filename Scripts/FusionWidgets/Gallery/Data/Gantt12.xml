@@ -1,0 +1,45 @@
+<chart dateFormat='mm/dd/yyyy' caption='Project Gantt' subCaption='From 1st Feb 2007 - 31st Aug 2007'>
+   <categories>
+      <category start='02/01/2007' end='04/01/2007' label='Q1' />
+      <category start='04/01/2007' end='07/01/2007' label='Q2' />
+      <category start='07/01/2007' end='09/01/2007' label='Q3' />
+   </categories>
+   <categories>
+      <category start='02/01/2007' end='03/01/2007' label='Feb' />
+      <category start='03/01/2007' end='04/01/2007' label='Mar' />
+      <category start='04/01/2007' end='05/01/2007' label='Apr' />
+      <category start='05/01/2007' end='06/01/2007' label='May' />
+      <category start='06/01/2007' end='07/01/2007' label='Jun' />
+      <category start='07/01/2007' end='08/01/2007' label='Jul' />
+      <category start='08/01/2007' end='09/01/2007' label='Aug' />
+   </categories>
+   <processes fontSize='12' isBold='1' align='right'>
+      <process label='Identify Customers' />
+      <process label='Survey 50 Customers' />
+      <process label='Interpret Requirements' />
+      <process label='Study Competition' />
+      <process label='Documentation of features' />
+      <process label='Brainstorm concepts' />
+      <process label='Design & Code' />
+      <process label='Testing / QA' />
+      <process label='Documentation of product' />
+      <process label='Global Release' />
+   </processes>
+   <tasks>
+      <task start='02/04/2007' end='02/10/2007' />
+      <task start='02/08/2007' end='02/19/2007' />
+      <task start='02/19/2007' end='03/02/2007' />
+      <task start='02/24/2007' end='03/02/2007' />
+      <task start='03/02/2007' end='03/21/2007' />
+      <task start='03/21/2007' end='04/06/2007' />
+      <task start='04/06/2007' end='07/21/2007' />
+      <task start='07/21/2007' end='08/19/2007' />
+      <task start='07/28/2007' end='08/24/2007' />
+      <task start='08/24/2007' end='08/27/2007' /> 
+   </tasks>
+   <trendlines>
+      <line start='08/14/2007' displayValue='Today' color='333333' thickness='2' dashed='1' />
+	<line start='05/3/2007' end='05/10/2007' displayValue='Vacation' isTrendZone='1' alpha='20' color='FF5904'/>
+
+   </trendlines>
+</chart>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" /></head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td><h2 class="pageHeader">Angular Gauge &gt; Adding trend-points </h2></td>
+  </tr>
+  <tr> 
+    <td valign="top" class="text"><p>The angular gauge allows you add the following trend elements on the gauge:</p>
+      <ul>
+        <li>Trend-points with markers</li>
+        <li>Trend-arcs</li>
+      </ul>
+    <p>Here we'll see how to add these and configure the same. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Adding simple trend point </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">To add a simple trend point (say last year's customer satisfaction index as 79%), you'll need to add the following to XML:  </td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;trendpoints&gt;<br />
+      &nbsp;&nbsp;&nbsp;&lt;point startValue='79' displayValue='Previous' color='666666' thickness='2' alpha='100' /&gt;<br />
+    &lt;/trendpoints&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>Here, we've first added the <span class="codeInline">&lt;trendpoints&gt;</span> element, which can contain any number of trend-points for the chart. Now, for each trend point, you need to add a <span class="codeInline">&lt;point&gt;</span> element with startValue/endValue as the value and other cosmetic properties defined.</p>
+    <p>The above trend point would show up on the chart as under: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Trend1.jpg" width="356" height="197" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can have the following properties for <span class="codeInline">&lt;point&gt;</span> element:  </p>    </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><table width="99%" border="1" cellpadding="2" cellspacing="0" bordercolor="#f1f1f1">
+      <tr>
+        <td width="25%" class="header">Attribute Name </td>
+        <td width="20%" class="header">Type / Range </td>
+        <td class="header">Description</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">startValue</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The starting value for the trend-point. Say, if you want to plot   a trend arc from value 102 to 109, the startValue would be 102. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">endValue</td>
+        <td valign="top" class="text">Number</td>
+        <td valign="top" class="text">The ending value for the trend-point. Say, if you want to   plot a trend-arc from value 102 to 109, the <span class="codeInline">endValue</span> would be 109. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">displayValue</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">Display label for the trend-point/trend-arc. If you do not specify a value, the chart displays the numeric value. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">valueInside</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">Whether to display the trend-point value inside the gauge? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">color</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Color of the trend point and its associated text. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">thickness</td>
+        <td valign="top" class="text">Number (Pixels)</td>
+        <td valign="top" class="text">If you've opted to show the trend as a point, this attribute   lets you define the thickness of trend line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">showBorder</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">If you're drawing a trend-arc, you can set its border on using this attribute. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">borderColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Lets you define the border color for trend-arc. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">radius</td>
+        <td valign="top" class="text">Number (Pixels) </td>
+        <td valign="top" class="text">Radius for trend point/outer side of trend arc. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">innerRadius</td>
+        <td valign="top" class="text">Number (Pixels) </td>
+        <td valign="top" class="text">In case of trend-arc, radius for inner side of arc. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashed</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">If you're showing the trend point as line, this attribute lets you control whether the line will be plotted as dashed? </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashLen</td>
+        <td valign="top" class="text">Number (pixels) </td>
+        <td valign="top" class="text">Length of each dash, if trend-point is plotted as dashed line. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">dashGap</td>
+        <td valign="top" class="text">Number (pixels)</td>
+        <td valign="top" class="text">Length of each dash gap, if trend-point is plotted as dashed line.</td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">useMarker</td>
+        <td valign="top" class="text">Boolean (0/1) </td>
+        <td valign="top" class="text">You can opt to show a triangular marker for each trend-point by setting this attribute to 1. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">markerColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Fill color of marker. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">markerBorderColor</td>
+        <td valign="top" class="text">Color Code </td>
+        <td valign="top" class="text">Border color of marker. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">markerRadius</td>
+        <td valign="top" class="text">Number (pixels) </td>
+        <td valign="top" class="text">Radius of the marker. </td>
+      </tr>
+      <tr>
+        <td valign="top" class="codeInline">markerTooltext</td>
+        <td valign="top" class="text">String</td>
+        <td valign="top" class="text">You can define tool tip for marker using this marker. </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If we wanted to customize the radius for this trend point, we can write:</p>
+      <p class="codeInline">&lt;point startValue='79' ... radius='150' innerRadius='95'/&gt;</p>
+    <p>Here we're using our own pixel based outer and inner radius for the trend point. This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Trend2.jpg" width="355" height="195" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also place the value inside by setting:</p>
+    <p class="codeInline">&lt;point ... valueInside='1' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Trend3.jpg" width="354" height="195" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>The line can also be drawn as dashed one by setting:</p>
+    <p class="codeInline">&lt;point ... dashed='1' dashLen='3' dashGap='3' ..&gt; </p>
+    <p>This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Trend4.jpg" width="354" height="194" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>If you wish to increase the space between trend line and its value, you can set it in:</p>
+      <p><span class="codeInline">&lt;chart ... trendValueDistance='25' ..&gt;</span> (or a value in pixels)</p>
+    <p>This might often be necessary when you've long trend labels. </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Showing trend-markers </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>For each trend point, you can also show a triangular marker using:</p>
+    <p class="codeInline">&lt;point startValue='79' displayValue='Previous' color='666666' useMarker='1' markerColor='F1f1f1' markerBorderColor='666666' markerRadius='7'/&gt;    </p>
+    <p>This  will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Trend5.jpg" width="355" height="196" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also add a tool tip to this marker using:</p>
+    <p class="codeInline">&lt;point ... markerTooltext='Previous year index: 79%' ...&gt;</p>
+    <p>This will result in:   </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Trend6.jpg" width="354" height="196" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="header">Creating trend-arcs </td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can also create trend-arcs to represent a range of values, instead of a single value. Shown below is a simple XML:</p>
+    <p class="codeInline">&lt;point startValue='59' endValue='85' displayValue='Arc' valueInside='1' color='FF0000'  alpha='30' /&gt;</p>
+    <p>Here, we've added both startValue and endValue to create a trend arc. Also, we've specified the cosmetics. This will result in: </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Trend7.jpg" width="354" height="195" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can customize its radius as under: </p>
+    <p class="codeInline">&lt;point startValue='59' endValue='85' color='FF0000'  alpha='20' radius='130' innerRadius='5' showBorder='0'/&gt;    </p>
+    <p>This will result in:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Trend8.jpg" width="354" height="194" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>You can opt to show border for the arc using:</p>
+    <p class="codeInline">&lt;point ... showBorder='1' borderColor='666666' ...&gt;</p>
+    <p>This will result in:  </p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/Angular_Trend9.jpg" width="355" height="195" /></td>
+  </tr>
+</table>
+</body>
+</html>

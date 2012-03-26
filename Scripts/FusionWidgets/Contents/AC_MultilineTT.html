@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>FusionWidgets v3 Documentation</title>
+<link rel="stylesheet" href="Style.css" type="text/css" />
+</head>
+
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="3" align="center">
+  <tr> 
+    <td width="100%"><h2 class="pageHeader">Putting tooltip in multiple lines </h2></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">FusionWidgets v3 allows you to put your tool tips in multiple lines with a little   manual tweaking. Consider the XML below:</td>
+  </tr>
+  <tr>
+    <td valign="top" class="codeBlock">&lt;chart&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;set label='John' value='420' <strong>tooltext='John   Miller{br}Score:   420{br}Rank:2'</strong>/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;set label='Mary'   value='295' <strong>tooltext='Mary Evans{br}Score:   295{br}Rank:3'</strong>/&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;set label='Tom'   value='523' <strong>tooltext='Tom Bowler{br}Score:   523{br}Rank:1'</strong>/&gt;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+    &lt;/chart&gt;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><p>In the above XML, we're first setting 3 lines tool tip content for each &lt;set&gt;. To separate each line we use the <strong>{br}</strong> pseudo code, which is equivalent to &lt;BR&gt; HTML tag in FusionCharts for tool-tips</p>
+      <p>When you now see the chart, you'll get the following output:</p></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" class="text"><img src="Images/AC_MultilineTT.jpg" width="400" height="350" /></td>
+  </tr>
+  <tr>
+    <td valign="top" class="text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

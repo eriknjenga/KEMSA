@@ -1,0 +1,19 @@
+<chart palette='4' lowerLimit='0' upperLimit='100' gaugeStartAngle='220' gaugeEndAngle='-40' numberSuffix='%25' bgColor='FFFFFF' showBorder='0' basefontColor='FFFFFF' gaugeOuterRadius='90' gaugeInnerRadius='75' chartTopMargin='45' toolTipBgColor='AEC0CA' toolTipBorderColor='FFFFFF' pivotRadius='6'>
+	<colorRange>
+		<color minValue='0' maxValue='100' code='F6BD0F'/>
+	</colorRange>
+	<trendpoints>
+		<point startValue='70' endValue='100' color='E10000' radius='75' innerRadius='70' alpha='70'/>
+	</trendpoints>
+	<dials>
+		<dial value='62' rearExtension='10' baseWidth='6' />
+	</dials>
+	<annotations>
+		<!--Rectangles below the gauge-->
+		<annotationGroup id='Grp1' showBelow='1'>
+			<annotation type='rectangle' x='0' y='0' toX='250' toY='250' radius='10' fillColor='AEC0CA, 333333, AEC0CA' fillAngle='90' />
+			<annotation type='rectangle' x='5' y='5' toX='245' toY='245' radius='10' fillColor='333333, C3D0D8, 333333' fillAngle='90' />
+			<annotation type='rectangle' x='10' y='10' toX='240' toY='240' radius='10' fillColor='C4D5DC, A3A5A4' fillAngle='180' />
+		</annotationGroup>
+	</annotations>
+</chart>

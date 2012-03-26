@@ -1,0 +1,27 @@
+<chart animation='1' bgColor='000000' bgAlpha='100' lowerLimit='0' upperLimit='20' gaugeStartAngle='180' gaugeEndAngle='0' gaugeOuterRadius='100' gaugeInnerRadius='90%25' gaugeOriginY='130' showTickValues='0' majorTMNumber='2' minorTMNumber='19' majorTMColor='FFFFFF' minorTMColor='EE0000' majorTMHeight='15' majorTMThickness='2' minorTMHeight='15' minorTMThickness='2' baseFontColor='FFFFFF' placeValuesInside='1' pivotFillMix='414340, 272727' pivotFillRatio='50,50' pivotBorderThickness='40' pivotBorderColor='CCCCCC' pivotRadius='20' showShadow='0' toolTipBgColor='000000'>
+	<dials>
+		<dial radius='120' baseWidth='12' topWidth='1' color='FF8F02,FFFFFF' fillRatio='90, 10' borderColor='FFFFFF'  value='7'/>
+	</dials>
+
+	<trendpoints>
+		<point startValue='1.6' color='000000' alpha='0' radius='90' innerRadius='88' displayValue='E'/>
+		<point startValue='18.4' color='000000' alpha='0' radius='90' innerRadius='88' displayValue='F'/>
+	</trendpoints>
+
+	<annotations>
+		<annotationGroup id='Grp1' showBelow='1'>
+			<annotation type='circle' x='165' y='130' radius='106' startAngle='0' endAngle='180' fillAngle='90' fillRatio='50,50' color='606417, 000000' fillPattern='linear' borderColor='FFFFFF' borderThickness='2'/>
+		</annotationGroup>
+	</annotations>
+
+	<styles>
+		<definition>
+			<style name='LimitFont' type='font' face='Verdana' size='20' color='FFFFFF' bold='1'/>
+			<style name='pivotGlow' type='glow' color='FFFFFF' />
+		</definition>
+		<application>
+			<apply toObject='TRENDVALUES' styles='LimitFont' />
+			<apply toObject='PIVOT' styles='pivotGlow' />
+		</application>
+	</styles>
+</chart>
