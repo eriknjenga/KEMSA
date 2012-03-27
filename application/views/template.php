@@ -127,10 +127,18 @@ if($user_is_facility){
 	?>">New Order!</a>
 		<a style="width:150px !important" href="<?php echo site_url('order_management/all_deliveries');?>" class="top_menu_link sub_menu_link <?php	if ($quick_link == "all_deliveries") {echo "top_menu_active";}
 	?>">Update Delivery</a>
-		<a style="width:150px !important" href="#" class="top_menu_link sub_menu_link last_link  <?php
+		<a style="width:150px !important" href="#" class="top_menu_link sub_menu_link   <?php
 		if ($quick_link == "zoonotic_data_management") {echo "top_menu_active";
 		}
 	?>">Change Password</a>
+	<a style="width:150px !important" href="<?php echo site_url('order_management/drug_issue');?>" class="top_menu_link sub_menu_link   <?php
+	if ($quick_link == "drug_issue") {echo "top_menu_active";
+	}
+	?>">Drug Issuing</a>
+	<a style="width:150px !important" href="<?php echo site_url('order_management/stock_level');?>" class="top_menu_link sub_menu_link last_link  <?php
+	if ($quick_link == "stock_level") {echo "top_menu_active";
+	}
+	?>">Stock Level</a>
 	<div id="search" >
 					<form action="" method="POST"> 
 							

@@ -44,5 +44,49 @@ class Order_Management extends MY_Controller {
 		$data['link'] = "order_management"; 
 		$this -> load -> view("template", $data);
 	}
-
+	public function drug_issue(){
+		$data['title'] = "New Drug Issue";
+		$data['content_view'] = "new_issue_v";
+		$data['banner_text'] = "New Drug Issue";
+		$data['link'] = "order_management";
+		$data['drug_categories'] = Drug_Category::getAll();
+		$data['quick_link'] = "drug_issue";
+		$this -> load -> view("template", $data);
+	}
+	public function stock_level(){
+		$data['title'] = "Stock";
+		$data['content_view'] = "stock_level_v";
+		$data['banner_text'] = "Stock Level";
+		$data['link'] = "order_management";
+		$data['counties'] = Counties::getAll();
+		$data['drug_categories'] = Drug_Category::getAll();
+		$data['quick_link'] = "stock_level";
+		$this -> load -> view("template", $data);
+	}
+	public function getDistrict(){
+		//for ajax
+		$county=$_POST['county'];
+		$districts=Districts::getDistrict($county);
+		$list="";
+		foreach ($districts as $districts) {
+			$list.=$districts->id;
+			$list.="*";
+			$list.=$districts->district;
+			$list.="_";
+		}
+		echo $list;
+	}
+	public function getFacilities(){
+		//for ajax
+		$district=$_POST['district'];
+		$facilities=Facilities::getFacilities($district);
+		$list="";
+		foreach ($facilities as $facilities) {
+			$list.=$facilities->id;
+			$list.="*";
+			$list.=$facilities->facility_name;
+			$list.="_";
+		}
+		echo $list;
+	}
 }
